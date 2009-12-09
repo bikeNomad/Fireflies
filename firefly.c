@@ -383,6 +383,7 @@ static uint8_t still_dark(void)
 
 	// turn off pullup
 	PORTB = ~(_BV(PIN_B) | _BV(PIN_A)) ;	// turn OFF pullup on PIN_A, PIN_B low, all others high
+    DDRB = 0xFF;    // make PIN_A an output again.
 
     if (photocell > DARK_MINIMUM)
     {
