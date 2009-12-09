@@ -64,12 +64,13 @@ OPTLEVEL=s
 # one of the valid "-c PROGRAMMER-ID" values 
 # described in the avrdude info page.
 # 
-AVRDUDE_PROGRAMMERID=stk500v2
+# AVRDUDE_PROGRAMMERID=stk500v2
+AVRDUDE_PROGRAMMERID=jtag2isp
 
 # port--serial or parallel port to which your 
 # hardware programmer is attached
 #
-AVRDUDE_PORT=/dev/cu.KeySerial1
+AVRDUDE_PORT=/dev/cu.pci-serial4a
 
 
 ####################################################
@@ -189,6 +190,8 @@ fuses:
 	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID) \
 	-p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) \
 	-U hfuse:w:0xDF:m -U lfuse:w:0x62:m
+
+firefly: hex
 
 install: writeflash
 

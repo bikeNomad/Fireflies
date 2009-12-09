@@ -7,7 +7,7 @@
 #include "firefly.h"
 
 const prog_uint8_t about[] = "Jar of Fireflies\n"
-            "Design and Implimentation by Xander Hudson (jar@synoptic.org)\n"
+            "Design and Implementation by Xander Hudson (jar@synoptic.org)\n"
             "Idea and Inspiration by Kayobi Tierney\n"
             "Special thanks to Katie Horn for getting me to think about electronics";
 const prog_uint8_t version[] = "$Revision: 1.41 $ $Date: 2007/01/10 04:35:55 $";
@@ -60,25 +60,33 @@ uint8_t mood = 2;
 uint16_t mood_count = 30;   // WDT cycles before changing mood
 
 volatile uint8_t masterpinmask;
+volatile uint8_t waiting_for_dark;	// true if in the "wait for dark" state.
+volatile uint8_t is_dark;	        // true if it still seems to be dark.
 
 /* Intentionally crash the program leaving a visual clue.  The  */
 /* watchdog should then come and reboot us.                     */
 #define FREAKOUT  for (;;) {PORTB = LEDS_OFF; PORTB = ~LEDS_OFF; } 
 
+static uint8_t still_dark(void);
+
 ISR(WDT_vect) {
-    if (ch1resting && (--ch1restcount == 0)) ch1resting = 0;
-    if (ch2resting && (--ch2restcount == 0)) ch2resting = 0;
-    if (!need_mood && (--mood_count == 0)) need_mood = 1;
+    still_dark();
+	if (ch1resting && (--ch1restcount == 0)) ch1resting = 0;
+	if (ch2resting && (--ch2restcount == 0)) ch2resting = 0;
+	if (!need_mood && (--mood_count == 0)) need_mood = 1;
 }
 
 ISR(TIM0_COMPA_vect) {
     static uint8_t x;
 
+    if (waiting_for_dark)
+		return;
+
     // Do this right up front so there's no jitter from all
     // the complex logic to follow.
     PORTB=portval;
     
-    // x rolls around to zero natrually every 256 cycles.  It's on
+    // x rolls around to zero naturally every 256 cycles.  It's on
     // the start of one of these cycles that we change the note that
     // we're playing.
     if ( x-- == 0 ) {
@@ -154,7 +162,7 @@ ioinit(void)
 { 
     wdt_enable(WDTO_500MS);   // Set watchdog timeout
 
-    WDTCR |= _BV(WDIE);    // Set watchdog to generate interrupt.
+	WATCHDOG_OK; 	// Set watchdog to generate interrupt.
 
     // Set all pins as outputs.
     // Drive PIN_A and PIN_B low, everybody else high.
@@ -186,168 +194,6 @@ ioinit(void)
     TIMSK = _BV(OCIE0A);
 
     WATCHDOG_OK;
-}
-
-int main(void) {
-    const Song *ch1song = 0;
-    const Song *ch2song = 0;
-    uint16_t ch1noteptr = 0;
-    uint16_t ch2noteptr = 0;
-    uint8_t temp;
-
-    ioinit();
-
-    // Zero out register variables.
-    ch1bright = ch2bright = ch1err = ch2err =
-        ch1pin = ch2pin = portval = 0;
-
-    // Zero out flags.
-    FLAGS0 = 0;
-
-    sei();
-
-    showbootup();
-
-    ch1restcount = randwaitval();
-    ch2restcount = randwaitval();
-
-    ch1resting = 1;
-    ch2resting = 1;
-
-    for (;;) {
-
-        /* If we have a channel playing, take care of its    */
-        /* housekeeping first.                               */
-        if (ch1playing || ch2playing) {
-            /* If channel is playing but doesn't have its next note   */
-            /* loaded, load it.                                       */
-
-            if (ch1playing && !ch1noteready) {
-                if ( ch1noteptr != ch1song->notecount ) {
-                
-                    temp = pgm_read_byte(&ch1song->notes[ch1noteptr++]);
-                    temp = ((uint16_t)(ch1scale * temp)) >> 8;
-
-                    cli();
-                    ch1nextnote = temp;
-                    ch1noteready = 1;
-                    sei();
-
-                    continue;  // Loop over from start.
-                } // Else end of song.
-            }
-
-            if (ch2playing && !ch2noteready) {
-                if ( ch2noteptr != ch2song->notecount ) {
-                    temp = pgm_read_byte(&ch2song->notes[ch2noteptr++]);
-                    temp = ((uint16_t)(ch2scale * temp)) >> 8;
-
-                    cli();
-                    ch2nextnote = temp;
-                    ch2noteready = 1;
-                    sei();
-
-                    continue;  // Loop over from start.
-                } // Else end of song.
-            }
-
-            /* If a channel is playing a song and its restcount is 0,   */
-            /* we need to pick a new random restcount for it.           */
-
-            if (ch1playing && ch1restcount == 0) {
-                temp = randwaitval();
-                cli(); 
-                ch1restcount = temp; 
-                sei();
-                continue;  // Loop over from start.
-            }
-
-            if (ch2playing && ch2restcount == 0) {
-                temp = randwaitval();
-                cli(); 
-                ch2restcount = temp; 
-                sei();
-                continue;  // Loop over from start.
-            }
-        }
-
-        /* If channel is done resting and waiting for a song to   */
-        /* be queued up, select a song for it.                    */
-        if (!ch1playing && !ch1resting && !ch1noteready) {   
-            ch1song = pickasong();           
-            ch1noteptr = 0;
-
-            ch1pin = pickapin(ch2pin);
-
-            // Now pick a random scaling value so the brightness
-            // varies over time.
-            ch1scale = randscaleval();
-           
-            temp = pgm_read_byte(&ch1song->notes[ch1noteptr++]);
-            temp = ((uint16_t)(ch1scale * temp)) >> 8;
-
-            // If the other channel isn't playing lets reselect the
-            // master pin.
-            if (ch2resting) masterpinmask = pickmaster();        
-
-            cli();
-            ch1nextnote = temp;
-            ch1noteready = 1;
-            sei();
-
-            continue;  // Loop over from start.
-        }
-        
-        if (!ch2playing && !ch2resting && !ch2noteready) {
-            ch2song = pickasong();           
-            ch2noteptr = 0;
-
-            ch2pin = pickapin(ch1pin);
-
-            // Now pick a random scaling value so the brightness
-            // varies over time.
-            ch2scale = randscaleval();
-
-            temp = pgm_read_byte(&ch2song->notes[ch2noteptr++]);
-            temp = ((uint16_t)(ch2scale * temp)) >> 8;
-
-            // If the other channel isn't playing lets reselect the
-            // master pin.
-            if (ch1resting) masterpinmask = pickmaster();        
-
-            cli();
-            ch2nextnote = temp;
-            ch2noteready = 1;
-            sei();
-
-            continue;  // Loop over from start.
-        }
-
-        if (need_mood) {
-#ifdef PHOTOSHOOT
-            mood = 1; 
-#else                   
-            mood = randbits(5) + 8; 
-#endif
-            mood_count = 60 * 5 * 2;
-            need_mood = 0;
-            
-            continue;  // Loop over from start.
-        }   
-
-        WATCHDOG_OK;
-
-        /* If both channels are resting then go to deep sleep.    */
-        /* We shouldn't get to here unless all our housekeeping   */
-        /* work is done.                                          */
-        if (ch1resting && ch2resting) {
-            set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-            sleep_mode();
-        } else {
-            set_sleep_mode(SLEEP_MODE_IDLE);
-            sleep_mode();
-        }   
-    }           
 }
 
 void showbootup (void) {
@@ -466,27 +312,281 @@ uint8_t pickmaster (void) {
 }
 
 
-/* randbits -- implimentation of linear feedback shift register. */
-uint8_t randbits (uint8_t bits) {
+/* randbits -- implementation of linear feedback shift register. */
+uint8_t randbits(uint8_t bits)
+{
     static uint16_t lfsr = RANDOM_SEED;
-    
-    if (lfsr == 0) FREAKOUT;
 
-    if ((lfsr&0x8000)==0)
-        lfsr=lfsr<<1;
+    if (lfsr == 0)
+        FREAKOUT;
+
+    if ((lfsr & 0x8000) == 0)
+        lfsr = lfsr << 1;
     else {
-        lfsr=lfsr<<1;
+        lfsr = lfsr << 1;
         lfsr = lfsr ^ 0x1D87;
     }
-    
+
     // Mask out the bits we want.
-    return ((lfsr & 0xFF) & pgm_read_byte(&bitmasks[bits]));    
+    return ((lfsr & 0xFF) & pgm_read_byte(&bitmasks[bits]));
 }
 
-const Song *pickasong (void) {
+const Song *pickasong(void)
+{
     // when the number of songs to choose from is a power of two, the
-    // optimizer makes this quite fast.  Otherwise it can take hundreds of cycles to
+    // optimizer makes this quite fast.  Otherwise it can take hundreds of
+    // cycles to
     // do the multiplication.
-    return songs[ (randbits(8) * (sizeof(songs)/sizeof(Song *))) >> 8 ];
+    return songs[(randbits(8) * (sizeof (songs) / sizeof (Song *))) >> 8];
 }
 
+static uint8_t read_adc(uint8_t muxreg)
+{
+	// enable and set up ADC
+    PRR &= ~_BV(PRADC);      // turn on the ADC power
+    ADMUX = muxreg | _BV(ADLAR);    // left-justified result
+    // ensure that ADC is not busy converting
+    loop_until_bit_is_clear(ADCSRA, ADSC);
+    ADCSRA = _BV(ADEN) | _BV(ADSC);      // enable ADC and start conversion
+    // wait until done converting
+	loop_until_bit_is_clear(ADCSRA, ADSC);
+
+	// get ADC result (high 8 bits)
+    uint8_t retval = ADCH;
+
+	// disable ADC
+    ADCSRA &= ~_BV(ADEN);    // disable ADC
+    PRR |= _BV(PRADC);        // turn off the ADC power
+
+    return retval;
+}
+
+uint8_t read_temperature(void)
+{
+    return read_adc(_BV(REFS1) | 0x0F); // 1.1V ref, no external bypass, select temp channel
+}
+
+#define	DARK_DEBOUNCE	10
+#define DARK_MINIMUM    0xE0
+
+// return true if dark enough
+// CdS photocell between PIN_A and PIN_B
+static uint8_t still_dark(void)
+{
+    static uint8_t debounce = DARK_DEBOUNCE;
+
+	// set up I/O pins
+	DDRB = ~_BV(PIN_A);		// only PIN_A as input
+	PORTB = ~_BV(PIN_B);	// turn ON pullup on PIN_A, PIN_B low, all others high
+	// read state
+    uint8_t photocell = read_adc(PIN_A_ADC);  // Vcc as VRef, no conn to AREF.
+
+	// turn off pullup
+	PORTB = ~(_BV(PIN_B) | _BV(PIN_A)) ;	// turn OFF pullup on PIN_A, PIN_B low, all others high
+
+    if (photocell > DARK_MINIMUM)
+    {
+        if (!debounce--)
+        {
+            debounce = DARK_DEBOUNCE;
+            is_dark = 1;
+        }
+    }
+    else
+    {
+        debounce = DARK_DEBOUNCE;
+        is_dark = 0;
+    }
+    return is_dark;
+}
+
+void wait_for_dark(void)
+{
+    waiting_for_dark = 1;
+    TIMSK = 0;  // disable timer 0 compare interrupt
+    while (!is_dark) {
+        WATCHDOG_OK;
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_mode();
+        // wake from WDT interrupt.
+    }
+    TIMSK = _BV(OCIE0A);    // enable timer 0 interrupt
+    waiting_for_dark = 0;
+}
+
+// do the old main loop, but only as long as it's still dark.
+void lighted_fireflies(void)
+{
+    static const Song *ch1song;
+    static const Song *ch2song;
+    static uint16_t ch1noteptr;
+    static uint16_t ch2noteptr;
+    static uint8_t temp;
+
+    // main loop.
+    while (is_dark) {
+        /* If we have a channel playing, take care of its */
+        /* housekeeping first.  */
+        if (ch1playing || ch2playing) {
+            /* If channel is playing but doesn't have its next note */
+            /* loaded, load it.  */
+
+            if (ch1playing && !ch1noteready) {
+                if (ch1noteptr != ch1song->notecount) {
+
+                    temp = pgm_read_byte(&ch1song->notes[ch1noteptr++]);
+                    temp = ((uint16_t) (ch1scale * temp)) >> 8;
+
+                    cli();
+                    ch1nextnote = temp;
+                    ch1noteready = 1;
+                    sei();
+
+                    continue;   // Loop over from start.
+                }               // Else end of song.
+            }
+
+            if (ch2playing && !ch2noteready) {
+                if (ch2noteptr != ch2song->notecount) {
+                    temp = pgm_read_byte(&ch2song->notes[ch2noteptr++]);
+                    temp = ((uint16_t) (ch2scale * temp)) >> 8;
+
+                    cli();
+                    ch2nextnote = temp;
+                    ch2noteready = 1;
+                    sei();
+
+                    continue;   // Loop over from start.
+                }               // Else end of song.
+            }
+
+            /* If a channel is playing a song and its restcount is 0, */
+            /* we need to pick a new random restcount for it.  */
+
+            if (ch1playing && ch1restcount == 0) {
+                temp = randwaitval();
+                cli();
+                ch1restcount = temp;
+                sei();
+                continue;       // Loop over from start.
+            }
+
+            if (ch2playing && ch2restcount == 0) {
+                temp = randwaitval();
+                cli();
+                ch2restcount = temp;
+                sei();
+                continue;       // Loop over from start.
+            }
+        }
+
+        /* If channel is done resting and waiting for a song to */
+        /* be queued up, select a song for it.  */
+        if (!ch1playing && !ch1resting && !ch1noteready) {
+            ch1song = pickasong();
+            ch1noteptr = 0;
+
+            ch1pin = pickapin(ch2pin);
+
+            // Now pick a random scaling value so the brightness
+            // varies over time.
+            ch1scale = randscaleval();
+
+            temp = pgm_read_byte(&ch1song->notes[ch1noteptr++]);
+            temp = ((uint16_t) (ch1scale * temp)) >> 8;
+
+            // If the other channel isn't playing lets reselect the
+            // master pin.
+            if (ch2resting)
+                masterpinmask = pickmaster();
+
+            cli();
+            ch1nextnote = temp;
+            ch1noteready = 1;
+            sei();
+
+            continue;           // Loop over from start.
+        }
+
+        if (!ch2playing && !ch2resting && !ch2noteready) {
+            ch2song = pickasong();
+            ch2noteptr = 0;
+
+            ch2pin = pickapin(ch1pin);
+
+            // Now pick a random scaling value so the brightness
+            // varies over time.
+            ch2scale = randscaleval();
+
+            temp = pgm_read_byte(&ch2song->notes[ch2noteptr++]);
+            temp = ((uint16_t) (ch2scale * temp)) >> 8;
+
+            // If the other channel isn't playing lets reselect the
+            // master pin.
+            if (ch1resting)
+                masterpinmask = pickmaster();
+
+            cli();
+            ch2nextnote = temp;
+            ch2noteready = 1;
+            sei();
+
+            continue;           // Loop over from start.
+        }
+
+        if (need_mood) {
+#ifdef PHOTOSHOOT
+            mood = 1;
+#else
+            mood = randbits(5) + 8;
+#endif
+            mood_count = 60 * 5 * 2;
+            need_mood = 0;
+
+            continue;           // Loop over from start.
+        }
+
+        WATCHDOG_OK;
+
+        /* If both channels are resting then go to deep sleep.  */
+        /* We shouldn't get to here unless all our housekeeping */
+        /* work is done.  */
+        if (ch1resting && ch2resting) {
+            set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+            sleep_mode();
+        }
+        else {
+            set_sleep_mode(SLEEP_MODE_IDLE);
+            sleep_mode();
+        }
+    }
+}
+
+
+int main(void)
+{
+    ioinit();
+
+    // Zero out register variables.
+    ch1bright = ch2bright = ch1err = ch2err = ch1pin = ch2pin = portval = 0;
+
+    // Zero out flags.
+    FLAGS0 = 0;
+    waiting_for_dark = 0;
+
+    sei();
+
+    showbootup();
+
+    for (;;) {
+        wait_for_dark();
+        ch1restcount = randwaitval();
+        ch2restcount = randwaitval();
+        ch1bright = ch2bright = ch1err = ch2err = ch1pin = ch2pin = portval = 0;
+        FLAGS0 = 0;
+        ch1resting = 1;
+        ch2resting = 1;
+
+        lighted_fireflies();
+    }
+}

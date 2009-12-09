@@ -55,7 +55,7 @@ const Song *songs[] = {
 #endif
         };
 
-/*  The following code impliments some flags using the GPIOR0 general
+/*  The following code implements some flags using the GPIOR0 general
  *  pupose I/O register.  It's ugly, but doing it this way immediately
  *  shaved over 230 bytes off of my code.
 */
@@ -83,7 +83,9 @@ typedef struct {
 */
 
 #define PIN_B 1
+
 #define PIN_A 4
+#define PIN_A_ADC 2
 
 #define PIN_C 3
 #define PIN_D 2
@@ -92,7 +94,7 @@ typedef struct {
 #define FLAGS0 GPIOR0
 
 /* pwm(value, error, result, resultmask) 
- *   Impliments 8-bit PWM with the result being a bit 
+ *   Implements 8-bit PWM with the result being a bit 
  *   (selected by resultmask) set or cleared in result. 
  *   Adopted from Bresenham's line drawing algorithm and heavily
  *   optimized.  I've also heard this called 'delta-sigma' encoding.
