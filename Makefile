@@ -70,7 +70,8 @@ AVRDUDE_PROGRAMMERID=jtag2isp
 # port--serial or parallel port to which your 
 # hardware programmer is attached
 #
-AVRDUDE_PORT=/dev/cu.pci-serial4a
+# AVRDUDE_PORT=/dev/cu.pci-serial4a
+AVRDUDE_PORT=usb
 
 
 ####################################################

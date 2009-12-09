@@ -60,14 +60,24 @@ uint8_t mood = 2;
 uint16_t mood_count = 30;   // WDT cycles before changing mood
 
 volatile uint8_t masterpinmask;
+
+static void still_dark(void);
+static void wait_for_dark(void);
+#ifdef USE_PHOTOCELL
 volatile uint8_t waiting_for_dark;	// true if in the "wait for dark" state.
 volatile uint8_t is_dark;	        // true if it still seems to be dark.
+volatile uint8_t force_dark;
+static uint8_t read_adc(uint8_t);
+static uint8_t read_temperature(void);
+#else
+#   define is_dark          1
+#   define waiting_for_dark 0
+#endif
 
 /* Intentionally crash the program leaving a visual clue.  The  */
 /* watchdog should then come and reboot us.                     */
 #define FREAKOUT  for (;;) {PORTB = LEDS_OFF; PORTB = ~LEDS_OFF; } 
 
-static uint8_t still_dark(void);
 
 ISR(WDT_vect) {
     still_dark();
@@ -340,6 +350,8 @@ const Song *pickasong(void)
     return songs[(randbits(8) * (sizeof (songs) / sizeof (Song *))) >> 8];
 }
 
+#ifdef USE_PHOTOCELL
+
 static uint8_t read_adc(uint8_t muxreg)
 {
 	// enable and set up ADC
@@ -361,7 +373,7 @@ static uint8_t read_adc(uint8_t muxreg)
     return retval;
 }
 
-uint8_t read_temperature(void)
+static uint8_t read_temperature(void)
 {
     return read_adc(_BV(REFS1) | 0x0F); // 1.1V ref, no external bypass, select temp channel
 }
@@ -371,7 +383,7 @@ uint8_t read_temperature(void)
 
 // return true if dark enough
 // CdS photocell between PIN_A and PIN_B
-static uint8_t still_dark(void)
+static void still_dark(void)
 {
     static uint8_t debounce = DARK_DEBOUNCE;
 
@@ -385,7 +397,7 @@ static uint8_t still_dark(void)
 	PORTB = ~(_BV(PIN_B) | _BV(PIN_A)) ;	// turn OFF pullup on PIN_A, PIN_B low, all others high
     DDRB = 0xFF;    // make PIN_A an output again.
 
-    if (photocell > DARK_MINIMUM)
+    if (photocell > DARK_MINIMUM || force_dark)
     {
         if (!debounce--)
         {
@@ -398,10 +410,10 @@ static uint8_t still_dark(void)
         debounce = DARK_DEBOUNCE;
         is_dark = 0;
     }
-    return is_dark;
+    return;
 }
 
-void wait_for_dark(void)
+static void wait_for_dark(void)
 {
     waiting_for_dark = 1;
     TIMSK = 0;  // disable timer 0 compare interrupt
@@ -414,6 +426,11 @@ void wait_for_dark(void)
     TIMSK = _BV(OCIE0A);    // enable timer 0 interrupt
     waiting_for_dark = 0;
 }
+
+#else   /* !defined(USE_PHOTOCELL) */
+static void still_dark(void)        { }
+static void wait_for_dark(void)     { }
+#endif  /* defined(USE_PHOTOCELL) */
 
 // do the old main loop, but only as long as it's still dark.
 void lighted_fireflies(void)
@@ -570,19 +587,27 @@ int main(void)
 
     // Zero out register variables.
     ch1bright = ch2bright = ch1err = ch2err = ch1pin = ch2pin = portval = 0;
+    ch1restcount = randwaitval();
+    ch2restcount = randwaitval();
 
     // Zero out flags.
     FLAGS0 = 0;
+
+#ifdef USE_PHOTOCELL
     waiting_for_dark = 0;
+    is_dark = 1;
+    force_dark = 1;
+#endif
 
     sei();
 
     showbootup();
-
+#ifdef USE_PHOTOCELL
+    force_dark = 0;
+#endif
     for (;;) {
         wait_for_dark();
-        ch1restcount = randwaitval();
-        ch2restcount = randwaitval();
+
         ch1bright = ch2bright = ch1err = ch2err = ch1pin = ch2pin = portval = 0;
         FLAGS0 = 0;
         ch1resting = 1;

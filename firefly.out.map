@@ -17,10 +17,8 @@ ch1restcount        0x1               firefly.o
 ch1nextnote         0x1               firefly.o
 ch2nextscale        0x1               firefly.o
 ch2nextnote         0x1               firefly.o
-is_dark             0x1               firefly.o
 ch2restcount        0x1               firefly.o
 ch1nextscale        0x1               firefly.o
-waiting_for_dark    0x1               firefly.o
 ch1scale            0x1               firefly.o
 masterpinmask       0x1               firefly.o
 
@@ -134,7 +132,7 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xc34
+.text           0x00000000      0xb34
  *(.vectors)
  .vectors       0x00000000       0x1e /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/crttn45.o
                 0x00000000                __vectors
@@ -216,36 +214,34 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a
                 0x00000450                __vector_2
                 0x00000450                __vector_8
                 0x00000450                __vector_14
- .text          0x00000452      0x7bc firefly.o
-                0x000006b0                randwaitval
-                0x00000822                __vector_12
-                0x000008bc                wait_for_dark
-                0x00000668                randbits
-                0x000006e2                randscaleval
-                0x0000070c                pickapin
-                0x0000075c                pickmaster
-                0x00000b78                main
-                0x000008f4                lighted_fireflies
-                0x0000078a                pickasong
-                0x00000546                showbootup
-                0x000008b4                read_temperature
-                0x00000452                __vector_10
- .text          0x00000c0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
- .text          0x00000c0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
- .text          0x00000c0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
- .text          0x00000c0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
-                0x00000c0e                . = ALIGN (0x2)
+ .text          0x00000452      0x6bc firefly.o
+                0x0000070e                randwaitval
+                0x00000452                __vector_12
+                0x000006c6                randbits
+                0x00000740                randscaleval
+                0x0000076a                pickapin
+                0x000007ba                pickmaster
+                0x00000a7c                main
+                0x00000808                lighted_fireflies
+                0x000007e8                pickasong
+                0x000005a4                showbootup
+                0x000004ba                __vector_10
+ .text          0x00000b0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
+ .text          0x00000b0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
+ .text          0x00000b0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
+ .text          0x00000b0e        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
+                0x00000b0e                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000c0e       0x24 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
-                0x00000c0e                __mulhi3
- .text.libgcc   0x00000c32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
- .text.libgcc   0x00000c32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
- .text.libgcc   0x00000c32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
-                0x00000c32                . = ALIGN (0x2)
+ .text.libgcc   0x00000b0e       0x24 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
+                0x00000b0e                __mulhi3
+ .text.libgcc   0x00000b32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
+ .text.libgcc   0x00000b32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000b32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
+                0x00000b32                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000c32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
-                0x00000c32                exit
-                0x00000c32                _exit
+ .fini9         0x00000b32        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
+                0x00000b32                exit
+                0x00000b32                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -264,15 +260,15 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000c32        0x2 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
+ .fini0         0x00000b32        0x2 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000c34                _etext = .
+                0x00000b34                _etext = .
 
-.data           0x00800060       0x4c load address 0x00000c34
+.data           0x00800060       0x4a load address 0x00000b34
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/crttn45.o
- .data          0x00800060       0x4b firefly.o
+ .data          0x00800060       0x4a firefly.o
                 0x00800091                song2d
                 0x008000a1                bootsong
                 0x00800089                song2f
@@ -285,52 +281,49 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a
                 0x00800062                mood
                 0x00800063                songs
                 0x00800095                song2c
- .data          0x008000ab        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
- .data          0x008000ab        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
- .data          0x008000ab        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
- .data          0x008000ab        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
+ .data          0x008000aa        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
+ .data          0x008000aa        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
+ .data          0x008000aa        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
+ .data          0x008000aa        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x008000ac                . = ALIGN (0x2)
- *fill*         0x008000ab        0x1 00
-                0x008000ac                _edata = .
-                0x008000ac                PROVIDE (__data_end, .)
+                0x008000aa                . = ALIGN (0x2)
+                0x008000aa                _edata = .
+                0x008000aa                PROVIDE (__data_end, .)
 
-.bss            0x008000ac       0x16
-                0x008000ac                PROVIDE (__bss_start, .)
+.bss            0x008000aa       0x14
+                0x008000aa                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008000ac        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/crttn45.o
- .bss           0x008000ac        0xb firefly.o
- .bss           0x008000b7        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
- .bss           0x008000b7        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
- .bss           0x008000b7        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
- .bss           0x008000b7        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
+ .bss           0x008000aa        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/../../../../avr/lib/crttn45.o
+ .bss           0x008000aa        0xb firefly.o
+ .bss           0x008000b5        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_mulhi3.o)
+ .bss           0x008000b5        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_exit.o)
+ .bss           0x008000b5        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_copy_data.o)
+ .bss           0x008000b5        0x0 /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a(_clear_bss.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x008000b7        0xb firefly.o
-                0x008000b7                ch2scale
-                0x008000b8                ch1restcount
-                0x008000b9                ch1nextnote
-                0x008000ba                ch2nextscale
-                0x008000bb                ch2nextnote
-                0x008000bc                is_dark
-                0x008000bd                ch2restcount
-                0x008000be                ch1nextscale
-                0x008000bf                waiting_for_dark
-                0x008000c0                ch1scale
-                0x008000c1                masterpinmask
-                0x008000c2                PROVIDE (__bss_end, .)
-                0x00000c34                __data_load_start = LOADADDR (.data)
-                0x00000c80                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008000b5        0x9 firefly.o
+                0x008000b5                ch2scale
+                0x008000b6                ch1restcount
+                0x008000b7                ch1nextnote
+                0x008000b8                ch2nextscale
+                0x008000b9                ch2nextnote
+                0x008000ba                ch2restcount
+                0x008000bb                ch1nextscale
+                0x008000bc                ch1scale
+                0x008000bd                masterpinmask
+                0x008000be                PROVIDE (__bss_end, .)
+                0x00000b34                __data_load_start = LOADADDR (.data)
+                0x00000b7e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008000c2        0x0
-                0x008000c2                PROVIDE (__noinit_start, .)
+.noinit         0x008000be        0x0
+                0x008000be                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008000c2                PROVIDE (__noinit_end, .)
-                0x008000c2                _end = .
-                0x008000c2                PROVIDE (__heap_start, .)
+                0x008000be                PROVIDE (__noinit_end, .)
+                0x008000be                _end = .
+                0x008000be                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -387,31 +380,31 @@ LOAD /usr/local/CrossPack-AVR-20090415/lib/gcc/avr/3.4.6/libgcc.a
                 0x00000000       0x14 firefly.o
 
 .debug_pubnames
-                0x00000000      0x2bf
+                0x00000000      0x277
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000      0x2bf firefly.o
+                0x00000000      0x277 firefly.o
 
-.debug_info     0x00000000      0x8ad
+.debug_info     0x00000000      0x7ea
  *(.debug_info)
- .debug_info    0x00000000      0x8ad firefly.o
+ .debug_info    0x00000000      0x7ea firefly.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x1e6
+.debug_abbrev   0x00000000      0x1a3
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x1e6 firefly.o
+ .debug_abbrev  0x00000000      0x1a3 firefly.o
 
-.debug_line     0x00000000      0x748
+.debug_line     0x00000000      0x652
  *(.debug_line)
- .debug_line    0x00000000      0x748 firefly.o
+ .debug_line    0x00000000      0x652 firefly.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x00000000      0x369
+.debug_str      0x00000000      0x2fc
  *(.debug_str)
- .debug_str     0x00000000      0x369 firefly.o
-                                0x3e7 (size before relaxing)
+ .debug_str     0x00000000      0x2fc firefly.o
+                                0x37a (size before relaxing)
 
 .debug_loc
  *(.debug_loc)
