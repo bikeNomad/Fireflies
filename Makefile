@@ -71,7 +71,8 @@ AVRDUDE_PROGRAMMERID=jtag2isp
 # hardware programmer is attached
 #
 # AVRDUDE_PORT=/dev/cu.pci-serial4a
-AVRDUDE_PORT=usb
+# AVRDUDE_PORT=usb
+AVRDUDE_PORT=com1:
 
 
 ####################################################

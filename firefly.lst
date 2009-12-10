@@ -1,2346 +1,2508 @@
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 1
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
 
 
    1               		.file	"firefly.c"
-   2               		.arch attiny45
-   3               	__SREG__ = 0x3f
-   4               	__SP_H__ = 0x3e
-   5               	__SP_L__ = 0x3d
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
    6               	__tmp_reg__ = 0
    7               	__zero_reg__ = 1
-   8               		.global __do_copy_data
-   9               		.global __do_clear_bss
-  17               	.Ltext0:
-  18               	.global	mood_count
-  19               		.data
-  22               	mood_count:
-  23 0000 1E00      		.word	30
-  24               	.global	mood
-  27               	mood:
-  28 0002 02        		.byte	2
-  29               	.global	version
-  30               		.section	.progmem.data,"a",@progbits
-  33               	version:
-  34 0000 2452 6576 		.string	"$Revision: 1.41 $ $Date: 2007/01/10 04:35:55 $"
-  34      6973 696F 
-  34      6E3A 2031 
-  34      2E34 3120 
-  34      2420 2444 
-  35               	.global	about
-  38               	about:
-  39 002f 4A61 7220 		.ascii	"Jar of Fireflies\nDesign and Implementation by Xander Hudson"
-  39      6F66 2046 
-  39      6972 6566 
-  39      6C69 6573 
-  39      0A44 6573 
-  40 006a 2028 6A61 		.ascii	" (jar@synoptic.org)\nIdea and Inspiration by Kayobi Tierney\n"
-  40      7240 7379 
-  40      6E6F 7074 
-  40      6963 2E6F 
-  40      7267 290A 
-  41 00a5 5370 6563 		.ascii	"Specia"
-  41      6961 
-  42 00ab 6C20 7468 		.string	"l thanks to Katie Horn for getting me to think about electronics"
-  42      616E 6B73 
-  42      2074 6F20 
-  42      4B61 7469 
-  42      6520 486F 
-  43               	.global	bitmasks
-  46               	bitmasks:
-  47 00ec 00        		.byte	0
-  48 00ed 01        		.byte	1
-  49 00ee 03        		.byte	3
-  50 00ef 07        		.byte	7
-  51 00f0 0F        		.byte	15
-  52 00f1 1F        		.byte	31
-  53 00f2 3F        		.byte	63
-  54 00f3 7F        		.byte	127
-  55 00f4 FF        		.byte	-1
-  56               	.global	songs
-  57               		.data
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 2
-
-
-  60               	songs:
-  61 0003 0000      		.word	song2a
-  62 0005 0000      		.word	song2b
-  63 0007 0000      		.word	song2b
-  64 0009 0000      		.word	song2c
-  65 000b 0000      		.word	song2c
-  66 000d 0000      		.word	song2c
-  67 000f 0000      		.word	song2d
-  68 0011 0000      		.word	song2d
-  69 0013 0000      		.word	song2e
-  70 0015 0000      		.word	song2e
-  71 0017 0000      		.word	song2e
-  72 0019 0000      		.word	song2f
-  73 001b 0000      		.word	song2f
-  74 001d 0000      		.word	song2g
-  75 001f 0000      		.word	song2g
-  76 0021 0000      		.word	song2g
-  77               	.global	bootsongs
-  80               	bootsongs:
-  81 0023 0000      		.word	bootsong
-  82               	.global	song2g
-  85               	song2g:
-  86 0025 4400      		.word	68
-  87 0027 0000      		.word	song2gnotes
-  88               	.global	song2gnotes
-  89               		.section	.progmem.data
-  92               	song2gnotes:
-  93 00f5 02        		.byte	2
-  94 00f6 2A        		.byte	42
-  95 00f7 63        		.byte	99
-  96 00f8 79        		.byte	121
-  97 00f9 60        		.byte	96
-  98 00fa 2A        		.byte	42
-  99 00fb 03        		.byte	3
- 100 00fc 01        		.byte	1
- 101 00fd 01        		.byte	1
- 102 00fe 01        		.byte	1
- 103 00ff 01        		.byte	1
- 104 0100 01        		.byte	1
- 105 0101 0C        		.byte	12
- 106 0102 19        		.byte	25
- 107 0103 29        		.byte	41
- 108 0104 3C        		.byte	60
- 109 0105 4D        		.byte	77
- 110 0106 56        		.byte	86
- 111 0107 5B        		.byte	91
- 112 0108 64        		.byte	100
- 113 0109 76        		.byte	118
- 114 010a 88        		.byte	-120
- 115 010b 90        		.byte	-112
- 116 010c 8F        		.byte	-113
- 117 010d 8D        		.byte	-115
- 118 010e 92        		.byte	-110
- 119 010f 99        		.byte	-103
- 120 0110 9B        		.byte	-101
- 121 0111 99        		.byte	-103
- 122 0112 98        		.byte	-104
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 3
-
-
- 123 0113 9B        		.byte	-101
- 124 0114 9A        		.byte	-102
- 125 0115 94        		.byte	-108
- 126 0116 8D        		.byte	-115
- 127 0117 8E        		.byte	-114
- 128 0118 98        		.byte	-104
- 129 0119 9F        		.byte	-97
- 130 011a 9A        		.byte	-102
- 131 011b 8E        		.byte	-114
- 132 011c 88        		.byte	-120
- 133 011d 8D        		.byte	-115
- 134 011e 98        		.byte	-104
- 135 011f 99        		.byte	-103
- 136 0120 8F        		.byte	-113
- 137 0121 84        		.byte	-124
- 138 0122 7E        		.byte	126
- 139 0123 7C        		.byte	124
- 140 0124 78        		.byte	120
- 141 0125 6F        		.byte	111
- 142 0126 65        		.byte	101
- 143 0127 5C        		.byte	92
- 144 0128 53        		.byte	83
- 145 0129 48        		.byte	72
- 146 012a 3B        		.byte	59
- 147 012b 31        		.byte	49
- 148 012c 2B        		.byte	43
- 149 012d 26        		.byte	38
- 150 012e 1E        		.byte	30
- 151 012f 15        		.byte	21
- 152 0130 0F        		.byte	15
- 153 0131 0B        		.byte	11
- 154 0132 08        		.byte	8
- 155 0133 05        		.byte	5
- 156 0134 03        		.byte	3
- 157 0135 01        		.byte	1
- 158 0136 01        		.byte	1
- 159 0137 00        		.byte	0
- 160 0138 00        		.byte	0
- 161               	.global	song2f
- 162               		.data
- 165               	song2f:
- 166 0029 5D00      		.word	93
- 167 002b 0000      		.word	song2fnotes
- 168               	.global	song2fnotes
- 169               		.section	.progmem.data
- 172               	song2fnotes:
- 173 0139 02        		.byte	2
- 174 013a 24        		.byte	36
- 175 013b 5E        		.byte	94
- 176 013c 82        		.byte	-126
- 177 013d 79        		.byte	121
- 178 013e 4F        		.byte	79
- 179 013f 1B        		.byte	27
- 180 0140 01        		.byte	1
- 181 0141 01        		.byte	1
- 182 0142 01        		.byte	1
- 183 0143 01        		.byte	1
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 4
-
-
- 184 0144 01        		.byte	1
- 185 0145 01        		.byte	1
- 186 0146 05        		.byte	5
- 187 0147 10        		.byte	16
- 188 0148 1E        		.byte	30
- 189 0149 2D        		.byte	45
- 190 014a 3B        		.byte	59
- 191 014b 47        		.byte	71
- 192 014c 52        		.byte	82
- 193 014d 5E        		.byte	94
- 194 014e 6B        		.byte	107
- 195 014f 77        		.byte	119
- 196 0150 82        		.byte	-126
- 197 0151 89        		.byte	-119
- 198 0152 8E        		.byte	-114
- 199 0153 93        		.byte	-109
- 200 0154 97        		.byte	-105
- 201 0155 9A        		.byte	-102
- 202 0156 99        		.byte	-103
- 203 0157 95        		.byte	-107
- 204 0158 90        		.byte	-112
- 205 0159 8D        		.byte	-115
- 206 015a 8D        		.byte	-115
- 207 015b 8F        		.byte	-113
- 208 015c 8F        		.byte	-113
- 209 015d 8C        		.byte	-116
- 210 015e 86        		.byte	-122
- 211 015f 83        		.byte	-125
- 212 0160 87        		.byte	-121
- 213 0161 91        		.byte	-111
- 214 0162 A0        		.byte	-96
- 215 0163 AB        		.byte	-85
- 216 0164 AC        		.byte	-84
- 217 0165 A3        		.byte	-93
- 218 0166 96        		.byte	-106
- 219 0167 8D        		.byte	-115
- 220 0168 8C        		.byte	-116
- 221 0169 91        		.byte	-111
- 222 016a 97        		.byte	-105
- 223 016b 98        		.byte	-104
- 224 016c 93        		.byte	-109
- 225 016d 8A        		.byte	-118
- 226 016e 86        		.byte	-122
- 227 016f 88        		.byte	-120
- 228 0170 93        		.byte	-109
- 229 0171 9F        		.byte	-97
- 230 0172 A5        		.byte	-91
- 231 0173 A2        		.byte	-94
- 232 0174 98        		.byte	-104
- 233 0175 8C        		.byte	-116
- 234 0176 84        		.byte	-124
- 235 0177 81        		.byte	-127
- 236 0178 83        		.byte	-125
- 237 0179 84        		.byte	-124
- 238 017a 83        		.byte	-125
- 239 017b 7F        		.byte	127
- 240 017c 7B        		.byte	123
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 5
-
-
- 241 017d 77        		.byte	119
- 242 017e 74        		.byte	116
- 243 017f 70        		.byte	112
- 244 0180 69        		.byte	105
- 245 0181 60        		.byte	96
- 246 0182 56        		.byte	86
- 247 0183 4D        		.byte	77
- 248 0184 45        		.byte	69
- 249 0185 3E        		.byte	62
- 250 0186 36        		.byte	54
- 251 0187 2D        		.byte	45
- 252 0188 26        		.byte	38
- 253 0189 1F        		.byte	31
- 254 018a 1B        		.byte	27
- 255 018b 17        		.byte	23
- 256 018c 13        		.byte	19
- 257 018d 0E        		.byte	14
- 258 018e 0A        		.byte	10
- 259 018f 06        		.byte	6
- 260 0190 04        		.byte	4
- 261 0191 02        		.byte	2
- 262 0192 01        		.byte	1
- 263 0193 01        		.byte	1
- 264 0194 00        		.byte	0
- 265 0195 00        		.byte	0
- 266               	.global	song2e
- 267               		.data
- 270               	song2e:
- 271 002d 8800      		.word	136
- 272 002f 0000      		.word	song2enotes
- 273               	.global	song2enotes
- 274               		.section	.progmem.data
- 277               	song2enotes:
- 278 0196 01        		.byte	1
- 279 0197 1A        		.byte	26
- 280 0198 49        		.byte	73
- 281 0199 74        		.byte	116
- 282 019a 83        		.byte	-125
- 283 019b 73        		.byte	115
- 284 019c 50        		.byte	80
- 285 019d 27        		.byte	39
- 286 019e 08        		.byte	8
- 287 019f 01        		.byte	1
- 288 01a0 01        		.byte	1
- 289 01a1 01        		.byte	1
- 290 01a2 01        		.byte	1
- 291 01a3 01        		.byte	1
- 292 01a4 01        		.byte	1
- 293 01a5 01        		.byte	1
- 294 01a6 06        		.byte	6
- 295 01a7 0F        		.byte	15
- 296 01a8 1A        		.byte	26
- 297 01a9 24        		.byte	36
- 298 01aa 2F        		.byte	47
- 299 01ab 3A        		.byte	58
- 300 01ac 46        		.byte	70
- 301 01ad 52        		.byte	82
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 6
-
-
- 302 01ae 5B        		.byte	91
- 303 01af 62        		.byte	98
- 304 01b0 66        		.byte	102
- 305 01b1 6A        		.byte	106
- 306 01b2 6F        		.byte	111
- 307 01b3 77        		.byte	119
- 308 01b4 83        		.byte	-125
- 309 01b5 90        		.byte	-112
- 310 01b6 9A        		.byte	-102
- 311 01b7 9D        		.byte	-99
- 312 01b8 99        		.byte	-103
- 313 01b9 90        		.byte	-112
- 314 01ba 89        		.byte	-119
- 315 01bb 86        		.byte	-122
- 316 01bc 89        		.byte	-119
- 317 01bd 92        		.byte	-110
- 318 01be 9A        		.byte	-102
- 319 01bf 9E        		.byte	-98
- 320 01c0 9C        		.byte	-100
- 321 01c1 95        		.byte	-107
- 322 01c2 8D        		.byte	-115
- 323 01c3 89        		.byte	-119
- 324 01c4 8A        		.byte	-118
- 325 01c5 8F        		.byte	-113
- 326 01c6 97        		.byte	-105
- 327 01c7 9D        		.byte	-99
- 328 01c8 9E        		.byte	-98
- 329 01c9 9B        		.byte	-101
- 330 01ca 97        		.byte	-105
- 331 01cb 94        		.byte	-108
- 332 01cc 96        		.byte	-106
- 333 01cd 9A        		.byte	-102
- 334 01ce 9E        		.byte	-98
- 335 01cf A0        		.byte	-96
- 336 01d0 9E        		.byte	-98
- 337 01d1 99        		.byte	-103
- 338 01d2 94        		.byte	-108
- 339 01d3 90        		.byte	-112
- 340 01d4 91        		.byte	-111
- 341 01d5 93        		.byte	-109
- 342 01d6 96        		.byte	-106
- 343 01d7 96        		.byte	-106
- 344 01d8 92        		.byte	-110
- 345 01d9 8C        		.byte	-116
- 346 01da 85        		.byte	-123
- 347 01db 82        		.byte	-126
- 348 01dc 83        		.byte	-125
- 349 01dd 87        		.byte	-121
- 350 01de 8C        		.byte	-116
- 351 01df 8F        		.byte	-113
- 352 01e0 90        		.byte	-112
- 353 01e1 8E        		.byte	-114
- 354 01e2 8D        		.byte	-115
- 355 01e3 8D        		.byte	-115
- 356 01e4 90        		.byte	-112
- 357 01e5 95        		.byte	-107
- 358 01e6 99        		.byte	-103
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 7
-
-
- 359 01e7 9C        		.byte	-100
- 360 01e8 9D        		.byte	-99
- 361 01e9 9D        		.byte	-99
- 362 01ea 9D        		.byte	-99
- 363 01eb A0        		.byte	-96
- 364 01ec A4        		.byte	-92
- 365 01ed A7        		.byte	-89
- 366 01ee A7        		.byte	-89
- 367 01ef A1        		.byte	-95
- 368 01f0 99        		.byte	-103
- 369 01f1 91        		.byte	-111
- 370 01f2 8E        		.byte	-114
- 371 01f3 8F        		.byte	-113
- 372 01f4 95        		.byte	-107
- 373 01f5 9A        		.byte	-102
- 374 01f6 9B        		.byte	-101
- 375 01f7 95        		.byte	-107
- 376 01f8 89        		.byte	-119
- 377 01f9 7C        		.byte	124
- 378 01fa 73        		.byte	115
- 379 01fb 70        		.byte	112
- 380 01fc 74        		.byte	116
- 381 01fd 7B        		.byte	123
- 382 01fe 80        		.byte	-128
- 383 01ff 80        		.byte	-128
- 384 0200 79        		.byte	121
- 385 0201 6E        		.byte	110
- 386 0202 63        		.byte	99
- 387 0203 5B        		.byte	91
- 388 0204 58        		.byte	88
- 389 0205 58        		.byte	88
- 390 0206 59        		.byte	89
- 391 0207 57        		.byte	87
- 392 0208 53        		.byte	83
- 393 0209 4B        		.byte	75
- 394 020a 42        		.byte	66
- 395 020b 39        		.byte	57
- 396 020c 32        		.byte	50
- 397 020d 2C        		.byte	44
- 398 020e 26        		.byte	38
- 399 020f 22        		.byte	34
- 400 0210 1D        		.byte	29
- 401 0211 19        		.byte	25
- 402 0212 14        		.byte	20
- 403 0213 11        		.byte	17
- 404 0214 0D        		.byte	13
- 405 0215 09        		.byte	9
- 406 0216 07        		.byte	7
- 407 0217 04        		.byte	4
- 408 0218 03        		.byte	3
- 409 0219 01        		.byte	1
- 410 021a 01        		.byte	1
- 411 021b 00        		.byte	0
- 412 021c 01        		.byte	1
- 413 021d 00        		.byte	0
- 414               	.global	song2d
- 415               		.data
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 8
-
-
- 418               	song2d:
- 419 0031 6300      		.word	99
- 420 0033 0000      		.word	song2dnotes
- 421               	.global	song2dnotes
- 422               		.section	.progmem.data
- 425               	song2dnotes:
- 426 021e 01        		.byte	1
- 427 021f 1B        		.byte	27
- 428 0220 48        		.byte	72
- 429 0221 6D        		.byte	109
- 430 0222 79        		.byte	121
- 431 0223 68        		.byte	104
- 432 0224 3D        		.byte	61
- 433 0225 11        		.byte	17
- 434 0226 01        		.byte	1
- 435 0227 01        		.byte	1
- 436 0228 01        		.byte	1
- 437 0229 01        		.byte	1
- 438 022a 01        		.byte	1
- 439 022b 01        		.byte	1
- 440 022c 01        		.byte	1
- 441 022d 0B        		.byte	11
- 442 022e 15        		.byte	21
- 443 022f 22        		.byte	34
- 444 0230 30        		.byte	48
- 445 0231 3C        		.byte	60
- 446 0232 46        		.byte	70
- 447 0233 4D        		.byte	77
- 448 0234 56        		.byte	86
- 449 0235 63        		.byte	99
- 450 0236 73        		.byte	115
- 451 0237 80        		.byte	-128
- 452 0238 87        		.byte	-121
- 453 0239 87        		.byte	-121
- 454 023a 86        		.byte	-122
- 455 023b 88        		.byte	-120
- 456 023c 8D        		.byte	-115
- 457 023d 90        		.byte	-112
- 458 023e 8F        		.byte	-113
- 459 023f 8B        		.byte	-117
- 460 0240 8A        		.byte	-118
- 461 0241 8D        		.byte	-115
- 462 0242 93        		.byte	-109
- 463 0243 94        		.byte	-108
- 464 0244 8E        		.byte	-114
- 465 0245 83        		.byte	-125
- 466 0246 7B        		.byte	123
- 467 0247 7E        		.byte	126
- 468 0248 8A        		.byte	-118
- 469 0249 99        		.byte	-103
- 470 024a A4        		.byte	-92
- 471 024b A6        		.byte	-90
- 472 024c A1        		.byte	-95
- 473 024d 9C        		.byte	-100
- 474 024e 9A        		.byte	-102
- 475 024f 9A        		.byte	-102
- 476 0250 99        		.byte	-103
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 9
-
-
- 477 0251 97        		.byte	-105
- 478 0252 96        		.byte	-106
- 479 0253 9B        		.byte	-101
- 480 0254 A3        		.byte	-93
- 481 0255 A9        		.byte	-87
- 482 0256 A6        		.byte	-90
- 483 0257 98        		.byte	-104
- 484 0258 88        		.byte	-120
- 485 0259 7E        		.byte	126
- 486 025a 80        		.byte	-128
- 487 025b 8B        		.byte	-117
- 488 025c 97        		.byte	-105
- 489 025d 9C        		.byte	-100
- 490 025e 99        		.byte	-103
- 491 025f 92        		.byte	-110
- 492 0260 8C        		.byte	-116
- 493 0261 88        		.byte	-120
- 494 0262 83        		.byte	-125
- 495 0263 7B        		.byte	123
- 496 0264 73        		.byte	115
- 497 0265 6E        		.byte	110
- 498 0266 6E        		.byte	110
- 499 0267 70        		.byte	112
- 500 0268 6E        		.byte	110
- 501 0269 64        		.byte	100
- 502 026a 56        		.byte	86
- 503 026b 49        		.byte	73
- 504 026c 41        		.byte	65
- 505 026d 3E        		.byte	62
- 506 026e 3C        		.byte	60
- 507 026f 3A        		.byte	58
- 508 0270 34        		.byte	52
- 509 0271 2E        		.byte	46
- 510 0272 28        		.byte	40
- 511 0273 23        		.byte	35
- 512 0274 1F        		.byte	31
- 513 0275 19        		.byte	25
- 514 0276 14        		.byte	20
- 515 0277 0F        		.byte	15
- 516 0278 0B        		.byte	11
- 517 0279 08        		.byte	8
- 518 027a 06        		.byte	6
- 519 027b 04        		.byte	4
- 520 027c 02        		.byte	2
- 521 027d 01        		.byte	1
- 522 027e 01        		.byte	1
- 523 027f 00        		.byte	0
- 524 0280 00        		.byte	0
- 525               	.global	song2c
- 526               		.data
- 529               	song2c:
- 530 0035 8200      		.word	130
- 531 0037 0000      		.word	song2cnotes
- 532               	.global	song2cnotes
- 533               		.section	.progmem.data
- 536               	song2cnotes:
- 537 0281 02        		.byte	2
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 10
-
-
- 538 0282 19        		.byte	25
- 539 0283 46        		.byte	70
- 540 0284 75        		.byte	117
- 541 0285 92        		.byte	-110
- 542 0286 90        		.byte	-112
- 543 0287 6F        		.byte	111
- 544 0288 3D        		.byte	61
- 545 0289 12        		.byte	18
- 546 028a 01        		.byte	1
- 547 028b 01        		.byte	1
- 548 028c 01        		.byte	1
- 549 028d 01        		.byte	1
- 550 028e 01        		.byte	1
- 551 028f 01        		.byte	1
- 552 0290 01        		.byte	1
- 553 0291 01        		.byte	1
- 554 0292 08        		.byte	8
- 555 0293 12        		.byte	18
- 556 0294 1C        		.byte	28
- 557 0295 27        		.byte	39
- 558 0296 32        		.byte	50
- 559 0297 3C        		.byte	60
- 560 0298 45        		.byte	69
- 561 0299 4E        		.byte	78
- 562 029a 55        		.byte	85
- 563 029b 5C        		.byte	92
- 564 029c 63        		.byte	99
- 565 029d 69        		.byte	105
- 566 029e 6F        		.byte	111
- 567 029f 76        		.byte	118
- 568 02a0 7E        		.byte	126
- 569 02a1 86        		.byte	-122
- 570 02a2 8E        		.byte	-114
- 571 02a3 95        		.byte	-107
- 572 02a4 9B        		.byte	-101
- 573 02a5 9F        		.byte	-97
- 574 02a6 A1        		.byte	-95
- 575 02a7 A0        		.byte	-96
- 576 02a8 9C        		.byte	-100
- 577 02a9 98        		.byte	-104
- 578 02aa 92        		.byte	-110
- 579 02ab 8B        		.byte	-117
- 580 02ac 86        		.byte	-122
- 581 02ad 81        		.byte	-127
- 582 02ae 7E        		.byte	126
- 583 02af 7D        		.byte	125
- 584 02b0 7E        		.byte	126
- 585 02b1 81        		.byte	-127
- 586 02b2 86        		.byte	-122
- 587 02b3 8C        		.byte	-116
- 588 02b4 94        		.byte	-108
- 589 02b5 9B        		.byte	-101
- 590 02b6 A2        		.byte	-94
- 591 02b7 A8        		.byte	-88
- 592 02b8 AB        		.byte	-85
- 593 02b9 AC        		.byte	-84
- 594 02ba AB        		.byte	-85
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 11
-
-
- 595 02bb A8        		.byte	-88
- 596 02bc A3        		.byte	-93
- 597 02bd 9E        		.byte	-98
- 598 02be 99        		.byte	-103
- 599 02bf 95        		.byte	-107
- 600 02c0 92        		.byte	-110
- 601 02c1 90        		.byte	-112
- 602 02c2 90        		.byte	-112
- 603 02c3 92        		.byte	-110
- 604 02c4 94        		.byte	-108
- 605 02c5 97        		.byte	-105
- 606 02c6 9A        		.byte	-102
- 607 02c7 9D        		.byte	-99
- 608 02c8 9E        		.byte	-98
- 609 02c9 9E        		.byte	-98
- 610 02ca 9D        		.byte	-99
- 611 02cb 9A        		.byte	-102
- 612 02cc 96        		.byte	-106
- 613 02cd 91        		.byte	-111
- 614 02ce 8D        		.byte	-115
- 615 02cf 89        		.byte	-119
- 616 02d0 86        		.byte	-122
- 617 02d1 85        		.byte	-123
- 618 02d2 84        		.byte	-124
- 619 02d3 86        		.byte	-122
- 620 02d4 88        		.byte	-120
- 621 02d5 8B        		.byte	-117
- 622 02d6 8F        		.byte	-113
- 623 02d7 93        		.byte	-109
- 624 02d8 95        		.byte	-107
- 625 02d9 96        		.byte	-106
- 626 02da 96        		.byte	-106
- 627 02db 93        		.byte	-109
- 628 02dc 8F        		.byte	-113
- 629 02dd 8A        		.byte	-118
- 630 02de 85        		.byte	-123
- 631 02df 80        		.byte	-128
- 632 02e0 7B        		.byte	123
- 633 02e1 76        		.byte	118
- 634 02e2 73        		.byte	115
- 635 02e3 71        		.byte	113
- 636 02e4 6F        		.byte	111
- 637 02e5 6D        		.byte	109
- 638 02e6 6C        		.byte	108
- 639 02e7 69        		.byte	105
- 640 02e8 66        		.byte	102
- 641 02e9 62        		.byte	98
- 642 02ea 5C        		.byte	92
- 643 02eb 56        		.byte	86
- 644 02ec 4E        		.byte	78
- 645 02ed 46        		.byte	70
- 646 02ee 3F        		.byte	63
- 647 02ef 37        		.byte	55
- 648 02f0 30        		.byte	48
- 649 02f1 2A        		.byte	42
- 650 02f2 25        		.byte	37
- 651 02f3 21        		.byte	33
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 12
-
-
- 652 02f4 1D        		.byte	29
- 653 02f5 19        		.byte	25
- 654 02f6 16        		.byte	22
- 655 02f7 13        		.byte	19
- 656 02f8 10        		.byte	16
- 657 02f9 0D        		.byte	13
- 658 02fa 0A        		.byte	10
- 659 02fb 07        		.byte	7
- 660 02fc 05        		.byte	5
- 661 02fd 03        		.byte	3
- 662 02fe 02        		.byte	2
- 663 02ff 01        		.byte	1
- 664 0300 01        		.byte	1
- 665 0301 00        		.byte	0
- 666 0302 00        		.byte	0
- 667               	.global	song2b
- 668               		.data
- 671               	song2b:
- 672 0039 6C00      		.word	108
- 673 003b 0000      		.word	song2bnotes
- 674               	.global	song2bnotes
- 675               		.section	.progmem.data
- 678               	song2bnotes:
- 679 0303 01        		.byte	1
- 680 0304 1F        		.byte	31
- 681 0305 59        		.byte	89
- 682 0306 7E        		.byte	126
- 683 0307 77        		.byte	119
- 684 0308 55        		.byte	85
- 685 0309 2A        		.byte	42
- 686 030a 06        		.byte	6
- 687 030b 01        		.byte	1
- 688 030c 01        		.byte	1
- 689 030d 01        		.byte	1
- 690 030e 01        		.byte	1
- 691 030f 01        		.byte	1
- 692 0310 01        		.byte	1
- 693 0311 08        		.byte	8
- 694 0312 16        		.byte	22
- 695 0313 25        		.byte	37
- 696 0314 33        		.byte	51
- 697 0315 40        		.byte	64
- 698 0316 48        		.byte	72
- 699 0317 50        		.byte	80
- 700 0318 5C        		.byte	92
- 701 0319 6C        		.byte	108
- 702 031a 7A        		.byte	122
- 703 031b 7F        		.byte	127
- 704 031c 7A        		.byte	122
- 705 031d 75        		.byte	117
- 706 031e 7C        		.byte	124
- 707 031f 8F        		.byte	-113
- 708 0320 A3        		.byte	-93
- 709 0321 A7        		.byte	-89
- 710 0322 9B        		.byte	-101
- 711 0323 8B        		.byte	-117
- 712 0324 87        		.byte	-121
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 13
-
-
- 713 0325 8E        		.byte	-114
- 714 0326 96        		.byte	-106
- 715 0327 96        		.byte	-106
- 716 0328 8D        		.byte	-115
- 717 0329 83        		.byte	-125
- 718 032a 81        		.byte	-127
- 719 032b 85        		.byte	-123
- 720 032c 8B        		.byte	-117
- 721 032d 8F        		.byte	-113
- 722 032e 92        		.byte	-110
- 723 032f 95        		.byte	-107
- 724 0330 98        		.byte	-104
- 725 0331 96        		.byte	-106
- 726 0332 90        		.byte	-112
- 727 0333 8A        		.byte	-118
- 728 0334 8A        		.byte	-118
- 729 0335 91        		.byte	-111
- 730 0336 96        		.byte	-106
- 731 0337 93        		.byte	-109
- 732 0338 89        		.byte	-119
- 733 0339 84        		.byte	-124
- 734 033a 89        		.byte	-119
- 735 033b 99        		.byte	-103
- 736 033c A6        		.byte	-90
- 737 033d A7        		.byte	-89
- 738 033e 9C        		.byte	-100
- 739 033f 94        		.byte	-108
- 740 0340 95        		.byte	-107
- 741 0341 9C        		.byte	-100
- 742 0342 A1        		.byte	-95
- 743 0343 9C        		.byte	-100
- 744 0344 93        		.byte	-109
- 745 0345 8D        		.byte	-115
- 746 0346 91        		.byte	-111
- 747 0347 98        		.byte	-104
- 748 0348 9D        		.byte	-99
- 749 0349 9C        		.byte	-100
- 750 034a 9A        		.byte	-102
- 751 034b 9C        		.byte	-100
- 752 034c A1        		.byte	-95
- 753 034d A1        		.byte	-95
- 754 034e 98        		.byte	-104
- 755 034f 8C        		.byte	-116
- 756 0350 85        		.byte	-123
- 757 0351 83        		.byte	-125
- 758 0352 82        		.byte	-126
- 759 0353 7C        		.byte	124
- 760 0354 72        		.byte	114
- 761 0355 69        		.byte	105
- 762 0356 66        		.byte	102
- 763 0357 67        		.byte	103
- 764 0358 65        		.byte	101
- 765 0359 5D        		.byte	93
- 766 035a 52        		.byte	82
- 767 035b 4A        		.byte	74
- 768 035c 44        		.byte	68
- 769 035d 3F        		.byte	63
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 14
-
-
- 770 035e 37        		.byte	55
- 771 035f 2E        		.byte	46
- 772 0360 26        		.byte	38
- 773 0361 20        		.byte	32
- 774 0362 1D        		.byte	29
- 775 0363 19        		.byte	25
- 776 0364 14        		.byte	20
- 777 0365 0F        		.byte	15
- 778 0366 0B        		.byte	11
- 779 0367 08        		.byte	8
- 780 0368 06        		.byte	6
- 781 0369 04        		.byte	4
- 782 036a 02        		.byte	2
- 783 036b 01        		.byte	1
- 784 036c 01        		.byte	1
- 785 036d 00        		.byte	0
- 786 036e 00        		.byte	0
- 787               	.global	song2a
- 788               		.data
- 791               	song2a:
- 792 003d 7700      		.word	119
- 793 003f 0000      		.word	song2anotes
- 794               	.global	song2anotes
- 795               		.section	.progmem.data
- 798               	song2anotes:
- 799 036f 02        		.byte	2
- 800 0370 1D        		.byte	29
- 801 0371 51        		.byte	81
- 802 0372 7B        		.byte	123
- 803 0373 82        		.byte	-126
- 804 0374 68        		.byte	104
- 805 0375 3F        		.byte	63
- 806 0376 18        		.byte	24
- 807 0377 02        		.byte	2
- 808 0378 01        		.byte	1
- 809 0379 01        		.byte	1
- 810 037a 01        		.byte	1
- 811 037b 01        		.byte	1
- 812 037c 01        		.byte	1
- 813 037d 01        		.byte	1
- 814 037e 04        		.byte	4
- 815 037f 0F        		.byte	15
- 816 0380 1A        		.byte	26
- 817 0381 24        		.byte	36
- 818 0382 2E        		.byte	46
- 819 0383 37        		.byte	55
- 820 0384 42        		.byte	66
- 821 0385 4F        		.byte	79
- 822 0386 5B        		.byte	91
- 823 0387 66        		.byte	102
- 824 0388 6D        		.byte	109
- 825 0389 73        		.byte	115
- 826 038a 79        		.byte	121
- 827 038b 83        		.byte	-125
- 828 038c 8E        		.byte	-114
- 829 038d 98        		.byte	-104
- 830 038e 9B        		.byte	-101
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 15
-
-
- 831 038f 97        		.byte	-105
- 832 0390 8D        		.byte	-115
- 833 0391 85        		.byte	-123
- 834 0392 83        		.byte	-125
- 835 0393 87        		.byte	-121
- 836 0394 90        		.byte	-112
- 837 0395 99        		.byte	-103
- 838 0396 9E        		.byte	-98
- 839 0397 9E        		.byte	-98
- 840 0398 9A        		.byte	-102
- 841 0399 97        		.byte	-105
- 842 039a 96        		.byte	-106
- 843 039b 95        		.byte	-107
- 844 039c 94        		.byte	-108
- 845 039d 90        		.byte	-112
- 846 039e 8B        		.byte	-117
- 847 039f 88        		.byte	-120
- 848 03a0 8A        		.byte	-118
- 849 03a1 91        		.byte	-111
- 850 03a2 9B        		.byte	-101
- 851 03a3 A1        		.byte	-95
- 852 03a4 A0        		.byte	-96
- 853 03a5 99        		.byte	-103
- 854 03a6 90        		.byte	-112
- 855 03a7 8A        		.byte	-118
- 856 03a8 8B        		.byte	-117
- 857 03a9 91        		.byte	-111
- 858 03aa 98        		.byte	-104
- 859 03ab 9C        		.byte	-100
- 860 03ac 9A        		.byte	-102
- 861 03ad 94        		.byte	-108
- 862 03ae 8D        		.byte	-115
- 863 03af 8A        		.byte	-118
- 864 03b0 8C        		.byte	-116
- 865 03b1 91        		.byte	-111
- 866 03b2 96        		.byte	-106
- 867 03b3 99        		.byte	-103
- 868 03b4 99        		.byte	-103
- 869 03b5 98        		.byte	-104
- 870 03b6 98        		.byte	-104
- 871 03b7 9A        		.byte	-102
- 872 03b8 9A        		.byte	-102
- 873 03b9 96        		.byte	-106
- 874 03ba 8E        		.byte	-114
- 875 03bb 86        		.byte	-122
- 876 03bc 81        		.byte	-127
- 877 03bd 84        		.byte	-124
- 878 03be 8E        		.byte	-114
- 879 03bf 9C        		.byte	-100
- 880 03c0 A8        		.byte	-88
- 881 03c1 AA        		.byte	-86
- 882 03c2 A1        		.byte	-95
- 883 03c3 92        		.byte	-110
- 884 03c4 83        		.byte	-125
- 885 03c5 79        		.byte	121
- 886 03c6 75        		.byte	117
- 887 03c7 74        		.byte	116
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 16
-
-
- 888 03c8 74        		.byte	116
- 889 03c9 73        		.byte	115
- 890 03ca 71        		.byte	113
- 891 03cb 6E        		.byte	110
- 892 03cc 6D        		.byte	109
- 893 03cd 6A        		.byte	106
- 894 03ce 65        		.byte	101
- 895 03cf 5C        		.byte	92
- 896 03d0 50        		.byte	80
- 897 03d1 43        		.byte	67
- 898 03d2 3A        		.byte	58
- 899 03d3 34        		.byte	52
- 900 03d4 31        		.byte	49
- 901 03d5 2E        		.byte	46
- 902 03d6 2B        		.byte	43
- 903 03d7 27        		.byte	39
- 904 03d8 21        		.byte	33
- 905 03d9 1B        		.byte	27
- 906 03da 16        		.byte	22
- 907 03db 12        		.byte	18
- 908 03dc 0E        		.byte	14
- 909 03dd 0B        		.byte	11
- 910 03de 07        		.byte	7
- 911 03df 05        		.byte	5
- 912 03e0 03        		.byte	3
- 913 03e1 01        		.byte	1
- 914 03e2 01        		.byte	1
- 915 03e3 00        		.byte	0
- 916 03e4 01        		.byte	1
- 917 03e5 00        		.byte	0
- 918               	.global	bootsong
- 919               		.data
- 922               	bootsong:
- 923 0041 1300      		.word	19
- 924 0043 0000      		.word	bootsongnotes
- 925               	.global	bootsongnotes
- 926               		.section	.progmem.data
- 929               	bootsongnotes:
- 930 03e6 00        		.byte	0
- 931 03e7 04        		.byte	4
- 932 03e8 09        		.byte	9
- 933 03e9 10        		.byte	16
- 934 03ea 18        		.byte	24
- 935 03eb 21        		.byte	33
- 936 03ec 29        		.byte	41
- 937 03ed 2F        		.byte	47
- 938 03ee 32        		.byte	50
- 939 03ef 31        		.byte	49
- 940 03f0 2C        		.byte	44
- 941 03f1 23        		.byte	35
- 942 03f2 1A        		.byte	26
- 943 03f3 11        		.byte	17
- 944 03f4 0A        		.byte	10
- 945 03f5 05        		.byte	5
- 946 03f6 01        		.byte	1
- 947 03f7 00        		.byte	0
- 948 03f8 00        		.byte	0
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 17
-
-
- 949               		.text
- 950               	.global	__vector_12
- 952               	__vector_12:
- 953               	.LFB2:
- 954               	.LM1:
- 955               	/* prologue: frame size=0 */
- 956 0000 1F92      		push __zero_reg__
- 957 0002 0F92      		push __tmp_reg__
- 958 0004 0FB6      		in __tmp_reg__,__SREG__
- 959 0006 0F92      		push __tmp_reg__
- 960 0008 1124      		clr __zero_reg__
- 961 000a 8F93      		push r24
- 962 000c 9F93      		push r25
- 963               	/* prologue end (size=7) */
- 964               	.LM2:
- 965 000e 899B      		sbis 49-0x20,1
- 966 0010 00C0      		rjmp .L3
- 967               	.LM3:
- 968 0012 8091 0000 		lds r24,ch1restcount
- 969 0016 8150      		subi r24,lo8(-(-1))
- 970 0018 8093 0000 		sts ch1restcount,r24
- 971 001c 8091 0000 		lds r24,ch1restcount
- 972 0020 8823      		tst r24
- 973 0022 01F4      		brne .L3
- 974 0024 8998      		cbi 49-0x20,1
- 975               	.L3:
- 976               	.LM4:
- 977 0026 8B9B      		sbis 49-0x20,3
- 978 0028 00C0      		rjmp .L4
- 979 002a 8091 0000 		lds r24,ch2restcount
- 980 002e 8150      		subi r24,lo8(-(-1))
- 981 0030 8093 0000 		sts ch2restcount,r24
- 982 0034 8091 0000 		lds r24,ch2restcount
- 983 0038 8823      		tst r24
- 984 003a 01F4      		brne .L4
- 985 003c 8B98      		cbi 49-0x20,3
- 986               	.L4:
- 987               	.LM5:
- 988 003e 8C99      		sbic 49-0x20,4
- 989 0040 00C0      		rjmp .L1
- 990 0042 8091 0000 		lds r24,mood_count
- 991 0046 9091 0000 		lds r25,(mood_count)+1
- 992 004a 0197      		sbiw r24,1
- 993 004c 9093 0000 		sts (mood_count)+1,r25
- 994 0050 8093 0000 		sts mood_count,r24
- 995 0054 892B      		or r24,r25
- 996 0056 01F4      		brne .L1
- 997 0058 8C9A      		sbi 49-0x20,4
- 998               	.L1:
- 999               	/* epilogue: frame size=0 */
- 1000 005a 9F91      		pop r25
- 1001 005c 8F91      		pop r24
- 1002 005e 0F90      		pop __tmp_reg__
- 1003 0060 0FBE      		out __SREG__,__tmp_reg__
- 1004 0062 0F90      		pop __tmp_reg__
- 1005 0064 1F90      		pop __zero_reg__
- 1006 0066 1895      		reti
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 18
-
-
- 1007               	/* epilogue end (size=7) */
- 1008               	/* function __vector_12 size 52 (38) */
- 1009               	.LFE2:
- 1011               		.lcomm x.7,1
- 1012               	.global	__vector_10
- 1014               	__vector_10:
- 1015               	.LFB3:
- 1016               	.LM6:
- 1017               	/* prologue: frame size=0 */
- 1018 0068 1F92      		push __zero_reg__
- 1019 006a 0F92      		push __tmp_reg__
- 1020 006c 0FB6      		in __tmp_reg__,__SREG__
- 1021 006e 0F92      		push __tmp_reg__
- 1022 0070 1124      		clr __zero_reg__
- 1023 0072 8F93      		push r24
- 1024 0074 9F93      		push r25
- 1025               	/* prologue end (size=7) */
- 1026               	.LM7:
- 1027 0076 88BA      		out 56-0x20,r8
- 1028               	.LM8:
- 1029 0078 8091 0000 		lds r24,x.7
- 1030 007c 8150      		subi r24,lo8(-(-1))
- 1031 007e 8093 0000 		sts x.7,r24
- 1032 0082 8F3F      		cpi r24,lo8(-1)
- 1033 0084 01F0      		breq .+2
- 1034 0086 00C0      		rjmp .L8
- 1035               	.LM9:
- 1036 0088 889B      		sbis 49-0x20,0
- 1037 008a 00C0      		rjmp .L9
- 1038               	.LM10:
- 1039 008c 81B3      		in r24,49-0x20
- 1040 008e 982F      		mov r25,r24
- 1041 0090 9074      		andi r25,lo8(64)
- 1042 0092 86FF      		sbrs r24,6
- 1043 0094 00C0      		rjmp .L10
- 1044               	.LM11:
- 1045 0096 2090 0000 		lds r2,ch1nextnote
- 1046               	.LM12:
- 1047 009a 8E98      		cbi 49-0x20,6
- 1048 009c 00C0      		rjmp .L13
- 1049               	.L10:
- 1050               	.LM13:
- 1051 009e 292E      		mov r2,r25
- 1052               	.LM14:
- 1053 00a0 8091 0000 		lds r24,ch1restcount
- 1054 00a4 8823      		tst r24
- 1055 00a6 01F0      		breq .L13
- 1056               	.LM15:
- 1057 00a8 8898      		cbi 49-0x20,0
- 1058               	.LM16:
- 1059 00aa 899A      		sbi 49-0x20,1
- 1060 00ac 00C0      		rjmp .L13
- 1061               	.L9:
- 1062               	.LM17:
- 1063 00ae 8999      		sbic 49-0x20,1
- 1064 00b0 00C0      		rjmp .L13
- 1065 00b2 8E9B      		sbis 49-0x20,6
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 19
-
-
- 1066 00b4 00C0      		rjmp .L13
- 1067               	.LM18:
- 1068 00b6 2090 0000 		lds r2,ch1nextnote
- 1069               	.LM19:
- 1070 00ba 8E98      		cbi 49-0x20,6
- 1071               	.LM20:
- 1072 00bc 889A      		sbi 49-0x20,0
- 1073               	.L13:
- 1074               	.LM21:
- 1075 00be 8A9B      		sbis 49-0x20,2
- 1076 00c0 00C0      		rjmp .L15
- 1077               	.LM22:
- 1078 00c2 81B3      		in r24,49-0x20
- 1079 00c4 8078      		andi r24,lo8(-128)
- 1080 00c6 01F0      		breq .L16
- 1081               	.LM23:
- 1082 00c8 3090 0000 		lds r3,ch2nextnote
- 1083               	.LM24:
- 1084 00cc 8F98      		cbi 49-0x20,7
- 1085 00ce 00C0      		rjmp .L19
- 1086               	.L16:
- 1087               	.LM25:
- 1088 00d0 382E      		mov r3,r24
- 1089               	.LM26:
- 1090 00d2 8091 0000 		lds r24,ch2restcount
- 1091 00d6 8823      		tst r24
- 1092 00d8 01F0      		breq .L19
- 1093               	.LM27:
- 1094 00da 8A98      		cbi 49-0x20,2
- 1095               	.LM28:
- 1096 00dc 8B9A      		sbi 49-0x20,3
- 1097 00de 00C0      		rjmp .L19
- 1098               	.L15:
- 1099               	.LM29:
- 1100 00e0 8B99      		sbic 49-0x20,3
- 1101 00e2 00C0      		rjmp .L19
- 1102 00e4 8F9B      		sbis 49-0x20,7
- 1103 00e6 00C0      		rjmp .L19
- 1104               	.LM30:
- 1105 00e8 3090 0000 		lds r3,ch2nextnote
- 1106               	.LM31:
- 1107 00ec 8F98      		cbi 49-0x20,7
- 1108               	.LM32:
- 1109 00ee 8A9A      		sbi 49-0x20,2
- 1110               	.L19:
- 1111               	.LM33:
- 1112 00f0 8899      		sbic 49-0x20,0
- 1113 00f2 4424      		clr r4
- 1114               	.L21:
- 1115               	.LM34:
- 1116 00f4 8A99      		sbic 49-0x20,2
- 1117 00f6 5524      		clr r5
- 1118               	.L22:
- 1119               	.LM35:
- 1120 00f8 8899      		sbic 49-0x20,0
- 1121 00fa 00C0      		rjmp .L24
- 1122 00fc 8A9B      		sbis 49-0x20,2
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 20
-
-
- 1123 00fe 00C0      		rjmp .L23
- 1124               	.L24:
- 1125               	.LM36:
- 1126 0100 8091 0000 		lds r24,masterpinmask
- 1127 0104 9DEE      		ldi r25,lo8(-19)
- 1128 0106 892E      		mov r8,r25
- 1129 0108 882A      		or r8,r24
- 1130 010a 00C0      		rjmp .L8
- 1131               	.L23:
- 1132               	.LM37:
- 1133 010c 8DEE      		ldi r24,lo8(-19)
- 1134 010e 882E      		mov r8,r24
- 1135               	.L8:
- 1136               	.LM38:
- 1137 0110 889B      		sbis 49-0x20,0
- 1138 0112 00C0      		rjmp .L26
- 1139               	/* #APP */
- 1140 0114 062C      		mov     __tmp_reg__, r6
- 1141 0116 27FA      		bst     r2, 7
- 1142 0118 420C      		add     r4, r2
- 1143 011a 03F0      		brvs    von_181
- 1144 011c 06F0      		brts    turnon_181
- 1145 011e 00C0      		rjmp    turnoff_181
- 1146               	von_181:
- 1147 0120 06F0      		brts    turnoff_181
- 1148               	turnon_181:
- 1149 0122 0094      		com     __tmp_reg__
- 1150 0124 8020      		and     r8, __tmp_reg__
- 1151 0126 00C0      	rjmp    done_181
- 1152               	turnoff_181:
- 1153 0128 8028      		or      r8, __tmp_reg__
- 1154               		done_181:
- 1155               		
- 1156               	/* #NOAPP */
- 1157               	.L26:
- 1158               	.LM39:
- 1159 012a 8A9B      		sbis 49-0x20,2
- 1160 012c 00C0      		rjmp .L6
- 1161               	/* #APP */
- 1162 012e 072C      		mov     __tmp_reg__, r7
- 1163 0130 37FA      		bst     r3, 7
- 1164 0132 530C      		add     r5, r3
- 1165 0134 03F0      		brvs    von_187
- 1166 0136 06F0      		brts    turnon_187
- 1167 0138 00C0      		rjmp    turnoff_187
- 1168               	von_187:
- 1169 013a 06F0      		brts    turnoff_187
- 1170               	turnon_187:
- 1171 013c 0094      		com     __tmp_reg__
- 1172 013e 8020      		and     r8, __tmp_reg__
- 1173 0140 00C0      	rjmp    done_187
- 1174               	turnoff_187:
- 1175 0142 8028      		or      r8, __tmp_reg__
- 1176               		done_187:
- 1177               		
- 1178               	/* #NOAPP */
- 1179               	.L6:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 21
-
-
- 1180               	/* epilogue: frame size=0 */
- 1181 0144 9F91      		pop r25
- 1182 0146 8F91      		pop r24
- 1183 0148 0F90      		pop __tmp_reg__
- 1184 014a 0FBE      		out __SREG__,__tmp_reg__
- 1185 014c 0F90      		pop __tmp_reg__
- 1186 014e 1F90      		pop __zero_reg__
- 1187 0150 1895      		reti
- 1188               	/* epilogue end (size=7) */
- 1189               	/* function __vector_10 size 162 (148) */
- 1190               	.LFE3:
- 1192               		.data
- 1193               	.LC0:
- 1194 0045 08        		.byte	8
- 1195 0046 04        		.byte	4
- 1196 0047 01        		.byte	1
- 1197               		.text
- 1198               	.global	showbootup
- 1200               	showbootup:
- 1201               	.LFB5:
- 1202               	.LM40:
- 1203               	/* prologue: frame size=5 */
- 1204 0152 EF92      		push r14
- 1205 0154 FF92      		push r15
- 1206 0156 0F93      		push r16
- 1207 0158 1F93      		push r17
- 1208 015a CF93      		push r28
- 1209 015c DF93      		push r29
- 1210 015e CDB7      		in r28,__SP_L__
- 1211 0160 DEB7      		in r29,__SP_H__
- 1212 0162 2597      		sbiw r28,5
- 1213 0164 0FB6      		in __tmp_reg__,__SREG__
- 1214 0166 F894      		cli
- 1215 0168 DEBF      		out __SP_H__,r29
- 1216 016a 0FBE      		out __SREG__,__tmp_reg__
- 1217 016c CDBF      		out __SP_L__,r28
- 1218               	/* prologue end (size=14) */
- 1219               	.LM41:
- 1220 016e 4091 0000 		lds r20,bootsongs
- 1221 0172 5091 0000 		lds r21,(bootsongs)+1
- 1222               	.LM42:
- 1223 0176 80E1      		ldi r24,lo8(16)
- 1224 0178 8C83      		std Y+4,r24
- 1225 017a 24E0      		ldi r18,lo8(4)
- 1226 017c E22E      		mov r14,r18
- 1227 017e F12C      		mov r15,__zero_reg__
- 1228 0180 EC0E      		add r14,r28
- 1229 0182 FD1E      		adc r15,r29
- 1230 0184 82E0      		ldi r24,lo8(2)
- 1231 0186 8D83      		std Y+5,r24
- 1232               	.LM43:
- 1233 0188 0C2F      		mov r16,r28
- 1234 018a 1D2F      		mov r17,r29
- 1235 018c 0F5F      		subi r16,lo8(-(1))
- 1236 018e 1F4F      		sbci r17,hi8(-(1))
- 1237 0190 B12F      		mov r27,r17
- 1238 0192 A02F      		mov r26,r16
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 22
-
-
- 1239 0194 E0E0      		ldi r30,lo8(.LC0)
- 1240 0196 F0E0      		ldi r31,hi8(.LC0)
- 1241 0198 83E0      		ldi r24,lo8(3)
- 1242               	.L29:
- 1243               	.LM44:
- 1244 019a 0190      		ld r0,Z+
- 1245 019c 0D92      		st X+,r0
- 1246 019e 8150      		subi r24,lo8(-(-1))
- 1247 01a0 01F4      		brne .L29
- 1248               	.LM45:
- 1249               	/* #APP */
- 1250 01a2 F894      		cli
- 1251               	.LM46:
- 1252               	/* #NOAPP */
- 1253 01a4 82E0      		ldi r24,lo8(2)
- 1254 01a6 8093 0000 		sts ch1restcount,r24
- 1255               	.LM47:
- 1256 01aa 899A      		sbi 49-0x20,1
- 1257               	.LM48:
- 1258               	/* #APP */
- 1259 01ac 7894      		sei
- 1260               	.LM49:
- 1261               	/* #NOAPP */
- 1262 01ae 60E0      		ldi r22,lo8(0)
- 1263               	.L49:
- 1264               	.LM50:
- 1265 01b0 FF2D      		mov r31,r15
- 1266 01b2 EE2D      		mov r30,r14
- 1267 01b4 E60F      		add r30,r22
- 1268 01b6 F11D      		adc r31,__zero_reg__
- 1269 01b8 8081      		ld r24,Z
- 1270 01ba 8093 0000 		sts masterpinmask,r24
- 1271 01be B12F      		mov r27,r17
- 1272 01c0 A02F      		mov r26,r16
- 1273 01c2 72E0      		ldi r23,lo8(2)
- 1274               	.L48:
- 1275               	.LM51:
- 1276 01c4 6C90      		ld r6,X
- 1277               	.LM52:
- 1278 01c6 20E0      		ldi r18,lo8(0)
- 1279 01c8 30E0      		ldi r19,hi8(0)
- 1280               	.L68:
- 1281 01ca F52F      		mov r31,r21
- 1282 01cc E42F      		mov r30,r20
- 1283 01ce 8081      		ld r24,Z
- 1284 01d0 9181      		ldd r25,Z+1
- 1285 01d2 2817      		cp r18,r24
- 1286 01d4 3907      		cpc r19,r25
- 1287 01d6 00F4      		brsh .L63
- 1288               	.LBB2:
- 1289               	.LM53:
- 1290 01d8 F52F      		mov r31,r21
- 1291 01da E42F      		mov r30,r20
- 1292 01dc 8281      		ldd r24,Z+2
- 1293 01de 9381      		ldd r25,Z+3
- 1294 01e0 820F      		add r24,r18
- 1295 01e2 931F      		adc r25,r19
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 23
-
-
- 1296 01e4 2F5F      		subi r18,lo8(-(1))
- 1297 01e6 3F4F      		sbci r19,hi8(-(1))
- 1298 01e8 F92F      		mov r31,r25
- 1299 01ea E82F      		mov r30,r24
- 1300               	/* #APP */
- 1301 01ec C895      		lpm
- 1302 01ee 802D      		mov r24, r0
- 1303               		
- 1304               	/* #NOAPP */
- 1305               	.LBE2:
- 1306 01f0 8093 0000 		sts ch1nextnote,r24
- 1307               	.LM54:
- 1308 01f4 8E9A      		sbi 49-0x20,6
- 1309               	.LM55:
- 1310 01f6 8E9B      		sbis 49-0x20,6
- 1311 01f8 00C0      		rjmp .L65
- 1312               	.L46:
- 1313               	.LM56:
- 1314 01fa 81B5      		in r24,65-0x20
- 1315 01fc 8064      		ori r24,lo8(64)
- 1316 01fe 81BD      		out 65-0x20,r24
- 1317               	.LM57:
- 1318 0200 85B7      		in r24,85-0x20
- 1319 0202 877E      		andi r24,lo8(-25)
- 1320 0204 85BF      		out 85-0x20,r24
- 1321               	.LM58:
- 1322 0206 85B7      		in r24,85-0x20
- 1323 0208 8062      		ori r24,lo8(32)
- 1324 020a 85BF      		out 85-0x20,r24
- 1325               	/* #APP */
- 1326 020c 8895      		sleep
- 1327               		
- 1328               	/* #NOAPP */
- 1329 020e 85B7      		in r24,85-0x20
- 1330 0210 8F7D      		andi r24,lo8(-33)
- 1331 0212 85BF      		out 85-0x20,r24
- 1332 0214 8E99      		sbic 49-0x20,6
- 1333 0216 00C0      		rjmp .L46
- 1334               	.L65:
- 1335               	.LM59:
- 1336 0218 2F5F      		subi r18,lo8(-(1))
- 1337 021a 3F4F      		sbci r19,hi8(-(1))
- 1338 021c 00C0      		rjmp .L68
- 1339               	.L63:
- 1340               	.LM60:
- 1341 021e 7150      		subi r23,lo8(-(-1))
- 1342 0220 1196      		adiw r26,1
- 1343 0222 77FF      		sbrs r23,7
- 1344 0224 00C0      		rjmp .L48
- 1345               	.LM61:
- 1346 0226 6F5F      		subi r22,lo8(-(1))
- 1347 0228 6230      		cpi r22,lo8(2)
- 1348 022a 00F4      		brsh .+2
- 1349 022c 00C0      		rjmp .L49
- 1350               	.LM62:
- 1351               	/* #APP */
- 1352 022e F894      		cli
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 24
-
-
- 1353               	.LM63:
- 1354               	/* #NOAPP */
- 1355 0230 81E0      		ldi r24,lo8(1)
- 1356 0232 8093 0000 		sts ch1restcount,r24
- 1357               	.LM64:
- 1358               	/* #APP */
- 1359 0236 7894      		sei
- 1360               	.LM65:
- 1361               	/* #NOAPP */
- 1362 0238 889B      		sbis 49-0x20,0
- 1363 023a 00C0      		rjmp .L67
- 1364               	.L57:
- 1365               	.LM66:
- 1366 023c 81B5      		in r24,65-0x20
- 1367 023e 8064      		ori r24,lo8(64)
- 1368 0240 81BD      		out 65-0x20,r24
- 1369               	.LM67:
- 1370 0242 85B7      		in r24,85-0x20
- 1371 0244 877E      		andi r24,lo8(-25)
- 1372 0246 85BF      		out 85-0x20,r24
- 1373               	.LM68:
- 1374 0248 85B7      		in r24,85-0x20
- 1375 024a 8062      		ori r24,lo8(32)
- 1376 024c 85BF      		out 85-0x20,r24
- 1377               	/* #APP */
- 1378 024e 8895      		sleep
- 1379               		
- 1380               	/* #NOAPP */
- 1381 0250 85B7      		in r24,85-0x20
- 1382 0252 8F7D      		andi r24,lo8(-33)
- 1383 0254 85BF      		out 85-0x20,r24
- 1384 0256 8899      		sbic 49-0x20,0
- 1385 0258 00C0      		rjmp .L57
- 1386               	.L67:
- 1387               	/* epilogue: frame size=5 */
- 1388 025a 2596      		adiw r28,5
- 1389 025c 0FB6      		in __tmp_reg__,__SREG__
- 1390 025e F894      		cli
- 1391 0260 DEBF      		out __SP_H__,r29
- 1392 0262 0FBE      		out __SREG__,__tmp_reg__
- 1393 0264 CDBF      		out __SP_L__,r28
- 1394 0266 DF91      		pop r29
- 1395 0268 CF91      		pop r28
- 1396 026a 1F91      		pop r17
- 1397 026c 0F91      		pop r16
- 1398 026e FF90      		pop r15
- 1399 0270 EF90      		pop r14
- 1400 0272 0895      		ret
- 1401               	/* epilogue end (size=13) */
- 1402               	/* function showbootup size 160 (133) */
- 1403               	.LFE5:
- 1405               		.data
- 1408               	lfsr.5:
- 1409 0048 CE74      		.word	29902
- 1410               		.text
- 1411               	.global	randbits
- 1413               	randbits:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 25
-
-
- 1414               	.LFB10:
- 1415               	.LM69:
- 1416               	/* prologue: frame size=0 */
- 1417               	/* prologue end (size=0) */
- 1418 0274 E82F      		mov r30,r24
- 1419               	.LM70:
- 1420 0276 8091 0000 		lds r24,lfsr.5
- 1421 027a 9091 0000 		lds r25,(lfsr.5)+1
- 1422 027e 0097      		sbiw r24,0
- 1423 0280 01F4      		brne .L70
- 1424 0282 9DEE      		ldi r25,lo8(-19)
- 1425 0284 82E1      		ldi r24,lo8(18)
- 1426               	.L71:
- 1427               	.LM71:
- 1428 0286 98BB      		out 56-0x20,r25
- 1429 0288 88BB      		out 56-0x20,r24
- 1430 028a 00C0      		rjmp .L71
- 1431               	.L70:
- 1432 028c 282F      		mov r18,r24
- 1433 028e 392F      		mov r19,r25
- 1434 0290 220F      		lsl r18
- 1435 0292 331F      		rol r19
- 1436               	.LM72:
- 1437 0294 97FF      		sbrs r25,7
- 1438 0296 00C0      		rjmp .L75
- 1439               	.LM73:
- 1440 0298 87E8      		ldi r24,lo8(7559)
- 1441 029a 9DE1      		ldi r25,hi8(7559)
- 1442 029c 2827      		eor r18,r24
- 1443 029e 3927      		eor r19,r25
- 1444               	.L75:
- 1445 02a0 3093 0000 		sts (lfsr.5)+1,r19
- 1446 02a4 2093 0000 		sts lfsr.5,r18
- 1447               	.LBB3:
- 1448               	.LM74:
- 1449 02a8 FF27      		clr r31
- 1450 02aa E050      		subi r30,lo8(-(bitmasks))
- 1451 02ac F040      		sbci r31,hi8(-(bitmasks))
- 1452               	/* #APP */
- 1453 02ae C895      		lpm
- 1454 02b0 902D      		mov r25, r0
- 1455               		
- 1456               	/* #NOAPP */
- 1457               	.LBE3:
- 1458 02b2 8091 0000 		lds r24,lfsr.5
- 1459 02b6 8923      		and r24,r25
- 1460               	.LM75:
- 1461 02b8 9927      		clr r25
- 1462               	/* epilogue: frame size=0 */
- 1463 02ba 0895      		ret
- 1464               	/* epilogue end (size=1) */
- 1465               	/* function randbits size 40 (39) */
- 1466               	.LFE10:
- 1468               	.global	randwaitval
- 1470               	randwaitval:
- 1471               	.LFB6:
- 1472               	.LM76:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 26
-
-
- 1473               	/* prologue: frame size=0 */
- 1474 02bc 1F93      		push r17
- 1475               	/* prologue end (size=1) */
- 1476               	.LM77:
- 1477 02be 84E0      		ldi r24,lo8(4)
- 1478 02c0 00D0      		rcall randbits
- 1479 02c2 1091 0000 		lds r17,mood
- 1480 02c6 180F      		add r17,r24
- 1481 02c8 84E0      		ldi r24,lo8(4)
- 1482 02ca 00D0      		rcall randbits
- 1483 02cc 180F      		add r17,r24
- 1484 02ce 83E0      		ldi r24,lo8(3)
- 1485 02d0 00D0      		rcall randbits
- 1486 02d2 180F      		add r17,r24
- 1487 02d4 82E0      		ldi r24,lo8(2)
- 1488 02d6 00D0      		rcall randbits
- 1489 02d8 180F      		add r17,r24
- 1490 02da 82E0      		ldi r24,lo8(2)
- 1491 02dc 00D0      		rcall randbits
- 1492 02de 180F      		add r17,r24
- 1493 02e0 83E0      		ldi r24,lo8(3)
- 1494 02e2 00D0      		rcall randbits
- 1495 02e4 181B      		sub r17,r24
- 1496               	.LM78:
- 1497 02e6 812F      		mov r24,r17
- 1498 02e8 9927      		clr r25
- 1499               	/* epilogue: frame size=0 */
- 1500 02ea 1F91      		pop r17
- 1501 02ec 0895      		ret
- 1502               	/* epilogue end (size=2) */
- 1503               	/* function randwaitval size 25 (22) */
- 1504               	.LFE6:
- 1506               	.global	randscaleval
- 1508               	randscaleval:
- 1509               	.LFB7:
- 1510               	.LM79:
- 1511               	/* prologue: frame size=0 */
- 1512 02ee 1F93      		push r17
- 1513               	/* prologue end (size=1) */
- 1514               	.LM80:
- 1515 02f0 86E0      		ldi r24,lo8(6)
- 1516 02f2 00D0      		rcall randbits
- 1517 02f4 182F      		mov r17,r24
- 1518 02f6 85E0      		ldi r24,lo8(5)
- 1519 02f8 00D0      		rcall randbits
- 1520 02fa 180F      		add r17,r24
- 1521 02fc 84E0      		ldi r24,lo8(4)
- 1522 02fe 00D0      		rcall randbits
- 1523 0300 180F      		add r17,r24
- 1524 0302 83E0      		ldi r24,lo8(3)
- 1525 0304 00D0      		rcall randbits
- 1526 0306 180F      		add r17,r24
- 1527 0308 82E0      		ldi r24,lo8(2)
- 1528 030a 00D0      		rcall randbits
- 1529 030c 180F      		add r17,r24
- 1530 030e 165C      		subi r17,lo8(-(58))
- 1531               	.LM81:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 27
-
-
- 1532 0310 812F      		mov r24,r17
- 1533 0312 9927      		clr r25
- 1534               	/* epilogue: frame size=0 */
- 1535 0314 1F91      		pop r17
- 1536 0316 0895      		ret
- 1537               	/* epilogue end (size=2) */
- 1538               	/* function randscaleval size 21 (18) */
- 1539               	.LFE7:
- 1541               	.global	pickapin
- 1543               	pickapin:
- 1544               	.LFB8:
- 1545               	.LM82:
- 1546               	/* prologue: frame size=0 */
- 1547 0318 CF93      		push r28
- 1548               	/* prologue end (size=1) */
- 1549 031a C82F      		mov r28,r24
- 1550               	.LM83:
- 1551 031c 88E0      		ldi r24,lo8(8)
- 1552 031e 00D0      		rcall randbits
- 1553               	.LM84:
- 1554 0320 282F      		mov r18,r24
- 1555 0322 3327      		clr r19
- 1556 0324 932F      		mov r25,r19
- 1557 0326 822F      		mov r24,r18
- 1558 0328 880F      		lsl r24
- 1559 032a 991F      		rol r25
- 1560 032c 820F      		add r24,r18
- 1561 032e 931F      		adc r25,r19
- 1562 0330 892F      		mov r24,r25
- 1563 0332 9927      		clr r25
- 1564               	.LM85:
- 1565 0334 9927      		clr r25
- 1566 0336 8130      		cpi r24,1
- 1567 0338 9105      		cpc r25,__zero_reg__
- 1568 033a 01F0      		breq .L82
- 1569               	.LM86:
- 1570 033c 8230      		cpi r24,2
- 1571 033e 9105      		cpc r25,__zero_reg__
- 1572 0340 04F4      		brge .L87
- 1573 0342 892B      		or r24,r25
- 1574 0344 01F0      		breq .L80
- 1575 0346 00C0      		rjmp .L86
- 1576               	.L87:
- 1577 0348 0297      		sbiw r24,2
- 1578 034a 01F0      		breq .L84
- 1579 034c 00C0      		rjmp .L86
- 1580               	.L80:
- 1581               	.LM87:
- 1582 034e 88E0      		ldi r24,lo8(8)
- 1583 0350 8C17      		cp r24,r28
- 1584 0352 01F4      		brne .L79
- 1585               	.L82:
- 1586               	.LM88:
- 1587 0354 84E0      		ldi r24,lo8(4)
- 1588 0356 8C17      		cp r24,r28
- 1589 0358 01F4      		brne .L79
- 1590               	.L84:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 28
-
-
- 1591               	.LM89:
- 1592 035a 81E0      		ldi r24,lo8(1)
- 1593 035c 8C17      		cp r24,r28
- 1594 035e 01F4      		brne .L79
- 1595               	.L86:
- 1596               	.LM90:
- 1597 0360 88E0      		ldi r24,lo8(8)
- 1598               	.L79:
- 1599               	.LM91:
- 1600 0362 9927      		clr r25
- 1601               	/* epilogue: frame size=0 */
- 1602 0364 CF91      		pop r28
- 1603 0366 0895      		ret
- 1604               	/* epilogue end (size=2) */
- 1605               	/* function pickapin size 41 (38) */
- 1606               	.LFE8:
- 1608               		.lcomm ticker.6,1
- 1609               	.global	pickmaster
- 1611               	pickmaster:
- 1612               	.LFB9:
- 1613               	.LM92:
- 1614               	/* prologue: frame size=0 */
- 1615               	/* prologue end (size=0) */
- 1616               	.LM93:
- 1617 0368 83E0      		ldi r24,lo8(3)
- 1618 036a 00D0      		rcall randbits
- 1619 036c 9091 0000 		lds r25,ticker.6
- 1620 0370 8823      		tst r24
- 1621 0372 01F4      		brne .L89
- 1622               	.LM94:
- 1623 0374 90FD      		sbrc r25,0
- 1624 0376 00C0      		rjmp .L95
- 1625 0378 82E0      		ldi r24,lo8(2)
- 1626 037a 90E0      		ldi r25,hi8(2)
- 1627 037c 0895      		ret
- 1628               	.L89:
- 1629               	.LM95:
- 1630 037e 892F      		mov r24,r25
- 1631 0380 8F5F      		subi r24,lo8(-(1))
- 1632 0382 8093 0000 		sts ticker.6,r24
- 1633 0386 80FF      		sbrs r24,0
- 1634 0388 00C0      		rjmp .L93
- 1635               	.L95:
- 1636 038a 80E1      		ldi r24,lo8(16)
- 1637 038c 90E0      		ldi r25,hi8(16)
- 1638 038e 0895      		ret
- 1639               	.L93:
- 1640 0390 82E0      		ldi r24,lo8(2)
- 1641 0392 90E0      		ldi r25,hi8(2)
- 1642               	.LM96:
- 1643 0394 0895      		ret
- 1644               	/* epilogue: frame size=0 */
- 1645               	/* epilogue: noreturn */
- 1646               	/* epilogue end (size=0) */
- 1647               	/* function pickmaster size 23 (23) */
- 1648               	.LFE9:
- 1650               	.global	pickasong
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 29
-
-
- 1652               	pickasong:
- 1653               	.LFB11:
- 1654               	.LM97:
- 1655               	/* prologue: frame size=0 */
- 1656               	/* prologue end (size=0) */
- 1657               	.LM98:
- 1658 0396 88E0      		ldi r24,lo8(8)
- 1659 0398 00D0      		rcall randbits
- 1660 039a E82F      		mov r30,r24
- 1661 039c FF27      		clr r31
- 1662 039e 74E0      		ldi r23,4
- 1663 03a0 F695      	1:	lsr r31
- 1664 03a2 E795      		ror r30
- 1665 03a4 7A95      		dec r23
- 1666 03a6 01F4      		brne 1b
- 1667 03a8 EE0F      		add r30,r30
- 1668 03aa FF1F      		adc r31,r31
- 1669 03ac E050      		subi r30,lo8(-(songs))
- 1670 03ae F040      		sbci r31,hi8(-(songs))
- 1671               	.LM99:
- 1672 03b0 8081      		ld r24,Z
- 1673 03b2 9181      		ldd r25,Z+1
- 1674               	/* epilogue: frame size=0 */
- 1675 03b4 0895      		ret
- 1676               	/* epilogue end (size=1) */
- 1677               	/* function pickasong size 16 (15) */
- 1678               	.LFE11:
- 1680               		.lcomm ch1song.0,2
- 1681               		.lcomm ch2song.1,2
- 1682               		.lcomm ch1noteptr.2,2
- 1683               		.lcomm ch2noteptr.3,2
- 1684               		.lcomm temp.4,1
- 1685               	.global	lighted_fireflies
- 1687               	lighted_fireflies:
- 1688               	.LFB14:
- 1689               	.LM100:
- 1690               	/* prologue: frame size=0 */
- 1691               	/* prologue end (size=0) */
- 1692               	.L129:
- 1693               	.LM101:
- 1694 03b6 8899      		sbic 49-0x20,0
- 1695 03b8 00C0      		rjmp .L101
- 1696               	.LM102:
- 1697 03ba 8A9B      		sbis 49-0x20,2
- 1698 03bc 00C0      		rjmp .L100
- 1699               	.L101:
- 1700               	.LM103:
- 1701 03be 889B      		sbis 49-0x20,0
- 1702 03c0 00C0      		rjmp .L102
- 1703 03c2 8E99      		sbic 49-0x20,6
- 1704 03c4 00C0      		rjmp .L102
- 1705               	.LM104:
- 1706 03c6 E091 0000 		lds r30,ch1song.0
- 1707 03ca F091 0000 		lds r31,(ch1song.0)+1
- 1708 03ce 2091 0000 		lds r18,ch1noteptr.2
- 1709 03d2 3091 0000 		lds r19,(ch1noteptr.2)+1
- 1710 03d6 8081      		ld r24,Z
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 30
-
-
- 1711 03d8 9181      		ldd r25,Z+1
- 1712 03da 2817      		cp r18,r24
- 1713 03dc 3907      		cpc r19,r25
- 1714 03de 01F0      		breq .L102
- 1715               	.LBB4:
- 1716               	.LM105:
- 1717 03e0 0280      		ldd __tmp_reg__,Z+2
- 1718 03e2 F381      		ldd r31,Z+3
- 1719 03e4 E02D      		mov r30,__tmp_reg__
- 1720 03e6 E20F      		add r30,r18
- 1721 03e8 F31F      		adc r31,r19
- 1722 03ea 2F5F      		subi r18,lo8(-(1))
- 1723 03ec 3F4F      		sbci r19,hi8(-(1))
- 1724 03ee 3093 0000 		sts (ch1noteptr.2)+1,r19
- 1725 03f2 2093 0000 		sts ch1noteptr.2,r18
- 1726               	/* #APP */
- 1727 03f6 C895      		lpm
- 1728 03f8 802D      		mov r24, r0
- 1729               		
- 1730               	/* #NOAPP */
- 1731               	.LBE4:
- 1732               	.LM106:
- 1733 03fa 9091 0000 		lds r25,ch1scale
- 1734 03fe 282F      		mov r18,r24
- 1735 0400 3327      		clr r19
- 1736 0402 892F      		mov r24,r25
- 1737 0404 9927      		clr r25
- 1738 0406 732F      		mov r23,r19
- 1739 0408 622F      		mov r22,r18
- 1740 040a 00D0      		rcall __mulhi3
- 1741 040c 892F      		mov r24,r25
- 1742 040e 9927      		clr r25
- 1743 0410 8093 0000 		sts temp.4,r24
- 1744               	.LM107:
- 1745               	/* #APP */
- 1746 0414 F894      		cli
- 1747               	.LM108:
- 1748               	/* #NOAPP */
- 1749 0416 8091 0000 		lds r24,temp.4
- 1750 041a 8093 0000 		sts ch1nextnote,r24
- 1751               	.LM109:
- 1752 041e 8E9A      		sbi 49-0x20,6
- 1753               	.LM110:
- 1754               	/* #APP */
- 1755 0420 7894      		sei
- 1756               	.LM111:
- 1757               	/* #NOAPP */
- 1758 0422 00C0      		rjmp .L129
- 1759               	.L102:
- 1760               	.LM112:
- 1761 0424 8A9B      		sbis 49-0x20,2
- 1762 0426 00C0      		rjmp .L104
- 1763 0428 8F99      		sbic 49-0x20,7
- 1764 042a 00C0      		rjmp .L104
- 1765               	.LM113:
- 1766 042c E091 0000 		lds r30,ch2song.1
- 1767 0430 F091 0000 		lds r31,(ch2song.1)+1
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 31
-
-
- 1768 0434 2091 0000 		lds r18,ch2noteptr.3
- 1769 0438 3091 0000 		lds r19,(ch2noteptr.3)+1
- 1770 043c 8081      		ld r24,Z
- 1771 043e 9181      		ldd r25,Z+1
- 1772 0440 2817      		cp r18,r24
- 1773 0442 3907      		cpc r19,r25
- 1774 0444 01F0      		breq .L104
- 1775               	.LBB5:
- 1776               	.LM114:
- 1777 0446 0280      		ldd __tmp_reg__,Z+2
- 1778 0448 F381      		ldd r31,Z+3
- 1779 044a E02D      		mov r30,__tmp_reg__
- 1780 044c E20F      		add r30,r18
- 1781 044e F31F      		adc r31,r19
- 1782 0450 2F5F      		subi r18,lo8(-(1))
- 1783 0452 3F4F      		sbci r19,hi8(-(1))
- 1784 0454 3093 0000 		sts (ch2noteptr.3)+1,r19
- 1785 0458 2093 0000 		sts ch2noteptr.3,r18
- 1786               	/* #APP */
- 1787 045c C895      		lpm
- 1788 045e 802D      		mov r24, r0
- 1789               		
- 1790               	/* #NOAPP */
- 1791               	.LBE5:
- 1792               	.LM115:
- 1793 0460 9091 0000 		lds r25,ch2scale
- 1794 0464 282F      		mov r18,r24
- 1795 0466 3327      		clr r19
- 1796 0468 892F      		mov r24,r25
- 1797 046a 9927      		clr r25
- 1798 046c 732F      		mov r23,r19
- 1799 046e 622F      		mov r22,r18
- 1800 0470 00D0      		rcall __mulhi3
- 1801 0472 892F      		mov r24,r25
- 1802 0474 9927      		clr r25
- 1803 0476 8093 0000 		sts temp.4,r24
- 1804               	.LM116:
- 1805               	/* #APP */
- 1806 047a F894      		cli
- 1807               	.LM117:
- 1808               	/* #NOAPP */
- 1809 047c 8091 0000 		lds r24,temp.4
- 1810 0480 8093 0000 		sts ch2nextnote,r24
- 1811               	.LM118:
- 1812 0484 8F9A      		sbi 49-0x20,7
- 1813               	.LM119:
- 1814               	/* #APP */
- 1815 0486 7894      		sei
- 1816               	.LM120:
- 1817               	/* #NOAPP */
- 1818 0488 00C0      		rjmp .L129
- 1819               	.L104:
- 1820               	.LM121:
- 1821 048a 889B      		sbis 49-0x20,0
- 1822 048c 00C0      		rjmp .L106
- 1823 048e 8091 0000 		lds r24,ch1restcount
- 1824 0492 8823      		tst r24
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 32
-
-
- 1825 0494 01F4      		brne .L106
- 1826               	.LM122:
- 1827 0496 00D0      		rcall randwaitval
- 1828 0498 8093 0000 		sts temp.4,r24
- 1829               	.LM123:
- 1830               	/* #APP */
- 1831 049c F894      		cli
- 1832               	.LM124:
- 1833               	/* #NOAPP */
- 1834 049e 8091 0000 		lds r24,temp.4
- 1835 04a2 8093 0000 		sts ch1restcount,r24
- 1836               	.LM125:
- 1837               	/* #APP */
- 1838 04a6 7894      		sei
- 1839               	.LM126:
- 1840               	/* #NOAPP */
- 1841 04a8 00C0      		rjmp .L129
- 1842               	.L106:
- 1843               	.LM127:
- 1844 04aa 8A9B      		sbis 49-0x20,2
- 1845 04ac 00C0      		rjmp .L100
- 1846 04ae 8091 0000 		lds r24,ch2restcount
- 1847 04b2 8823      		tst r24
- 1848 04b4 01F4      		brne .L100
- 1849               	.LM128:
- 1850 04b6 00D0      		rcall randwaitval
- 1851 04b8 8093 0000 		sts temp.4,r24
- 1852               	.LM129:
- 1853               	/* #APP */
- 1854 04bc F894      		cli
- 1855               	.LM130:
- 1856               	/* #NOAPP */
- 1857 04be 8091 0000 		lds r24,temp.4
- 1858 04c2 8093 0000 		sts ch2restcount,r24
- 1859               	.LM131:
- 1860               	/* #APP */
- 1861 04c6 7894      		sei
- 1862               	.LM132:
- 1863               	/* #NOAPP */
- 1864 04c8 00C0      		rjmp .L129
- 1865               	.L100:
- 1866               	.LM133:
- 1867 04ca 8899      		sbic 49-0x20,0
- 1868 04cc 00C0      		rjmp .L108
- 1869 04ce 8999      		sbic 49-0x20,1
- 1870 04d0 00C0      		rjmp .L108
- 1871 04d2 8E99      		sbic 49-0x20,6
- 1872 04d4 00C0      		rjmp .L108
- 1873               	.LM134:
- 1874 04d6 00D0      		rcall pickasong
- 1875 04d8 9093 0000 		sts (ch1song.0)+1,r25
- 1876 04dc 8093 0000 		sts ch1song.0,r24
- 1877               	.LM135:
- 1878 04e0 1092 0000 		sts (ch1noteptr.2)+1,__zero_reg__
- 1879 04e4 1092 0000 		sts ch1noteptr.2,__zero_reg__
- 1880               	.LM136:
- 1881 04e8 872D      		mov r24,r7
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 33
-
-
- 1882 04ea 00D0      		rcall pickapin
- 1883 04ec 682E      		mov r6,r24
- 1884               	.LM137:
- 1885 04ee 00D0      		rcall randscaleval
- 1886 04f0 8093 0000 		sts ch1scale,r24
- 1887               	.LBB6:
- 1888               	.LM138:
- 1889 04f4 E091 0000 		lds r30,ch1song.0
- 1890 04f8 F091 0000 		lds r31,(ch1song.0)+1
- 1891 04fc 8091 0000 		lds r24,ch1noteptr.2
- 1892 0500 9091 0000 		lds r25,(ch1noteptr.2)+1
- 1893 0504 0280      		ldd __tmp_reg__,Z+2
- 1894 0506 F381      		ldd r31,Z+3
- 1895 0508 E02D      		mov r30,__tmp_reg__
- 1896 050a E80F      		add r30,r24
- 1897 050c F91F      		adc r31,r25
- 1898 050e 0196      		adiw r24,1
- 1899 0510 9093 0000 		sts (ch1noteptr.2)+1,r25
- 1900 0514 8093 0000 		sts ch1noteptr.2,r24
- 1901               	/* #APP */
- 1902 0518 C895      		lpm
- 1903 051a 802D      		mov r24, r0
- 1904               		
- 1905               	/* #NOAPP */
- 1906               	.LBE6:
- 1907               	.LM139:
- 1908 051c 9091 0000 		lds r25,ch1scale
- 1909 0520 282F      		mov r18,r24
- 1910 0522 3327      		clr r19
- 1911 0524 892F      		mov r24,r25
- 1912 0526 9927      		clr r25
- 1913 0528 732F      		mov r23,r19
- 1914 052a 622F      		mov r22,r18
- 1915 052c 00D0      		rcall __mulhi3
- 1916 052e 892F      		mov r24,r25
- 1917 0530 9927      		clr r25
- 1918 0532 8093 0000 		sts temp.4,r24
- 1919               	.LM140:
- 1920 0536 8B9B      		sbis 49-0x20,3
- 1921 0538 00C0      		rjmp .L109
- 1922               	.LM141:
- 1923 053a 00D0      		rcall pickmaster
- 1924 053c 8093 0000 		sts masterpinmask,r24
- 1925               	.L109:
- 1926               	.LM142:
- 1927               	/* #APP */
- 1928 0540 F894      		cli
- 1929               	.LM143:
- 1930               	/* #NOAPP */
- 1931 0542 8091 0000 		lds r24,temp.4
- 1932 0546 8093 0000 		sts ch1nextnote,r24
- 1933               	.LM144:
- 1934 054a 8E9A      		sbi 49-0x20,6
- 1935               	.LM145:
- 1936               	/* #APP */
- 1937 054c 7894      		sei
- 1938               	.LM146:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 34
-
-
- 1939               	/* #NOAPP */
- 1940 054e 00C0      		rjmp .L129
- 1941               	.L108:
- 1942               	.LM147:
- 1943 0550 8A99      		sbic 49-0x20,2
- 1944 0552 00C0      		rjmp .L110
- 1945 0554 8B99      		sbic 49-0x20,3
- 1946 0556 00C0      		rjmp .L110
- 1947 0558 8F99      		sbic 49-0x20,7
- 1948 055a 00C0      		rjmp .L110
- 1949               	.LM148:
- 1950 055c 00D0      		rcall pickasong
- 1951 055e 9093 0000 		sts (ch2song.1)+1,r25
- 1952 0562 8093 0000 		sts ch2song.1,r24
- 1953               	.LM149:
- 1954 0566 1092 0000 		sts (ch2noteptr.3)+1,__zero_reg__
- 1955 056a 1092 0000 		sts ch2noteptr.3,__zero_reg__
- 1956               	.LM150:
- 1957 056e 862D      		mov r24,r6
- 1958 0570 00D0      		rcall pickapin
- 1959 0572 782E      		mov r7,r24
- 1960               	.LM151:
- 1961 0574 00D0      		rcall randscaleval
- 1962 0576 8093 0000 		sts ch2scale,r24
- 1963               	.LBB7:
- 1964               	.LM152:
- 1965 057a E091 0000 		lds r30,ch2song.1
- 1966 057e F091 0000 		lds r31,(ch2song.1)+1
- 1967 0582 8091 0000 		lds r24,ch2noteptr.3
- 1968 0586 9091 0000 		lds r25,(ch2noteptr.3)+1
- 1969 058a 0280      		ldd __tmp_reg__,Z+2
- 1970 058c F381      		ldd r31,Z+3
- 1971 058e E02D      		mov r30,__tmp_reg__
- 1972 0590 E80F      		add r30,r24
- 1973 0592 F91F      		adc r31,r25
- 1974 0594 0196      		adiw r24,1
- 1975 0596 9093 0000 		sts (ch2noteptr.3)+1,r25
- 1976 059a 8093 0000 		sts ch2noteptr.3,r24
- 1977               	/* #APP */
- 1978 059e C895      		lpm
- 1979 05a0 802D      		mov r24, r0
- 1980               		
- 1981               	/* #NOAPP */
- 1982               	.LBE7:
- 1983               	.LM153:
- 1984 05a2 9091 0000 		lds r25,ch2scale
- 1985 05a6 282F      		mov r18,r24
- 1986 05a8 3327      		clr r19
- 1987 05aa 892F      		mov r24,r25
- 1988 05ac 9927      		clr r25
- 1989 05ae 732F      		mov r23,r19
- 1990 05b0 622F      		mov r22,r18
- 1991 05b2 00D0      		rcall __mulhi3
- 1992 05b4 892F      		mov r24,r25
- 1993 05b6 9927      		clr r25
- 1994 05b8 8093 0000 		sts temp.4,r24
- 1995               	.LM154:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 35
-
-
- 1996 05bc 899B      		sbis 49-0x20,1
- 1997 05be 00C0      		rjmp .L111
- 1998               	.LM155:
- 1999 05c0 00D0      		rcall pickmaster
- 2000 05c2 8093 0000 		sts masterpinmask,r24
- 2001               	.L111:
- 2002               	.LM156:
- 2003               	/* #APP */
- 2004 05c6 F894      		cli
- 2005               	.LM157:
- 2006               	/* #NOAPP */
- 2007 05c8 8091 0000 		lds r24,temp.4
- 2008 05cc 8093 0000 		sts ch2nextnote,r24
- 2009               	.LM158:
- 2010 05d0 8F9A      		sbi 49-0x20,7
- 2011               	.LM159:
- 2012               	/* #APP */
- 2013 05d2 7894      		sei
- 2014               	.LM160:
- 2015               	/* #NOAPP */
- 2016 05d4 00C0      		rjmp .L129
- 2017               	.L110:
- 2018               	.LM161:
- 2019 05d6 8C9B      		sbis 49-0x20,4
- 2020 05d8 00C0      		rjmp .L112
- 2021               	.LM162:
- 2022 05da 85E0      		ldi r24,lo8(5)
- 2023 05dc 00D0      		rcall randbits
- 2024 05de 885F      		subi r24,lo8(-(8))
- 2025 05e0 8093 0000 		sts mood,r24
- 2026               	.LM163:
- 2027 05e4 88E5      		ldi r24,lo8(600)
- 2028 05e6 92E0      		ldi r25,hi8(600)
- 2029 05e8 9093 0000 		sts (mood_count)+1,r25
- 2030 05ec 8093 0000 		sts mood_count,r24
- 2031               	.LM164:
- 2032 05f0 8C98      		cbi 49-0x20,4
- 2033               	.LM165:
- 2034 05f2 00C0      		rjmp .L129
- 2035               	.L112:
- 2036               	.LM166:
- 2037 05f4 81B5      		in r24,65-0x20
- 2038 05f6 8064      		ori r24,lo8(64)
- 2039 05f8 81BD      		out 65-0x20,r24
- 2040               	.LM167:
- 2041 05fa 899B      		sbis 49-0x20,1
- 2042 05fc 00C0      		rjmp .L113
- 2043 05fe 8B9B      		sbis 49-0x20,3
- 2044 0600 00C0      		rjmp .L113
- 2045               	.LM168:
- 2046 0602 85B7      		in r24,85-0x20
- 2047 0604 877E      		andi r24,lo8(-25)
- 2048 0606 8061      		ori r24,lo8(16)
- 2049 0608 85BF      		out 85-0x20,r24
- 2050               	.LM169:
- 2051 060a 85B7      		in r24,85-0x20
- 2052 060c 8062      		ori r24,lo8(32)
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 36
-
-
- 2053 060e 85BF      		out 85-0x20,r24
- 2054               	/* #APP */
- 2055 0610 8895      		sleep
- 2056               		
- 2057               	/* #NOAPP */
- 2058 0612 00C0      		rjmp .L128
- 2059               	.L113:
- 2060               	.LM170:
- 2061 0614 85B7      		in r24,85-0x20
- 2062 0616 877E      		andi r24,lo8(-25)
- 2063 0618 85BF      		out 85-0x20,r24
- 2064               	.LM171:
- 2065 061a 85B7      		in r24,85-0x20
- 2066 061c 8062      		ori r24,lo8(32)
- 2067 061e 85BF      		out 85-0x20,r24
- 2068               	/* #APP */
- 2069 0620 8895      		sleep
- 2070               		
- 2071               	/* #NOAPP */
- 2072               	.L128:
- 2073 0622 85B7      		in r24,85-0x20
- 2074 0624 8F7D      		andi r24,lo8(-33)
- 2075 0626 85BF      		out 85-0x20,r24
- 2076 0628 00C0      		rjmp .L129
- 2077               	/* epilogue: frame size=0 */
- 2078               	/* epilogue: noreturn */
- 2079               	/* epilogue end (size=0) */
- 2080               	/* function lighted_fireflies size 348 (348) */
- 2081               	.LFE14:
- 2083               	.global	main
- 2085               	main:
- 2086               	.LFB15:
- 2087               	.LM172:
- 2088               	/* prologue: frame size=0 */
- 2089 062a C0E0      		ldi r28,lo8(__stack - 0)
- 2090 062c D0E0      		ldi r29,hi8(__stack - 0)
- 2091 062e DEBF      		out __SP_H__,r29
- 2092 0630 CDBF      		out __SP_L__,r28
- 2093               	/* prologue end (size=4) */
- 2094               	.LBB8:
- 2095               	.LBB9:
- 2096               	.LM173:
- 2097 0632 88E1      		ldi r24,lo8(24)
- 2098 0634 90E0      		ldi r25,hi8(24)
- 2099 0636 2DE0      		ldi r18,lo8(13)
- 2100               	/* #APP */
- 2101 0638 0FB6      		in __tmp_reg__,__SREG__
- 2102 063a F894      		cli
- 2103 063c A895      		wdr
- 2104 063e 81BD      		out 33,r24
- 2105 0640 0FBE      		out __SREG__,__tmp_reg__
- 2106 0642 21BD      		out 33,r18
- 2107               	.LM174:
- 2108               	/* #NOAPP */
- 2109 0644 81B5      		in r24,65-0x20
- 2110 0646 8064      		ori r24,lo8(64)
- 2111 0648 81BD      		out 65-0x20,r24
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 37
-
-
- 2112               	.LM175:
- 2113 064a 8FEF      		ldi r24,lo8(-1)
- 2114 064c 87BB      		out 55-0x20,r24
- 2115               	.LM176:
- 2116 064e 8DEE      		ldi r24,lo8(-19)
- 2117 0650 88BB      		out 56-0x20,r24
- 2118               	.LM177:
- 2119 0652 80B5      		in r24,64-0x20
- 2120 0654 8860      		ori r24,lo8(8)
- 2121 0656 80BD      		out 64-0x20,r24
- 2122               	.LM178:
- 2123 0658 80B5      		in r24,64-0x20
- 2124 065a 8260      		ori r24,lo8(2)
- 2125 065c 80BD      		out 64-0x20,r24
- 2126               	.LM179:
- 2127 065e 80B5      		in r24,64-0x20
- 2128 0660 8160      		ori r24,lo8(1)
- 2129 0662 80BD      		out 64-0x20,r24
- 2130               	.LM180:
- 2131 0664 92E0      		ldi r25,lo8(2)
- 2132 0666 9ABD      		out 74-0x20,r25
- 2133               	.LM181:
- 2134 0668 93BF      		out 83-0x20,r25
- 2135               	.LM182:
- 2136 066a 89E1      		ldi r24,lo8(25)
- 2137 066c 89BD      		out 73-0x20,r24
- 2138               	.LBB10:
- 2139               	.LM183:
- 2140 066e 80E8      		ldi r24,lo8(-128)
- 2141               	/* #APP */
- 2142 0670 0FB6      		in __tmp_reg__,__SREG__
- 2143 0672 F894      		cli
- 2144 0674 86BD      		out 38, r24
- 2145 0676 96BD      		out 38, r25
- 2146 0678 0FBE      		out __SREG__, __tmp_reg__
- 2147               	/* #NOAPP */
- 2148               	.LBE10:
- 2149               	.LM184:
- 2150 067a 80E1      		ldi r24,lo8(16)
- 2151 067c 89BF      		out 89-0x20,r24
- 2152               	.LM185:
- 2153 067e 81B5      		in r24,65-0x20
- 2154 0680 8064      		ori r24,lo8(64)
- 2155 0682 81BD      		out 65-0x20,r24
- 2156               	.LBE9:
- 2157               	.LBE8:
- 2158               	.LM186:
- 2159 0684 8824      		clr r8
- 2160 0686 782C      		mov r7,r8
- 2161 0688 682C      		mov r6,r8
- 2162 068a 582C      		mov r5,r8
- 2163 068c 482C      		mov r4,r8
- 2164 068e 382C      		mov r3,r8
- 2165 0690 282C      		mov r2,r8
- 2166               	.LM187:
- 2167 0692 00D0      		rcall randwaitval
- 2168 0694 8093 0000 		sts ch1restcount,r24
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 38
-
-
- 2169               	.LM188:
- 2170 0698 00D0      		rcall randwaitval
- 2171 069a 8093 0000 		sts ch2restcount,r24
- 2172               	.LM189:
- 2173 069e 11BA      		out 49-0x20,__zero_reg__
- 2174               	.LM190:
- 2175               	/* #APP */
- 2176 06a0 7894      		sei
- 2177               	.LM191:
- 2178               	/* #NOAPP */
- 2179 06a2 00D0      		rcall showbootup
- 2180               	.L132:
- 2181               	.LM192:
- 2182 06a4 8824      		clr r8
- 2183 06a6 782C      		mov r7,r8
- 2184 06a8 682C      		mov r6,r8
- 2185 06aa 582C      		mov r5,r8
- 2186 06ac 482C      		mov r4,r8
- 2187 06ae 382C      		mov r3,r8
- 2188 06b0 282C      		mov r2,r8
- 2189               	.LM193:
- 2190 06b2 81BA      		out 49-0x20,r8
- 2191               	.LM194:
- 2192 06b4 899A      		sbi 49-0x20,1
- 2193               	.LM195:
- 2194 06b6 8B9A      		sbi 49-0x20,3
- 2195               	.LM196:
- 2196 06b8 00D0      		rcall lighted_fireflies
- 2197               	.LM197:
- 2198 06ba 00C0      		rjmp .L132
- 2199               	/* epilogue: frame size=0 */
- 2200               	/* epilogue: noreturn */
- 2201               	/* epilogue end (size=0) */
- 2202               	/* function main size 85 (81) */
- 2203               	.LFE15:
- 2205               		.comm ch1restcount,1,1
- 2206               		.comm ch2restcount,1,1
- 2207               		.comm ch1nextnote,1,1
- 2208               		.comm ch2nextnote,1,1
- 2209               		.comm ch1scale,1,1
- 2210               		.comm ch2scale,1,1
- 2211               		.comm ch1nextscale,1,1
- 2212               		.comm ch2nextscale,1,1
- 2213               		.comm masterpinmask,1,1
- 2214               	.Letext0:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 39
+  15               	.Ltext0:
+  16               	.global	__vector_12
+  18               	__vector_12:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 1F92      		push __zero_reg__
+  22 0002 0F92      		push r0
+  23 0004 0FB6      		in r0,__SREG__
+  24 0006 0F92      		push r0
+  25 0008 1124      		clr __zero_reg__
+  26 000a 8F93      		push r24
+  27 000c 9F93      		push r25
+  28               	/* prologue: Signal */
+  29               	/* frame size = 0 */
+  30               	.LBB13:
+  31               	.LBB14:
+  32               	.LM2:
+  33 000e 8FEE      		ldi r24,lo8(-17)
+  34 0010 87BB      		out 55-32,r24
+  35               	.LM3:
+  36 0012 8DEF      		ldi r24,lo8(-3)
+  37 0014 88BB      		out 56-32,r24
+  38               	.LBB15:
+  39               	.LBB16:
+  40               	.LM4:
+  41 0016 80B5      		in r24,64-32
+  42 0018 8E7F      		andi r24,lo8(-2)
+  43 001a 80BD      		out 64-32,r24
+  44               	.LM5:
+  45 001c 82E2      		ldi r24,lo8(34)
+  46 001e 87B9      		out 39-32,r24
+  47               	.L2:
+  48               	.LM6:
+  49 0020 3699      		sbic 38-32,6
+  50 0022 00C0      		rjmp .L2
+  51               	.LM7:
+  52 0024 80EC      		ldi r24,lo8(-64)
+  53 0026 86B9      		out 38-32,r24
+  54               	.L3:
+  55               	.LM8:
+  56 0028 3699      		sbic 38-32,6
+  57 002a 00C0      		rjmp .L3
+  58               	.LM9:
+  59 002c 95B1      		in r25,37-32
+  60               	.LVL0:
+  61               	.LM10:
+  62 002e 3798      		cbi 38-32,7
+  63               	.LM11:
+  64 0030 80B5      		in r24,64-32
+  65 0032 8160      		ori r24,lo8(1)
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 2
+
+
+  66 0034 80BD      		out 64-32,r24
+  67               	.LBE16:
+  68               	.LBE15:
+  69               	.LM12:
+  70 0036 8DEE      		ldi r24,lo8(-19)
+  71 0038 88BB      		out 56-32,r24
+  72               	.LM13:
+  73 003a 8FEF      		ldi r24,lo8(-1)
+  74 003c 87BB      		out 55-32,r24
+  75               	.LM14:
+  76 003e 913E      		cpi r25,lo8(-31)
+  77 0040 00F4      		brsh .L4
+  78 0042 8091 0000 		lds r24,force_dark
+  79 0046 8823      		tst r24
+  80 0048 01F0      		breq .L5
+  81               	.L4:
+  82               	.LM15:
+  83 004a 8091 0000 		lds r24,debounce.1651
+  84 004e 8150      		subi r24,lo8(-(-1))
+  85 0050 8093 0000 		sts debounce.1651,r24
+  86 0054 8F5F      		subi r24,lo8(-(1))
+  87 0056 01F4      		brne .L6
+  88               	.LM16:
+  89 0058 8AE0      		ldi r24,lo8(10)
+  90 005a 8093 0000 		sts debounce.1651,r24
+  91               	.LM17:
+  92 005e 81E0      		ldi r24,lo8(1)
+  93 0060 8093 0000 		sts is_dark,r24
+  94 0064 00C0      		rjmp .L6
+  95               	.L5:
+  96               	.LM18:
+  97 0066 8AE0      		ldi r24,lo8(10)
+  98 0068 8093 0000 		sts debounce.1651,r24
+  99               	.LM19:
+ 100 006c 1092 0000 		sts is_dark,__zero_reg__
+ 101               	.L6:
+ 102               	.LBE14:
+ 103               	.LBE13:
+ 104               	.LM20:
+ 105 0070 899B      		sbis 49-32,1
+ 106 0072 00C0      		rjmp .L7
+ 107 0074 8091 0000 		lds r24,ch1restcount
+ 108 0078 8150      		subi r24,lo8(-(-1))
+ 109 007a 8093 0000 		sts ch1restcount,r24
+ 110 007e 8091 0000 		lds r24,ch1restcount
+ 111 0082 8823      		tst r24
+ 112 0084 01F4      		brne .L7
+ 113 0086 8998      		cbi 49-32,1
+ 114               	.L7:
+ 115               	.LM21:
+ 116 0088 8B9B      		sbis 49-32,3
+ 117 008a 00C0      		rjmp .L8
+ 118 008c 8091 0000 		lds r24,ch2restcount
+ 119 0090 8150      		subi r24,lo8(-(-1))
+ 120 0092 8093 0000 		sts ch2restcount,r24
+ 121 0096 8091 0000 		lds r24,ch2restcount
+ 122 009a 8823      		tst r24
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 3
+
+
+ 123 009c 01F4      		brne .L8
+ 124 009e 8B98      		cbi 49-32,3
+ 125               	.L8:
+ 126               	.LM22:
+ 127 00a0 8C99      		sbic 49-32,4
+ 128 00a2 00C0      		rjmp .L10
+ 129 00a4 8091 0000 		lds r24,mood_count
+ 130 00a8 9091 0000 		lds r25,(mood_count)+1
+ 131 00ac 0197      		sbiw r24,1
+ 132 00ae 9093 0000 		sts (mood_count)+1,r25
+ 133 00b2 8093 0000 		sts mood_count,r24
+ 134 00b6 892B      		or r24,r25
+ 135 00b8 01F4      		brne .L10
+ 136 00ba 8C9A      		sbi 49-32,4
+ 137               	.L10:
+ 138               	/* epilogue start */
+ 139               	.LM23:
+ 140 00bc 9F91      		pop r25
+ 141               	.LVL1:
+ 142 00be 8F91      		pop r24
+ 143 00c0 0F90      		pop r0
+ 144 00c2 0FBE      		out __SREG__,r0
+ 145 00c4 0F90      		pop r0
+ 146 00c6 1F90      		pop __zero_reg__
+ 147 00c8 1895      		reti
+ 148               	.LFE2:
+ 150               	.global	__vector_10
+ 152               	__vector_10:
+ 153               	.LFB3:
+ 154               	.LM24:
+ 155 00ca 1F92      		push __zero_reg__
+ 156 00cc 0F92      		push r0
+ 157 00ce 0FB6      		in r0,__SREG__
+ 158 00d0 0F92      		push r0
+ 159 00d2 1124      		clr __zero_reg__
+ 160 00d4 8F93      		push r24
+ 161               	/* prologue: Signal */
+ 162               	/* frame size = 0 */
+ 163               	.LM25:
+ 164 00d6 8091 0000 		lds r24,waiting_for_dark
+ 165 00da 8823      		tst r24
+ 166 00dc 01F0      		breq .+2
+ 167 00de 00C0      		rjmp .L27
+ 168               	.LM26:
+ 169 00e0 88BA      		out 56-32,r8
+ 170               	.LM27:
+ 171 00e2 8091 0000 		lds r24,x.1420
+ 172 00e6 8150      		subi r24,lo8(-(-1))
+ 173 00e8 8093 0000 		sts x.1420,r24
+ 174 00ec 8F5F      		subi r24,lo8(-(1))
+ 175 00ee 01F0      		breq .+2
+ 176 00f0 00C0      		rjmp .L15
+ 177               	.LM28:
+ 178 00f2 889B      		sbis 49-32,0
+ 179 00f4 00C0      		rjmp .L16
+ 180               	.LM29:
+ 181 00f6 8E9B      		sbis 49-32,6
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 4
+
+
+ 182 00f8 00C0      		rjmp .L17
+ 183               	.LM30:
+ 184 00fa 8091 0000 		lds r24,ch1nextnote
+ 185 00fe 282E      		mov r2,r24
+ 186               	.LM31:
+ 187 0100 8E98      		cbi 49-32,6
+ 188 0102 00C0      		rjmp .L18
+ 189               	.L17:
+ 190               	.LM32:
+ 191 0104 2224      		clr r2
+ 192               	.LM33:
+ 193 0106 8091 0000 		lds r24,ch1restcount
+ 194 010a 8823      		tst r24
+ 195 010c 01F0      		breq .L18
+ 196               	.LM34:
+ 197 010e 8898      		cbi 49-32,0
+ 198               	.LM35:
+ 199 0110 899A      		sbi 49-32,1
+ 200 0112 00C0      		rjmp .L18
+ 201               	.L16:
+ 202               	.LM36:
+ 203 0114 8999      		sbic 49-32,1
+ 204 0116 00C0      		rjmp .L18
+ 205 0118 8E9B      		sbis 49-32,6
+ 206 011a 00C0      		rjmp .L18
+ 207               	.LM37:
+ 208 011c 8091 0000 		lds r24,ch1nextnote
+ 209 0120 282E      		mov r2,r24
+ 210               	.LM38:
+ 211 0122 8E98      		cbi 49-32,6
+ 212               	.LM39:
+ 213 0124 889A      		sbi 49-32,0
+ 214               	.L18:
+ 215               	.LM40:
+ 216 0126 8A9B      		sbis 49-32,2
+ 217 0128 00C0      		rjmp .L19
+ 218               	.LM41:
+ 219 012a 8F9B      		sbis 49-32,7
+ 220 012c 00C0      		rjmp .L20
+ 221               	.LM42:
+ 222 012e 8091 0000 		lds r24,ch2nextnote
+ 223 0132 382E      		mov r3,r24
+ 224               	.LM43:
+ 225 0134 8F98      		cbi 49-32,7
+ 226 0136 00C0      		rjmp .L21
+ 227               	.L20:
+ 228               	.LM44:
+ 229 0138 3324      		clr r3
+ 230               	.LM45:
+ 231 013a 8091 0000 		lds r24,ch2restcount
+ 232 013e 8823      		tst r24
+ 233 0140 01F0      		breq .L21
+ 234               	.LM46:
+ 235 0142 8A98      		cbi 49-32,2
+ 236               	.LM47:
+ 237 0144 8B9A      		sbi 49-32,3
+ 238 0146 00C0      		rjmp .L21
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 5
+
+
+ 239               	.L19:
+ 240               	.LM48:
+ 241 0148 8B99      		sbic 49-32,3
+ 242 014a 00C0      		rjmp .L21
+ 243 014c 8F9B      		sbis 49-32,7
+ 244 014e 00C0      		rjmp .L21
+ 245               	.LM49:
+ 246 0150 8091 0000 		lds r24,ch2nextnote
+ 247 0154 382E      		mov r3,r24
+ 248               	.LM50:
+ 249 0156 8F98      		cbi 49-32,7
+ 250               	.LM51:
+ 251 0158 8A9A      		sbi 49-32,2
+ 252               	.L21:
+ 253               	.LM52:
+ 254 015a 8899      		sbic 49-32,0
+ 255 015c 4424      		clr r4
+ 256               	.L22:
+ 257               	.LM53:
+ 258 015e 8A99      		sbic 49-32,2
+ 259 0160 5524      		clr r5
+ 260               	.L23:
+ 261               	.LM54:
+ 262 0162 8899      		sbic 49-32,0
+ 263 0164 00C0      		rjmp .L24
+ 264 0166 8A9B      		sbis 49-32,2
+ 265 0168 00C0      		rjmp .L25
+ 266               	.L24:
+ 267               	.LM55:
+ 268 016a 8091 0000 		lds r24,masterpinmask
+ 269 016e 0F2E      		mov __tmp_reg__,r31
+ 270 0170 FDEE      		ldi r31,lo8(-19)
+ 271 0172 8F2E      		mov r8,r31
+ 272 0174 F02D      		mov r31,__tmp_reg__
+ 273 0176 882A      		or r8,r24
+ 274 0178 00C0      		rjmp .L15
+ 275               	.L25:
+ 276               	.LM56:
+ 277 017a 8DEE      		ldi r24,lo8(-19)
+ 278 017c 882E      		mov r8,r24
+ 279               	.L15:
+ 280               	.LM57:
+ 281 017e 889B      		sbis 49-32,0
+ 282 0180 00C0      		rjmp .L26
+ 283               	/* #APP */
+ 284               	 ;  163 "firefly.c" 1
+ 285 0182 062C      		mov     __tmp_reg__, r6
+ 286 0184 27FA      		bst     r2, 7
+ 287 0186 420C      		add     r4, r2
+ 288 0188 03F0      		brvs    von_332
+ 289 018a 06F0      		brts    turnon_332
+ 290 018c 00C0      		rjmp    turnoff_332
+ 291               	von_332:
+ 292 018e 06F0      		brts    turnoff_332
+ 293               	turnon_332:
+ 294 0190 0094      		com     __tmp_reg__
+ 295 0192 8020      		and     r8, __tmp_reg__
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 6
+
+
+ 296 0194 00C0      	rjmp    done_332
+ 297               	turnoff_332:
+ 298 0196 8028      		or      r8, __tmp_reg__
+ 299               		done_332:
+ 300               		
+ 301               	 ;  0 "" 2
+ 302               	/* #NOAPP */
+ 303               	.L26:
+ 304               	.LM58:
+ 305 0198 8A9B      		sbis 49-32,2
+ 306 019a 00C0      		rjmp .L27
+ 307               	/* #APP */
+ 308               	 ;  164 "firefly.c" 1
+ 309 019c 072C      		mov     __tmp_reg__, r7
+ 310 019e 37FA      		bst     r3, 7
+ 311 01a0 530C      		add     r5, r3
+ 312 01a2 03F0      		brvs    von_341
+ 313 01a4 06F0      		brts    turnon_341
+ 314 01a6 00C0      		rjmp    turnoff_341
+ 315               	von_341:
+ 316 01a8 06F0      		brts    turnoff_341
+ 317               	turnon_341:
+ 318 01aa 0094      		com     __tmp_reg__
+ 319 01ac 8020      		and     r8, __tmp_reg__
+ 320 01ae 00C0      	rjmp    done_341
+ 321               	turnoff_341:
+ 322 01b0 8028      		or      r8, __tmp_reg__
+ 323               		done_341:
+ 324               		
+ 325               	 ;  0 "" 2
+ 326               	/* #NOAPP */
+ 327               	.L27:
+ 328               	/* epilogue start */
+ 329               	.LM59:
+ 330 01b2 8F91      		pop r24
+ 331 01b4 0F90      		pop r0
+ 332 01b6 0FBE      		out __SREG__,r0
+ 333 01b8 0F90      		pop r0
+ 334 01ba 1F90      		pop __zero_reg__
+ 335 01bc 1895      		reti
+ 336               	.LFE3:
+ 338               	.global	showbootup
+ 340               	showbootup:
+ 341               	.LFB5:
+ 342               	.LM60:
+ 343 01be 0F93      		push r16
+ 344 01c0 1F93      		push r17
+ 345 01c2 CF93      		push r28
+ 346 01c4 DF93      		push r29
+ 347               	/* prologue: function */
+ 348               	/* frame size = 0 */
+ 349               	.LM61:
+ 350 01c6 4091 0000 		lds r20,bootsongs
+ 351 01ca 5091 0000 		lds r21,(bootsongs)+1
+ 352               	.LVL2:
+ 353               	.LM62:
+ 354               	/* #APP */
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 7
+
+
+ 355               	 ;  223 "firefly.c" 1
+ 356 01ce F894      		cli
+ 357               	 ;  0 "" 2
+ 358               	.LM63:
+ 359               	/* #NOAPP */
+ 360 01d0 82E0      		ldi r24,lo8(2)
+ 361 01d2 8093 0000 		sts ch1restcount,r24
+ 362               	.LM64:
+ 363 01d6 899A      		sbi 49-32,1
+ 364               	.LM65:
+ 365               	/* #APP */
+ 366               	 ;  226 "firefly.c" 1
+ 367 01d8 7894      		sei
+ 368               	 ;  0 "" 2
+ 369               	.LM66:
+ 370               	/* #NOAPP */
+ 371 01da FA01      		movw r30,r20
+ 372 01dc 6081      		ld r22,Z
+ 373 01de 7181      		ldd r23,Z+1
+ 374 01e0 C0E0      		ldi r28,lo8(masterpins.1490)
+ 375 01e2 D0E0      		ldi r29,hi8(masterpins.1490)
+ 376               	.LVL3:
+ 377               	.L34:
+ 378               	.LM67:
+ 379 01e4 8881      		ld r24,Y
+ 380 01e6 8093 0000 		sts masterpinmask,r24
+ 381 01ea A0E0      		ldi r26,lo8(ch1pins.1491)
+ 382 01ec B0E0      		ldi r27,hi8(ch1pins.1491)
+ 383               	.LVL4:
+ 384               	.L33:
+ 385               	.LM68:
+ 386 01ee 9C91      		ld r25,X
+ 387 01f0 20E0      		ldi r18,lo8(0)
+ 388 01f2 30E0      		ldi r19,hi8(0)
+ 389 01f4 00C0      		rjmp .L29
+ 390               	.L32:
+ 391               	.LBB17:
+ 392               	.LM69:
+ 393 01f6 FA01      		movw r30,r20
+ 394 01f8 0281      		ldd r16,Z+2
+ 395 01fa 1381      		ldd r17,Z+3
+ 396 01fc 020F      		add r16,r18
+ 397 01fe 131F      		adc r17,r19
+ 398 0200 F801      		movw r30,r16
+ 399               	/* #APP */
+ 400               	 ;  235 "firefly.c" 1
+ 401 0202 8491      		lpm r24, Z
+ 402               		
+ 403               	 ;  0 "" 2
+ 404               	/* #NOAPP */
+ 405               	.LBE17:
+ 406 0204 8093 0000 		sts ch1nextnote,r24
+ 407               	.LM70:
+ 408 0208 8E9A      		sbi 49-32,6
+ 409 020a 00C0      		rjmp .L30
+ 410               	.L31:
+ 411               	.LM71:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 8
+
+
+ 412 020c 81B5      		in r24,65-32
+ 413               	.LVL5:
+ 414 020e 8064      		ori r24,lo8(64)
+ 415 0210 81BD      		out 65-32,r24
+ 416               	.LM72:
+ 417 0212 85B7      		in r24,85-32
+ 418 0214 877E      		andi r24,lo8(-25)
+ 419 0216 85BF      		out 85-32,r24
+ 420               	.LM73:
+ 421 0218 85B7      		in r24,85-32
+ 422 021a 8062      		ori r24,lo8(32)
+ 423 021c 85BF      		out 85-32,r24
+ 424               	/* #APP */
+ 425               	 ;  241 "firefly.c" 1
+ 426 021e 8895      		sleep
+ 427               		
+ 428               	 ;  0 "" 2
+ 429               	/* #NOAPP */
+ 430 0220 85B7      		in r24,85-32
+ 431 0222 8F7D      		andi r24,lo8(-33)
+ 432 0224 85BF      		out 85-32,r24
+ 433               	.LVL6:
+ 434               	.L30:
+ 435               	.LM74:
+ 436 0226 8E99      		sbic 49-32,6
+ 437 0228 00C0      		rjmp .L31
+ 438               	.LM75:
+ 439 022a 2E5F      		subi r18,lo8(-(2))
+ 440 022c 3F4F      		sbci r19,hi8(-(2))
+ 441               	.L29:
+ 442 022e 2617      		cp r18,r22
+ 443 0230 3707      		cpc r19,r23
+ 444 0232 00F0      		brlo .L32
+ 445 0234 1196      		adiw r26,1
+ 446               	.LM76:
+ 447 0236 F0E0      		ldi r31,hi8(ch1pins.1491+3)
+ 448 0238 A030      		cpi r26,lo8(ch1pins.1491+3)
+ 449 023a BF07      		cpc r27,r31
+ 450 023c 01F4      		brne .L33
+ 451 023e 2196      		adiw r28,1
+ 452               	.LM77:
+ 453 0240 80E0      		ldi r24,hi8(masterpins.1490+2)
+ 454 0242 C030      		cpi r28,lo8(masterpins.1490+2)
+ 455 0244 D807      		cpc r29,r24
+ 456               	.LVL7:
+ 457 0246 01F4      		brne .L34
+ 458 0248 692E      		mov r6,r25
+ 459               	.LM78:
+ 460               	/* #APP */
+ 461               	 ;  247 "firefly.c" 1
+ 462 024a F894      		cli
+ 463               	 ;  0 "" 2
+ 464               	.LM79:
+ 465               	/* #NOAPP */
+ 466 024c 81E0      		ldi r24,lo8(1)
+ 467 024e 8093 0000 		sts ch1restcount,r24
+ 468               	.LM80:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 9
+
+
+ 469               	/* #APP */
+ 470               	 ;  249 "firefly.c" 1
+ 471 0252 7894      		sei
+ 472               	 ;  0 "" 2
+ 473               	/* #NOAPP */
+ 474 0254 00C0      		rjmp .L35
+ 475               	.L36:
+ 476               	.LM81:
+ 477 0256 81B5      		in r24,65-32
+ 478 0258 8064      		ori r24,lo8(64)
+ 479 025a 81BD      		out 65-32,r24
+ 480               	.LM82:
+ 481 025c 85B7      		in r24,85-32
+ 482 025e 877E      		andi r24,lo8(-25)
+ 483 0260 85BF      		out 85-32,r24
+ 484               	.LM83:
+ 485 0262 85B7      		in r24,85-32
+ 486 0264 8062      		ori r24,lo8(32)
+ 487 0266 85BF      		out 85-32,r24
+ 488               	/* #APP */
+ 489               	 ;  254 "firefly.c" 1
+ 490 0268 8895      		sleep
+ 491               		
+ 492               	 ;  0 "" 2
+ 493               	/* #NOAPP */
+ 494 026a 85B7      		in r24,85-32
+ 495 026c 8F7D      		andi r24,lo8(-33)
+ 496 026e 85BF      		out 85-32,r24
+ 497               	.L35:
+ 498               	.LM84:
+ 499 0270 8899      		sbic 49-32,0
+ 500 0272 00C0      		rjmp .L36
+ 501               	/* epilogue start */
+ 502               	.LM85:
+ 503 0274 DF91      		pop r29
+ 504 0276 CF91      		pop r28
+ 505 0278 1F91      		pop r17
+ 506 027a 0F91      		pop r16
+ 507 027c 0895      		ret
+ 508               	.LFE5:
+ 510               	.global	randbits
+ 512               	randbits:
+ 513               	.LFB10:
+ 514               	.LM86:
+ 515               	.LVL8:
+ 516               	/* prologue: function */
+ 517               	/* frame size = 0 */
+ 518 027e E82F      		mov r30,r24
+ 519               	.LM87:
+ 520 0280 8091 0000 		lds r24,lfsr.1600
+ 521 0284 9091 0000 		lds r25,(lfsr.1600)+1
+ 522               	.LVL9:
+ 523 0288 0097      		sbiw r24,0
+ 524 028a 01F4      		brne .L41
+ 525               	.LM88:
+ 526 028c 9DEE      		ldi r25,lo8(-19)
+ 527 028e 82E1      		ldi r24,lo8(18)
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 10
+
+
+ 528               	.L46:
+ 529 0290 98BB      		out 56-32,r25
+ 530 0292 88BB      		out 56-32,r24
+ 531 0294 00C0      		rjmp .L46
+ 532               	.L41:
+ 533 0296 9C01      		movw r18,r24
+ 534 0298 220F      		lsl r18
+ 535 029a 331F      		rol r19
+ 536               	.LM89:
+ 537 029c 97FF      		sbrs r25,7
+ 538 029e 00C0      		rjmp .L47
+ 539               	.L43:
+ 540               	.LM90:
+ 541 02a0 87E8      		ldi r24,lo8(7559)
+ 542 02a2 9DE1      		ldi r25,hi8(7559)
+ 543 02a4 2827      		eor r18,r24
+ 544 02a6 3927      		eor r19,r25
+ 545               	.L47:
+ 546 02a8 3093 0000 		sts (lfsr.1600)+1,r19
+ 547 02ac 2093 0000 		sts lfsr.1600,r18
+ 548               	.LBB18:
+ 549               	.LM91:
+ 550 02b0 F0E0      		ldi r31,lo8(0)
+ 551               	.LVL10:
+ 552 02b2 E050      		subi r30,lo8(-(bitmasks))
+ 553 02b4 F040      		sbci r31,hi8(-(bitmasks))
+ 554               	.LVL11:
+ 555               	/* #APP */
+ 556               	 ;  343 "firefly.c" 1
+ 557 02b6 E491      		lpm r30, Z
+ 558               		
+ 559               	 ;  0 "" 2
+ 560               	.LVL12:
+ 561               	/* #NOAPP */
+ 562 02b8 8091 0000 		lds r24,lfsr.1600
+ 563               	.LBE18:
+ 564               	.LM92:
+ 565 02bc 8E23      		and r24,r30
+ 566               	/* epilogue start */
+ 567 02be 0895      		ret
+ 568               	.LFE10:
+ 570               	.global	pickmaster
+ 572               	pickmaster:
+ 573               	.LFB9:
+ 574               	.LM93:
+ 575               	/* prologue: function */
+ 576               	/* frame size = 0 */
+ 577               	.LM94:
+ 578 02c0 83E0      		ldi r24,lo8(3)
+ 579 02c2 00D0      		rcall randbits
+ 580 02c4 9091 0000 		lds r25,ticker.1587
+ 581 02c8 8823      		tst r24
+ 582 02ca 01F4      		brne .L49
+ 583               	.LM95:
+ 584 02cc 90FF      		sbrs r25,0
+ 585 02ce 00C0      		rjmp .L51
+ 586 02d0 00C0      		rjmp .L50
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 11
+
+
+ 587               	.L49:
+ 588               	.LM96:
+ 589 02d2 892F      		mov r24,r25
+ 590 02d4 8F5F      		subi r24,lo8(-(1))
+ 591 02d6 8093 0000 		sts ticker.1587,r24
+ 592 02da 80FD      		sbrc r24,0
+ 593 02dc 00C0      		rjmp .L50
+ 594               	.L51:
+ 595 02de 82E0      		ldi r24,lo8(2)
+ 596 02e0 0895      		ret
+ 597               	.L50:
+ 598 02e2 80E1      		ldi r24,lo8(16)
+ 599               	.LM97:
+ 600 02e4 0895      		ret
+ 601               	.LFE9:
+ 603               	.global	pickapin
+ 605               	pickapin:
+ 606               	.LFB8:
+ 607               	.LM98:
+ 608               	.LVL13:
+ 609 02e6 1F93      		push r17
+ 610               	/* prologue: function */
+ 611               	/* frame size = 0 */
+ 612 02e8 182F      		mov r17,r24
+ 613               	.LM99:
+ 614 02ea 88E0      		ldi r24,lo8(8)
+ 615               	.LVL14:
+ 616 02ec 00D0      		rcall randbits
+ 617               	.LM100:
+ 618 02ee 90E0      		ldi r25,lo8(0)
+ 619               	.LM101:
+ 620 02f0 9C01      		movw r18,r24
+ 621 02f2 220F      		lsl r18
+ 622 02f4 331F      		rol r19
+ 623 02f6 280F      		add r18,r24
+ 624 02f8 391F      		adc r19,r25
+ 625 02fa 3130      		cpi r19,lo8(1)
+ 626 02fc 01F0      		breq .L57
+ 627 02fe 3130      		cpi r19,lo8(1)
+ 628 0300 00F0      		brlo .L56
+ 629 0302 3230      		cpi r19,lo8(2)
+ 630 0304 01F4      		brne .L55
+ 631 0306 00C0      		rjmp .L63
+ 632               	.L56:
+ 633               	.LM102:
+ 634 0308 1830      		cpi r17,lo8(8)
+ 635 030a 01F4      		brne .L55
+ 636 030c 00C0      		rjmp .L59
+ 637               	.L57:
+ 638               	.LM103:
+ 639 030e 1430      		cpi r17,lo8(4)
+ 640 0310 01F4      		brne .L59
+ 641 0312 00C0      		rjmp .L60
+ 642               	.L63:
+ 643               	.LM104:
+ 644 0314 1130      		cpi r17,lo8(1)
+ 645 0316 01F4      		brne .L60
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 12
+
+
+ 646               	.L55:
+ 647 0318 88E0      		ldi r24,lo8(8)
+ 648               	.LVL15:
+ 649 031a 00C0      		rjmp .L61
+ 650               	.LVL16:
+ 651               	.L59:
+ 652 031c 84E0      		ldi r24,lo8(4)
+ 653               	.LVL17:
+ 654 031e 00C0      		rjmp .L61
+ 655               	.LVL18:
+ 656               	.L60:
+ 657 0320 81E0      		ldi r24,lo8(1)
+ 658               	.LVL19:
+ 659               	.L61:
+ 660               	.LVL20:
+ 661               	/* epilogue start */
+ 662               	.LM105:
+ 663 0322 1F91      		pop r17
+ 664               	.LVL21:
+ 665 0324 0895      		ret
+ 666               	.LFE8:
+ 668               	.global	randscaleval
+ 670               	randscaleval:
+ 671               	.LFB7:
+ 672               	.LM106:
+ 673 0326 EF92      		push r14
+ 674 0328 FF92      		push r15
+ 675 032a 0F93      		push r16
+ 676 032c 1F93      		push r17
+ 677               	/* prologue: function */
+ 678               	/* frame size = 0 */
+ 679               	.LM107:
+ 680 032e 86E0      		ldi r24,lo8(6)
+ 681 0330 00D0      		rcall randbits
+ 682 0332 182F      		mov r17,r24
+ 683 0334 85E0      		ldi r24,lo8(5)
+ 684 0336 00D0      		rcall randbits
+ 685 0338 E82E      		mov r14,r24
+ 686 033a 84E0      		ldi r24,lo8(4)
+ 687 033c 00D0      		rcall randbits
+ 688 033e F82E      		mov r15,r24
+ 689 0340 83E0      		ldi r24,lo8(3)
+ 690 0342 00D0      		rcall randbits
+ 691 0344 082F      		mov r16,r24
+ 692 0346 82E0      		ldi r24,lo8(2)
+ 693 0348 00D0      		rcall randbits
+ 694 034a 1E0D      		add r17,r14
+ 695 034c 165C      		subi r17,lo8(-(58))
+ 696 034e 1F0D      		add r17,r15
+ 697 0350 100F      		add r17,r16
+ 698               	.LM108:
+ 699 0352 810F      		add r24,r17
+ 700               	/* epilogue start */
+ 701 0354 1F91      		pop r17
+ 702 0356 0F91      		pop r16
+ 703 0358 FF90      		pop r15
+ 704 035a EF90      		pop r14
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 13
+
+
+ 705 035c 0895      		ret
+ 706               	.LFE7:
+ 708               	.global	randwaitval
+ 710               	randwaitval:
+ 711               	.LFB6:
+ 712               	.LM109:
+ 713 035e CF92      		push r12
+ 714 0360 DF92      		push r13
+ 715 0362 EF92      		push r14
+ 716 0364 FF92      		push r15
+ 717 0366 0F93      		push r16
+ 718 0368 1F93      		push r17
+ 719               	/* prologue: function */
+ 720               	/* frame size = 0 */
+ 721               	.LM110:
+ 722 036a C090 0000 		lds r12,mood
+ 723 036e 84E0      		ldi r24,lo8(4)
+ 724 0370 00D0      		rcall randbits
+ 725 0372 182F      		mov r17,r24
+ 726 0374 84E0      		ldi r24,lo8(4)
+ 727 0376 00D0      		rcall randbits
+ 728 0378 D82E      		mov r13,r24
+ 729 037a 83E0      		ldi r24,lo8(3)
+ 730 037c 00D0      		rcall randbits
+ 731 037e E82E      		mov r14,r24
+ 732 0380 82E0      		ldi r24,lo8(2)
+ 733 0382 00D0      		rcall randbits
+ 734 0384 F82E      		mov r15,r24
+ 735 0386 82E0      		ldi r24,lo8(2)
+ 736 0388 00D0      		rcall randbits
+ 737 038a 082F      		mov r16,r24
+ 738 038c 83E0      		ldi r24,lo8(3)
+ 739 038e 00D0      		rcall randbits
+ 740 0390 1D0D      		add r17,r13
+ 741 0392 1C0D      		add r17,r12
+ 742 0394 1E0D      		add r17,r14
+ 743 0396 1F0D      		add r17,r15
+ 744 0398 100F      		add r17,r16
+ 745               	.LM111:
+ 746 039a 181B      		sub r17,r24
+ 747 039c 812F      		mov r24,r17
+ 748               	/* epilogue start */
+ 749 039e 1F91      		pop r17
+ 750 03a0 0F91      		pop r16
+ 751 03a2 FF90      		pop r15
+ 752 03a4 EF90      		pop r14
+ 753 03a6 DF90      		pop r13
+ 754 03a8 CF90      		pop r12
+ 755 03aa 0895      		ret
+ 756               	.LFE6:
+ 758               	.global	pickasong
+ 760               	pickasong:
+ 761               	.LFB11:
+ 762               	.LM112:
+ 763               	/* prologue: function */
+ 764               	/* frame size = 0 */
+ 765               	.LM113:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 14
+
+
+ 766 03ac 88E0      		ldi r24,lo8(8)
+ 767 03ae 00D0      		rcall randbits
+ 768 03b0 E82F      		mov r30,r24
+ 769 03b2 F0E0      		ldi r31,lo8(0)
+ 770 03b4 74E0      		ldi r23,4
+ 771 03b6 F695      	1:	lsr r31
+ 772 03b8 E795      		ror r30
+ 773 03ba 7A95      		dec r23
+ 774 03bc 01F4      		brne 1b
+ 775 03be EE0F      		lsl r30
+ 776 03c0 FF1F      		rol r31
+ 777 03c2 E050      		subi r30,lo8(-(songs))
+ 778 03c4 F040      		sbci r31,hi8(-(songs))
+ 779               	.LM114:
+ 780 03c6 8081      		ld r24,Z
+ 781 03c8 9181      		ldd r25,Z+1
+ 782               	/* epilogue start */
+ 783 03ca 0895      		ret
+ 784               	.LFE11:
+ 786               	.global	lighted_fireflies
+ 788               	lighted_fireflies:
+ 789               	.LFB15:
+ 790               	.LM115:
+ 791 03cc EF92      		push r14
+ 792 03ce FF92      		push r15
+ 793 03d0 0F93      		push r16
+ 794 03d2 1F93      		push r17
+ 795 03d4 CF93      		push r28
+ 796 03d6 DF93      		push r29
+ 797               	/* prologue: function */
+ 798               	/* frame size = 0 */
+ 799               	.LM116:
+ 800 03d8 1091 0000 		lds r17,temp.1691
+ 801 03dc C091 0000 		lds r28,ch1noteptr.1689
+ 802 03e0 D091 0000 		lds r29,(ch1noteptr.1689)+1
+ 803               	.LM117:
+ 804 03e4 E8E5      		ldi r30,lo8(600)
+ 805 03e6 EE2E      		mov r14,r30
+ 806 03e8 E2E0      		ldi r30,hi8(600)
+ 807 03ea FE2E      		mov r15,r30
+ 808 03ec 00C0      		rjmp .L85
+ 809               	.LVL22:
+ 810               	.L83:
+ 811               	.LM118:
+ 812 03ee 8899      		sbic 49-32,0
+ 813 03f0 00C0      		rjmp .L72
+ 814 03f2 8A9B      		sbis 49-32,2
+ 815 03f4 00C0      		rjmp .L73
+ 816               	.L72:
+ 817               	.LM119:
+ 818 03f6 889B      		sbis 49-32,0
+ 819 03f8 00C0      		rjmp .L74
+ 820 03fa 8E99      		sbic 49-32,6
+ 821 03fc 00C0      		rjmp .L74
+ 822               	.LM120:
+ 823 03fe E091 0000 		lds r30,ch1song.1687
+ 824 0402 F091 0000 		lds r31,(ch1song.1687)+1
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 15
+
+
+ 825               	.LVL23:
+ 826 0406 8081      		ld r24,Z
+ 827 0408 9181      		ldd r25,Z+1
+ 828 040a C817      		cp r28,r24
+ 829 040c D907      		cpc r29,r25
+ 830 040e 01F0      		breq .L74
+ 831               	.LBB19:
+ 832               	.LM121:
+ 833 0410 0280      		ldd __tmp_reg__,Z+2
+ 834 0412 F381      		ldd r31,Z+3
+ 835 0414 E02D      		mov r30,__tmp_reg__
+ 836 0416 EC0F      		add r30,r28
+ 837 0418 FD1F      		adc r31,r29
+ 838 041a 2196      		adiw r28,1
+ 839               	/* #APP */
+ 840               	 ;  459 "firefly.c" 1
+ 841 041c E491      		lpm r30, Z
+ 842               		
+ 843               	 ;  0 "" 2
+ 844               	.LVL24:
+ 845               	/* #NOAPP */
+ 846               	.LBE19:
+ 847               	.LM122:
+ 848 041e 6091 0000 		lds r22,ch1scale
+ 849 0422 8E2F      		mov r24,r30
+ 850 0424 90E0      		ldi r25,lo8(0)
+ 851 0426 70E0      		ldi r23,lo8(0)
+ 852 0428 00D0      		rcall __mulhi3
+ 853 042a 192F      		mov r17,r25
+ 854               	.LM123:
+ 855               	/* #APP */
+ 856               	 ;  462 "firefly.c" 1
+ 857 042c F894      		cli
+ 858               	 ;  0 "" 2
+ 859               	.LM124:
+ 860               	/* #NOAPP */
+ 861 042e 9093 0000 		sts ch1nextnote,r25
+ 862               	.LM125:
+ 863 0432 8E9A      		sbi 49-32,6
+ 864               	.LM126:
+ 865               	/* #APP */
+ 866               	 ;  465 "firefly.c" 1
+ 867 0434 7894      		sei
+ 868               	 ;  0 "" 2
+ 869               	/* #NOAPP */
+ 870 0436 00C0      		rjmp .L85
+ 871               	.LVL25:
+ 872               	.L74:
+ 873               	.LM127:
+ 874 0438 8A9B      		sbis 49-32,2
+ 875 043a 00C0      		rjmp .L75
+ 876 043c 8F99      		sbic 49-32,7
+ 877 043e 00C0      		rjmp .L75
+ 878               	.LM128:
+ 879 0440 2091 0000 		lds r18,ch2noteptr.1690
+ 880 0444 3091 0000 		lds r19,(ch2noteptr.1690)+1
+ 881 0448 E091 0000 		lds r30,ch2song.1688
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 16
+
+
+ 882 044c F091 0000 		lds r31,(ch2song.1688)+1
+ 883               	.LVL26:
+ 884 0450 8081      		ld r24,Z
+ 885 0452 9181      		ldd r25,Z+1
+ 886 0454 2817      		cp r18,r24
+ 887 0456 3907      		cpc r19,r25
+ 888 0458 01F0      		breq .L75
+ 889               	.LBB20:
+ 890               	.LM129:
+ 891 045a 0280      		ldd __tmp_reg__,Z+2
+ 892 045c F381      		ldd r31,Z+3
+ 893 045e E02D      		mov r30,__tmp_reg__
+ 894 0460 E20F      		add r30,r18
+ 895 0462 F31F      		adc r31,r19
+ 896 0464 2F5F      		subi r18,lo8(-(1))
+ 897 0466 3F4F      		sbci r19,hi8(-(1))
+ 898 0468 3093 0000 		sts (ch2noteptr.1690)+1,r19
+ 899 046c 2093 0000 		sts ch2noteptr.1690,r18
+ 900               	/* #APP */
+ 901               	 ;  473 "firefly.c" 1
+ 902 0470 E491      		lpm r30, Z
+ 903               		
+ 904               	 ;  0 "" 2
+ 905               	.LVL27:
+ 906               	/* #NOAPP */
+ 907               	.LBE20:
+ 908               	.LM130:
+ 909 0472 6091 0000 		lds r22,ch2scale
+ 910 0476 8E2F      		mov r24,r30
+ 911 0478 90E0      		ldi r25,lo8(0)
+ 912 047a 70E0      		ldi r23,lo8(0)
+ 913 047c 00D0      		rcall __mulhi3
+ 914 047e 192F      		mov r17,r25
+ 915               	.LM131:
+ 916               	/* #APP */
+ 917               	 ;  476 "firefly.c" 1
+ 918 0480 F894      		cli
+ 919               	 ;  0 "" 2
+ 920               	.LM132:
+ 921               	/* #NOAPP */
+ 922 0482 9093 0000 		sts ch2nextnote,r25
+ 923               	.LM133:
+ 924 0486 8F9A      		sbi 49-32,7
+ 925               	.LM134:
+ 926               	/* #APP */
+ 927               	 ;  479 "firefly.c" 1
+ 928 0488 7894      		sei
+ 929               	 ;  0 "" 2
+ 930               	/* #NOAPP */
+ 931 048a 00C0      		rjmp .L85
+ 932               	.LVL28:
+ 933               	.L75:
+ 934               	.LM135:
+ 935 048c 889B      		sbis 49-32,0
+ 936 048e 00C0      		rjmp .L76
+ 937 0490 8091 0000 		lds r24,ch1restcount
+ 938 0494 8823      		tst r24
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 17
+
+
+ 939 0496 01F4      		brne .L76
+ 940               	.LM136:
+ 941 0498 00D0      		rcall randwaitval
+ 942               	.LVL29:
+ 943 049a 182F      		mov r17,r24
+ 944               	.LM137:
+ 945               	/* #APP */
+ 946               	 ;  490 "firefly.c" 1
+ 947 049c F894      		cli
+ 948               	 ;  0 "" 2
+ 949               	.LM138:
+ 950               	/* #NOAPP */
+ 951 049e 8093 0000 		sts ch1restcount,r24
+ 952               	.LM139:
+ 953               	/* #APP */
+ 954               	 ;  492 "firefly.c" 1
+ 955 04a2 7894      		sei
+ 956               	 ;  0 "" 2
+ 957               	/* #NOAPP */
+ 958 04a4 00C0      		rjmp .L85
+ 959               	.LVL30:
+ 960               	.L76:
+ 961               	.LM140:
+ 962 04a6 8A9B      		sbis 49-32,2
+ 963 04a8 00C0      		rjmp .L73
+ 964 04aa 8091 0000 		lds r24,ch2restcount
+ 965 04ae 8823      		tst r24
+ 966 04b0 01F4      		brne .L73
+ 967               	.LM141:
+ 968 04b2 00D0      		rcall randwaitval
+ 969               	.LVL31:
+ 970 04b4 182F      		mov r17,r24
+ 971               	.LM142:
+ 972               	/* #APP */
+ 973               	 ;  498 "firefly.c" 1
+ 974 04b6 F894      		cli
+ 975               	 ;  0 "" 2
+ 976               	.LM143:
+ 977               	/* #NOAPP */
+ 978 04b8 8093 0000 		sts ch2restcount,r24
+ 979               	.LM144:
+ 980               	/* #APP */
+ 981               	 ;  500 "firefly.c" 1
+ 982 04bc 7894      		sei
+ 983               	 ;  0 "" 2
+ 984               	/* #NOAPP */
+ 985 04be 00C0      		rjmp .L85
+ 986               	.LVL32:
+ 987               	.L73:
+ 988               	.LM145:
+ 989 04c0 8899      		sbic 49-32,0
+ 990 04c2 00C0      		rjmp .L77
+ 991 04c4 8999      		sbic 49-32,1
+ 992 04c6 00C0      		rjmp .L77
+ 993 04c8 8E99      		sbic 49-32,6
+ 994 04ca 00C0      		rjmp .L77
+ 995               	.LM146:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 18
+
+
+ 996 04cc 00D0      		rcall pickasong
+ 997               	.LVL33:
+ 998 04ce 9093 0000 		sts (ch1song.1687)+1,r25
+ 999 04d2 8093 0000 		sts ch1song.1687,r24
+ 1000               	.LM147:
+ 1001 04d6 872D      		mov r24,r7
+ 1002 04d8 00D0      		rcall pickapin
+ 1003 04da 682E      		mov r6,r24
+ 1004               	.LM148:
+ 1005 04dc 00D0      		rcall randscaleval
+ 1006 04de 8093 0000 		sts ch1scale,r24
+ 1007               	.LBB21:
+ 1008               	.LM149:
+ 1009 04e2 E091 0000 		lds r30,ch1song.1687
+ 1010 04e6 F091 0000 		lds r31,(ch1song.1687)+1
+ 1011 04ea 0280      		ldd __tmp_reg__,Z+2
+ 1012 04ec F381      		ldd r31,Z+3
+ 1013 04ee E02D      		mov r30,__tmp_reg__
+ 1014               	/* #APP */
+ 1015               	 ;  517 "firefly.c" 1
+ 1016 04f0 E491      		lpm r30, Z
+ 1017               		
+ 1018               	 ;  0 "" 2
+ 1019               	.LVL34:
+ 1020               	/* #NOAPP */
+ 1021               	.LBE21:
+ 1022               	.LM150:
+ 1023 04f2 6091 0000 		lds r22,ch1scale
+ 1024 04f6 8E2F      		mov r24,r30
+ 1025 04f8 90E0      		ldi r25,lo8(0)
+ 1026 04fa 70E0      		ldi r23,lo8(0)
+ 1027 04fc 00D0      		rcall __mulhi3
+ 1028 04fe 192F      		mov r17,r25
+ 1029 0500 092F      		mov r16,r25
+ 1030               	.LM151:
+ 1031 0502 8B9B      		sbis 49-32,3
+ 1032 0504 00C0      		rjmp .L78
+ 1033               	.LM152:
+ 1034 0506 00D0      		rcall pickmaster
+ 1035               	.LVL35:
+ 1036 0508 8093 0000 		sts masterpinmask,r24
+ 1037               	.LVL36:
+ 1038               	.L78:
+ 1039               	.LM153:
+ 1040               	/* #APP */
+ 1041               	 ;  525 "firefly.c" 1
+ 1042 050c F894      		cli
+ 1043               	 ;  0 "" 2
+ 1044               	.LM154:
+ 1045               	/* #NOAPP */
+ 1046 050e 0093 0000 		sts ch1nextnote,r16
+ 1047               	.LM155:
+ 1048 0512 8E9A      		sbi 49-32,6
+ 1049               	.LM156:
+ 1050               	/* #APP */
+ 1051               	 ;  528 "firefly.c" 1
+ 1052 0514 7894      		sei
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 19
+
+
+ 1053               	 ;  0 "" 2
+ 1054               	/* #NOAPP */
+ 1055 0516 C1E0      		ldi r28,lo8(1)
+ 1056 0518 D0E0      		ldi r29,hi8(1)
+ 1057 051a 00C0      		rjmp .L85
+ 1058               	.LVL37:
+ 1059               	.L77:
+ 1060               	.LM157:
+ 1061 051c 8A99      		sbic 49-32,2
+ 1062 051e 00C0      		rjmp .L79
+ 1063 0520 8B99      		sbic 49-32,3
+ 1064 0522 00C0      		rjmp .L79
+ 1065 0524 8F99      		sbic 49-32,7
+ 1066 0526 00C0      		rjmp .L79
+ 1067               	.LM158:
+ 1068 0528 00D0      		rcall pickasong
+ 1069               	.LVL38:
+ 1070 052a 9093 0000 		sts (ch2song.1688)+1,r25
+ 1071 052e 8093 0000 		sts ch2song.1688,r24
+ 1072               	.LM159:
+ 1073 0532 1092 0000 		sts (ch2noteptr.1690)+1,__zero_reg__
+ 1074 0536 1092 0000 		sts ch2noteptr.1690,__zero_reg__
+ 1075               	.LM160:
+ 1076 053a 862D      		mov r24,r6
+ 1077 053c 00D0      		rcall pickapin
+ 1078 053e 782E      		mov r7,r24
+ 1079               	.LM161:
+ 1080 0540 00D0      		rcall randscaleval
+ 1081 0542 8093 0000 		sts ch2scale,r24
+ 1082               	.LBB22:
+ 1083               	.LM162:
+ 1084 0546 8091 0000 		lds r24,ch2noteptr.1690
+ 1085 054a 9091 0000 		lds r25,(ch2noteptr.1690)+1
+ 1086 054e E091 0000 		lds r30,ch2song.1688
+ 1087 0552 F091 0000 		lds r31,(ch2song.1688)+1
+ 1088 0556 0280      		ldd __tmp_reg__,Z+2
+ 1089 0558 F381      		ldd r31,Z+3
+ 1090 055a E02D      		mov r30,__tmp_reg__
+ 1091 055c E80F      		add r30,r24
+ 1092 055e F91F      		adc r31,r25
+ 1093 0560 0196      		adiw r24,1
+ 1094 0562 9093 0000 		sts (ch2noteptr.1690)+1,r25
+ 1095 0566 8093 0000 		sts ch2noteptr.1690,r24
+ 1096               	/* #APP */
+ 1097               	 ;  543 "firefly.c" 1
+ 1098 056a E491      		lpm r30, Z
+ 1099               		
+ 1100               	 ;  0 "" 2
+ 1101               	.LVL39:
+ 1102               	/* #NOAPP */
+ 1103               	.LBE22:
+ 1104               	.LM163:
+ 1105 056c 6091 0000 		lds r22,ch2scale
+ 1106 0570 8E2F      		mov r24,r30
+ 1107 0572 90E0      		ldi r25,lo8(0)
+ 1108 0574 70E0      		ldi r23,lo8(0)
+ 1109 0576 00D0      		rcall __mulhi3
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 20
+
+
+ 1110 0578 192F      		mov r17,r25
+ 1111 057a 092F      		mov r16,r25
+ 1112               	.LM164:
+ 1113 057c 899B      		sbis 49-32,1
+ 1114 057e 00C0      		rjmp .L80
+ 1115               	.LM165:
+ 1116 0580 00D0      		rcall pickmaster
+ 1117               	.LVL40:
+ 1118 0582 8093 0000 		sts masterpinmask,r24
+ 1119               	.LVL41:
+ 1120               	.L80:
+ 1121               	.LM166:
+ 1122               	/* #APP */
+ 1123               	 ;  551 "firefly.c" 1
+ 1124 0586 F894      		cli
+ 1125               	 ;  0 "" 2
+ 1126               	.LM167:
+ 1127               	/* #NOAPP */
+ 1128 0588 0093 0000 		sts ch2nextnote,r16
+ 1129               	.LM168:
+ 1130 058c 8F9A      		sbi 49-32,7
+ 1131               	.LM169:
+ 1132               	/* #APP */
+ 1133               	 ;  554 "firefly.c" 1
+ 1134 058e 7894      		sei
+ 1135               	 ;  0 "" 2
+ 1136               	/* #NOAPP */
+ 1137 0590 00C0      		rjmp .L85
+ 1138               	.LVL42:
+ 1139               	.L79:
+ 1140               	.LM170:
+ 1141 0592 8C9B      		sbis 49-32,4
+ 1142 0594 00C0      		rjmp .L81
+ 1143               	.LM171:
+ 1144 0596 85E0      		ldi r24,lo8(5)
+ 1145 0598 00D0      		rcall randbits
+ 1146               	.LVL43:
+ 1147 059a 885F      		subi r24,lo8(-(8))
+ 1148 059c 8093 0000 		sts mood,r24
+ 1149               	.LM172:
+ 1150 05a0 F092 0000 		sts (mood_count)+1,r15
+ 1151 05a4 E092 0000 		sts mood_count,r14
+ 1152               	.LM173:
+ 1153 05a8 8C98      		cbi 49-32,4
+ 1154 05aa 00C0      		rjmp .L85
+ 1155               	.LVL44:
+ 1156               	.L81:
+ 1157               	.LM174:
+ 1158 05ac 81B5      		in r24,65-32
+ 1159 05ae 8064      		ori r24,lo8(64)
+ 1160 05b0 81BD      		out 65-32,r24
+ 1161               	.LM175:
+ 1162 05b2 899B      		sbis 49-32,1
+ 1163 05b4 00C0      		rjmp .L82
+ 1164 05b6 8B9B      		sbis 49-32,3
+ 1165 05b8 00C0      		rjmp .L82
+ 1166               	.LM176:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 21
+
+
+ 1167 05ba 85B7      		in r24,85-32
+ 1168 05bc 877E      		andi r24,lo8(-25)
+ 1169 05be 8061      		ori r24,lo8(16)
+ 1170 05c0 85BF      		out 85-32,r24
+ 1171               	.LM177:
+ 1172 05c2 85B7      		in r24,85-32
+ 1173 05c4 8062      		ori r24,lo8(32)
+ 1174 05c6 85BF      		out 85-32,r24
+ 1175               	/* #APP */
+ 1176               	 ;  578 "firefly.c" 1
+ 1177 05c8 8895      		sleep
+ 1178               		
+ 1179               	 ;  0 "" 2
+ 1180               	/* #NOAPP */
+ 1181 05ca 00C0      		rjmp .L86
+ 1182               	.L82:
+ 1183               	.LM178:
+ 1184 05cc 85B7      		in r24,85-32
+ 1185 05ce 877E      		andi r24,lo8(-25)
+ 1186 05d0 85BF      		out 85-32,r24
+ 1187               	.LM179:
+ 1188 05d2 85B7      		in r24,85-32
+ 1189 05d4 8062      		ori r24,lo8(32)
+ 1190 05d6 85BF      		out 85-32,r24
+ 1191               	/* #APP */
+ 1192               	 ;  582 "firefly.c" 1
+ 1193 05d8 8895      		sleep
+ 1194               		
+ 1195               	 ;  0 "" 2
+ 1196               	/* #NOAPP */
+ 1197               	.L86:
+ 1198 05da 85B7      		in r24,85-32
+ 1199 05dc 8F7D      		andi r24,lo8(-33)
+ 1200 05de 85BF      		out 85-32,r24
+ 1201               	.L85:
+ 1202               	.LM180:
+ 1203 05e0 8091 0000 		lds r24,is_dark
+ 1204 05e4 8823      		tst r24
+ 1205 05e6 01F0      		breq .+2
+ 1206 05e8 00C0      		rjmp .L83
+ 1207 05ea 1093 0000 		sts temp.1691,r17
+ 1208 05ee D093 0000 		sts (ch1noteptr.1689)+1,r29
+ 1209 05f2 C093 0000 		sts ch1noteptr.1689,r28
+ 1210               	/* epilogue start */
+ 1211               	.LM181:
+ 1212 05f6 DF91      		pop r29
+ 1213 05f8 CF91      		pop r28
+ 1214 05fa 1F91      		pop r17
+ 1215 05fc 0F91      		pop r16
+ 1216 05fe FF90      		pop r15
+ 1217 0600 EF90      		pop r14
+ 1218 0602 0895      		ret
+ 1219               	.LFE15:
+ 1221               	.global	main
+ 1223               	main:
+ 1224               	.LFB16:
+ 1225               	.LM182:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 22
+
+
+ 1226 0604 0F93      		push r16
+ 1227 0606 1F93      		push r17
+ 1228               	/* prologue: function */
+ 1229               	/* frame size = 0 */
+ 1230               	.LBB23:
+ 1231               	.LBB24:
+ 1232               	.LM183:
+ 1233 0608 2DE0      		ldi r18,lo8(13)
+ 1234 060a 88E1      		ldi r24,lo8(24)
+ 1235 060c 90E0      		ldi r25,hi8(24)
+ 1236               	/* #APP */
+ 1237               	 ;  175 "firefly.c" 1
+ 1238 060e 0FB6      		in __tmp_reg__,__SREG__
+ 1239 0610 F894      		cli
+ 1240 0612 A895      		wdr
+ 1241 0614 81BD      		out 33,r24
+ 1242 0616 0FBE      		out __SREG__,__tmp_reg__
+ 1243 0618 21BD      		out 33,r18
+ 1244               	 ;  0 "" 2
+ 1245               	.LM184:
+ 1246               	/* #NOAPP */
+ 1247 061a 81B5      		in r24,65-32
+ 1248 061c 8064      		ori r24,lo8(64)
+ 1249 061e 81BD      		out 65-32,r24
+ 1250               	.LM185:
+ 1251 0620 8FEF      		ldi r24,lo8(-1)
+ 1252 0622 87BB      		out 55-32,r24
+ 1253               	.LM186:
+ 1254 0624 8DEE      		ldi r24,lo8(-19)
+ 1255 0626 88BB      		out 56-32,r24
+ 1256               	.LM187:
+ 1257 0628 80B5      		in r24,64-32
+ 1258 062a 8860      		ori r24,lo8(8)
+ 1259 062c 80BD      		out 64-32,r24
+ 1260               	.LM188:
+ 1261 062e 80B5      		in r24,64-32
+ 1262 0630 8260      		ori r24,lo8(2)
+ 1263 0632 80BD      		out 64-32,r24
+ 1264               	.LM189:
+ 1265 0634 80B5      		in r24,64-32
+ 1266 0636 8160      		ori r24,lo8(1)
+ 1267 0638 80BD      		out 64-32,r24
+ 1268               	.LM190:
+ 1269 063a 82E0      		ldi r24,lo8(2)
+ 1270 063c 8ABD      		out 74-32,r24
+ 1271               	.LM191:
+ 1272 063e 83BF      		out 83-32,r24
+ 1273               	.LM192:
+ 1274 0640 89E1      		ldi r24,lo8(25)
+ 1275 0642 89BD      		out 73-32,r24
+ 1276               	.LBB25:
+ 1277               	.LM193:
+ 1278 0644 82E0      		ldi r24,lo8(2)
+ 1279 0646 90E0      		ldi r25,hi8(2)
+ 1280 0648 20E8      		ldi r18,lo8(-128)
+ 1281               	/* #APP */
+ 1282               	 ;  204 "firefly.c" 1
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 23
+
+
+ 1283 064a 0FB6      		in __tmp_reg__,__SREG__
+ 1284 064c F894      		cli
+ 1285 064e 26BD      		out 38, r18
+ 1286 0650 86BD      		out 38, r24
+ 1287 0652 0FBE      		out __SREG__, __tmp_reg__
+ 1288               	 ;  0 "" 2
+ 1289               	/* #NOAPP */
+ 1290               	.LBE25:
+ 1291               	.LM194:
+ 1292 0654 80E1      		ldi r24,lo8(16)
+ 1293 0656 89BF      		out 89-32,r24
+ 1294               	.LM195:
+ 1295 0658 81B5      		in r24,65-32
+ 1296 065a 8064      		ori r24,lo8(64)
+ 1297 065c 81BD      		out 65-32,r24
+ 1298               	.LBE24:
+ 1299               	.LBE23:
+ 1300               	.LM196:
+ 1301 065e 8824      		clr r8
+ 1302 0660 7724      		clr r7
+ 1303 0662 6624      		clr r6
+ 1304 0664 5524      		clr r5
+ 1305 0666 4424      		clr r4
+ 1306 0668 3324      		clr r3
+ 1307 066a 2224      		clr r2
+ 1308               	.LM197:
+ 1309 066c 00D0      		rcall randwaitval
+ 1310 066e 8093 0000 		sts ch1restcount,r24
+ 1311               	.LM198:
+ 1312 0672 00D0      		rcall randwaitval
+ 1313 0674 8093 0000 		sts ch2restcount,r24
+ 1314               	.LM199:
+ 1315 0678 11BA      		out 49-32,__zero_reg__
+ 1316               	.LM200:
+ 1317 067a 1092 0000 		sts waiting_for_dark,__zero_reg__
+ 1318               	.LM201:
+ 1319 067e 81E0      		ldi r24,lo8(1)
+ 1320 0680 8093 0000 		sts is_dark,r24
+ 1321               	.LM202:
+ 1322 0684 8093 0000 		sts force_dark,r24
+ 1323               	.LM203:
+ 1324               	/* #APP */
+ 1325               	 ;  606 "firefly.c" 1
+ 1326 0688 7894      		sei
+ 1327               	 ;  0 "" 2
+ 1328               	.LM204:
+ 1329               	/* #NOAPP */
+ 1330 068a 00D0      		rcall showbootup
+ 1331               	.LM205:
+ 1332 068c 1092 0000 		sts force_dark,__zero_reg__
+ 1333               	.LBB26:
+ 1334               	.LBB27:
+ 1335               	.LM206:
+ 1336 0690 01E0      		ldi r16,lo8(1)
+ 1337               	.LM207:
+ 1338 0692 10E1      		ldi r17,lo8(16)
+ 1339               	.L90:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 24
+
+
+ 1340               	.LM208:
+ 1341 0694 0093 0000 		sts waiting_for_dark,r16
+ 1342               	.LM209:
+ 1343 0698 19BE      		out 89-32,__zero_reg__
+ 1344 069a 00C0      		rjmp .L88
+ 1345               	.L89:
+ 1346               	.LM210:
+ 1347 069c 81B5      		in r24,65-32
+ 1348 069e 8064      		ori r24,lo8(64)
+ 1349 06a0 81BD      		out 65-32,r24
+ 1350               	.LM211:
+ 1351 06a2 85B7      		in r24,85-32
+ 1352 06a4 877E      		andi r24,lo8(-25)
+ 1353 06a6 8061      		ori r24,lo8(16)
+ 1354 06a8 85BF      		out 85-32,r24
+ 1355               	.LM212:
+ 1356 06aa 85B7      		in r24,85-32
+ 1357 06ac 8062      		ori r24,lo8(32)
+ 1358 06ae 85BF      		out 85-32,r24
+ 1359               	/* #APP */
+ 1360               	 ;  427 "firefly.c" 1
+ 1361 06b0 8895      		sleep
+ 1362               		
+ 1363               	 ;  0 "" 2
+ 1364               	/* #NOAPP */
+ 1365 06b2 85B7      		in r24,85-32
+ 1366 06b4 8F7D      		andi r24,lo8(-33)
+ 1367 06b6 85BF      		out 85-32,r24
+ 1368               	.L88:
+ 1369               	.LM213:
+ 1370 06b8 8091 0000 		lds r24,is_dark
+ 1371 06bc 8823      		tst r24
+ 1372 06be 01F0      		breq .L89
+ 1373               	.LM214:
+ 1374 06c0 19BF      		out 89-32,r17
+ 1375               	.LM215:
+ 1376 06c2 1092 0000 		sts waiting_for_dark,__zero_reg__
+ 1377               	.LBE27:
+ 1378               	.LBE26:
+ 1379               	.LM216:
+ 1380 06c6 8824      		clr r8
+ 1381 06c8 7724      		clr r7
+ 1382 06ca 6624      		clr r6
+ 1383 06cc 5524      		clr r5
+ 1384 06ce 4424      		clr r4
+ 1385 06d0 3324      		clr r3
+ 1386 06d2 2224      		clr r2
+ 1387               	.LM217:
+ 1388 06d4 11BA      		out 49-32,__zero_reg__
+ 1389               	.LM218:
+ 1390 06d6 899A      		sbi 49-32,1
+ 1391               	.LM219:
+ 1392 06d8 8B9A      		sbi 49-32,3
+ 1393               	.LM220:
+ 1394 06da 00D0      		rcall lighted_fireflies
+ 1395 06dc 00C0      		rjmp .L90
+ 1396               	.LFE16:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 25
+
+
+ 1398               	.global	bootsongnotes
+ 1399               		.section	.progmem.data,"a",@progbits
+ 1402               	bootsongnotes:
+ 1403 0000 00        		.byte	0
+ 1404 0001 04        		.byte	4
+ 1405 0002 09        		.byte	9
+ 1406 0003 10        		.byte	16
+ 1407 0004 18        		.byte	24
+ 1408 0005 21        		.byte	33
+ 1409 0006 29        		.byte	41
+ 1410 0007 2F        		.byte	47
+ 1411 0008 32        		.byte	50
+ 1412 0009 31        		.byte	49
+ 1413 000a 2C        		.byte	44
+ 1414 000b 23        		.byte	35
+ 1415 000c 1A        		.byte	26
+ 1416 000d 11        		.byte	17
+ 1417 000e 0A        		.byte	10
+ 1418 000f 05        		.byte	5
+ 1419 0010 01        		.byte	1
+ 1420 0011 00        		.byte	0
+ 1421 0012 00        		.byte	0
+ 1422               	.global	bootsong
+ 1423               		.data
+ 1426               	bootsong:
+ 1427 0000 1300      		.word	19
+ 1428 0002 0000      		.word	bootsongnotes
+ 1429               	.global	song2anotes
+ 1430               		.section	.progmem.data
+ 1433               	song2anotes:
+ 1434 0013 02        		.byte	2
+ 1435 0014 1D        		.byte	29
+ 1436 0015 51        		.byte	81
+ 1437 0016 7B        		.byte	123
+ 1438 0017 82        		.byte	-126
+ 1439 0018 68        		.byte	104
+ 1440 0019 3F        		.byte	63
+ 1441 001a 18        		.byte	24
+ 1442 001b 02        		.byte	2
+ 1443 001c 01        		.byte	1
+ 1444 001d 01        		.byte	1
+ 1445 001e 01        		.byte	1
+ 1446 001f 01        		.byte	1
+ 1447 0020 01        		.byte	1
+ 1448 0021 01        		.byte	1
+ 1449 0022 04        		.byte	4
+ 1450 0023 0F        		.byte	15
+ 1451 0024 1A        		.byte	26
+ 1452 0025 24        		.byte	36
+ 1453 0026 2E        		.byte	46
+ 1454 0027 37        		.byte	55
+ 1455 0028 42        		.byte	66
+ 1456 0029 4F        		.byte	79
+ 1457 002a 5B        		.byte	91
+ 1458 002b 66        		.byte	102
+ 1459 002c 6D        		.byte	109
+ 1460 002d 73        		.byte	115
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 26
+
+
+ 1461 002e 79        		.byte	121
+ 1462 002f 83        		.byte	-125
+ 1463 0030 8E        		.byte	-114
+ 1464 0031 98        		.byte	-104
+ 1465 0032 9B        		.byte	-101
+ 1466 0033 97        		.byte	-105
+ 1467 0034 8D        		.byte	-115
+ 1468 0035 85        		.byte	-123
+ 1469 0036 83        		.byte	-125
+ 1470 0037 87        		.byte	-121
+ 1471 0038 90        		.byte	-112
+ 1472 0039 99        		.byte	-103
+ 1473 003a 9E        		.byte	-98
+ 1474 003b 9E        		.byte	-98
+ 1475 003c 9A        		.byte	-102
+ 1476 003d 97        		.byte	-105
+ 1477 003e 96        		.byte	-106
+ 1478 003f 95        		.byte	-107
+ 1479 0040 94        		.byte	-108
+ 1480 0041 90        		.byte	-112
+ 1481 0042 8B        		.byte	-117
+ 1482 0043 88        		.byte	-120
+ 1483 0044 8A        		.byte	-118
+ 1484 0045 91        		.byte	-111
+ 1485 0046 9B        		.byte	-101
+ 1486 0047 A1        		.byte	-95
+ 1487 0048 A0        		.byte	-96
+ 1488 0049 99        		.byte	-103
+ 1489 004a 90        		.byte	-112
+ 1490 004b 8A        		.byte	-118
+ 1491 004c 8B        		.byte	-117
+ 1492 004d 91        		.byte	-111
+ 1493 004e 98        		.byte	-104
+ 1494 004f 9C        		.byte	-100
+ 1495 0050 9A        		.byte	-102
+ 1496 0051 94        		.byte	-108
+ 1497 0052 8D        		.byte	-115
+ 1498 0053 8A        		.byte	-118
+ 1499 0054 8C        		.byte	-116
+ 1500 0055 91        		.byte	-111
+ 1501 0056 96        		.byte	-106
+ 1502 0057 99        		.byte	-103
+ 1503 0058 99        		.byte	-103
+ 1504 0059 98        		.byte	-104
+ 1505 005a 98        		.byte	-104
+ 1506 005b 9A        		.byte	-102
+ 1507 005c 9A        		.byte	-102
+ 1508 005d 96        		.byte	-106
+ 1509 005e 8E        		.byte	-114
+ 1510 005f 86        		.byte	-122
+ 1511 0060 81        		.byte	-127
+ 1512 0061 84        		.byte	-124
+ 1513 0062 8E        		.byte	-114
+ 1514 0063 9C        		.byte	-100
+ 1515 0064 A8        		.byte	-88
+ 1516 0065 AA        		.byte	-86
+ 1517 0066 A1        		.byte	-95
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 27
+
+
+ 1518 0067 92        		.byte	-110
+ 1519 0068 83        		.byte	-125
+ 1520 0069 79        		.byte	121
+ 1521 006a 75        		.byte	117
+ 1522 006b 74        		.byte	116
+ 1523 006c 74        		.byte	116
+ 1524 006d 73        		.byte	115
+ 1525 006e 71        		.byte	113
+ 1526 006f 6E        		.byte	110
+ 1527 0070 6D        		.byte	109
+ 1528 0071 6A        		.byte	106
+ 1529 0072 65        		.byte	101
+ 1530 0073 5C        		.byte	92
+ 1531 0074 50        		.byte	80
+ 1532 0075 43        		.byte	67
+ 1533 0076 3A        		.byte	58
+ 1534 0077 34        		.byte	52
+ 1535 0078 31        		.byte	49
+ 1536 0079 2E        		.byte	46
+ 1537 007a 2B        		.byte	43
+ 1538 007b 27        		.byte	39
+ 1539 007c 21        		.byte	33
+ 1540 007d 1B        		.byte	27
+ 1541 007e 16        		.byte	22
+ 1542 007f 12        		.byte	18
+ 1543 0080 0E        		.byte	14
+ 1544 0081 0B        		.byte	11
+ 1545 0082 07        		.byte	7
+ 1546 0083 05        		.byte	5
+ 1547 0084 03        		.byte	3
+ 1548 0085 01        		.byte	1
+ 1549 0086 01        		.byte	1
+ 1550 0087 00        		.byte	0
+ 1551 0088 01        		.byte	1
+ 1552 0089 00        		.byte	0
+ 1553               	.global	song2a
+ 1554               		.data
+ 1557               	song2a:
+ 1558 0004 7700      		.word	119
+ 1559 0006 0000      		.word	song2anotes
+ 1560               	.global	song2bnotes
+ 1561               		.section	.progmem.data
+ 1564               	song2bnotes:
+ 1565 008a 01        		.byte	1
+ 1566 008b 1F        		.byte	31
+ 1567 008c 59        		.byte	89
+ 1568 008d 7E        		.byte	126
+ 1569 008e 77        		.byte	119
+ 1570 008f 55        		.byte	85
+ 1571 0090 2A        		.byte	42
+ 1572 0091 06        		.byte	6
+ 1573 0092 01        		.byte	1
+ 1574 0093 01        		.byte	1
+ 1575 0094 01        		.byte	1
+ 1576 0095 01        		.byte	1
+ 1577 0096 01        		.byte	1
+ 1578 0097 01        		.byte	1
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 28
+
+
+ 1579 0098 08        		.byte	8
+ 1580 0099 16        		.byte	22
+ 1581 009a 25        		.byte	37
+ 1582 009b 33        		.byte	51
+ 1583 009c 40        		.byte	64
+ 1584 009d 48        		.byte	72
+ 1585 009e 50        		.byte	80
+ 1586 009f 5C        		.byte	92
+ 1587 00a0 6C        		.byte	108
+ 1588 00a1 7A        		.byte	122
+ 1589 00a2 7F        		.byte	127
+ 1590 00a3 7A        		.byte	122
+ 1591 00a4 75        		.byte	117
+ 1592 00a5 7C        		.byte	124
+ 1593 00a6 8F        		.byte	-113
+ 1594 00a7 A3        		.byte	-93
+ 1595 00a8 A7        		.byte	-89
+ 1596 00a9 9B        		.byte	-101
+ 1597 00aa 8B        		.byte	-117
+ 1598 00ab 87        		.byte	-121
+ 1599 00ac 8E        		.byte	-114
+ 1600 00ad 96        		.byte	-106
+ 1601 00ae 96        		.byte	-106
+ 1602 00af 8D        		.byte	-115
+ 1603 00b0 83        		.byte	-125
+ 1604 00b1 81        		.byte	-127
+ 1605 00b2 85        		.byte	-123
+ 1606 00b3 8B        		.byte	-117
+ 1607 00b4 8F        		.byte	-113
+ 1608 00b5 92        		.byte	-110
+ 1609 00b6 95        		.byte	-107
+ 1610 00b7 98        		.byte	-104
+ 1611 00b8 96        		.byte	-106
+ 1612 00b9 90        		.byte	-112
+ 1613 00ba 8A        		.byte	-118
+ 1614 00bb 8A        		.byte	-118
+ 1615 00bc 91        		.byte	-111
+ 1616 00bd 96        		.byte	-106
+ 1617 00be 93        		.byte	-109
+ 1618 00bf 89        		.byte	-119
+ 1619 00c0 84        		.byte	-124
+ 1620 00c1 89        		.byte	-119
+ 1621 00c2 99        		.byte	-103
+ 1622 00c3 A6        		.byte	-90
+ 1623 00c4 A7        		.byte	-89
+ 1624 00c5 9C        		.byte	-100
+ 1625 00c6 94        		.byte	-108
+ 1626 00c7 95        		.byte	-107
+ 1627 00c8 9C        		.byte	-100
+ 1628 00c9 A1        		.byte	-95
+ 1629 00ca 9C        		.byte	-100
+ 1630 00cb 93        		.byte	-109
+ 1631 00cc 8D        		.byte	-115
+ 1632 00cd 91        		.byte	-111
+ 1633 00ce 98        		.byte	-104
+ 1634 00cf 9D        		.byte	-99
+ 1635 00d0 9C        		.byte	-100
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 29
+
+
+ 1636 00d1 9A        		.byte	-102
+ 1637 00d2 9C        		.byte	-100
+ 1638 00d3 A1        		.byte	-95
+ 1639 00d4 A1        		.byte	-95
+ 1640 00d5 98        		.byte	-104
+ 1641 00d6 8C        		.byte	-116
+ 1642 00d7 85        		.byte	-123
+ 1643 00d8 83        		.byte	-125
+ 1644 00d9 82        		.byte	-126
+ 1645 00da 7C        		.byte	124
+ 1646 00db 72        		.byte	114
+ 1647 00dc 69        		.byte	105
+ 1648 00dd 66        		.byte	102
+ 1649 00de 67        		.byte	103
+ 1650 00df 65        		.byte	101
+ 1651 00e0 5D        		.byte	93
+ 1652 00e1 52        		.byte	82
+ 1653 00e2 4A        		.byte	74
+ 1654 00e3 44        		.byte	68
+ 1655 00e4 3F        		.byte	63
+ 1656 00e5 37        		.byte	55
+ 1657 00e6 2E        		.byte	46
+ 1658 00e7 26        		.byte	38
+ 1659 00e8 20        		.byte	32
+ 1660 00e9 1D        		.byte	29
+ 1661 00ea 19        		.byte	25
+ 1662 00eb 14        		.byte	20
+ 1663 00ec 0F        		.byte	15
+ 1664 00ed 0B        		.byte	11
+ 1665 00ee 08        		.byte	8
+ 1666 00ef 06        		.byte	6
+ 1667 00f0 04        		.byte	4
+ 1668 00f1 02        		.byte	2
+ 1669 00f2 01        		.byte	1
+ 1670 00f3 01        		.byte	1
+ 1671 00f4 00        		.byte	0
+ 1672 00f5 00        		.byte	0
+ 1673               	.global	song2b
+ 1674               		.data
+ 1677               	song2b:
+ 1678 0008 6C00      		.word	108
+ 1679 000a 0000      		.word	song2bnotes
+ 1680               	.global	song2cnotes
+ 1681               		.section	.progmem.data
+ 1684               	song2cnotes:
+ 1685 00f6 02        		.byte	2
+ 1686 00f7 19        		.byte	25
+ 1687 00f8 46        		.byte	70
+ 1688 00f9 75        		.byte	117
+ 1689 00fa 92        		.byte	-110
+ 1690 00fb 90        		.byte	-112
+ 1691 00fc 6F        		.byte	111
+ 1692 00fd 3D        		.byte	61
+ 1693 00fe 12        		.byte	18
+ 1694 00ff 01        		.byte	1
+ 1695 0100 01        		.byte	1
+ 1696 0101 01        		.byte	1
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 30
+
+
+ 1697 0102 01        		.byte	1
+ 1698 0103 01        		.byte	1
+ 1699 0104 01        		.byte	1
+ 1700 0105 01        		.byte	1
+ 1701 0106 01        		.byte	1
+ 1702 0107 08        		.byte	8
+ 1703 0108 12        		.byte	18
+ 1704 0109 1C        		.byte	28
+ 1705 010a 27        		.byte	39
+ 1706 010b 32        		.byte	50
+ 1707 010c 3C        		.byte	60
+ 1708 010d 45        		.byte	69
+ 1709 010e 4E        		.byte	78
+ 1710 010f 55        		.byte	85
+ 1711 0110 5C        		.byte	92
+ 1712 0111 63        		.byte	99
+ 1713 0112 69        		.byte	105
+ 1714 0113 6F        		.byte	111
+ 1715 0114 76        		.byte	118
+ 1716 0115 7E        		.byte	126
+ 1717 0116 86        		.byte	-122
+ 1718 0117 8E        		.byte	-114
+ 1719 0118 95        		.byte	-107
+ 1720 0119 9B        		.byte	-101
+ 1721 011a 9F        		.byte	-97
+ 1722 011b A1        		.byte	-95
+ 1723 011c A0        		.byte	-96
+ 1724 011d 9C        		.byte	-100
+ 1725 011e 98        		.byte	-104
+ 1726 011f 92        		.byte	-110
+ 1727 0120 8B        		.byte	-117
+ 1728 0121 86        		.byte	-122
+ 1729 0122 81        		.byte	-127
+ 1730 0123 7E        		.byte	126
+ 1731 0124 7D        		.byte	125
+ 1732 0125 7E        		.byte	126
+ 1733 0126 81        		.byte	-127
+ 1734 0127 86        		.byte	-122
+ 1735 0128 8C        		.byte	-116
+ 1736 0129 94        		.byte	-108
+ 1737 012a 9B        		.byte	-101
+ 1738 012b A2        		.byte	-94
+ 1739 012c A8        		.byte	-88
+ 1740 012d AB        		.byte	-85
+ 1741 012e AC        		.byte	-84
+ 1742 012f AB        		.byte	-85
+ 1743 0130 A8        		.byte	-88
+ 1744 0131 A3        		.byte	-93
+ 1745 0132 9E        		.byte	-98
+ 1746 0133 99        		.byte	-103
+ 1747 0134 95        		.byte	-107
+ 1748 0135 92        		.byte	-110
+ 1749 0136 90        		.byte	-112
+ 1750 0137 90        		.byte	-112
+ 1751 0138 92        		.byte	-110
+ 1752 0139 94        		.byte	-108
+ 1753 013a 97        		.byte	-105
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 31
+
+
+ 1754 013b 9A        		.byte	-102
+ 1755 013c 9D        		.byte	-99
+ 1756 013d 9E        		.byte	-98
+ 1757 013e 9E        		.byte	-98
+ 1758 013f 9D        		.byte	-99
+ 1759 0140 9A        		.byte	-102
+ 1760 0141 96        		.byte	-106
+ 1761 0142 91        		.byte	-111
+ 1762 0143 8D        		.byte	-115
+ 1763 0144 89        		.byte	-119
+ 1764 0145 86        		.byte	-122
+ 1765 0146 85        		.byte	-123
+ 1766 0147 84        		.byte	-124
+ 1767 0148 86        		.byte	-122
+ 1768 0149 88        		.byte	-120
+ 1769 014a 8B        		.byte	-117
+ 1770 014b 8F        		.byte	-113
+ 1771 014c 93        		.byte	-109
+ 1772 014d 95        		.byte	-107
+ 1773 014e 96        		.byte	-106
+ 1774 014f 96        		.byte	-106
+ 1775 0150 93        		.byte	-109
+ 1776 0151 8F        		.byte	-113
+ 1777 0152 8A        		.byte	-118
+ 1778 0153 85        		.byte	-123
+ 1779 0154 80        		.byte	-128
+ 1780 0155 7B        		.byte	123
+ 1781 0156 76        		.byte	118
+ 1782 0157 73        		.byte	115
+ 1783 0158 71        		.byte	113
+ 1784 0159 6F        		.byte	111
+ 1785 015a 6D        		.byte	109
+ 1786 015b 6C        		.byte	108
+ 1787 015c 69        		.byte	105
+ 1788 015d 66        		.byte	102
+ 1789 015e 62        		.byte	98
+ 1790 015f 5C        		.byte	92
+ 1791 0160 56        		.byte	86
+ 1792 0161 4E        		.byte	78
+ 1793 0162 46        		.byte	70
+ 1794 0163 3F        		.byte	63
+ 1795 0164 37        		.byte	55
+ 1796 0165 30        		.byte	48
+ 1797 0166 2A        		.byte	42
+ 1798 0167 25        		.byte	37
+ 1799 0168 21        		.byte	33
+ 1800 0169 1D        		.byte	29
+ 1801 016a 19        		.byte	25
+ 1802 016b 16        		.byte	22
+ 1803 016c 13        		.byte	19
+ 1804 016d 10        		.byte	16
+ 1805 016e 0D        		.byte	13
+ 1806 016f 0A        		.byte	10
+ 1807 0170 07        		.byte	7
+ 1808 0171 05        		.byte	5
+ 1809 0172 03        		.byte	3
+ 1810 0173 02        		.byte	2
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 32
+
+
+ 1811 0174 01        		.byte	1
+ 1812 0175 01        		.byte	1
+ 1813 0176 00        		.byte	0
+ 1814 0177 00        		.byte	0
+ 1815               	.global	song2c
+ 1816               		.data
+ 1819               	song2c:
+ 1820 000c 8200      		.word	130
+ 1821 000e 0000      		.word	song2cnotes
+ 1822               	.global	song2dnotes
+ 1823               		.section	.progmem.data
+ 1826               	song2dnotes:
+ 1827 0178 01        		.byte	1
+ 1828 0179 1B        		.byte	27
+ 1829 017a 48        		.byte	72
+ 1830 017b 6D        		.byte	109
+ 1831 017c 79        		.byte	121
+ 1832 017d 68        		.byte	104
+ 1833 017e 3D        		.byte	61
+ 1834 017f 11        		.byte	17
+ 1835 0180 01        		.byte	1
+ 1836 0181 01        		.byte	1
+ 1837 0182 01        		.byte	1
+ 1838 0183 01        		.byte	1
+ 1839 0184 01        		.byte	1
+ 1840 0185 01        		.byte	1
+ 1841 0186 01        		.byte	1
+ 1842 0187 0B        		.byte	11
+ 1843 0188 15        		.byte	21
+ 1844 0189 22        		.byte	34
+ 1845 018a 30        		.byte	48
+ 1846 018b 3C        		.byte	60
+ 1847 018c 46        		.byte	70
+ 1848 018d 4D        		.byte	77
+ 1849 018e 56        		.byte	86
+ 1850 018f 63        		.byte	99
+ 1851 0190 73        		.byte	115
+ 1852 0191 80        		.byte	-128
+ 1853 0192 87        		.byte	-121
+ 1854 0193 87        		.byte	-121
+ 1855 0194 86        		.byte	-122
+ 1856 0195 88        		.byte	-120
+ 1857 0196 8D        		.byte	-115
+ 1858 0197 90        		.byte	-112
+ 1859 0198 8F        		.byte	-113
+ 1860 0199 8B        		.byte	-117
+ 1861 019a 8A        		.byte	-118
+ 1862 019b 8D        		.byte	-115
+ 1863 019c 93        		.byte	-109
+ 1864 019d 94        		.byte	-108
+ 1865 019e 8E        		.byte	-114
+ 1866 019f 83        		.byte	-125
+ 1867 01a0 7B        		.byte	123
+ 1868 01a1 7E        		.byte	126
+ 1869 01a2 8A        		.byte	-118
+ 1870 01a3 99        		.byte	-103
+ 1871 01a4 A4        		.byte	-92
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 33
+
+
+ 1872 01a5 A6        		.byte	-90
+ 1873 01a6 A1        		.byte	-95
+ 1874 01a7 9C        		.byte	-100
+ 1875 01a8 9A        		.byte	-102
+ 1876 01a9 9A        		.byte	-102
+ 1877 01aa 99        		.byte	-103
+ 1878 01ab 97        		.byte	-105
+ 1879 01ac 96        		.byte	-106
+ 1880 01ad 9B        		.byte	-101
+ 1881 01ae A3        		.byte	-93
+ 1882 01af A9        		.byte	-87
+ 1883 01b0 A6        		.byte	-90
+ 1884 01b1 98        		.byte	-104
+ 1885 01b2 88        		.byte	-120
+ 1886 01b3 7E        		.byte	126
+ 1887 01b4 80        		.byte	-128
+ 1888 01b5 8B        		.byte	-117
+ 1889 01b6 97        		.byte	-105
+ 1890 01b7 9C        		.byte	-100
+ 1891 01b8 99        		.byte	-103
+ 1892 01b9 92        		.byte	-110
+ 1893 01ba 8C        		.byte	-116
+ 1894 01bb 88        		.byte	-120
+ 1895 01bc 83        		.byte	-125
+ 1896 01bd 7B        		.byte	123
+ 1897 01be 73        		.byte	115
+ 1898 01bf 6E        		.byte	110
+ 1899 01c0 6E        		.byte	110
+ 1900 01c1 70        		.byte	112
+ 1901 01c2 6E        		.byte	110
+ 1902 01c3 64        		.byte	100
+ 1903 01c4 56        		.byte	86
+ 1904 01c5 49        		.byte	73
+ 1905 01c6 41        		.byte	65
+ 1906 01c7 3E        		.byte	62
+ 1907 01c8 3C        		.byte	60
+ 1908 01c9 3A        		.byte	58
+ 1909 01ca 34        		.byte	52
+ 1910 01cb 2E        		.byte	46
+ 1911 01cc 28        		.byte	40
+ 1912 01cd 23        		.byte	35
+ 1913 01ce 1F        		.byte	31
+ 1914 01cf 19        		.byte	25
+ 1915 01d0 14        		.byte	20
+ 1916 01d1 0F        		.byte	15
+ 1917 01d2 0B        		.byte	11
+ 1918 01d3 08        		.byte	8
+ 1919 01d4 06        		.byte	6
+ 1920 01d5 04        		.byte	4
+ 1921 01d6 02        		.byte	2
+ 1922 01d7 01        		.byte	1
+ 1923 01d8 01        		.byte	1
+ 1924 01d9 00        		.byte	0
+ 1925 01da 00        		.byte	0
+ 1926               	.global	song2d
+ 1927               		.data
+ 1930               	song2d:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 34
+
+
+ 1931 0010 6300      		.word	99
+ 1932 0012 0000      		.word	song2dnotes
+ 1933               	.global	song2enotes
+ 1934               		.section	.progmem.data
+ 1937               	song2enotes:
+ 1938 01db 01        		.byte	1
+ 1939 01dc 1A        		.byte	26
+ 1940 01dd 49        		.byte	73
+ 1941 01de 74        		.byte	116
+ 1942 01df 83        		.byte	-125
+ 1943 01e0 73        		.byte	115
+ 1944 01e1 50        		.byte	80
+ 1945 01e2 27        		.byte	39
+ 1946 01e3 08        		.byte	8
+ 1947 01e4 01        		.byte	1
+ 1948 01e5 01        		.byte	1
+ 1949 01e6 01        		.byte	1
+ 1950 01e7 01        		.byte	1
+ 1951 01e8 01        		.byte	1
+ 1952 01e9 01        		.byte	1
+ 1953 01ea 01        		.byte	1
+ 1954 01eb 06        		.byte	6
+ 1955 01ec 0F        		.byte	15
+ 1956 01ed 1A        		.byte	26
+ 1957 01ee 24        		.byte	36
+ 1958 01ef 2F        		.byte	47
+ 1959 01f0 3A        		.byte	58
+ 1960 01f1 46        		.byte	70
+ 1961 01f2 52        		.byte	82
+ 1962 01f3 5B        		.byte	91
+ 1963 01f4 62        		.byte	98
+ 1964 01f5 66        		.byte	102
+ 1965 01f6 6A        		.byte	106
+ 1966 01f7 6F        		.byte	111
+ 1967 01f8 77        		.byte	119
+ 1968 01f9 83        		.byte	-125
+ 1969 01fa 90        		.byte	-112
+ 1970 01fb 9A        		.byte	-102
+ 1971 01fc 9D        		.byte	-99
+ 1972 01fd 99        		.byte	-103
+ 1973 01fe 90        		.byte	-112
+ 1974 01ff 89        		.byte	-119
+ 1975 0200 86        		.byte	-122
+ 1976 0201 89        		.byte	-119
+ 1977 0202 92        		.byte	-110
+ 1978 0203 9A        		.byte	-102
+ 1979 0204 9E        		.byte	-98
+ 1980 0205 9C        		.byte	-100
+ 1981 0206 95        		.byte	-107
+ 1982 0207 8D        		.byte	-115
+ 1983 0208 89        		.byte	-119
+ 1984 0209 8A        		.byte	-118
+ 1985 020a 8F        		.byte	-113
+ 1986 020b 97        		.byte	-105
+ 1987 020c 9D        		.byte	-99
+ 1988 020d 9E        		.byte	-98
+ 1989 020e 9B        		.byte	-101
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 35
+
+
+ 1990 020f 97        		.byte	-105
+ 1991 0210 94        		.byte	-108
+ 1992 0211 96        		.byte	-106
+ 1993 0212 9A        		.byte	-102
+ 1994 0213 9E        		.byte	-98
+ 1995 0214 A0        		.byte	-96
+ 1996 0215 9E        		.byte	-98
+ 1997 0216 99        		.byte	-103
+ 1998 0217 94        		.byte	-108
+ 1999 0218 90        		.byte	-112
+ 2000 0219 91        		.byte	-111
+ 2001 021a 93        		.byte	-109
+ 2002 021b 96        		.byte	-106
+ 2003 021c 96        		.byte	-106
+ 2004 021d 92        		.byte	-110
+ 2005 021e 8C        		.byte	-116
+ 2006 021f 85        		.byte	-123
+ 2007 0220 82        		.byte	-126
+ 2008 0221 83        		.byte	-125
+ 2009 0222 87        		.byte	-121
+ 2010 0223 8C        		.byte	-116
+ 2011 0224 8F        		.byte	-113
+ 2012 0225 90        		.byte	-112
+ 2013 0226 8E        		.byte	-114
+ 2014 0227 8D        		.byte	-115
+ 2015 0228 8D        		.byte	-115
+ 2016 0229 90        		.byte	-112
+ 2017 022a 95        		.byte	-107
+ 2018 022b 99        		.byte	-103
+ 2019 022c 9C        		.byte	-100
+ 2020 022d 9D        		.byte	-99
+ 2021 022e 9D        		.byte	-99
+ 2022 022f 9D        		.byte	-99
+ 2023 0230 A0        		.byte	-96
+ 2024 0231 A4        		.byte	-92
+ 2025 0232 A7        		.byte	-89
+ 2026 0233 A7        		.byte	-89
+ 2027 0234 A1        		.byte	-95
+ 2028 0235 99        		.byte	-103
+ 2029 0236 91        		.byte	-111
+ 2030 0237 8E        		.byte	-114
+ 2031 0238 8F        		.byte	-113
+ 2032 0239 95        		.byte	-107
+ 2033 023a 9A        		.byte	-102
+ 2034 023b 9B        		.byte	-101
+ 2035 023c 95        		.byte	-107
+ 2036 023d 89        		.byte	-119
+ 2037 023e 7C        		.byte	124
+ 2038 023f 73        		.byte	115
+ 2039 0240 70        		.byte	112
+ 2040 0241 74        		.byte	116
+ 2041 0242 7B        		.byte	123
+ 2042 0243 80        		.byte	-128
+ 2043 0244 80        		.byte	-128
+ 2044 0245 79        		.byte	121
+ 2045 0246 6E        		.byte	110
+ 2046 0247 63        		.byte	99
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 36
+
+
+ 2047 0248 5B        		.byte	91
+ 2048 0249 58        		.byte	88
+ 2049 024a 58        		.byte	88
+ 2050 024b 59        		.byte	89
+ 2051 024c 57        		.byte	87
+ 2052 024d 53        		.byte	83
+ 2053 024e 4B        		.byte	75
+ 2054 024f 42        		.byte	66
+ 2055 0250 39        		.byte	57
+ 2056 0251 32        		.byte	50
+ 2057 0252 2C        		.byte	44
+ 2058 0253 26        		.byte	38
+ 2059 0254 22        		.byte	34
+ 2060 0255 1D        		.byte	29
+ 2061 0256 19        		.byte	25
+ 2062 0257 14        		.byte	20
+ 2063 0258 11        		.byte	17
+ 2064 0259 0D        		.byte	13
+ 2065 025a 09        		.byte	9
+ 2066 025b 07        		.byte	7
+ 2067 025c 04        		.byte	4
+ 2068 025d 03        		.byte	3
+ 2069 025e 01        		.byte	1
+ 2070 025f 01        		.byte	1
+ 2071 0260 00        		.byte	0
+ 2072 0261 01        		.byte	1
+ 2073 0262 00        		.byte	0
+ 2074               	.global	song2e
+ 2075               		.data
+ 2078               	song2e:
+ 2079 0014 8800      		.word	136
+ 2080 0016 0000      		.word	song2enotes
+ 2081               	.global	song2fnotes
+ 2082               		.section	.progmem.data
+ 2085               	song2fnotes:
+ 2086 0263 02        		.byte	2
+ 2087 0264 24        		.byte	36
+ 2088 0265 5E        		.byte	94
+ 2089 0266 82        		.byte	-126
+ 2090 0267 79        		.byte	121
+ 2091 0268 4F        		.byte	79
+ 2092 0269 1B        		.byte	27
+ 2093 026a 01        		.byte	1
+ 2094 026b 01        		.byte	1
+ 2095 026c 01        		.byte	1
+ 2096 026d 01        		.byte	1
+ 2097 026e 01        		.byte	1
+ 2098 026f 01        		.byte	1
+ 2099 0270 05        		.byte	5
+ 2100 0271 10        		.byte	16
+ 2101 0272 1E        		.byte	30
+ 2102 0273 2D        		.byte	45
+ 2103 0274 3B        		.byte	59
+ 2104 0275 47        		.byte	71
+ 2105 0276 52        		.byte	82
+ 2106 0277 5E        		.byte	94
+ 2107 0278 6B        		.byte	107
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 37
+
+
+ 2108 0279 77        		.byte	119
+ 2109 027a 82        		.byte	-126
+ 2110 027b 89        		.byte	-119
+ 2111 027c 8E        		.byte	-114
+ 2112 027d 93        		.byte	-109
+ 2113 027e 97        		.byte	-105
+ 2114 027f 9A        		.byte	-102
+ 2115 0280 99        		.byte	-103
+ 2116 0281 95        		.byte	-107
+ 2117 0282 90        		.byte	-112
+ 2118 0283 8D        		.byte	-115
+ 2119 0284 8D        		.byte	-115
+ 2120 0285 8F        		.byte	-113
+ 2121 0286 8F        		.byte	-113
+ 2122 0287 8C        		.byte	-116
+ 2123 0288 86        		.byte	-122
+ 2124 0289 83        		.byte	-125
+ 2125 028a 87        		.byte	-121
+ 2126 028b 91        		.byte	-111
+ 2127 028c A0        		.byte	-96
+ 2128 028d AB        		.byte	-85
+ 2129 028e AC        		.byte	-84
+ 2130 028f A3        		.byte	-93
+ 2131 0290 96        		.byte	-106
+ 2132 0291 8D        		.byte	-115
+ 2133 0292 8C        		.byte	-116
+ 2134 0293 91        		.byte	-111
+ 2135 0294 97        		.byte	-105
+ 2136 0295 98        		.byte	-104
+ 2137 0296 93        		.byte	-109
+ 2138 0297 8A        		.byte	-118
+ 2139 0298 86        		.byte	-122
+ 2140 0299 88        		.byte	-120
+ 2141 029a 93        		.byte	-109
+ 2142 029b 9F        		.byte	-97
+ 2143 029c A5        		.byte	-91
+ 2144 029d A2        		.byte	-94
+ 2145 029e 98        		.byte	-104
+ 2146 029f 8C        		.byte	-116
+ 2147 02a0 84        		.byte	-124
+ 2148 02a1 81        		.byte	-127
+ 2149 02a2 83        		.byte	-125
+ 2150 02a3 84        		.byte	-124
+ 2151 02a4 83        		.byte	-125
+ 2152 02a5 7F        		.byte	127
+ 2153 02a6 7B        		.byte	123
+ 2154 02a7 77        		.byte	119
+ 2155 02a8 74        		.byte	116
+ 2156 02a9 70        		.byte	112
+ 2157 02aa 69        		.byte	105
+ 2158 02ab 60        		.byte	96
+ 2159 02ac 56        		.byte	86
+ 2160 02ad 4D        		.byte	77
+ 2161 02ae 45        		.byte	69
+ 2162 02af 3E        		.byte	62
+ 2163 02b0 36        		.byte	54
+ 2164 02b1 2D        		.byte	45
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 38
+
+
+ 2165 02b2 26        		.byte	38
+ 2166 02b3 1F        		.byte	31
+ 2167 02b4 1B        		.byte	27
+ 2168 02b5 17        		.byte	23
+ 2169 02b6 13        		.byte	19
+ 2170 02b7 0E        		.byte	14
+ 2171 02b8 0A        		.byte	10
+ 2172 02b9 06        		.byte	6
+ 2173 02ba 04        		.byte	4
+ 2174 02bb 02        		.byte	2
+ 2175 02bc 01        		.byte	1
+ 2176 02bd 01        		.byte	1
+ 2177 02be 00        		.byte	0
+ 2178 02bf 00        		.byte	0
+ 2179               	.global	song2f
+ 2180               		.data
+ 2183               	song2f:
+ 2184 0018 5D00      		.word	93
+ 2185 001a 0000      		.word	song2fnotes
+ 2186               	.global	song2gnotes
+ 2187               		.section	.progmem.data
+ 2190               	song2gnotes:
+ 2191 02c0 02        		.byte	2
+ 2192 02c1 2A        		.byte	42
+ 2193 02c2 63        		.byte	99
+ 2194 02c3 79        		.byte	121
+ 2195 02c4 60        		.byte	96
+ 2196 02c5 2A        		.byte	42
+ 2197 02c6 03        		.byte	3
+ 2198 02c7 01        		.byte	1
+ 2199 02c8 01        		.byte	1
+ 2200 02c9 01        		.byte	1
+ 2201 02ca 01        		.byte	1
+ 2202 02cb 01        		.byte	1
+ 2203 02cc 0C        		.byte	12
+ 2204 02cd 19        		.byte	25
+ 2205 02ce 29        		.byte	41
+ 2206 02cf 3C        		.byte	60
+ 2207 02d0 4D        		.byte	77
+ 2208 02d1 56        		.byte	86
+ 2209 02d2 5B        		.byte	91
+ 2210 02d3 64        		.byte	100
+ 2211 02d4 76        		.byte	118
+ 2212 02d5 88        		.byte	-120
+ 2213 02d6 90        		.byte	-112
+ 2214 02d7 8F        		.byte	-113
+ 2215 02d8 8D        		.byte	-115
+ 2216 02d9 92        		.byte	-110
+ 2217 02da 99        		.byte	-103
+ 2218 02db 9B        		.byte	-101
+ 2219 02dc 99        		.byte	-103
+ 2220 02dd 98        		.byte	-104
+ 2221 02de 9B        		.byte	-101
+ 2222 02df 9A        		.byte	-102
+ 2223 02e0 94        		.byte	-108
+ 2224 02e1 8D        		.byte	-115
+ 2225 02e2 8E        		.byte	-114
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 39
+
+
+ 2226 02e3 98        		.byte	-104
+ 2227 02e4 9F        		.byte	-97
+ 2228 02e5 9A        		.byte	-102
+ 2229 02e6 8E        		.byte	-114
+ 2230 02e7 88        		.byte	-120
+ 2231 02e8 8D        		.byte	-115
+ 2232 02e9 98        		.byte	-104
+ 2233 02ea 99        		.byte	-103
+ 2234 02eb 8F        		.byte	-113
+ 2235 02ec 84        		.byte	-124
+ 2236 02ed 7E        		.byte	126
+ 2237 02ee 7C        		.byte	124
+ 2238 02ef 78        		.byte	120
+ 2239 02f0 6F        		.byte	111
+ 2240 02f1 65        		.byte	101
+ 2241 02f2 5C        		.byte	92
+ 2242 02f3 53        		.byte	83
+ 2243 02f4 48        		.byte	72
+ 2244 02f5 3B        		.byte	59
+ 2245 02f6 31        		.byte	49
+ 2246 02f7 2B        		.byte	43
+ 2247 02f8 26        		.byte	38
+ 2248 02f9 1E        		.byte	30
+ 2249 02fa 15        		.byte	21
+ 2250 02fb 0F        		.byte	15
+ 2251 02fc 0B        		.byte	11
+ 2252 02fd 08        		.byte	8
+ 2253 02fe 05        		.byte	5
+ 2254 02ff 03        		.byte	3
+ 2255 0300 01        		.byte	1
+ 2256 0301 01        		.byte	1
+ 2257 0302 00        		.byte	0
+ 2258 0303 00        		.byte	0
+ 2259               	.global	song2g
+ 2260               		.data
+ 2263               	song2g:
+ 2264 001c 4400      		.word	68
+ 2265 001e 0000      		.word	song2gnotes
+ 2266               	.global	bootsongs
+ 2269               	bootsongs:
+ 2270 0020 0000      		.word	bootsong
+ 2271               	.global	songs
+ 2274               	songs:
+ 2275 0022 0000      		.word	song2a
+ 2276 0024 0000      		.word	song2b
+ 2277 0026 0000      		.word	song2b
+ 2278 0028 0000      		.word	song2c
+ 2279 002a 0000      		.word	song2c
+ 2280 002c 0000      		.word	song2c
+ 2281 002e 0000      		.word	song2d
+ 2282 0030 0000      		.word	song2d
+ 2283 0032 0000      		.word	song2e
+ 2284 0034 0000      		.word	song2e
+ 2285 0036 0000      		.word	song2e
+ 2286 0038 0000      		.word	song2f
+ 2287 003a 0000      		.word	song2f
+ 2288 003c 0000      		.word	song2g
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 40
+
+
+ 2289 003e 0000      		.word	song2g
+ 2290 0040 0000      		.word	song2g
+ 2291               	.global	bitmasks
+ 2292               		.section	.progmem.data
+ 2295               	bitmasks:
+ 2296 0304 00        		.byte	0
+ 2297 0305 01        		.byte	1
+ 2298 0306 03        		.byte	3
+ 2299 0307 07        		.byte	7
+ 2300 0308 0F        		.byte	15
+ 2301 0309 1F        		.byte	31
+ 2302 030a 3F        		.byte	63
+ 2303 030b 7F        		.byte	127
+ 2304 030c FF        		.byte	-1
+ 2305               	.global	about
+ 2308               	about:
+ 2309 030d 4A61 7220 		.ascii	"Jar of Fireflies\nDesign and Implementation by Xander Hudson"
+ 2309      6F66 2046 
+ 2309      6972 6566 
+ 2309      6C69 6573 
+ 2309      0A44 6573 
+ 2310 0348 2028 6A61 		.ascii	" (jar@synoptic.org)\nIdea and Inspiration by Kayobi Tierney\n"
+ 2310      7240 7379 
+ 2310      6E6F 7074 
+ 2310      6963 2E6F 
+ 2310      7267 290A 
+ 2311 0383 5370 6563 		.ascii	"Specia"
+ 2311      6961 
+ 2312 0389 6C20 7468 		.string	"l thanks to Katie Horn for getting me to think about electronics"
+ 2312      616E 6B73 
+ 2312      2074 6F20 
+ 2312      4B61 7469 
+ 2312      6520 486F 
+ 2313               	.global	version
+ 2316               	version:
+ 2317 03ca 2452 6576 		.string	"$Revision: 1.41 $ $Date: 2007/01/10 04:35:55 $"
+ 2317      6973 696F 
+ 2317      6E3A 2031 
+ 2317      2E34 3120 
+ 2317      2420 2444 
+ 2318               	.global	mood
+ 2319               		.data
+ 2322               	mood:
+ 2323 0042 02        		.byte	2
+ 2324               	.global	mood_count
+ 2327               	mood_count:
+ 2328 0043 1E00      		.word	30
+ 2329               		.lcomm temp.1691,1
+ 2330               		.lcomm ch2noteptr.1690,2
+ 2331               		.lcomm ch1noteptr.1689,2
+ 2332               		.lcomm ch2song.1688,2
+ 2333               		.lcomm ch1song.1687,2
+ 2336               	lfsr.1600:
+ 2337 0045 CE74      		.word	29902
+ 2338               		.lcomm ticker.1587,1
+ 2341               	ch1pins.1491:
+ 2342 0047 08        		.byte	8
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 41
+
+
+ 2343 0048 04        		.byte	4
+ 2344 0049 01        		.byte	1
+ 2347               	masterpins.1490:
+ 2348 004a 10        		.byte	16
+ 2349 004b 02        		.byte	2
+ 2350               		.lcomm x.1420,1
+ 2353               	debounce.1651:
+ 2354 004c 0A        		.byte	10
+ 2355               		.comm ch1restcount,1,1
+ 2356               		.comm ch2restcount,1,1
+ 2357               		.comm ch1nextnote,1,1
+ 2358               		.comm ch2nextnote,1,1
+ 2359               		.comm ch1scale,1,1
+ 2360               		.comm ch2scale,1,1
+ 2361               		.comm ch1nextscale,1,1
+ 2362               		.comm ch2nextscale,1,1
+ 2363               		.comm masterpinmask,1,1
+ 2364               		.comm waiting_for_dark,1,1
+ 2365               		.comm is_dark,1,1
+ 2366               		.comm force_dark,1,1
+ 2471               	.Letext0:
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 firefly.c
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:3      *ABS*:0000003f __SREG__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:4      *ABS*:0000003e __SP_H__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:5      *ABS*:0000003d __SP_L__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:6      *ABS*:00000000 __tmp_reg__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:7      *ABS*:00000001 __zero_reg__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:22     .data:00000000 mood_count
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:27     .data:00000002 mood
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:33     .progmem.data:00000000 version
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:38     .progmem.data:0000002f about
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:46     .progmem.data:000000ec bitmasks
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:60     .data:00000003 songs
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:791    .data:0000003d song2a
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:671    .data:00000039 song2b
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:529    .data:00000035 song2c
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:418    .data:00000031 song2d
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:270    .data:0000002d song2e
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:165    .data:00000029 song2f
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:85     .data:00000025 song2g
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:80     .data:00000023 bootsongs
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:922    .data:00000041 bootsong
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:92     .progmem.data:000000f5 song2gnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:172    .progmem.data:00000139 song2fnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:277    .progmem.data:00000196 song2enotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:425    .progmem.data:0000021e song2dnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:536    .progmem.data:00000281 song2cnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:678    .progmem.data:00000303 song2bnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:798    .progmem.data:0000036f song2anotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:929    .progmem.data:000003e6 bootsongnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:952    .text:00000000 __vector_12
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2      *ABS*:0000003f __SREG__
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:3      *ABS*:0000003e __SP_H__
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:4      *ABS*:0000003d __SP_L__
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:5      *ABS*:00000034 __CCP__
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:6      *ABS*:00000000 __tmp_reg__
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:7      *ABS*:00000001 __zero_reg__
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:18     .text:00000000 __vector_12
+                            *COM*:00000001 force_dark
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2353   .data:0000004c debounce.1651
+                            *COM*:00000001 is_dark
                             *COM*:00000001 ch1restcount
                             *COM*:00000001 ch2restcount
-                             .bss:00000000 x.7
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1014   .text:00000068 __vector_10
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2327   .data:00000043 mood_count
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:152    .text:000000ca __vector_10
+                            *COM*:00000001 waiting_for_dark
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2338   .bss:0000000a x.1420
                             *COM*:00000001 ch1nextnote
                             *COM*:00000001 ch2nextnote
                             *COM*:00000001 masterpinmask
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1146   .text:00000120 von_181
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1148   .text:00000122 turnon_181
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1152   .text:00000128 turnoff_181
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1154   .text:0000012a done_181
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1168   .text:0000013a von_187
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1170   .text:0000013c turnon_187
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1174   .text:00000142 turnoff_187
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1176   .text:00000144 done_187
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1200   .text:00000152 showbootup
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1408   .data:00000048 lfsr.5
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1413   .text:00000274 randbits
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1470   .text:000002bc randwaitval
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1508   .text:000002ee randscaleval
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1543   .text:00000318 pickapin
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1011   .bss:00000001 ticker.6
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1611   .text:00000368 pickmaster
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1652   .text:00000396 pickasong
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1608   .bss:00000002 ch1song.0
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1680   .bss:00000004 ch2song.1
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s 			page 40
-
-
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1681   .bss:00000006 ch1noteptr.2
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1682   .bss:00000008 ch2noteptr.3
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1683   .bss:0000000a temp.4
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:1687   .text:000003b6 lighted_fireflies
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:291    .text:0000018e von_332
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:293    .text:00000190 turnon_332
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:297    .text:00000196 turnoff_332
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:299    .text:00000198 done_332
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:315    .text:000001a8 von_341
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:317    .text:000001aa turnon_341
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:321    .text:000001b0 turnoff_341
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:323    .text:000001b2 done_341
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:340    .text:000001be showbootup
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2269   .data:00000020 bootsongs
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2347   .data:0000004a masterpins.1490
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2341   .data:00000047 ch1pins.1491
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:512    .text:0000027e randbits
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2336   .data:00000045 lfsr.1600
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2295   .progmem.data:00000304 bitmasks
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:572    .text:000002c0 pickmaster
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2333   .bss:00000009 ticker.1587
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:605    .text:000002e6 pickapin
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:670    .text:00000326 randscaleval
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:710    .text:0000035e randwaitval
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2322   .data:00000042 mood
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:760    .text:000003ac pickasong
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2274   .data:00000022 songs
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:788    .text:000003cc lighted_fireflies
+                             .bss:00000000 temp.1691
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2330   .bss:00000003 ch1noteptr.1689
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2332   .bss:00000007 ch1song.1687
                             *COM*:00000001 ch1scale
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2329   .bss:00000001 ch2noteptr.1690
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2331   .bss:00000005 ch2song.1688
                             *COM*:00000001 ch2scale
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccMZ4o1l.s:2085   .text:0000062a main
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1223   .text:00000604 main
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1402   .progmem.data:00000000 bootsongnotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1426   .data:00000000 bootsong
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1433   .progmem.data:00000013 song2anotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1557   .data:00000004 song2a
+GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 43
+
+
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1564   .progmem.data:0000008a song2bnotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1677   .data:00000008 song2b
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1684   .progmem.data:000000f6 song2cnotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1819   .data:0000000c song2c
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1826   .progmem.data:00000178 song2dnotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1930   .data:00000010 song2d
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1937   .progmem.data:000001db song2enotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2078   .data:00000014 song2e
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2085   .progmem.data:00000263 song2fnotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2183   .data:00000018 song2f
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2190   .progmem.data:000002c0 song2gnotes
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2263   .data:0000001c song2g
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2308   .progmem.data:0000030d about
+c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2316   .progmem.data:000003ca version
                             *COM*:00000001 ch1nextscale
                             *COM*:00000001 ch2nextscale
 
 UNDEFINED SYMBOLS
+__mulhi3
 __do_copy_data
 __do_clear_bss
-__mulhi3
-__stack

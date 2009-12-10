@@ -68,7 +68,9 @@ volatile uint8_t waiting_for_dark;	// true if in the "wait for dark" state.
 volatile uint8_t is_dark;	        // true if it still seems to be dark.
 volatile uint8_t force_dark;
 static uint8_t read_adc(uint8_t);
+#ifdef READ_TEMPERATURE
 static uint8_t read_temperature(void);
+#endif
 #else
 #   define is_dark          1
 #   define waiting_for_dark 0
@@ -373,10 +375,12 @@ static uint8_t read_adc(uint8_t muxreg)
     return retval;
 }
 
+#ifdef READ_TEMPERATURE
 static uint8_t read_temperature(void)
 {
     return read_adc(_BV(REFS1) | 0x0F); // 1.1V ref, no external bypass, select temp channel
 }
+#endif
 
 #define	DARK_DEBOUNCE	10
 #define DARK_MINIMUM    0xE0
@@ -397,7 +401,7 @@ static void still_dark(void)
 	PORTB = ~(_BV(PIN_B) | _BV(PIN_A)) ;	// turn OFF pullup on PIN_A, PIN_B low, all others high
     DDRB = 0xFF;    // make PIN_A an output again.
 
-    if (photocell > DARK_MINIMUM || force_dark)
+    if ((photocell > DARK_MINIMUM) || force_dark)
     {
         if (!debounce--)
         {
@@ -600,11 +604,12 @@ int main(void)
 #endif
 
     sei();
-
     showbootup();
+
 #ifdef USE_PHOTOCELL
     force_dark = 0;
 #endif
+
     for (;;) {
         wait_for_dark();
 
