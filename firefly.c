@@ -382,8 +382,7 @@ static uint8_t read_temperature(void)
 }
 #endif
 
-#define	DARK_DEBOUNCE	10
-#define DARK_MINIMUM    0xE0
+
 
 // return true if dark enough
 // CdS photocell between PIN_A and PIN_B

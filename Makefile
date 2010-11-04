@@ -65,14 +65,17 @@ OPTLEVEL=s
 # described in the avrdude info page.
 # 
 # AVRDUDE_PROGRAMMERID=stk500v2
-AVRDUDE_PROGRAMMERID=jtag2isp
+# AVRDUDE_PROGRAMMERID=jtag2isp
+AVRDUDE_PROGRAMMERID=dragon_isp
+# additional AVRDUDE opts (in this case 125KHz)
+AVRDUDE_OPTS=-i 8
 
 # port--serial or parallel port to which your 
 # hardware programmer is attached
 #
 # AVRDUDE_PORT=/dev/cu.pci-serial4a
-# AVRDUDE_PORT=usb
-AVRDUDE_PORT=com1:
+AVRDUDE_PORT=usb
+# AVRDUDE_PORT=com1:
 
 
 ####################################################
@@ -185,12 +188,13 @@ hex: $(HEXTRG)
 
 writeflash: hex
 	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID)   \
-	 -p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) -e        \
+	 -p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) $(AVRDUDE_OPTS) \
+	 -e \
 	 -U flash:w:$(HEXROMTRG)
 
 fuses:
 	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID) \
-	-p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) \
+	-p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) $(AVRDUDE_OPTS) \
 	-U hfuse:w:0xDF:m -U lfuse:w:0x62:m
 
 firefly: hex

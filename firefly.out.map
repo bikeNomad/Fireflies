@@ -1,12 +1,12 @@
 Archive member included because of file (symbol)
 
-c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_mulhi3.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_mulhi3.o)
                               firefly.o (__mulhi3)
-c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_exit.o)
-                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o (exit)
-c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_copy_data.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
+                              /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o (exit)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_copy_data.o)
                               firefly.o (__do_copy_data)
-c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_clear_bss.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_clear_bss.o)
                               firefly.o (__do_clear_bss)
 
 Allocating common symbols
@@ -38,12 +38,12 @@ signature        0x00840000         0x00000400         rw !x
 
 Linker script and memory map
 
-LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
-LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25\libm.a
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/libm.a
 LOAD firefly.o
-LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
-LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25\libc.a
-LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/libc.a
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
 
 .hash
  *(.hash)
@@ -137,7 +137,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
 
 .text           0x00000000      0xb56
  *(.vectors)
- .vectors       0x00000000       0x1e c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
+ .vectors       0x00000000       0x1e /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
                 0x00000000                __vectors
                 0x00000000                __vector_default
  *(.vectors)
@@ -175,20 +175,20 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000418        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
+ .init0         0x00000418        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
                 0x00000418                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000418        0xc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
+ .init2         0x00000418        0xc /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000424       0x16 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_copy_data.o)
+ .init4         0x00000424       0x16 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_copy_data.o)
                 0x00000424                __do_copy_data
- .init4         0x0000043a       0x10 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_clear_bss.o)
+ .init4         0x0000043a       0x10 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_clear_bss.o)
                 0x0000043a                __do_clear_bss
  *(.init4)
  *(.init5)
@@ -200,10 +200,10 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000044a        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
+ .init9         0x0000044a        0x4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
  *(.init9)
  *(.text)
- .text          0x0000044e        0x2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
+ .text          0x0000044e        0x2 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
                 0x0000044e                __vector_1
                 0x0000044e                __bad_interrupt
                 0x0000044e                __vector_6
@@ -229,20 +229,20 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
                 0x000007fc                pickasong
                 0x0000060e                showbootup
                 0x0000051a                __vector_10
- .text          0x00000b2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_mulhi3.o)
- .text          0x00000b2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_exit.o)
- .text          0x00000b2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_copy_data.o)
- .text          0x00000b2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_clear_bss.o)
+ .text          0x00000b2e        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_mulhi3.o)
+ .text          0x00000b2e        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
+ .text          0x00000b2e        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_copy_data.o)
+ .text          0x00000b2e        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_clear_bss.o)
                 0x00000b2e                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000b2e       0x24 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_mulhi3.o)
+ .text.libgcc   0x00000b2e       0x24 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_mulhi3.o)
                 0x00000b2e                __mulhi3
- .text.libgcc   0x00000b52        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_exit.o)
- .text.libgcc   0x00000b52        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000b52        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000b52        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc   0x00000b52        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000b52        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_clear_bss.o)
                 0x00000b52                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000b52        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_exit.o)
+ .fini9         0x00000b52        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
                 0x00000b52                exit
                 0x00000b52                _exit
  *(.fini9)
@@ -263,14 +263,14 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000b52        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_exit.o)
+ .fini0         0x00000b52        0x4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
  *(.fini0)
                 0x00000b56                _etext = .
 
 .data           0x00800060       0x4e load address 0x00000b56
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800060        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
+ .data          0x00800060        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
  .data          0x00800060       0x4d firefly.o
                 0x00800070                song2d
                 0x00800060                bootsong
@@ -284,10 +284,10 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
                 0x008000a2                mood
                 0x00800082                songs
                 0x0080006c                song2c
- .data          0x008000ad        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_mulhi3.o)
- .data          0x008000ad        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_exit.o)
- .data          0x008000ad        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_copy_data.o)
- .data          0x008000ad        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_clear_bss.o)
+ .data          0x008000ad        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_mulhi3.o)
+ .data          0x008000ad        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
+ .data          0x008000ad        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_copy_data.o)
+ .data          0x008000ad        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_clear_bss.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
@@ -300,12 +300,12 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
 .bss            0x008000ae       0x17
                 0x008000ae                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008000ae        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr25/crttn45.o
+ .bss           0x008000ae        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
  .bss           0x008000ae        0xb firefly.o
- .bss           0x008000b9        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_mulhi3.o)
- .bss           0x008000b9        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_exit.o)
- .bss           0x008000b9        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_copy_data.o)
- .bss           0x008000b9        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a(_clear_bss.o)
+ .bss           0x008000b9        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_mulhi3.o)
+ .bss           0x008000b9        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
+ .bss           0x008000b9        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_copy_data.o)
+ .bss           0x008000b9        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_clear_bss.o)
  *(.bss*)
  *(COMMON)
  COMMON         0x008000b9        0xc firefly.o
@@ -348,11 +348,13 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
 .signature
  *(.signature*)
 
-.stab
+.stab           0x00000000      0x6b4
  *(.stab)
+ .stab          0x00000000      0x6b4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
 
-.stabstr
+.stabstr        0x00000000       0x82
  *(.stabstr)
+ .stabstr       0x00000000       0x82 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
 
 .stab.excl
  *(.stab.excl)
@@ -401,18 +403,18 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr25\libgcc.a
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x275 firefly.o
 
-.debug_line     0x00000000      0x858
+.debug_line     0x00000000      0x893
  *(.debug_line)
- .debug_line    0x00000000      0x858 firefly.o
+ .debug_line    0x00000000      0x893 firefly.o
 
 .debug_frame    0x00000000       0xc0
  *(.debug_frame)
  .debug_frame   0x00000000       0xc0 firefly.o
 
-.debug_str      0x00000000      0x3bc
+.debug_str      0x00000000      0x3c4
  *(.debug_str)
- .debug_str     0x00000000      0x3bc firefly.o
-                                0x416 (size before relaxing)
+ .debug_str     0x00000000      0x3c4 firefly.o
+                                0x41e (size before relaxing)
 
 .debug_loc      0x00000000      0x23c
  *(.debug_loc)

@@ -1,4 +1,4 @@
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 1
 
 
    1               		.file	"firefly.c"
@@ -58,7 +58,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
   63               	.LM11:
   64 0030 80B5      		in r24,64-32
   65 0032 8160      		ori r24,lo8(1)
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 2
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 2
 
 
   66 0034 80BD      		out 64-32,r24
@@ -78,14 +78,14 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
   80 0048 01F0      		breq .L5
   81               	.L4:
   82               	.LM15:
-  83 004a 8091 0000 		lds r24,debounce.1651
+  83 004a 8091 0000 		lds r24,debounce.1682
   84 004e 8150      		subi r24,lo8(-(-1))
-  85 0050 8093 0000 		sts debounce.1651,r24
+  85 0050 8093 0000 		sts debounce.1682,r24
   86 0054 8F5F      		subi r24,lo8(-(1))
   87 0056 01F4      		brne .L6
   88               	.LM16:
   89 0058 8AE0      		ldi r24,lo8(10)
-  90 005a 8093 0000 		sts debounce.1651,r24
+  90 005a 8093 0000 		sts debounce.1682,r24
   91               	.LM17:
   92 005e 81E0      		ldi r24,lo8(1)
   93 0060 8093 0000 		sts is_dark,r24
@@ -93,7 +93,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
   95               	.L5:
   96               	.LM18:
   97 0066 8AE0      		ldi r24,lo8(10)
-  98 0068 8093 0000 		sts debounce.1651,r24
+  98 0068 8093 0000 		sts debounce.1682,r24
   99               	.LM19:
  100 006c 1092 0000 		sts is_dark,__zero_reg__
  101               	.L6:
@@ -118,7 +118,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  120 0092 8093 0000 		sts ch2restcount,r24
  121 0096 8091 0000 		lds r24,ch2restcount
  122 009a 8823      		tst r24
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 3
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 3
 
 
  123 009c 01F4      		brne .L8
@@ -167,9 +167,9 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  168               	.LM26:
  169 00e0 88BA      		out 56-32,r8
  170               	.LM27:
- 171 00e2 8091 0000 		lds r24,x.1420
+ 171 00e2 8091 0000 		lds r24,x.1435
  172 00e6 8150      		subi r24,lo8(-(-1))
- 173 00e8 8093 0000 		sts x.1420,r24
+ 173 00e8 8093 0000 		sts x.1435,r24
  174 00ec 8F5F      		subi r24,lo8(-(1))
  175 00ee 01F0      		breq .+2
  176 00f0 00C0      		rjmp .L15
@@ -178,7 +178,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  179 00f4 00C0      		rjmp .L16
  180               	.LM29:
  181 00f6 8E9B      		sbis 49-32,6
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 4
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 4
 
 
  182 00f8 00C0      		rjmp .L17
@@ -238,7 +238,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  236               	.LM47:
  237 0144 8B9A      		sbi 49-32,3
  238 0146 00C0      		rjmp .L21
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 5
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 5
 
 
  239               	.L19:
@@ -290,21 +290,21 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  285 0182 062C      		mov     __tmp_reg__, r6
  286 0184 27FA      		bst     r2, 7
  287 0186 420C      		add     r4, r2
- 288 0188 03F0      		brvs    von_332
- 289 018a 06F0      		brts    turnon_332
- 290 018c 00C0      		rjmp    turnoff_332
- 291               	von_332:
- 292 018e 06F0      		brts    turnoff_332
- 293               	turnon_332:
+ 288 0188 03F0      		brvs    von_322
+ 289 018a 06F0      		brts    turnon_322
+ 290 018c 00C0      		rjmp    turnoff_322
+ 291               	von_322:
+ 292 018e 06F0      		brts    turnoff_322
+ 293               	turnon_322:
  294 0190 0094      		com     __tmp_reg__
  295 0192 8020      		and     r8, __tmp_reg__
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 6
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 6
 
 
- 296 0194 00C0      	rjmp    done_332
- 297               	turnoff_332:
+ 296 0194 00C0      	rjmp    done_322
+ 297               	turnoff_322:
  298 0196 8028      		or      r8, __tmp_reg__
- 299               		done_332:
+ 299               		done_322:
  300               		
  301               	 ;  0 "" 2
  302               	/* #NOAPP */
@@ -317,18 +317,18 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  309 019c 072C      		mov     __tmp_reg__, r7
  310 019e 37FA      		bst     r3, 7
  311 01a0 530C      		add     r5, r3
- 312 01a2 03F0      		brvs    von_341
- 313 01a4 06F0      		brts    turnon_341
- 314 01a6 00C0      		rjmp    turnoff_341
- 315               	von_341:
- 316 01a8 06F0      		brts    turnoff_341
- 317               	turnon_341:
+ 312 01a2 03F0      		brvs    von_330
+ 313 01a4 06F0      		brts    turnon_330
+ 314 01a6 00C0      		rjmp    turnoff_330
+ 315               	von_330:
+ 316 01a8 06F0      		brts    turnoff_330
+ 317               	turnon_330:
  318 01aa 0094      		com     __tmp_reg__
  319 01ac 8020      		and     r8, __tmp_reg__
- 320 01ae 00C0      	rjmp    done_341
- 321               	turnoff_341:
+ 320 01ae 00C0      	rjmp    done_330
+ 321               	turnoff_330:
  322 01b0 8028      		or      r8, __tmp_reg__
- 323               		done_341:
+ 323               		done_330:
  324               		
  325               	 ;  0 "" 2
  326               	/* #NOAPP */
@@ -358,7 +358,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  352               	.LVL2:
  353               	.LM62:
  354               	/* #APP */
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 7
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 7
 
 
  355               	 ;  223 "firefly.c" 1
@@ -380,15 +380,15 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  371 01da FA01      		movw r30,r20
  372 01dc 6081      		ld r22,Z
  373 01de 7181      		ldd r23,Z+1
- 374 01e0 C0E0      		ldi r28,lo8(masterpins.1490)
- 375 01e2 D0E0      		ldi r29,hi8(masterpins.1490)
+ 374 01e0 C0E0      		ldi r28,lo8(masterpins.1519)
+ 375 01e2 D0E0      		ldi r29,hi8(masterpins.1519)
  376               	.LVL3:
  377               	.L34:
  378               	.LM67:
  379 01e4 8881      		ld r24,Y
  380 01e6 8093 0000 		sts masterpinmask,r24
- 381 01ea A0E0      		ldi r26,lo8(ch1pins.1491)
- 382 01ec B0E0      		ldi r27,hi8(ch1pins.1491)
+ 381 01ea A0E0      		ldi r26,lo8(ch1pins.1520)
+ 382 01ec B0E0      		ldi r27,hi8(ch1pins.1520)
  383               	.LVL4:
  384               	.L33:
  385               	.LM68:
@@ -418,7 +418,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  409 020a 00C0      		rjmp .L30
  410               	.L31:
  411               	.LM71:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 8
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 8
 
 
  412 020c 81B5      		in r24,65-32
@@ -456,14 +456,14 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  444 0232 00F0      		brlo .L32
  445 0234 1196      		adiw r26,1
  446               	.LM76:
- 447 0236 F0E0      		ldi r31,hi8(ch1pins.1491+3)
- 448 0238 A030      		cpi r26,lo8(ch1pins.1491+3)
+ 447 0236 F0E0      		ldi r31,hi8(ch1pins.1520+3)
+ 448 0238 A030      		cpi r26,lo8(ch1pins.1520+3)
  449 023a BF07      		cpc r27,r31
  450 023c 01F4      		brne .L33
  451 023e 2196      		adiw r28,1
  452               	.LM77:
- 453 0240 80E0      		ldi r24,hi8(masterpins.1490+2)
- 454 0242 C030      		cpi r28,lo8(masterpins.1490+2)
+ 453 0240 80E0      		ldi r24,hi8(masterpins.1519+2)
+ 454 0242 C030      		cpi r28,lo8(masterpins.1519+2)
  455 0244 D807      		cpc r29,r24
  456               	.LVL7:
  457 0246 01F4      		brne .L34
@@ -478,7 +478,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  466 024c 81E0      		ldi r24,lo8(1)
  467 024e 8093 0000 		sts ch1restcount,r24
  468               	.LM80:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 9
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 9
 
 
  469               	/* #APP */
@@ -530,15 +530,15 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  517               	/* frame size = 0 */
  518 027e E82F      		mov r30,r24
  519               	.LM87:
- 520 0280 8091 0000 		lds r24,lfsr.1600
- 521 0284 9091 0000 		lds r25,(lfsr.1600)+1
+ 520 0280 8091 0000 		lds r24,lfsr.1631
+ 521 0284 9091 0000 		lds r25,(lfsr.1631)+1
  522               	.LVL9:
  523 0288 0097      		sbiw r24,0
  524 028a 01F4      		brne .L41
  525               	.LM88:
  526 028c 9DEE      		ldi r25,lo8(-19)
  527 028e 82E1      		ldi r24,lo8(18)
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 10
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 10
 
 
  528               	.L46:
@@ -559,8 +559,8 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  543 02a4 2827      		eor r18,r24
  544 02a6 3927      		eor r19,r25
  545               	.L47:
- 546 02a8 3093 0000 		sts (lfsr.1600)+1,r19
- 547 02ac 2093 0000 		sts lfsr.1600,r18
+ 546 02a8 3093 0000 		sts (lfsr.1631)+1,r19
+ 547 02ac 2093 0000 		sts lfsr.1631,r18
  548               	.LBB18:
  549               	.LM91:
  550 02b0 F0E0      		ldi r31,lo8(0)
@@ -575,7 +575,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  559               	 ;  0 "" 2
  560               	.LVL12:
  561               	/* #NOAPP */
- 562 02b8 8091 0000 		lds r24,lfsr.1600
+ 562 02b8 8091 0000 		lds r24,lfsr.1631
  563               	.LBE18:
  564               	.LM92:
  565 02bc 8E23      		and r24,r30
@@ -591,21 +591,21 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  577               	.LM94:
  578 02c0 83E0      		ldi r24,lo8(3)
  579 02c2 00D0      		rcall randbits
- 580 02c4 9091 0000 		lds r25,ticker.1587
+ 580 02c4 9091 0000 		lds r25,ticker.1618
  581 02c8 8823      		tst r24
  582 02ca 01F4      		brne .L49
  583               	.LM95:
  584 02cc 90FF      		sbrs r25,0
  585 02ce 00C0      		rjmp .L51
  586 02d0 00C0      		rjmp .L50
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 11
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 11
 
 
  587               	.L49:
  588               	.LM96:
  589 02d2 892F      		mov r24,r25
  590 02d4 8F5F      		subi r24,lo8(-(1))
- 591 02d6 8093 0000 		sts ticker.1587,r24
+ 591 02d6 8093 0000 		sts ticker.1618,r24
  592 02da 80FD      		sbrc r24,0
  593 02dc 00C0      		rjmp .L50
  594               	.L51:
@@ -658,7 +658,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  643               	.LM104:
  644 0314 1130      		cpi r17,lo8(1)
  645 0316 01F4      		brne .L60
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 12
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 12
 
 
  646               	.L55:
@@ -718,7 +718,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  702 0356 0F91      		pop r16
  703 0358 FF90      		pop r15
  704 035a EF90      		pop r14
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 13
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 13
 
 
  705 035c 0895      		ret
@@ -778,7 +778,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  763               	/* prologue: function */
  764               	/* frame size = 0 */
  765               	.LM113:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 14
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 14
 
 
  766 03ac 88E0      		ldi r24,lo8(8)
@@ -813,9 +813,9 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  797               	/* prologue: function */
  798               	/* frame size = 0 */
  799               	.LM116:
- 800 03d8 1091 0000 		lds r17,temp.1691
- 801 03dc C091 0000 		lds r28,ch1noteptr.1689
- 802 03e0 D091 0000 		lds r29,(ch1noteptr.1689)+1
+ 800 03d8 1091 0000 		lds r17,temp.1722
+ 801 03dc C091 0000 		lds r28,ch1noteptr.1720
+ 802 03e0 D091 0000 		lds r29,(ch1noteptr.1720)+1
  803               	.LM117:
  804 03e4 E8E5      		ldi r30,lo8(600)
  805 03e6 EE2E      		mov r14,r30
@@ -836,9 +836,9 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  820 03fa 8E99      		sbic 49-32,6
  821 03fc 00C0      		rjmp .L74
  822               	.LM120:
- 823 03fe E091 0000 		lds r30,ch1song.1687
- 824 0402 F091 0000 		lds r31,(ch1song.1687)+1
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 15
+ 823 03fe E091 0000 		lds r30,ch1song.1718
+ 824 0402 F091 0000 		lds r31,(ch1song.1718)+1
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 15
 
 
  825               	.LVL23:
@@ -856,7 +856,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  837 0418 FD1F      		adc r31,r29
  838 041a 2196      		adiw r28,1
  839               	/* #APP */
- 840               	 ;  459 "firefly.c" 1
+ 840               	 ;  458 "firefly.c" 1
  841 041c E491      		lpm r30, Z
  842               		
  843               	 ;  0 "" 2
@@ -872,7 +872,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  853 042a 192F      		mov r17,r25
  854               	.LM123:
  855               	/* #APP */
- 856               	 ;  462 "firefly.c" 1
+ 856               	 ;  461 "firefly.c" 1
  857 042c F894      		cli
  858               	 ;  0 "" 2
  859               	.LM124:
@@ -882,7 +882,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  863 0432 8E9A      		sbi 49-32,6
  864               	.LM126:
  865               	/* #APP */
- 866               	 ;  465 "firefly.c" 1
+ 866               	 ;  464 "firefly.c" 1
  867 0434 7894      		sei
  868               	 ;  0 "" 2
  869               	/* #NOAPP */
@@ -895,13 +895,13 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  876 043c 8F99      		sbic 49-32,7
  877 043e 00C0      		rjmp .L75
  878               	.LM128:
- 879 0440 2091 0000 		lds r18,ch2noteptr.1690
- 880 0444 3091 0000 		lds r19,(ch2noteptr.1690)+1
- 881 0448 E091 0000 		lds r30,ch2song.1688
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 16
+ 879 0440 2091 0000 		lds r18,ch2noteptr.1721
+ 880 0444 3091 0000 		lds r19,(ch2noteptr.1721)+1
+ 881 0448 E091 0000 		lds r30,ch2song.1719
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 16
 
 
- 882 044c F091 0000 		lds r31,(ch2song.1688)+1
+ 882 044c F091 0000 		lds r31,(ch2song.1719)+1
  883               	.LVL26:
  884 0450 8081      		ld r24,Z
  885 0452 9181      		ldd r25,Z+1
@@ -917,10 +917,10 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  895 0462 F31F      		adc r31,r19
  896 0464 2F5F      		subi r18,lo8(-(1))
  897 0466 3F4F      		sbci r19,hi8(-(1))
- 898 0468 3093 0000 		sts (ch2noteptr.1690)+1,r19
- 899 046c 2093 0000 		sts ch2noteptr.1690,r18
+ 898 0468 3093 0000 		sts (ch2noteptr.1721)+1,r19
+ 899 046c 2093 0000 		sts ch2noteptr.1721,r18
  900               	/* #APP */
- 901               	 ;  473 "firefly.c" 1
+ 901               	 ;  472 "firefly.c" 1
  902 0470 E491      		lpm r30, Z
  903               		
  904               	 ;  0 "" 2
@@ -936,7 +936,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  914 047e 192F      		mov r17,r25
  915               	.LM131:
  916               	/* #APP */
- 917               	 ;  476 "firefly.c" 1
+ 917               	 ;  475 "firefly.c" 1
  918 0480 F894      		cli
  919               	 ;  0 "" 2
  920               	.LM132:
@@ -946,7 +946,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  924 0486 8F9A      		sbi 49-32,7
  925               	.LM134:
  926               	/* #APP */
- 927               	 ;  479 "firefly.c" 1
+ 927               	 ;  478 "firefly.c" 1
  928 0488 7894      		sei
  929               	 ;  0 "" 2
  930               	/* #NOAPP */
@@ -958,7 +958,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  936 048e 00C0      		rjmp .L76
  937 0490 8091 0000 		lds r24,ch1restcount
  938 0494 8823      		tst r24
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 17
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 17
 
 
  939 0496 01F4      		brne .L76
@@ -968,7 +968,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  943 049a 182F      		mov r17,r24
  944               	.LM137:
  945               	/* #APP */
- 946               	 ;  490 "firefly.c" 1
+ 946               	 ;  489 "firefly.c" 1
  947 049c F894      		cli
  948               	 ;  0 "" 2
  949               	.LM138:
@@ -976,7 +976,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  951 049e 8093 0000 		sts ch1restcount,r24
  952               	.LM139:
  953               	/* #APP */
- 954               	 ;  492 "firefly.c" 1
+ 954               	 ;  491 "firefly.c" 1
  955 04a2 7894      		sei
  956               	 ;  0 "" 2
  957               	/* #NOAPP */
@@ -995,7 +995,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  970 04b4 182F      		mov r17,r24
  971               	.LM142:
  972               	/* #APP */
- 973               	 ;  498 "firefly.c" 1
+ 973               	 ;  497 "firefly.c" 1
  974 04b6 F894      		cli
  975               	 ;  0 "" 2
  976               	.LM143:
@@ -1003,7 +1003,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  978 04b8 8093 0000 		sts ch2restcount,r24
  979               	.LM144:
  980               	/* #APP */
- 981               	 ;  500 "firefly.c" 1
+ 981               	 ;  499 "firefly.c" 1
  982 04bc 7894      		sei
  983               	 ;  0 "" 2
  984               	/* #NOAPP */
@@ -1018,13 +1018,13 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  993 04c8 8E99      		sbic 49-32,6
  994 04ca 00C0      		rjmp .L77
  995               	.LM146:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 18
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 18
 
 
  996 04cc 00D0      		rcall pickasong
  997               	.LVL33:
- 998 04ce 9093 0000 		sts (ch1song.1687)+1,r25
- 999 04d2 8093 0000 		sts ch1song.1687,r24
+ 998 04ce 9093 0000 		sts (ch1song.1718)+1,r25
+ 999 04d2 8093 0000 		sts ch1song.1718,r24
  1000               	.LM147:
  1001 04d6 872D      		mov r24,r7
  1002 04d8 00D0      		rcall pickapin
@@ -1034,13 +1034,13 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1006 04de 8093 0000 		sts ch1scale,r24
  1007               	.LBB21:
  1008               	.LM149:
- 1009 04e2 E091 0000 		lds r30,ch1song.1687
- 1010 04e6 F091 0000 		lds r31,(ch1song.1687)+1
+ 1009 04e2 E091 0000 		lds r30,ch1song.1718
+ 1010 04e6 F091 0000 		lds r31,(ch1song.1718)+1
  1011 04ea 0280      		ldd __tmp_reg__,Z+2
  1012 04ec F381      		ldd r31,Z+3
  1013 04ee E02D      		mov r30,__tmp_reg__
  1014               	/* #APP */
- 1015               	 ;  517 "firefly.c" 1
+ 1015               	 ;  516 "firefly.c" 1
  1016 04f0 E491      		lpm r30, Z
  1017               		
  1018               	 ;  0 "" 2
@@ -1066,7 +1066,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1038               	.L78:
  1039               	.LM153:
  1040               	/* #APP */
- 1041               	 ;  525 "firefly.c" 1
+ 1041               	 ;  524 "firefly.c" 1
  1042 050c F894      		cli
  1043               	 ;  0 "" 2
  1044               	.LM154:
@@ -1076,9 +1076,9 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1048 0512 8E9A      		sbi 49-32,6
  1049               	.LM156:
  1050               	/* #APP */
- 1051               	 ;  528 "firefly.c" 1
+ 1051               	 ;  527 "firefly.c" 1
  1052 0514 7894      		sei
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 19
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 19
 
 
  1053               	 ;  0 "" 2
@@ -1098,11 +1098,11 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1067               	.LM158:
  1068 0528 00D0      		rcall pickasong
  1069               	.LVL38:
- 1070 052a 9093 0000 		sts (ch2song.1688)+1,r25
- 1071 052e 8093 0000 		sts ch2song.1688,r24
+ 1070 052a 9093 0000 		sts (ch2song.1719)+1,r25
+ 1071 052e 8093 0000 		sts ch2song.1719,r24
  1072               	.LM159:
- 1073 0532 1092 0000 		sts (ch2noteptr.1690)+1,__zero_reg__
- 1074 0536 1092 0000 		sts ch2noteptr.1690,__zero_reg__
+ 1073 0532 1092 0000 		sts (ch2noteptr.1721)+1,__zero_reg__
+ 1074 0536 1092 0000 		sts ch2noteptr.1721,__zero_reg__
  1075               	.LM160:
  1076 053a 862D      		mov r24,r6
  1077 053c 00D0      		rcall pickapin
@@ -1112,20 +1112,20 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1081 0542 8093 0000 		sts ch2scale,r24
  1082               	.LBB22:
  1083               	.LM162:
- 1084 0546 8091 0000 		lds r24,ch2noteptr.1690
- 1085 054a 9091 0000 		lds r25,(ch2noteptr.1690)+1
- 1086 054e E091 0000 		lds r30,ch2song.1688
- 1087 0552 F091 0000 		lds r31,(ch2song.1688)+1
+ 1084 0546 8091 0000 		lds r24,ch2noteptr.1721
+ 1085 054a 9091 0000 		lds r25,(ch2noteptr.1721)+1
+ 1086 054e E091 0000 		lds r30,ch2song.1719
+ 1087 0552 F091 0000 		lds r31,(ch2song.1719)+1
  1088 0556 0280      		ldd __tmp_reg__,Z+2
  1089 0558 F381      		ldd r31,Z+3
  1090 055a E02D      		mov r30,__tmp_reg__
  1091 055c E80F      		add r30,r24
  1092 055e F91F      		adc r31,r25
  1093 0560 0196      		adiw r24,1
- 1094 0562 9093 0000 		sts (ch2noteptr.1690)+1,r25
- 1095 0566 8093 0000 		sts ch2noteptr.1690,r24
+ 1094 0562 9093 0000 		sts (ch2noteptr.1721)+1,r25
+ 1095 0566 8093 0000 		sts ch2noteptr.1721,r24
  1096               	/* #APP */
- 1097               	 ;  543 "firefly.c" 1
+ 1097               	 ;  542 "firefly.c" 1
  1098 056a E491      		lpm r30, Z
  1099               		
  1100               	 ;  0 "" 2
@@ -1138,7 +1138,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1107 0572 90E0      		ldi r25,lo8(0)
  1108 0574 70E0      		ldi r23,lo8(0)
  1109 0576 00D0      		rcall __mulhi3
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 20
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 20
 
 
  1110 0578 192F      		mov r17,r25
@@ -1154,7 +1154,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1120               	.L80:
  1121               	.LM166:
  1122               	/* #APP */
- 1123               	 ;  551 "firefly.c" 1
+ 1123               	 ;  550 "firefly.c" 1
  1124 0586 F894      		cli
  1125               	 ;  0 "" 2
  1126               	.LM167:
@@ -1164,7 +1164,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1130 058c 8F9A      		sbi 49-32,7
  1131               	.LM169:
  1132               	/* #APP */
- 1133               	 ;  554 "firefly.c" 1
+ 1133               	 ;  553 "firefly.c" 1
  1134 058e 7894      		sei
  1135               	 ;  0 "" 2
  1136               	/* #NOAPP */
@@ -1198,7 +1198,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1164 05b6 8B9B      		sbis 49-32,3
  1165 05b8 00C0      		rjmp .L82
  1166               	.LM176:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 21
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 21
 
 
  1167 05ba 85B7      		in r24,85-32
@@ -1210,7 +1210,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1173 05c4 8062      		ori r24,lo8(32)
  1174 05c6 85BF      		out 85-32,r24
  1175               	/* #APP */
- 1176               	 ;  578 "firefly.c" 1
+ 1176               	 ;  577 "firefly.c" 1
  1177 05c8 8895      		sleep
  1178               		
  1179               	 ;  0 "" 2
@@ -1226,7 +1226,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1189 05d4 8062      		ori r24,lo8(32)
  1190 05d6 85BF      		out 85-32,r24
  1191               	/* #APP */
- 1192               	 ;  582 "firefly.c" 1
+ 1192               	 ;  581 "firefly.c" 1
  1193 05d8 8895      		sleep
  1194               		
  1195               	 ;  0 "" 2
@@ -1241,9 +1241,9 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1204 05e4 8823      		tst r24
  1205 05e6 01F0      		breq .+2
  1206 05e8 00C0      		rjmp .L83
- 1207 05ea 1093 0000 		sts temp.1691,r17
- 1208 05ee D093 0000 		sts (ch1noteptr.1689)+1,r29
- 1209 05f2 C093 0000 		sts ch1noteptr.1689,r28
+ 1207 05ea 1093 0000 		sts temp.1722,r17
+ 1208 05ee D093 0000 		sts (ch1noteptr.1720)+1,r29
+ 1209 05f2 C093 0000 		sts ch1noteptr.1720,r28
  1210               	/* epilogue start */
  1211               	.LM181:
  1212 05f6 DF91      		pop r29
@@ -1258,7 +1258,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1223               	main:
  1224               	.LFB16:
  1225               	.LM182:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 22
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 22
 
 
  1226 0604 0F93      		push r16
@@ -1318,7 +1318,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1280 0648 20E8      		ldi r18,lo8(-128)
  1281               	/* #APP */
  1282               	 ;  204 "firefly.c" 1
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 23
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 23
 
 
  1283 064a 0FB6      		in __tmp_reg__,__SREG__
@@ -1363,7 +1363,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1322 0684 8093 0000 		sts force_dark,r24
  1323               	.LM203:
  1324               	/* #APP */
- 1325               	 ;  606 "firefly.c" 1
+ 1325               	 ;  605 "firefly.c" 1
  1326 0688 7894      		sei
  1327               	 ;  0 "" 2
  1328               	.LM204:
@@ -1378,7 +1378,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1337               	.LM207:
  1338 0692 10E1      		ldi r17,lo8(16)
  1339               	.L90:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 24
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 24
 
 
  1340               	.LM208:
@@ -1401,7 +1401,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1357 06ac 8062      		ori r24,lo8(32)
  1358 06ae 85BF      		out 85-32,r24
  1359               	/* #APP */
- 1360               	 ;  427 "firefly.c" 1
+ 1360               	 ;  426 "firefly.c" 1
  1361 06b0 8895      		sleep
  1362               		
  1363               	 ;  0 "" 2
@@ -1438,7 +1438,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1394 06da 00D0      		rcall lighted_fireflies
  1395 06dc 00C0      		rjmp .L90
  1396               	.LFE16:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 25
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 25
 
 
  1398               	.global	bootsongnotes
@@ -1498,7 +1498,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1458 002b 66        		.byte	102
  1459 002c 6D        		.byte	109
  1460 002d 73        		.byte	115
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 26
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 26
 
 
  1461 002e 79        		.byte	121
@@ -1558,7 +1558,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1515 0064 A8        		.byte	-88
  1516 0065 AA        		.byte	-86
  1517 0066 A1        		.byte	-95
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 27
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 27
 
 
  1518 0067 92        		.byte	-110
@@ -1618,7 +1618,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1576 0095 01        		.byte	1
  1577 0096 01        		.byte	1
  1578 0097 01        		.byte	1
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 28
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 28
 
 
  1579 0098 08        		.byte	8
@@ -1678,7 +1678,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1633 00ce 98        		.byte	-104
  1634 00cf 9D        		.byte	-99
  1635 00d0 9C        		.byte	-100
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 29
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 29
 
 
  1636 00d1 9A        		.byte	-102
@@ -1738,7 +1738,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1694 00ff 01        		.byte	1
  1695 0100 01        		.byte	1
  1696 0101 01        		.byte	1
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 30
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 30
 
 
  1697 0102 01        		.byte	1
@@ -1798,7 +1798,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1751 0138 92        		.byte	-110
  1752 0139 94        		.byte	-108
  1753 013a 97        		.byte	-105
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 31
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 31
 
 
  1754 013b 9A        		.byte	-102
@@ -1858,7 +1858,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1808 0171 05        		.byte	5
  1809 0172 03        		.byte	3
  1810 0173 02        		.byte	2
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 32
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 32
 
 
  1811 0174 01        		.byte	1
@@ -1918,7 +1918,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1869 01a2 8A        		.byte	-118
  1870 01a3 99        		.byte	-103
  1871 01a4 A4        		.byte	-92
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 33
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 33
 
 
  1872 01a5 A6        		.byte	-90
@@ -1978,7 +1978,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1926               	.global	song2d
  1927               		.data
  1930               	song2d:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 34
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 34
 
 
  1931 0010 6300      		.word	99
@@ -2038,7 +2038,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  1987 020c 9D        		.byte	-99
  1988 020d 9E        		.byte	-98
  1989 020e 9B        		.byte	-101
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 35
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 35
 
 
  1990 020f 97        		.byte	-105
@@ -2098,7 +2098,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  2044 0245 79        		.byte	121
  2045 0246 6E        		.byte	110
  2046 0247 63        		.byte	99
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 36
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 36
 
 
  2047 0248 5B        		.byte	91
@@ -2158,7 +2158,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  2105 0276 52        		.byte	82
  2106 0277 5E        		.byte	94
  2107 0278 6B        		.byte	107
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 37
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 37
 
 
  2108 0279 77        		.byte	119
@@ -2218,7 +2218,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  2162 02af 3E        		.byte	62
  2163 02b0 36        		.byte	54
  2164 02b1 2D        		.byte	45
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 38
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 38
 
 
  2165 02b2 26        		.byte	38
@@ -2278,7 +2278,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  2223 02e0 94        		.byte	-108
  2224 02e1 8D        		.byte	-115
  2225 02e2 8E        		.byte	-114
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 39
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 39
 
 
  2226 02e3 98        		.byte	-104
@@ -2338,7 +2338,7 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  2286 0038 0000      		.word	song2f
  2287 003a 0000      		.word	song2f
  2288 003c 0000      		.word	song2g
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 40
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 40
 
 
  2289 003e 0000      		.word	song2g
@@ -2388,26 +2388,26 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  2324               	.global	mood_count
  2327               	mood_count:
  2328 0043 1E00      		.word	30
- 2329               		.lcomm temp.1691,1
- 2330               		.lcomm ch2noteptr.1690,2
- 2331               		.lcomm ch1noteptr.1689,2
- 2332               		.lcomm ch2song.1688,2
- 2333               		.lcomm ch1song.1687,2
- 2336               	lfsr.1600:
+ 2329               		.lcomm temp.1722,1
+ 2330               		.lcomm ch2noteptr.1721,2
+ 2331               		.lcomm ch1noteptr.1720,2
+ 2332               		.lcomm ch2song.1719,2
+ 2333               		.lcomm ch1song.1718,2
+ 2336               	lfsr.1631:
  2337 0045 CE74      		.word	29902
- 2338               		.lcomm ticker.1587,1
- 2341               	ch1pins.1491:
+ 2338               		.lcomm ticker.1618,1
+ 2341               	ch1pins.1520:
  2342 0047 08        		.byte	8
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 41
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 41
 
 
  2343 0048 04        		.byte	4
  2344 0049 01        		.byte	1
- 2347               	masterpins.1490:
+ 2347               	masterpins.1519:
  2348 004a 10        		.byte	16
  2349 004b 02        		.byte	2
- 2350               		.lcomm x.1420,1
- 2353               	debounce.1651:
+ 2350               		.lcomm x.1435,1
+ 2353               	debounce.1682:
  2354 004c 0A        		.byte	10
  2355               		.comm ch1restcount,1,1
  2356               		.comm ch2restcount,1,1
@@ -2422,83 +2422,83 @@ GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 1
  2365               		.comm is_dark,1,1
  2366               		.comm force_dark,1,1
  2471               	.Letext0:
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 42
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 firefly.c
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2      *ABS*:0000003f __SREG__
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:3      *ABS*:0000003e __SP_H__
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:4      *ABS*:0000003d __SP_L__
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:5      *ABS*:00000034 __CCP__
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:6      *ABS*:00000000 __tmp_reg__
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:7      *ABS*:00000001 __zero_reg__
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:18     .text:00000000 __vector_12
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2      *ABS*:0000003f __SREG__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:3      *ABS*:0000003e __SP_H__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:4      *ABS*:0000003d __SP_L__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:5      *ABS*:00000034 __CCP__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:6      *ABS*:00000000 __tmp_reg__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:7      *ABS*:00000001 __zero_reg__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:18     .text:00000000 __vector_12
                             *COM*:00000001 force_dark
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2353   .data:0000004c debounce.1651
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2353   .data:0000004c debounce.1682
                             *COM*:00000001 is_dark
                             *COM*:00000001 ch1restcount
                             *COM*:00000001 ch2restcount
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2327   .data:00000043 mood_count
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:152    .text:000000ca __vector_10
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2327   .data:00000043 mood_count
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:152    .text:000000ca __vector_10
                             *COM*:00000001 waiting_for_dark
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2338   .bss:0000000a x.1420
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2338   .bss:0000000a x.1435
                             *COM*:00000001 ch1nextnote
                             *COM*:00000001 ch2nextnote
                             *COM*:00000001 masterpinmask
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:291    .text:0000018e von_332
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:293    .text:00000190 turnon_332
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:297    .text:00000196 turnoff_332
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:299    .text:00000198 done_332
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:315    .text:000001a8 von_341
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:317    .text:000001aa turnon_341
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:321    .text:000001b0 turnoff_341
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:323    .text:000001b2 done_341
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:340    .text:000001be showbootup
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2269   .data:00000020 bootsongs
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2347   .data:0000004a masterpins.1490
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2341   .data:00000047 ch1pins.1491
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:512    .text:0000027e randbits
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2336   .data:00000045 lfsr.1600
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2295   .progmem.data:00000304 bitmasks
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:572    .text:000002c0 pickmaster
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2333   .bss:00000009 ticker.1587
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:605    .text:000002e6 pickapin
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:670    .text:00000326 randscaleval
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:710    .text:0000035e randwaitval
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2322   .data:00000042 mood
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:760    .text:000003ac pickasong
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2274   .data:00000022 songs
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:788    .text:000003cc lighted_fireflies
-                             .bss:00000000 temp.1691
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2330   .bss:00000003 ch1noteptr.1689
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2332   .bss:00000007 ch1song.1687
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:291    .text:0000018e von_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:293    .text:00000190 turnon_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:297    .text:00000196 turnoff_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:299    .text:00000198 done_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:315    .text:000001a8 von_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:317    .text:000001aa turnon_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:321    .text:000001b0 turnoff_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:323    .text:000001b2 done_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:340    .text:000001be showbootup
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2269   .data:00000020 bootsongs
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2347   .data:0000004a masterpins.1519
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2341   .data:00000047 ch1pins.1520
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:512    .text:0000027e randbits
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2336   .data:00000045 lfsr.1631
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2295   .progmem.data:00000304 bitmasks
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:572    .text:000002c0 pickmaster
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2333   .bss:00000009 ticker.1618
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:605    .text:000002e6 pickapin
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:670    .text:00000326 randscaleval
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:710    .text:0000035e randwaitval
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2322   .data:00000042 mood
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:760    .text:000003ac pickasong
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2274   .data:00000022 songs
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:788    .text:000003cc lighted_fireflies
+                             .bss:00000000 temp.1722
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2330   .bss:00000003 ch1noteptr.1720
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2332   .bss:00000007 ch1song.1718
                             *COM*:00000001 ch1scale
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2329   .bss:00000001 ch2noteptr.1690
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2331   .bss:00000005 ch2song.1688
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2329   .bss:00000001 ch2noteptr.1721
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2331   .bss:00000005 ch2song.1719
                             *COM*:00000001 ch2scale
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1223   .text:00000604 main
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1402   .progmem.data:00000000 bootsongnotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1426   .data:00000000 bootsong
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1433   .progmem.data:00000013 song2anotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1557   .data:00000004 song2a
-GAS LISTING c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s 			page 43
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1223   .text:00000604 main
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1402   .progmem.data:00000000 bootsongnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1426   .data:00000000 bootsong
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1433   .progmem.data:00000013 song2anotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1557   .data:00000004 song2a
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 43
 
 
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1564   .progmem.data:0000008a song2bnotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1677   .data:00000008 song2b
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1684   .progmem.data:000000f6 song2cnotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1819   .data:0000000c song2c
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1826   .progmem.data:00000178 song2dnotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1930   .data:00000010 song2d
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:1937   .progmem.data:000001db song2enotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2078   .data:00000014 song2e
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2085   .progmem.data:00000263 song2fnotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2183   .data:00000018 song2f
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2190   .progmem.data:000002c0 song2gnotes
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2263   .data:0000001c song2g
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2308   .progmem.data:0000030d about
-c:\DOCUME~1\NEDKON~1\LOCALS~1\Temp/cc8se4JM.s:2316   .progmem.data:000003ca version
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1564   .progmem.data:0000008a song2bnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1677   .data:00000008 song2b
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1684   .progmem.data:000000f6 song2cnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1819   .data:0000000c song2c
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1826   .progmem.data:00000178 song2dnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1930   .data:00000010 song2d
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1937   .progmem.data:000001db song2enotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2078   .data:00000014 song2e
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2085   .progmem.data:00000263 song2fnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2183   .data:00000018 song2f
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2190   .progmem.data:000002c0 song2gnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2263   .data:0000001c song2g
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2308   .progmem.data:0000030d about
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2316   .progmem.data:000003ca version
                             *COM*:00000001 ch1nextscale
                             *COM*:00000001 ch2nextscale
 
