@@ -12,7 +12,14 @@ const prog_uint8_t about[] = "Jar of Fireflies\n"
             "Special thanks to Katie Horn for getting me to think about electronics";
 const prog_uint8_t version[] = "$Revision: 1.41 $ $Date: 2007/01/10 04:35:55 $";
 
-#define LEDS_OFF ~(_BV(PIN_A) | _BV(PIN_B))
+#if (USE_PHOTOCELL && PHOTOCELL_ON_RESET_PIN)
+// PIN_F (reset/PB5) used as ADC0, thus an input
+#  define LEDS_OFF ~(_BV(PIN_A) | _BV(PIN_B) | _BV(PIN_F))
+#  define DDRB_DEFAULT ~(_BV(PIN_F))
+#else
+#  define LEDS_OFF ~(_BV(PIN_A) | _BV(PIN_B))
+#  define DDRB_DEFAULT 0xFF
+#endif
 
 #define WATCHDOG_OK  WDTCR |= _BV(WDIE)
 
@@ -63,17 +70,18 @@ volatile uint8_t masterpinmask;
 
 static void still_dark(void);
 static void wait_for_dark(void);
-#ifdef USE_PHOTOCELL
+#if USE_PHOTOCELL
 volatile uint8_t waiting_for_dark;	// true if in the "wait for dark" state.
 volatile uint8_t is_dark;	        // true if it still seems to be dark.
 volatile uint8_t force_dark;
 static uint8_t read_adc(uint8_t);
-#ifdef READ_TEMPERATURE
-static uint8_t read_temperature(void);
-#endif
 #else
 #   define is_dark          1
 #   define waiting_for_dark 0
+#endif
+
+#if READ_TEMPERATURE
+static uint8_t read_temperature(void);
 #endif
 
 /* Intentionally crash the program leaving a visual clue.  The  */
@@ -178,7 +186,7 @@ ioinit(void)
 
     // Set all pins as outputs.
     // Drive PIN_A and PIN_B low, everybody else high.
-    DDRB = 0xFF;
+    DDRB = DDRB_DEFAULT;
     PORTB= LEDS_OFF;
 
     PRR |= _BV(PRTIM1);  // Turn off Timer1 to save power.
@@ -257,7 +265,7 @@ void showbootup (void) {
 }
 
 uint8_t randwaitval (void) {
-#ifdef PHOTOSHOOT
+#if PHOTOSHOOT
     return mood + randbits(3) + randbits(3)  + randbits(3); 
 #else
     return mood + randbits(4) + randbits(4) + randbits(3) + 
@@ -267,10 +275,10 @@ uint8_t randwaitval (void) {
 
 uint8_t randscaleval (void) {
 
-#ifdef BRIGHTER
+#if BRIGHTER
     return (randbits(6) + randbits(5) + randbits(5) + randbits(4) + 
             randbits(3) + 54);
-#elif defined(PHOTOSHOOT)
+#elif PHOTOSHOOT
     // for photoshoot
     return (randbits(6) + randbits(5) + randbits(4) + randbits(3) + 
             randbits(2) + 34);
@@ -352,7 +360,8 @@ const Song *pickasong(void)
     return songs[(randbits(8) * (sizeof (songs) / sizeof (Song *))) >> 8];
 }
 
-#ifdef USE_PHOTOCELL
+
+#if (USE_PHOTOCELL || READ_TEMPERATURE)
 
 static uint8_t read_adc(uint8_t muxreg)
 {
@@ -375,14 +384,10 @@ static uint8_t read_adc(uint8_t muxreg)
     return retval;
 }
 
-#ifdef READ_TEMPERATURE
-static uint8_t read_temperature(void)
-{
-    return read_adc(_BV(REFS1) | 0x0F); // 1.1V ref, no external bypass, select temp channel
-}
 #endif
 
 
+#if USE_PHOTOCELL
 
 // return true if dark enough
 // CdS photocell between PIN_A and PIN_B
@@ -391,14 +396,22 @@ static void still_dark(void)
     static uint8_t debounce = DARK_DEBOUNCE;
 
 	// set up I/O pins
+#if PHOTOCELL_ON_RESET_PIN
+	PORTB = LEDS_OFF | _BV(PIN_F);	// turn ON pullup on PIN_F
+#else
 	DDRB = ~_BV(PIN_A);		// only PIN_A as input
 	PORTB = ~_BV(PIN_B);	// turn ON pullup on PIN_A, PIN_B low, all others high
+#endif
 	// read state
-    uint8_t photocell = read_adc(PIN_A_ADC);  // Vcc as VRef, no conn to AREF.
+    uint8_t photocell = read_adc(PHOTOCELL_ADC);  // Vcc as VRef, no conn to AREF.
 
 	// turn off pullup
+#if PHOTOCELL_ON_RESET_PIN
+	PORTB = LEDS_OFF;	// turn OFF pullup on PIN_F
+#else
 	PORTB = ~(_BV(PIN_B) | _BV(PIN_A)) ;	// turn OFF pullup on PIN_A, PIN_B low, all others high
-    DDRB = 0xFF;    // make PIN_A an output again.
+    DDRB = DDRB_DEFAULT;    // make PIN_A an output again.
+#endif
 
     if ((photocell > DARK_MINIMUM) || force_dark)
     {
@@ -430,10 +443,20 @@ static void wait_for_dark(void)
     waiting_for_dark = 0;
 }
 
-#else   /* !defined(USE_PHOTOCELL) */
+#else   /* !USE_PHOTOCELL */
 static void still_dark(void)        { }
 static void wait_for_dark(void)     { }
-#endif  /* defined(USE_PHOTOCELL) */
+#endif  /* USE_PHOTOCELL */
+
+#if READ_TEMPERATURE
+
+static uint8_t read_temperature(void)
+{
+    return read_adc(_BV(REFS1) | 0x0F); // 1.1V ref, no external bypass, select temp channel
+}
+
+#endif
+
 
 // do the old main loop, but only as long as it's still dark.
 void lighted_fireflies(void)
@@ -556,7 +579,7 @@ void lighted_fireflies(void)
         }
 
         if (need_mood) {
-#ifdef PHOTOSHOOT
+#if PHOTOSHOOT
             mood = 1;
 #else
             mood = randbits(5) + 8;
@@ -596,7 +619,7 @@ int main(void)
     // Zero out flags.
     FLAGS0 = 0;
 
-#ifdef USE_PHOTOCELL
+#if USE_PHOTOCELL
     waiting_for_dark = 0;
     is_dark = 1;
     force_dark = 1;
@@ -605,7 +628,7 @@ int main(void)
     sei();
     showbootup();
 
-#ifdef USE_PHOTOCELL
+#if USE_PHOTOCELL
     force_dark = 0;
 #endif
 

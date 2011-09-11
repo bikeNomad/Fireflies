@@ -40,7 +40,7 @@ PROJECTNAME=firefly
 PRJSRC=firefly.c
 
 # additional includes (e.g. -I/path/to/mydir)
-INC=-I/path/to/include
+# INC=-I/path/to/include
 
 # libraries to link in (e.g. -lmylib)
 LIBS=
@@ -192,6 +192,10 @@ writeflash: hex
 	 -e \
 	 -U flash:w:$(HEXROMTRG)
 
+# EFUSE: 0xFF: self-programming disabled
+# HFUSE: 0xDF: (default): reset not disabled, SPI enabled, no WDT, no BOD, no dW
+# 	: 0x5F: reset disabled, SPI enabled, no WDT, no BOD, no dW
+# LFUSE: 0x62: (default): clk/8, internal RC (1MHz clk)
 fuses:
 	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID) \
 	-p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) $(AVRDUDE_OPTS) \

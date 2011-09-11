@@ -1,4 +1,4 @@
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 1
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 1
 
 
    1               		.file	"firefly.c"
@@ -58,7 +58,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
   63               	.LM11:
   64 0030 80B5      		in r24,64-32
   65 0032 8160      		ori r24,lo8(1)
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 2
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 2
 
 
   66 0034 80BD      		out 64-32,r24
@@ -118,7 +118,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  120 0092 8093 0000 		sts ch2restcount,r24
  121 0096 8091 0000 		lds r24,ch2restcount
  122 009a 8823      		tst r24
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 3
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 3
 
 
  123 009c 01F4      		brne .L8
@@ -178,7 +178,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  179 00f4 00C0      		rjmp .L16
  180               	.LM29:
  181 00f6 8E9B      		sbis 49-32,6
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 4
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 4
 
 
  182 00f8 00C0      		rjmp .L17
@@ -238,7 +238,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  236               	.LM47:
  237 0144 8B9A      		sbi 49-32,3
  238 0146 00C0      		rjmp .L21
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 5
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 5
 
 
  239               	.L19:
@@ -286,7 +286,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  281 017e 889B      		sbis 49-32,0
  282 0180 00C0      		rjmp .L26
  283               	/* #APP */
- 284               	 ;  163 "firefly.c" 1
+ 284               	 ;  171 "firefly.c" 1
  285 0182 062C      		mov     __tmp_reg__, r6
  286 0184 27FA      		bst     r2, 7
  287 0186 420C      		add     r4, r2
@@ -298,7 +298,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  293               	turnon_322:
  294 0190 0094      		com     __tmp_reg__
  295 0192 8020      		and     r8, __tmp_reg__
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 6
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 6
 
 
  296 0194 00C0      	rjmp    done_322
@@ -313,7 +313,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  305 0198 8A9B      		sbis 49-32,2
  306 019a 00C0      		rjmp .L27
  307               	/* #APP */
- 308               	 ;  164 "firefly.c" 1
+ 308               	 ;  172 "firefly.c" 1
  309 019c 072C      		mov     __tmp_reg__, r7
  310 019e 37FA      		bst     r3, 7
  311 01a0 530C      		add     r5, r3
@@ -358,10 +358,10 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  352               	.LVL2:
  353               	.LM62:
  354               	/* #APP */
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 7
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 7
 
 
- 355               	 ;  223 "firefly.c" 1
+ 355               	 ;  231 "firefly.c" 1
  356 01ce F894      		cli
  357               	 ;  0 "" 2
  358               	.LM63:
@@ -372,7 +372,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  363 01d6 899A      		sbi 49-32,1
  364               	.LM65:
  365               	/* #APP */
- 366               	 ;  226 "firefly.c" 1
+ 366               	 ;  234 "firefly.c" 1
  367 01d8 7894      		sei
  368               	 ;  0 "" 2
  369               	.LM66:
@@ -406,7 +406,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  397 01fe 131F      		adc r17,r19
  398 0200 F801      		movw r30,r16
  399               	/* #APP */
- 400               	 ;  235 "firefly.c" 1
+ 400               	 ;  243 "firefly.c" 1
  401 0202 8491      		lpm r24, Z
  402               		
  403               	 ;  0 "" 2
@@ -418,7 +418,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  409 020a 00C0      		rjmp .L30
  410               	.L31:
  411               	.LM71:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 8
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 8
 
 
  412 020c 81B5      		in r24,65-32
@@ -434,7 +434,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  422 021a 8062      		ori r24,lo8(32)
  423 021c 85BF      		out 85-32,r24
  424               	/* #APP */
- 425               	 ;  241 "firefly.c" 1
+ 425               	 ;  249 "firefly.c" 1
  426 021e 8895      		sleep
  427               		
  428               	 ;  0 "" 2
@@ -470,7 +470,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  458 0248 692E      		mov r6,r25
  459               	.LM78:
  460               	/* #APP */
- 461               	 ;  247 "firefly.c" 1
+ 461               	 ;  255 "firefly.c" 1
  462 024a F894      		cli
  463               	 ;  0 "" 2
  464               	.LM79:
@@ -478,11 +478,11 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  466 024c 81E0      		ldi r24,lo8(1)
  467 024e 8093 0000 		sts ch1restcount,r24
  468               	.LM80:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 9
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 9
 
 
  469               	/* #APP */
- 470               	 ;  249 "firefly.c" 1
+ 470               	 ;  257 "firefly.c" 1
  471 0252 7894      		sei
  472               	 ;  0 "" 2
  473               	/* #NOAPP */
@@ -501,7 +501,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  486 0264 8062      		ori r24,lo8(32)
  487 0266 85BF      		out 85-32,r24
  488               	/* #APP */
- 489               	 ;  254 "firefly.c" 1
+ 489               	 ;  262 "firefly.c" 1
  490 0268 8895      		sleep
  491               		
  492               	 ;  0 "" 2
@@ -538,7 +538,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  525               	.LM88:
  526 028c 9DEE      		ldi r25,lo8(-19)
  527 028e 82E1      		ldi r24,lo8(18)
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 10
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 10
 
 
  528               	.L46:
@@ -569,7 +569,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  553 02b4 F040      		sbci r31,hi8(-(bitmasks))
  554               	.LVL11:
  555               	/* #APP */
- 556               	 ;  343 "firefly.c" 1
+ 556               	 ;  351 "firefly.c" 1
  557 02b6 E491      		lpm r30, Z
  558               		
  559               	 ;  0 "" 2
@@ -598,7 +598,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  584 02cc 90FF      		sbrs r25,0
  585 02ce 00C0      		rjmp .L51
  586 02d0 00C0      		rjmp .L50
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 11
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 11
 
 
  587               	.L49:
@@ -658,7 +658,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  643               	.LM104:
  644 0314 1130      		cpi r17,lo8(1)
  645 0316 01F4      		brne .L60
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 12
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 12
 
 
  646               	.L55:
@@ -718,7 +718,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  702 0356 0F91      		pop r16
  703 0358 FF90      		pop r15
  704 035a EF90      		pop r14
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 13
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 13
 
 
  705 035c 0895      		ret
@@ -778,7 +778,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  763               	/* prologue: function */
  764               	/* frame size = 0 */
  765               	.LM113:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 14
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 14
 
 
  766 03ac 88E0      		ldi r24,lo8(8)
@@ -838,7 +838,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  822               	.LM120:
  823 03fe E091 0000 		lds r30,ch1song.1718
  824 0402 F091 0000 		lds r31,(ch1song.1718)+1
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 15
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 15
 
 
  825               	.LVL23:
@@ -856,7 +856,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  837 0418 FD1F      		adc r31,r29
  838 041a 2196      		adiw r28,1
  839               	/* #APP */
- 840               	 ;  458 "firefly.c" 1
+ 840               	 ;  481 "firefly.c" 1
  841 041c E491      		lpm r30, Z
  842               		
  843               	 ;  0 "" 2
@@ -872,7 +872,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  853 042a 192F      		mov r17,r25
  854               	.LM123:
  855               	/* #APP */
- 856               	 ;  461 "firefly.c" 1
+ 856               	 ;  484 "firefly.c" 1
  857 042c F894      		cli
  858               	 ;  0 "" 2
  859               	.LM124:
@@ -882,7 +882,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  863 0432 8E9A      		sbi 49-32,6
  864               	.LM126:
  865               	/* #APP */
- 866               	 ;  464 "firefly.c" 1
+ 866               	 ;  487 "firefly.c" 1
  867 0434 7894      		sei
  868               	 ;  0 "" 2
  869               	/* #NOAPP */
@@ -898,7 +898,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  879 0440 2091 0000 		lds r18,ch2noteptr.1721
  880 0444 3091 0000 		lds r19,(ch2noteptr.1721)+1
  881 0448 E091 0000 		lds r30,ch2song.1719
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 16
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 16
 
 
  882 044c F091 0000 		lds r31,(ch2song.1719)+1
@@ -920,7 +920,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  898 0468 3093 0000 		sts (ch2noteptr.1721)+1,r19
  899 046c 2093 0000 		sts ch2noteptr.1721,r18
  900               	/* #APP */
- 901               	 ;  472 "firefly.c" 1
+ 901               	 ;  495 "firefly.c" 1
  902 0470 E491      		lpm r30, Z
  903               		
  904               	 ;  0 "" 2
@@ -936,7 +936,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  914 047e 192F      		mov r17,r25
  915               	.LM131:
  916               	/* #APP */
- 917               	 ;  475 "firefly.c" 1
+ 917               	 ;  498 "firefly.c" 1
  918 0480 F894      		cli
  919               	 ;  0 "" 2
  920               	.LM132:
@@ -946,7 +946,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  924 0486 8F9A      		sbi 49-32,7
  925               	.LM134:
  926               	/* #APP */
- 927               	 ;  478 "firefly.c" 1
+ 927               	 ;  501 "firefly.c" 1
  928 0488 7894      		sei
  929               	 ;  0 "" 2
  930               	/* #NOAPP */
@@ -958,7 +958,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  936 048e 00C0      		rjmp .L76
  937 0490 8091 0000 		lds r24,ch1restcount
  938 0494 8823      		tst r24
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 17
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 17
 
 
  939 0496 01F4      		brne .L76
@@ -968,7 +968,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  943 049a 182F      		mov r17,r24
  944               	.LM137:
  945               	/* #APP */
- 946               	 ;  489 "firefly.c" 1
+ 946               	 ;  512 "firefly.c" 1
  947 049c F894      		cli
  948               	 ;  0 "" 2
  949               	.LM138:
@@ -976,7 +976,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  951 049e 8093 0000 		sts ch1restcount,r24
  952               	.LM139:
  953               	/* #APP */
- 954               	 ;  491 "firefly.c" 1
+ 954               	 ;  514 "firefly.c" 1
  955 04a2 7894      		sei
  956               	 ;  0 "" 2
  957               	/* #NOAPP */
@@ -995,7 +995,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  970 04b4 182F      		mov r17,r24
  971               	.LM142:
  972               	/* #APP */
- 973               	 ;  497 "firefly.c" 1
+ 973               	 ;  520 "firefly.c" 1
  974 04b6 F894      		cli
  975               	 ;  0 "" 2
  976               	.LM143:
@@ -1003,7 +1003,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  978 04b8 8093 0000 		sts ch2restcount,r24
  979               	.LM144:
  980               	/* #APP */
- 981               	 ;  499 "firefly.c" 1
+ 981               	 ;  522 "firefly.c" 1
  982 04bc 7894      		sei
  983               	 ;  0 "" 2
  984               	/* #NOAPP */
@@ -1018,7 +1018,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  993 04c8 8E99      		sbic 49-32,6
  994 04ca 00C0      		rjmp .L77
  995               	.LM146:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 18
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 18
 
 
  996 04cc 00D0      		rcall pickasong
@@ -1040,7 +1040,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1012 04ec F381      		ldd r31,Z+3
  1013 04ee E02D      		mov r30,__tmp_reg__
  1014               	/* #APP */
- 1015               	 ;  516 "firefly.c" 1
+ 1015               	 ;  539 "firefly.c" 1
  1016 04f0 E491      		lpm r30, Z
  1017               		
  1018               	 ;  0 "" 2
@@ -1066,7 +1066,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1038               	.L78:
  1039               	.LM153:
  1040               	/* #APP */
- 1041               	 ;  524 "firefly.c" 1
+ 1041               	 ;  547 "firefly.c" 1
  1042 050c F894      		cli
  1043               	 ;  0 "" 2
  1044               	.LM154:
@@ -1076,9 +1076,9 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1048 0512 8E9A      		sbi 49-32,6
  1049               	.LM156:
  1050               	/* #APP */
- 1051               	 ;  527 "firefly.c" 1
+ 1051               	 ;  550 "firefly.c" 1
  1052 0514 7894      		sei
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 19
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 19
 
 
  1053               	 ;  0 "" 2
@@ -1125,7 +1125,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1094 0562 9093 0000 		sts (ch2noteptr.1721)+1,r25
  1095 0566 8093 0000 		sts ch2noteptr.1721,r24
  1096               	/* #APP */
- 1097               	 ;  542 "firefly.c" 1
+ 1097               	 ;  565 "firefly.c" 1
  1098 056a E491      		lpm r30, Z
  1099               		
  1100               	 ;  0 "" 2
@@ -1138,7 +1138,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1107 0572 90E0      		ldi r25,lo8(0)
  1108 0574 70E0      		ldi r23,lo8(0)
  1109 0576 00D0      		rcall __mulhi3
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 20
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 20
 
 
  1110 0578 192F      		mov r17,r25
@@ -1154,7 +1154,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1120               	.L80:
  1121               	.LM166:
  1122               	/* #APP */
- 1123               	 ;  550 "firefly.c" 1
+ 1123               	 ;  573 "firefly.c" 1
  1124 0586 F894      		cli
  1125               	 ;  0 "" 2
  1126               	.LM167:
@@ -1164,7 +1164,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1130 058c 8F9A      		sbi 49-32,7
  1131               	.LM169:
  1132               	/* #APP */
- 1133               	 ;  553 "firefly.c" 1
+ 1133               	 ;  576 "firefly.c" 1
  1134 058e 7894      		sei
  1135               	 ;  0 "" 2
  1136               	/* #NOAPP */
@@ -1198,7 +1198,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1164 05b6 8B9B      		sbis 49-32,3
  1165 05b8 00C0      		rjmp .L82
  1166               	.LM176:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 21
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 21
 
 
  1167 05ba 85B7      		in r24,85-32
@@ -1210,7 +1210,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1173 05c4 8062      		ori r24,lo8(32)
  1174 05c6 85BF      		out 85-32,r24
  1175               	/* #APP */
- 1176               	 ;  577 "firefly.c" 1
+ 1176               	 ;  600 "firefly.c" 1
  1177 05c8 8895      		sleep
  1178               		
  1179               	 ;  0 "" 2
@@ -1226,7 +1226,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1189 05d4 8062      		ori r24,lo8(32)
  1190 05d6 85BF      		out 85-32,r24
  1191               	/* #APP */
- 1192               	 ;  581 "firefly.c" 1
+ 1192               	 ;  604 "firefly.c" 1
  1193 05d8 8895      		sleep
  1194               		
  1195               	 ;  0 "" 2
@@ -1258,7 +1258,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1223               	main:
  1224               	.LFB16:
  1225               	.LM182:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 22
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 22
 
 
  1226 0604 0F93      		push r16
@@ -1272,7 +1272,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1234 060a 88E1      		ldi r24,lo8(24)
  1235 060c 90E0      		ldi r25,hi8(24)
  1236               	/* #APP */
- 1237               	 ;  175 "firefly.c" 1
+ 1237               	 ;  183 "firefly.c" 1
  1238 060e 0FB6      		in __tmp_reg__,__SREG__
  1239 0610 F894      		cli
  1240 0612 A895      		wdr
@@ -1317,8 +1317,8 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1279 0646 90E0      		ldi r25,hi8(2)
  1280 0648 20E8      		ldi r18,lo8(-128)
  1281               	/* #APP */
- 1282               	 ;  204 "firefly.c" 1
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 23
+ 1282               	 ;  212 "firefly.c" 1
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 23
 
 
  1283 064a 0FB6      		in __tmp_reg__,__SREG__
@@ -1363,7 +1363,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1322 0684 8093 0000 		sts force_dark,r24
  1323               	.LM203:
  1324               	/* #APP */
- 1325               	 ;  605 "firefly.c" 1
+ 1325               	 ;  628 "firefly.c" 1
  1326 0688 7894      		sei
  1327               	 ;  0 "" 2
  1328               	.LM204:
@@ -1378,7 +1378,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1337               	.LM207:
  1338 0692 10E1      		ldi r17,lo8(16)
  1339               	.L90:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 24
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 24
 
 
  1340               	.LM208:
@@ -1401,7 +1401,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1357 06ac 8062      		ori r24,lo8(32)
  1358 06ae 85BF      		out 85-32,r24
  1359               	/* #APP */
- 1360               	 ;  426 "firefly.c" 1
+ 1360               	 ;  439 "firefly.c" 1
  1361 06b0 8895      		sleep
  1362               		
  1363               	 ;  0 "" 2
@@ -1438,7 +1438,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1394 06da 00D0      		rcall lighted_fireflies
  1395 06dc 00C0      		rjmp .L90
  1396               	.LFE16:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 25
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 25
 
 
  1398               	.global	bootsongnotes
@@ -1498,7 +1498,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1458 002b 66        		.byte	102
  1459 002c 6D        		.byte	109
  1460 002d 73        		.byte	115
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 26
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 26
 
 
  1461 002e 79        		.byte	121
@@ -1558,7 +1558,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1515 0064 A8        		.byte	-88
  1516 0065 AA        		.byte	-86
  1517 0066 A1        		.byte	-95
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 27
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 27
 
 
  1518 0067 92        		.byte	-110
@@ -1618,7 +1618,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1576 0095 01        		.byte	1
  1577 0096 01        		.byte	1
  1578 0097 01        		.byte	1
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 28
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 28
 
 
  1579 0098 08        		.byte	8
@@ -1678,7 +1678,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1633 00ce 98        		.byte	-104
  1634 00cf 9D        		.byte	-99
  1635 00d0 9C        		.byte	-100
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 29
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 29
 
 
  1636 00d1 9A        		.byte	-102
@@ -1738,7 +1738,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1694 00ff 01        		.byte	1
  1695 0100 01        		.byte	1
  1696 0101 01        		.byte	1
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 30
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 30
 
 
  1697 0102 01        		.byte	1
@@ -1798,7 +1798,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1751 0138 92        		.byte	-110
  1752 0139 94        		.byte	-108
  1753 013a 97        		.byte	-105
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 31
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 31
 
 
  1754 013b 9A        		.byte	-102
@@ -1858,7 +1858,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1808 0171 05        		.byte	5
  1809 0172 03        		.byte	3
  1810 0173 02        		.byte	2
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 32
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 32
 
 
  1811 0174 01        		.byte	1
@@ -1918,7 +1918,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1869 01a2 8A        		.byte	-118
  1870 01a3 99        		.byte	-103
  1871 01a4 A4        		.byte	-92
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 33
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 33
 
 
  1872 01a5 A6        		.byte	-90
@@ -1978,7 +1978,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1926               	.global	song2d
  1927               		.data
  1930               	song2d:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 34
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 34
 
 
  1931 0010 6300      		.word	99
@@ -2038,7 +2038,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  1987 020c 9D        		.byte	-99
  1988 020d 9E        		.byte	-98
  1989 020e 9B        		.byte	-101
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 35
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 35
 
 
  1990 020f 97        		.byte	-105
@@ -2098,7 +2098,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  2044 0245 79        		.byte	121
  2045 0246 6E        		.byte	110
  2046 0247 63        		.byte	99
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 36
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 36
 
 
  2047 0248 5B        		.byte	91
@@ -2158,7 +2158,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  2105 0276 52        		.byte	82
  2106 0277 5E        		.byte	94
  2107 0278 6B        		.byte	107
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 37
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 37
 
 
  2108 0279 77        		.byte	119
@@ -2218,7 +2218,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  2162 02af 3E        		.byte	62
  2163 02b0 36        		.byte	54
  2164 02b1 2D        		.byte	45
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 38
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 38
 
 
  2165 02b2 26        		.byte	38
@@ -2278,7 +2278,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  2223 02e0 94        		.byte	-108
  2224 02e1 8D        		.byte	-115
  2225 02e2 8E        		.byte	-114
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 39
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 39
 
 
  2226 02e3 98        		.byte	-104
@@ -2338,7 +2338,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  2286 0038 0000      		.word	song2f
  2287 003a 0000      		.word	song2f
  2288 003c 0000      		.word	song2g
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 40
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 40
 
 
  2289 003e 0000      		.word	song2g
@@ -2398,7 +2398,7 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  2338               		.lcomm ticker.1618,1
  2341               	ch1pins.1520:
  2342 0047 08        		.byte	8
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 41
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 41
 
 
  2343 0048 04        		.byte	4
@@ -2422,83 +2422,83 @@ GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			pag
  2365               		.comm is_dark,1,1
  2366               		.comm force_dark,1,1
  2471               	.Letext0:
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 42
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 firefly.c
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2      *ABS*:0000003f __SREG__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:3      *ABS*:0000003e __SP_H__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:4      *ABS*:0000003d __SP_L__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:5      *ABS*:00000034 __CCP__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:6      *ABS*:00000000 __tmp_reg__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:7      *ABS*:00000001 __zero_reg__
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:18     .text:00000000 __vector_12
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2      *ABS*:0000003f __SREG__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:3      *ABS*:0000003e __SP_H__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:4      *ABS*:0000003d __SP_L__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:5      *ABS*:00000034 __CCP__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:6      *ABS*:00000000 __tmp_reg__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:7      *ABS*:00000001 __zero_reg__
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:18     .text:00000000 __vector_12
                             *COM*:00000001 force_dark
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2353   .data:0000004c debounce.1682
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2353   .data:0000004c debounce.1682
                             *COM*:00000001 is_dark
                             *COM*:00000001 ch1restcount
                             *COM*:00000001 ch2restcount
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2327   .data:00000043 mood_count
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:152    .text:000000ca __vector_10
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2327   .data:00000043 mood_count
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:152    .text:000000ca __vector_10
                             *COM*:00000001 waiting_for_dark
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2338   .bss:0000000a x.1435
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2338   .bss:0000000a x.1435
                             *COM*:00000001 ch1nextnote
                             *COM*:00000001 ch2nextnote
                             *COM*:00000001 masterpinmask
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:291    .text:0000018e von_322
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:293    .text:00000190 turnon_322
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:297    .text:00000196 turnoff_322
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:299    .text:00000198 done_322
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:315    .text:000001a8 von_330
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:317    .text:000001aa turnon_330
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:321    .text:000001b0 turnoff_330
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:323    .text:000001b2 done_330
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:340    .text:000001be showbootup
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2269   .data:00000020 bootsongs
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2347   .data:0000004a masterpins.1519
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2341   .data:00000047 ch1pins.1520
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:512    .text:0000027e randbits
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2336   .data:00000045 lfsr.1631
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2295   .progmem.data:00000304 bitmasks
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:572    .text:000002c0 pickmaster
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2333   .bss:00000009 ticker.1618
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:605    .text:000002e6 pickapin
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:670    .text:00000326 randscaleval
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:710    .text:0000035e randwaitval
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2322   .data:00000042 mood
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:760    .text:000003ac pickasong
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2274   .data:00000022 songs
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:788    .text:000003cc lighted_fireflies
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:291    .text:0000018e von_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:293    .text:00000190 turnon_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:297    .text:00000196 turnoff_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:299    .text:00000198 done_322
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:315    .text:000001a8 von_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:317    .text:000001aa turnon_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:321    .text:000001b0 turnoff_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:323    .text:000001b2 done_330
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:340    .text:000001be showbootup
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2269   .data:00000020 bootsongs
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2347   .data:0000004a masterpins.1519
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2341   .data:00000047 ch1pins.1520
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:512    .text:0000027e randbits
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2336   .data:00000045 lfsr.1631
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2295   .progmem.data:00000304 bitmasks
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:572    .text:000002c0 pickmaster
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2333   .bss:00000009 ticker.1618
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:605    .text:000002e6 pickapin
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:670    .text:00000326 randscaleval
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:710    .text:0000035e randwaitval
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2322   .data:00000042 mood
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:760    .text:000003ac pickasong
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2274   .data:00000022 songs
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:788    .text:000003cc lighted_fireflies
                              .bss:00000000 temp.1722
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2330   .bss:00000003 ch1noteptr.1720
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2332   .bss:00000007 ch1song.1718
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2330   .bss:00000003 ch1noteptr.1720
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2332   .bss:00000007 ch1song.1718
                             *COM*:00000001 ch1scale
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2329   .bss:00000001 ch2noteptr.1721
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2331   .bss:00000005 ch2song.1719
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2329   .bss:00000001 ch2noteptr.1721
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2331   .bss:00000005 ch2song.1719
                             *COM*:00000001 ch2scale
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1223   .text:00000604 main
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1402   .progmem.data:00000000 bootsongnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1426   .data:00000000 bootsong
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1433   .progmem.data:00000013 song2anotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1557   .data:00000004 song2a
-GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s 			page 43
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1223   .text:00000604 main
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1402   .progmem.data:00000000 bootsongnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1426   .data:00000000 bootsong
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1433   .progmem.data:00000013 song2anotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1557   .data:00000004 song2a
+GAS LISTING /var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s 			page 43
 
 
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1564   .progmem.data:0000008a song2bnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1677   .data:00000008 song2b
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1684   .progmem.data:000000f6 song2cnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1819   .data:0000000c song2c
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1826   .progmem.data:00000178 song2dnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1930   .data:00000010 song2d
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:1937   .progmem.data:000001db song2enotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2078   .data:00000014 song2e
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2085   .progmem.data:00000263 song2fnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2183   .data:00000018 song2f
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2190   .progmem.data:000002c0 song2gnotes
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2263   .data:0000001c song2g
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2308   .progmem.data:0000030d about
-/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//cc2Qktuv.s:2316   .progmem.data:000003ca version
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1564   .progmem.data:0000008a song2bnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1677   .data:00000008 song2b
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1684   .progmem.data:000000f6 song2cnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1819   .data:0000000c song2c
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1826   .progmem.data:00000178 song2dnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1930   .data:00000010 song2d
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:1937   .progmem.data:000001db song2enotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2078   .data:00000014 song2e
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2085   .progmem.data:00000263 song2fnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2183   .data:00000018 song2f
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2190   .progmem.data:000002c0 song2gnotes
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2263   .data:0000001c song2g
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2308   .progmem.data:0000030d about
+/var/folders/co/coknbUWaExmsbK3adiW3-++++TI/-Tmp-//ccwttGXi.s:2316   .progmem.data:000003ca version
                             *COM*:00000001 ch1nextscale
                             *COM*:00000001 ch2nextscale
 

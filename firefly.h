@@ -1,7 +1,7 @@
 
 #include "config.h"
 
-#if !(defined(SONG1) || defined(SONG2))
+#if !(SONG1 || SONG2)
 #define SONG1 1
 #endif
 
@@ -13,7 +13,7 @@
 
 #include "songs/bootsong.h"
 
-#ifdef SONG1
+#if SONG1
 #include "songs/song1a.h"
 #include "songs/song1b.h"
 #include "songs/song1c.h"
@@ -21,7 +21,7 @@
 #include "songs/song1e.h"
 #endif
 
-#ifdef SONG2
+#if SONG2
 #include "songs/song2a.h"
 #include "songs/song2b.h"
 #include "songs/song2c.h"
@@ -37,14 +37,14 @@ const Song *bootsongs[] = { &bootsong };
 /* can optimize the pickasong() routine using bit shift multiplication */
 
 const Song *songs[] = { 
-#ifdef SONG1
+#if SONG1
        &song1a, &song1a, &song1a, &song1a, &song1a,
        &song1b, &song1b, &song1b, &song1b, &song1b,
        &song1c, &song1c, &song1c,
        &song1e, &song1e, &song1e,
 #endif
 
-#ifdef SONG2
+#if SONG2
         &song2a, 
         &song2b, &song2b,
         &song2c, &song2c, &song2c,
@@ -82,14 +82,29 @@ typedef struct {
  *      else   { B-C, B-D, B-E } //B
 */
 
+// PIN_B is PB1
 #define PIN_B 1
 
+// PIN_A is PB4/ADC2
 #define PIN_A 4
 #define PIN_A_ADC 2
 
+// PB3
 #define PIN_C 3
+// PB2
 #define PIN_D 2
+// PB0
 #define PIN_E 0
+
+// PB5/ADC0/!RESET
+#define PIN_F 5
+#define PIN_F_ADC 0
+
+#if PHOTOCELL_ON_RESET_PIN
+#   define PHOTOCELL_ADC    PIN_F_ADC
+#else
+#   define PHOTOCELL_ADC    PIN_A_ADC
+#endif
 
 #define FLAGS0 GPIOR0
 
