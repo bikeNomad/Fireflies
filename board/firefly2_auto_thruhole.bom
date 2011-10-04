@@ -1,0 +1,9 @@
+Partlist exported from /Users/ned/src/firefly/board/firefly2_auto_thruhole.sch at 10/1/11 8:00 AM
+
+Qty Value    Device        Parts                             
+1            BATTERY20PTH  BAT1                              
+6            LED3MM        LED1, LED2, LED3, LED4, LED5, LED6
+2   100      RESISTORPTH1  R2, R3                            
+1   100n     CAPPTH_SMALL2 C1                                
+1   ATTINY45 ATTINY45DIP08 IC1                               
+1   CDS      PHOTOCELLPTH  PC1                               

@@ -16,7 +16,7 @@
 # options for possible values)
 #MCU=atmega16
 #MCU=atmega8515
-MCU=attiny45
+MCU=attiny25
 
 # id to use with programmer
 # default: PROGRAMMER_MCU=$(MCU)
@@ -26,7 +26,7 @@ MCU=attiny45
 # avrdude requires 'm8')
 #PROGRAMMER_MCU=m16
 #PROGRAMMER_MCU=m8515
-PROGRAMMER_MCU=t45
+PROGRAMMER_MCU=t25
 
 # Name of our project
 # (use a single word, e.g. 'myproject')
@@ -47,7 +47,7 @@ LIBS=
 
 # Optimization level, 
 # use s (size opt), 1, 2, 3 or 0 (off)
-OPTLEVEL=s
+OPT?=s
 
 
 #####      AVR Dude 'writeflash' options       #####
@@ -93,11 +93,12 @@ AVRDUDE_PORT=usb
 
 # HEXFORMAT -- format for .hex file output
 HEXFORMAT=ihex
+OUTFORMAT=elf
 
     #-mtiny-stack                            \
 	#-Winline -finline-functions             \
 # compiler
-CFLAGS= -I. $(INC) -g -mmcu=$(MCU) -O$(OPTLEVEL) \
+CFLAGS= -I. $(INC) -g -mmcu=$(MCU) -O$(OPT) \
 	-fpack-struct -fshort-enums             \
 	-funsigned-bitfields -funsigned-char    \
 	-Wall -Wstrict-prototypes               \
@@ -131,7 +132,7 @@ AVRDUDE=avrdude
 REMOVE=rm -f
 
 ##### automatic target names ####
-TRG=$(PROJECTNAME).out
+TRG=$(PROJECTNAME).$(OUTFORMAT)
 DUMPTRG=$(PROJECTNAME).s
 
 HEXROMTRG=$(PROJECTNAME).hex 
@@ -167,7 +168,7 @@ LST=$(filter %.lst, $(OBJDEPS:.o=.lst))
 GENASMFILES=$(filter %.s, $(OBJDEPS:.o=.s)) 
 
 
-.SUFFIXES : .c .cc .cpp .C .o .out .s .S \
+.SUFFIXES : .c .cc .cpp .C .o .$(OUTFORMAT) .s .S \
 	.hex .ee.hex .h .hh .hpp
 
 
@@ -175,7 +176,7 @@ GENASMFILES=$(filter %.s, $(OBJDEPS:.o=.s))
 
 # Make targets:
 # all, disasm, stats, hex, writeflash/install, clean
-all: $(TRG)
+all: $(TRG) stats disasm
 
 disasm: $(DUMPTRG) stats
 
@@ -184,7 +185,6 @@ stats: $(TRG)
 	$(SIZE) $(TRG) 
 
 hex: $(HEXTRG)
-
 
 writeflash: hex
 	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID)   \
@@ -208,10 +208,8 @@ install: writeflash
 $(DUMPTRG): $(TRG) 
 	$(OBJDUMP) -S  $< > $@
 
-
 $(TRG): $(OBJDEPS) 
 	$(CC) $(LDFLAGS) -o $(TRG) $(OBJDEPS)
-
 
 #### Generating assembly ####
 # asm from C
@@ -247,12 +245,12 @@ $(TRG): $(OBJDEPS)
 #### Generating hex files ####
 # hex files from elf
 #####  Generating a gdb initialisation file    #####
-.out.hex:
+.$(OUTFORMAT).hex:
 	$(OBJCOPY) -j .text                    \
 		-j .data                       \
 		-O $(HEXFORMAT) $< $@
 
-.out.ee.hex:
+.$(OUTFORMAT).ee.hex:
 	$(OBJCOPY) -j .eeprom                  \
 		--change-section-lma .eeprom=0 \
 		-O $(HEXFORMAT) $< $@
