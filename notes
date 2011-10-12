@@ -1,0 +1,8 @@
+PIN_A PB4  anode#1
+PIN_B PB1  anode#2
+
+PIN_C PB3  cathode#1
+PIN_D PB2  cathode#2
+PIN_E PB0  cathode#3
+
+CdS between PIN_A and PIN_B
