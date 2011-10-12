@@ -2,8 +2,8 @@
 set path=.,../common
 if filereadable("/usr/avr/include/avr/io.h")
     set path+=/usr/avr/include
-elseif filereadable("/usr/local/AVRMacPack/avr/include/avr/io.h")
-    set path+=/usr/local/AVRMacPack/avr/include
+elseif filereadable("/usr/local/CrossPack-AVR/avr/include/avr/io.h")
+    set path+=/usr/local/CrossPack-AVR/avr/include
 elseif filereadable("/opt/local/avr/include/avr/io.h")
     set path+=/opt/local/avr/include
 else

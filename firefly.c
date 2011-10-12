@@ -391,6 +391,7 @@ static uint8_t read_adc(uint8_t muxreg)
 
 // return true if dark enough
 // CdS photocell between PIN_A and PIN_B
+// or between RESET line and GND (if PHOTOCELL_ON_RESET_PIN defined)
 static void still_dark(void)
 {
     static uint8_t debounce = DARK_DEBOUNCE;
