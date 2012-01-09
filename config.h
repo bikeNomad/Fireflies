@@ -2,7 +2,9 @@
 #define SONG2   1
 
 // non-zero to use the photocell for dark detection
-#define USE_PHOTOCELL 1
+#ifndef USE_PHOTOCELL
+#define USE_PHOTOCELL 0
+#endif
 
 // TODO
 // non-zero to use the internal temperature for blink speed

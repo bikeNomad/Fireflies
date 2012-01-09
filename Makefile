@@ -16,7 +16,7 @@
 # options for possible values)
 #MCU=atmega16
 #MCU=atmega8515
-MCU=attiny25
+MCU=attiny45
 
 # id to use with programmer
 # default: PROGRAMMER_MCU=$(MCU)
@@ -26,7 +26,7 @@ MCU=attiny25
 # avrdude requires 'm8')
 #PROGRAMMER_MCU=m16
 #PROGRAMMER_MCU=m8515
-PROGRAMMER_MCU=t25
+PROGRAMMER_MCU=t45
 
 # Name of our project
 # (use a single word, e.g. 'myproject')
@@ -65,8 +65,8 @@ OPT?=s
 # described in the avrdude info page.
 # 
 # AVRDUDE_PROGRAMMERID=stk500v2
-# AVRDUDE_PROGRAMMERID=jtag2isp
-AVRDUDE_PROGRAMMERID=dragon_isp
+AVRDUDE_PROGRAMMERID=jtag2isp
+# AVRDUDE_PROGRAMMERID=dragon_isp
 # additional AVRDUDE opts (in this case 125KHz)
 AVRDUDE_OPTS=-i 8
 
@@ -286,3 +286,8 @@ clean:
 
 #####                    EOF                   #####
 
+help:
+	@echo targets:
+	@echo all disasm stats hex writeflash fuses firefly install gdbinit clean
+
+.PHONY: help
