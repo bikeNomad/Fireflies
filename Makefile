@@ -64,8 +64,9 @@ OPT?=s
 # one of the valid "-c PROGRAMMER-ID" values 
 # described in the avrdude info page.
 # 
+AVRDUDE_PROGRAMMERID=stk500
 # AVRDUDE_PROGRAMMERID=stk500v2
-AVRDUDE_PROGRAMMERID=jtag2isp
+# AVRDUDE_PROGRAMMERID=jtag2isp
 # AVRDUDE_PROGRAMMERID=dragon_isp
 # additional AVRDUDE opts (in this case 125KHz)
 AVRDUDE_OPTS=-i 8
@@ -73,8 +74,8 @@ AVRDUDE_OPTS=-i 8
 # port--serial or parallel port to which your 
 # hardware programmer is attached
 #
-# AVRDUDE_PORT=/dev/cu.pci-serial4a
-AVRDUDE_PORT=usb
+AVRDUDE_PORT=/dev/cu.usbserial-FTB5PNU8
+# AVRDUDE_PORT=usb
 # AVRDUDE_PORT=com1:
 
 
