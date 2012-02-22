@@ -16,7 +16,7 @@
 # options for possible values)
 #MCU=atmega16
 #MCU=atmega8515
-MCU=attiny45
+MCU=attiny85
 
 # id to use with programmer
 # default: PROGRAMMER_MCU=$(MCU)
@@ -26,7 +26,7 @@ MCU=attiny45
 # avrdude requires 'm8')
 #PROGRAMMER_MCU=m16
 #PROGRAMMER_MCU=m8515
-PROGRAMMER_MCU=t45
+PROGRAMMER_MCU=t85
 
 # Name of our project
 # (use a single word, e.g. 'myproject')

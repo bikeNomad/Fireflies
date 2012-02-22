@@ -12,7 +12,7 @@ const prog_uint8_t about[] = "Jar of Fireflies\n"
             "Special thanks to Katie Horn for getting me to think about electronics";
 const prog_uint8_t version[] = "$Revision: 1.41 $ $Date: 2007/01/10 04:35:55 $";
 
-#if (USE_PHOTOCELL && PHOTOCELL_ON_RESET_PIN)
+#if USE_PHOTOTRANSISTOR
 // PIN_F (reset/PB5) used as ADC0, thus an input
 #  define LEDS_OFF ~(_BV(PIN_A) | _BV(PIN_B) | _BV(PIN_F))
 #  define DDRB_DEFAULT ~(_BV(PIN_F))
@@ -70,7 +70,7 @@ volatile uint8_t masterpinmask;
 
 static void still_dark(void);
 static void wait_for_dark(void);
-#if USE_PHOTOCELL
+#if USE_PHOTOTRANSISTOR
 volatile uint8_t waiting_for_dark;	// true if in the "wait for dark" state.
 volatile uint8_t is_dark;	        // true if it still seems to be dark.
 volatile uint8_t force_dark;
@@ -361,7 +361,7 @@ const Song *pickasong(void)
 }
 
 
-#if (USE_PHOTOCELL || READ_TEMPERATURE)
+#if (USE_PHOTOTRANSISTOR || READ_TEMPERATURE)
 
 static uint8_t read_adc(uint8_t muxreg)
 {
@@ -387,32 +387,22 @@ static uint8_t read_adc(uint8_t muxreg)
 #endif
 
 
-#if USE_PHOTOCELL
+#if USE_PHOTOTRANSISTOR
 
-// return true if dark enough
-// CdS photocell between PIN_A and PIN_B
-// or between RESET line and GND (if PHOTOCELL_ON_RESET_PIN defined)
+// called from WDT ISR
+// sets is_dark if dark enough
+// phototransistor between RESET line and GND
 static void still_dark(void)
 {
     static uint8_t debounce = DARK_DEBOUNCE;
 
 	// set up I/O pins
-#if PHOTOCELL_ON_RESET_PIN
 	PORTB = LEDS_OFF | _BV(PIN_F);	// turn ON pullup on PIN_F
-#else
-	DDRB = ~_BV(PIN_A);		// only PIN_A as input
-	PORTB = ~_BV(PIN_B);	// turn ON pullup on PIN_A, PIN_B low, all others high
-#endif
 	// read state
-    uint8_t photocell = read_adc(PHOTOCELL_ADC);  // Vcc as VRef, no conn to AREF.
+    uint8_t photocell = read_adc(PHOTOTRANSISTOR_ADC);  // Vcc as VRef, no conn to AREF.
 
 	// turn off pullup
-#if PHOTOCELL_ON_RESET_PIN
 	PORTB = LEDS_OFF;	// turn OFF pullup on PIN_F
-#else
-	PORTB = ~(_BV(PIN_B) | _BV(PIN_A)) ;	// turn OFF pullup on PIN_A, PIN_B low, all others high
-    DDRB = DDRB_DEFAULT;    // make PIN_A an output again.
-#endif
 
     if ((photocell > DARK_MINIMUM) || force_dark)
     {
@@ -444,10 +434,10 @@ static void wait_for_dark(void)
     waiting_for_dark = 0;
 }
 
-#else   /* !USE_PHOTOCELL */
+#else   /* !USE_PHOTOTRANSISTOR */
 static void still_dark(void)        { }
 static void wait_for_dark(void)     { }
-#endif  /* USE_PHOTOCELL */
+#endif  /* USE_PHOTOTRANSISTOR */
 
 #if READ_TEMPERATURE
 
@@ -620,7 +610,7 @@ int main(void)
     // Zero out flags.
     FLAGS0 = 0;
 
-#if USE_PHOTOCELL
+#if USE_PHOTOTRANSISTOR
     waiting_for_dark = 0;
     is_dark = 1;
     force_dark = 1;
@@ -629,7 +619,7 @@ int main(void)
     sei();
     showbootup();
 
-#if USE_PHOTOCELL
+#if USE_PHOTOTRANSISTOR
     force_dark = 0;
 #endif
 
