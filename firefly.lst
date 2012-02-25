@@ -1,4 +1,4 @@
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 1
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 1
 
 
    1               		.file	"firefly.c"
@@ -22,2301 +22,2479 @@ GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page
   27 000c 9F93      		push r25
   28               	/* prologue: Signal */
   29               	/* frame size = 0 */
-  30               	.LM2:
-  31 000e 899B      		sbis 49-32,1
-  32 0010 00C0      		rjmp .L2
-  33 0012 8091 0000 		lds r24,ch1restcount
-  34 0016 8150      		subi r24,lo8(-(-1))
-  35 0018 8093 0000 		sts ch1restcount,r24
-  36 001c 8091 0000 		lds r24,ch1restcount
-  37 0020 8823      		tst r24
-  38 0022 01F4      		brne .L2
-  39 0024 8998      		cbi 49-32,1
-  40               	.L2:
-  41               	.LM3:
-  42 0026 8B9B      		sbis 49-32,3
-  43 0028 00C0      		rjmp .L3
-  44 002a 8091 0000 		lds r24,ch2restcount
-  45 002e 8150      		subi r24,lo8(-(-1))
-  46 0030 8093 0000 		sts ch2restcount,r24
-  47 0034 8091 0000 		lds r24,ch2restcount
-  48 0038 8823      		tst r24
-  49 003a 01F4      		brne .L3
-  50 003c 8B98      		cbi 49-32,3
+  30               	.LBB13:
+  31               	.LBB14:
+  32               	.LM2:
+  33 000e 8DEE      		ldi r24,lo8(-19)
+  34 0010 88BB      		out 56-32,r24
+  35               	.LBB15:
+  36               	.LBB16:
+  37               	.LM3:
+  38 0012 80B5      		in r24,64-32
+  39 0014 8E7F      		andi r24,lo8(-2)
+  40 0016 80BD      		out 64-32,r24
+  41               	.LM4:
+  42 0018 80E2      		ldi r24,lo8(32)
+  43 001a 87B9      		out 39-32,r24
+  44               	.L2:
+  45               	.LM5:
+  46 001c 3699      		sbic 38-32,6
+  47 001e 00C0      		rjmp .L2
+  48               	.LM6:
+  49 0020 80EC      		ldi r24,lo8(-64)
+  50 0022 86B9      		out 38-32,r24
   51               	.L3:
-  52               	.LM4:
-  53 003e 8C99      		sbic 49-32,4
-  54 0040 00C0      		rjmp .L5
-  55 0042 8091 0000 		lds r24,mood_count
-  56 0046 9091 0000 		lds r25,(mood_count)+1
-  57 004a 0197      		sbiw r24,1
-  58 004c 9093 0000 		sts (mood_count)+1,r25
-  59 0050 8093 0000 		sts mood_count,r24
-  60 0054 892B      		or r24,r25
-  61 0056 01F4      		brne .L5
-  62 0058 8C9A      		sbi 49-32,4
-  63               	.L5:
-  64               	/* epilogue start */
-  65               	.LM5:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 2
+  52               	.LM7:
+  53 0024 3699      		sbic 38-32,6
+  54 0026 00C0      		rjmp .L3
+  55               	.LM8:
+  56 0028 85B1      		in r24,37-32
+  57               	.LVL0:
+  58               	.LM9:
+  59 002a 3798      		cbi 38-32,7
+  60               	.LM10:
+  61 002c 90B5      		in r25,64-32
+  62 002e 9160      		ori r25,lo8(1)
+  63 0030 90BD      		out 64-32,r25
+  64               	.LBE16:
+  65               	.LBE15:
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 2
 
 
-  66 005a 9F91      		pop r25
-  67 005c 8F91      		pop r24
-  68 005e 0F90      		pop r0
-  69 0060 0FBE      		out __SREG__,r0
-  70 0062 0F90      		pop r0
-  71 0064 1F90      		pop __zero_reg__
-  72 0066 1895      		reti
-  73               	.LFE2:
-  75               	.global	__vector_10
-  77               	__vector_10:
-  78               	.LFB3:
-  79               	.LM6:
-  80 0068 1F92      		push __zero_reg__
-  81 006a 0F92      		push r0
-  82 006c 0FB6      		in r0,__SREG__
-  83 006e 0F92      		push r0
-  84 0070 1124      		clr __zero_reg__
-  85 0072 8F93      		push r24
-  86               	/* prologue: Signal */
-  87               	/* frame size = 0 */
-  88               	.LM7:
-  89 0074 88BA      		out 56-32,r8
-  90               	.LM8:
-  91 0076 8091 0000 		lds r24,x.1430
-  92 007a 8150      		subi r24,lo8(-(-1))
-  93 007c 8093 0000 		sts x.1430,r24
-  94 0080 8F5F      		subi r24,lo8(-(1))
-  95 0082 01F0      		breq .+2
-  96 0084 00C0      		rjmp .L7
-  97               	.LM9:
-  98 0086 889B      		sbis 49-32,0
-  99 0088 00C0      		rjmp .L8
- 100               	.LM10:
- 101 008a 8E9B      		sbis 49-32,6
- 102 008c 00C0      		rjmp .L9
- 103               	.LM11:
- 104 008e 8091 0000 		lds r24,ch1nextnote
- 105 0092 282E      		mov r2,r24
- 106               	.LM12:
- 107 0094 8E98      		cbi 49-32,6
- 108 0096 00C0      		rjmp .L10
- 109               	.L9:
- 110               	.LM13:
- 111 0098 2224      		clr r2
- 112               	.LM14:
- 113 009a 8091 0000 		lds r24,ch1restcount
- 114 009e 8823      		tst r24
- 115 00a0 01F0      		breq .L10
- 116               	.LM15:
- 117 00a2 8898      		cbi 49-32,0
- 118               	.LM16:
- 119 00a4 899A      		sbi 49-32,1
- 120 00a6 00C0      		rjmp .L10
- 121               	.L8:
- 122               	.LM17:
- 123 00a8 8999      		sbic 49-32,1
- 124 00aa 00C0      		rjmp .L10
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 3
+  66               	.LM11:
+  67 0032 9DEC      		ldi r25,lo8(-51)
+  68 0034 98BB      		out 56-32,r25
+  69               	.LM12:
+  70 0036 873E      		cpi r24,lo8(-25)
+  71 0038 00F4      		brsh .L4
+  72 003a 8091 0000 		lds r24,force_dark
+  73               	.LVL1:
+  74 003e 8823      		tst r24
+  75 0040 01F0      		breq .L5
+  76               	.LVL2:
+  77               	.L4:
+  78               	.LM13:
+  79 0042 8091 0000 		lds r24,debounce.1682
+  80               	.LVL3:
+  81 0046 8150      		subi r24,lo8(-(-1))
+  82 0048 8093 0000 		sts debounce.1682,r24
+  83 004c 8F5F      		subi r24,lo8(-(1))
+  84 004e 01F4      		brne .L6
+  85               	.LM14:
+  86 0050 8AE0      		ldi r24,lo8(10)
+  87 0052 8093 0000 		sts debounce.1682,r24
+  88               	.LM15:
+  89 0056 81E0      		ldi r24,lo8(1)
+  90 0058 8093 0000 		sts is_dark,r24
+  91 005c 00C0      		rjmp .L6
+  92               	.L5:
+  93               	.LM16:
+  94 005e 8AE0      		ldi r24,lo8(10)
+  95 0060 8093 0000 		sts debounce.1682,r24
+  96               	.LM17:
+  97 0064 1092 0000 		sts is_dark,__zero_reg__
+  98               	.L6:
+  99               	.LBE14:
+ 100               	.LBE13:
+ 101               	.LM18:
+ 102 0068 899B      		sbis 49-32,1
+ 103 006a 00C0      		rjmp .L7
+ 104 006c 8091 0000 		lds r24,ch1restcount
+ 105 0070 8150      		subi r24,lo8(-(-1))
+ 106 0072 8093 0000 		sts ch1restcount,r24
+ 107 0076 8091 0000 		lds r24,ch1restcount
+ 108 007a 8823      		tst r24
+ 109 007c 01F4      		brne .L7
+ 110 007e 8998      		cbi 49-32,1
+ 111               	.L7:
+ 112               	.LM19:
+ 113 0080 8B9B      		sbis 49-32,3
+ 114 0082 00C0      		rjmp .L8
+ 115 0084 8091 0000 		lds r24,ch2restcount
+ 116 0088 8150      		subi r24,lo8(-(-1))
+ 117 008a 8093 0000 		sts ch2restcount,r24
+ 118 008e 8091 0000 		lds r24,ch2restcount
+ 119 0092 8823      		tst r24
+ 120 0094 01F4      		brne .L8
+ 121 0096 8B98      		cbi 49-32,3
+ 122               	.L8:
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 3
 
 
- 125 00ac 8E9B      		sbis 49-32,6
- 126 00ae 00C0      		rjmp .L10
- 127               	.LM18:
- 128 00b0 8091 0000 		lds r24,ch1nextnote
- 129 00b4 282E      		mov r2,r24
- 130               	.LM19:
- 131 00b6 8E98      		cbi 49-32,6
- 132               	.LM20:
- 133 00b8 889A      		sbi 49-32,0
+ 123               	.LM20:
+ 124 0098 8C99      		sbic 49-32,4
+ 125 009a 00C0      		rjmp .L10
+ 126 009c 8091 0000 		lds r24,mood_count
+ 127 00a0 9091 0000 		lds r25,(mood_count)+1
+ 128 00a4 0197      		sbiw r24,1
+ 129 00a6 9093 0000 		sts (mood_count)+1,r25
+ 130 00aa 8093 0000 		sts mood_count,r24
+ 131 00ae 892B      		or r24,r25
+ 132 00b0 01F4      		brne .L10
+ 133 00b2 8C9A      		sbi 49-32,4
  134               	.L10:
- 135               	.LM21:
- 136 00ba 8A9B      		sbis 49-32,2
- 137 00bc 00C0      		rjmp .L11
- 138               	.LM22:
- 139 00be 8F9B      		sbis 49-32,7
- 140 00c0 00C0      		rjmp .L12
- 141               	.LM23:
- 142 00c2 8091 0000 		lds r24,ch2nextnote
- 143 00c6 382E      		mov r3,r24
- 144               	.LM24:
- 145 00c8 8F98      		cbi 49-32,7
- 146 00ca 00C0      		rjmp .L13
- 147               	.L12:
- 148               	.LM25:
- 149 00cc 3324      		clr r3
- 150               	.LM26:
- 151 00ce 8091 0000 		lds r24,ch2restcount
- 152 00d2 8823      		tst r24
- 153 00d4 01F0      		breq .L13
- 154               	.LM27:
- 155 00d6 8A98      		cbi 49-32,2
- 156               	.LM28:
- 157 00d8 8B9A      		sbi 49-32,3
- 158 00da 00C0      		rjmp .L13
- 159               	.L11:
- 160               	.LM29:
- 161 00dc 8B99      		sbic 49-32,3
- 162 00de 00C0      		rjmp .L13
- 163 00e0 8F9B      		sbis 49-32,7
- 164 00e2 00C0      		rjmp .L13
- 165               	.LM30:
- 166 00e4 8091 0000 		lds r24,ch2nextnote
- 167 00e8 382E      		mov r3,r24
- 168               	.LM31:
- 169 00ea 8F98      		cbi 49-32,7
- 170               	.LM32:
- 171 00ec 8A9A      		sbi 49-32,2
- 172               	.L13:
- 173               	.LM33:
- 174 00ee 8899      		sbic 49-32,0
- 175 00f0 4424      		clr r4
- 176               	.L14:
- 177               	.LM34:
- 178 00f2 8A99      		sbic 49-32,2
- 179 00f4 5524      		clr r5
- 180               	.L15:
- 181               	.LM35:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 4
+ 135               	/* epilogue start */
+ 136               	.LM21:
+ 137 00b4 9F91      		pop r25
+ 138 00b6 8F91      		pop r24
+ 139 00b8 0F90      		pop r0
+ 140 00ba 0FBE      		out __SREG__,r0
+ 141 00bc 0F90      		pop r0
+ 142 00be 1F90      		pop __zero_reg__
+ 143 00c0 1895      		reti
+ 144               	.LFE2:
+ 146               	.global	__vector_10
+ 148               	__vector_10:
+ 149               	.LFB3:
+ 150               	.LM22:
+ 151 00c2 1F92      		push __zero_reg__
+ 152 00c4 0F92      		push r0
+ 153 00c6 0FB6      		in r0,__SREG__
+ 154 00c8 0F92      		push r0
+ 155 00ca 1124      		clr __zero_reg__
+ 156 00cc 8F93      		push r24
+ 157               	/* prologue: Signal */
+ 158               	/* frame size = 0 */
+ 159               	.LM23:
+ 160 00ce 8091 0000 		lds r24,waiting_for_dark
+ 161 00d2 8823      		tst r24
+ 162 00d4 01F0      		breq .+2
+ 163 00d6 00C0      		rjmp .L27
+ 164               	.LM24:
+ 165 00d8 88BA      		out 56-32,r8
+ 166               	.LM25:
+ 167 00da 8091 0000 		lds r24,x.1435
+ 168 00de 8150      		subi r24,lo8(-(-1))
+ 169 00e0 8093 0000 		sts x.1435,r24
+ 170 00e4 8F5F      		subi r24,lo8(-(1))
+ 171 00e6 01F0      		breq .+2
+ 172 00e8 00C0      		rjmp .L15
+ 173               	.LM26:
+ 174 00ea 889B      		sbis 49-32,0
+ 175 00ec 00C0      		rjmp .L16
+ 176               	.LM27:
+ 177 00ee 8E9B      		sbis 49-32,6
+ 178 00f0 00C0      		rjmp .L17
+ 179               	.LM28:
+ 180 00f2 8091 0000 		lds r24,ch1nextnote
+ 181 00f6 282E      		mov r2,r24
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 4
 
 
- 182 00f6 8899      		sbic 49-32,0
- 183 00f8 00C0      		rjmp .L16
- 184 00fa 8A9B      		sbis 49-32,2
- 185 00fc 00C0      		rjmp .L17
- 186               	.L16:
- 187               	.LM36:
- 188 00fe 8091 0000 		lds r24,masterpinmask
- 189 0102 0F2E      		mov __tmp_reg__,r31
- 190 0104 FDEE      		ldi r31,lo8(-19)
- 191 0106 8F2E      		mov r8,r31
- 192 0108 F02D      		mov r31,__tmp_reg__
- 193 010a 882A      		or r8,r24
- 194 010c 00C0      		rjmp .L7
- 195               	.L17:
- 196               	.LM37:
- 197 010e 8DEE      		ldi r24,lo8(-19)
- 198 0110 882E      		mov r8,r24
- 199               	.L7:
- 200               	.LM38:
- 201 0112 889B      		sbis 49-32,0
- 202 0114 00C0      		rjmp .L18
- 203               	/* #APP */
- 204               	 ;  171 "firefly.c" 1
- 205 0116 062C      		mov     __tmp_reg__, r6
- 206 0118 27FA      		bst     r2, 7
- 207 011a 420C      		add     r4, r2
- 208 011c 03F0      		brvs    von_242
- 209 011e 06F0      		brts    turnon_242
- 210 0120 00C0      		rjmp    turnoff_242
- 211               	von_242:
- 212 0122 06F0      		brts    turnoff_242
- 213               	turnon_242:
- 214 0124 0094      		com     __tmp_reg__
- 215 0126 8020      		and     r8, __tmp_reg__
- 216 0128 00C0      	rjmp    done_242
- 217               	turnoff_242:
- 218 012a 8028      		or      r8, __tmp_reg__
- 219               		done_242:
- 220               		
- 221               	 ;  0 "" 2
- 222               	/* #NOAPP */
- 223               	.L18:
- 224               	.LM39:
- 225 012c 8A9B      		sbis 49-32,2
- 226 012e 00C0      		rjmp .L20
- 227               	/* #APP */
- 228               	 ;  172 "firefly.c" 1
- 229 0130 072C      		mov     __tmp_reg__, r7
- 230 0132 37FA      		bst     r3, 7
- 231 0134 530C      		add     r5, r3
- 232 0136 03F0      		brvs    von_250
- 233 0138 06F0      		brts    turnon_250
- 234 013a 00C0      		rjmp    turnoff_250
- 235               	von_250:
- 236 013c 06F0      		brts    turnoff_250
- 237               	turnon_250:
- 238 013e 0094      		com     __tmp_reg__
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 5
+ 182               	.LM29:
+ 183 00f8 8E98      		cbi 49-32,6
+ 184 00fa 00C0      		rjmp .L18
+ 185               	.L17:
+ 186               	.LM30:
+ 187 00fc 2224      		clr r2
+ 188               	.LM31:
+ 189 00fe 8091 0000 		lds r24,ch1restcount
+ 190 0102 8823      		tst r24
+ 191 0104 01F0      		breq .L18
+ 192               	.LM32:
+ 193 0106 8898      		cbi 49-32,0
+ 194               	.LM33:
+ 195 0108 899A      		sbi 49-32,1
+ 196 010a 00C0      		rjmp .L18
+ 197               	.L16:
+ 198               	.LM34:
+ 199 010c 8999      		sbic 49-32,1
+ 200 010e 00C0      		rjmp .L18
+ 201 0110 8E9B      		sbis 49-32,6
+ 202 0112 00C0      		rjmp .L18
+ 203               	.LM35:
+ 204 0114 8091 0000 		lds r24,ch1nextnote
+ 205 0118 282E      		mov r2,r24
+ 206               	.LM36:
+ 207 011a 8E98      		cbi 49-32,6
+ 208               	.LM37:
+ 209 011c 889A      		sbi 49-32,0
+ 210               	.L18:
+ 211               	.LM38:
+ 212 011e 8A9B      		sbis 49-32,2
+ 213 0120 00C0      		rjmp .L19
+ 214               	.LM39:
+ 215 0122 8F9B      		sbis 49-32,7
+ 216 0124 00C0      		rjmp .L20
+ 217               	.LM40:
+ 218 0126 8091 0000 		lds r24,ch2nextnote
+ 219 012a 382E      		mov r3,r24
+ 220               	.LM41:
+ 221 012c 8F98      		cbi 49-32,7
+ 222 012e 00C0      		rjmp .L21
+ 223               	.L20:
+ 224               	.LM42:
+ 225 0130 3324      		clr r3
+ 226               	.LM43:
+ 227 0132 8091 0000 		lds r24,ch2restcount
+ 228 0136 8823      		tst r24
+ 229 0138 01F0      		breq .L21
+ 230               	.LM44:
+ 231 013a 8A98      		cbi 49-32,2
+ 232               	.LM45:
+ 233 013c 8B9A      		sbi 49-32,3
+ 234 013e 00C0      		rjmp .L21
+ 235               	.L19:
+ 236               	.LM46:
+ 237 0140 8B99      		sbic 49-32,3
+ 238 0142 00C0      		rjmp .L21
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 5
 
 
- 239 0140 8020      		and     r8, __tmp_reg__
- 240 0142 00C0      	rjmp    done_250
- 241               	turnoff_250:
- 242 0144 8028      		or      r8, __tmp_reg__
- 243               		done_250:
- 244               		
- 245               	 ;  0 "" 2
- 246               	/* #NOAPP */
- 247               	.L20:
- 248               	/* epilogue start */
- 249               	.LM40:
- 250 0146 8F91      		pop r24
- 251 0148 0F90      		pop r0
- 252 014a 0FBE      		out __SREG__,r0
- 253 014c 0F90      		pop r0
- 254 014e 1F90      		pop __zero_reg__
- 255 0150 1895      		reti
- 256               	.LFE3:
- 258               	.global	showbootup
- 260               	showbootup:
- 261               	.LFB5:
- 262               	.LM41:
- 263 0152 0F93      		push r16
- 264 0154 1F93      		push r17
- 265 0156 CF93      		push r28
- 266 0158 DF93      		push r29
- 267               	/* prologue: function */
- 268               	/* frame size = 0 */
- 269               	.LM42:
- 270 015a 4091 0000 		lds r20,bootsongs
- 271 015e 5091 0000 		lds r21,(bootsongs)+1
- 272               	.LVL0:
- 273               	.LM43:
- 274               	/* #APP */
- 275               	 ;  231 "firefly.c" 1
- 276 0162 F894      		cli
- 277               	 ;  0 "" 2
- 278               	.LM44:
- 279               	/* #NOAPP */
- 280 0164 82E0      		ldi r24,lo8(2)
- 281 0166 8093 0000 		sts ch1restcount,r24
- 282               	.LM45:
- 283 016a 899A      		sbi 49-32,1
- 284               	.LM46:
- 285               	/* #APP */
- 286               	 ;  234 "firefly.c" 1
- 287 016c 7894      		sei
- 288               	 ;  0 "" 2
- 289               	.LM47:
- 290               	/* #NOAPP */
- 291 016e FA01      		movw r30,r20
- 292 0170 6081      		ld r22,Z
- 293 0172 7181      		ldd r23,Z+1
- 294 0174 C0E0      		ldi r28,lo8(masterpins.1513)
- 295 0176 D0E0      		ldi r29,hi8(masterpins.1513)
- 296               	.LVL1:
- 297               	.L27:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 6
+ 239 0144 8F9B      		sbis 49-32,7
+ 240 0146 00C0      		rjmp .L21
+ 241               	.LM47:
+ 242 0148 8091 0000 		lds r24,ch2nextnote
+ 243 014c 382E      		mov r3,r24
+ 244               	.LM48:
+ 245 014e 8F98      		cbi 49-32,7
+ 246               	.LM49:
+ 247 0150 8A9A      		sbi 49-32,2
+ 248               	.L21:
+ 249               	.LM50:
+ 250 0152 8899      		sbic 49-32,0
+ 251 0154 4424      		clr r4
+ 252               	.L22:
+ 253               	.LM51:
+ 254 0156 8A99      		sbic 49-32,2
+ 255 0158 5524      		clr r5
+ 256               	.L23:
+ 257               	.LM52:
+ 258 015a 8899      		sbic 49-32,0
+ 259 015c 00C0      		rjmp .L24
+ 260 015e 8A9B      		sbis 49-32,2
+ 261 0160 00C0      		rjmp .L25
+ 262               	.L24:
+ 263               	.LM53:
+ 264 0162 8091 0000 		lds r24,masterpinmask
+ 265 0166 0F2E      		mov __tmp_reg__,r31
+ 266 0168 FDEC      		ldi r31,lo8(-51)
+ 267 016a 8F2E      		mov r8,r31
+ 268 016c F02D      		mov r31,__tmp_reg__
+ 269 016e 882A      		or r8,r24
+ 270 0170 00C0      		rjmp .L15
+ 271               	.L25:
+ 272               	.LM54:
+ 273 0172 8DEC      		ldi r24,lo8(-51)
+ 274 0174 882E      		mov r8,r24
+ 275               	.L15:
+ 276               	.LM55:
+ 277 0176 889B      		sbis 49-32,0
+ 278 0178 00C0      		rjmp .L26
+ 279               	/* #APP */
+ 280               	 ;  171 "firefly.c" 1
+ 281 017a 062C      		mov     __tmp_reg__, r6
+ 282 017c 27FA      		bst     r2, 7
+ 283 017e 420C      		add     r4, r2
+ 284 0180 03F0      		brvs    von_320
+ 285 0182 06F0      		brts    turnon_320
+ 286 0184 00C0      		rjmp    turnoff_320
+ 287               	von_320:
+ 288 0186 06F0      		brts    turnoff_320
+ 289               	turnon_320:
+ 290 0188 0094      		com     __tmp_reg__
+ 291 018a 8020      		and     r8, __tmp_reg__
+ 292 018c 00C0      	rjmp    done_320
+ 293               	turnoff_320:
+ 294 018e 8028      		or      r8, __tmp_reg__
+ 295               		done_320:
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 6
 
 
- 298               	.LM48:
- 299 0178 8881      		ld r24,Y
- 300 017a 8093 0000 		sts masterpinmask,r24
- 301 017e A0E0      		ldi r26,lo8(ch1pins.1514)
- 302 0180 B0E0      		ldi r27,hi8(ch1pins.1514)
- 303               	.LVL2:
- 304               	.L26:
- 305               	.LM49:
- 306 0182 9C91      		ld r25,X
- 307 0184 20E0      		ldi r18,lo8(0)
- 308 0186 30E0      		ldi r19,hi8(0)
- 309 0188 00C0      		rjmp .L22
- 310               	.L25:
- 311               	.LBB9:
- 312               	.LM50:
- 313 018a FA01      		movw r30,r20
- 314 018c 0281      		ldd r16,Z+2
- 315 018e 1381      		ldd r17,Z+3
- 316 0190 020F      		add r16,r18
- 317 0192 131F      		adc r17,r19
- 318 0194 F801      		movw r30,r16
- 319               	/* #APP */
- 320               	 ;  243 "firefly.c" 1
- 321 0196 8491      		lpm r24, Z
- 322               		
- 323               	 ;  0 "" 2
- 324               	/* #NOAPP */
- 325               	.LBE9:
- 326 0198 8093 0000 		sts ch1nextnote,r24
- 327               	.LM51:
- 328 019c 8E9A      		sbi 49-32,6
- 329 019e 00C0      		rjmp .L23
- 330               	.L24:
- 331               	.LM52:
- 332 01a0 81B5      		in r24,65-32
- 333               	.LVL3:
- 334 01a2 8064      		ori r24,lo8(64)
- 335 01a4 81BD      		out 65-32,r24
- 336               	.LM53:
- 337 01a6 85B7      		in r24,85-32
- 338 01a8 877E      		andi r24,lo8(-25)
- 339 01aa 85BF      		out 85-32,r24
- 340               	.LM54:
- 341 01ac 85B7      		in r24,85-32
- 342 01ae 8062      		ori r24,lo8(32)
- 343 01b0 85BF      		out 85-32,r24
- 344               	/* #APP */
- 345               	 ;  249 "firefly.c" 1
- 346 01b2 8895      		sleep
- 347               		
- 348               	 ;  0 "" 2
- 349               	/* #NOAPP */
- 350 01b4 85B7      		in r24,85-32
- 351 01b6 8F7D      		andi r24,lo8(-33)
- 352 01b8 85BF      		out 85-32,r24
- 353               	.LVL4:
- 354               	.L23:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 7
+ 296               		
+ 297               	 ;  0 "" 2
+ 298               	/* #NOAPP */
+ 299               	.L26:
+ 300               	.LM56:
+ 301 0190 8A9B      		sbis 49-32,2
+ 302 0192 00C0      		rjmp .L27
+ 303               	/* #APP */
+ 304               	 ;  172 "firefly.c" 1
+ 305 0194 072C      		mov     __tmp_reg__, r7
+ 306 0196 37FA      		bst     r3, 7
+ 307 0198 530C      		add     r5, r3
+ 308 019a 03F0      		brvs    von_328
+ 309 019c 06F0      		brts    turnon_328
+ 310 019e 00C0      		rjmp    turnoff_328
+ 311               	von_328:
+ 312 01a0 06F0      		brts    turnoff_328
+ 313               	turnon_328:
+ 314 01a2 0094      		com     __tmp_reg__
+ 315 01a4 8020      		and     r8, __tmp_reg__
+ 316 01a6 00C0      	rjmp    done_328
+ 317               	turnoff_328:
+ 318 01a8 8028      		or      r8, __tmp_reg__
+ 319               		done_328:
+ 320               		
+ 321               	 ;  0 "" 2
+ 322               	/* #NOAPP */
+ 323               	.L27:
+ 324               	/* epilogue start */
+ 325               	.LM57:
+ 326 01aa 8F91      		pop r24
+ 327 01ac 0F90      		pop r0
+ 328 01ae 0FBE      		out __SREG__,r0
+ 329 01b0 0F90      		pop r0
+ 330 01b2 1F90      		pop __zero_reg__
+ 331 01b4 1895      		reti
+ 332               	.LFE3:
+ 334               	.global	showbootup
+ 336               	showbootup:
+ 337               	.LFB5:
+ 338               	.LM58:
+ 339 01b6 0F93      		push r16
+ 340 01b8 1F93      		push r17
+ 341 01ba CF93      		push r28
+ 342 01bc DF93      		push r29
+ 343               	/* prologue: function */
+ 344               	/* frame size = 0 */
+ 345               	.LM59:
+ 346 01be 4091 0000 		lds r20,bootsongs
+ 347 01c2 5091 0000 		lds r21,(bootsongs)+1
+ 348               	.LVL4:
+ 349               	.LM60:
+ 350               	/* #APP */
+ 351               	 ;  231 "firefly.c" 1
+ 352 01c6 F894      		cli
+ 353               	 ;  0 "" 2
+ 354               	.LM61:
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 7
 
 
- 355               	.LM55:
- 356 01ba 8E99      		sbic 49-32,6
- 357 01bc 00C0      		rjmp .L24
- 358               	.LM56:
- 359 01be 2E5F      		subi r18,lo8(-(2))
- 360 01c0 3F4F      		sbci r19,hi8(-(2))
- 361               	.L22:
- 362 01c2 2617      		cp r18,r22
- 363 01c4 3707      		cpc r19,r23
- 364 01c6 00F0      		brlo .L25
- 365 01c8 1196      		adiw r26,1
- 366               	.LM57:
- 367 01ca F0E0      		ldi r31,hi8(ch1pins.1514+3)
- 368 01cc A030      		cpi r26,lo8(ch1pins.1514+3)
- 369 01ce BF07      		cpc r27,r31
- 370 01d0 01F4      		brne .L26
- 371 01d2 2196      		adiw r28,1
- 372               	.LM58:
- 373 01d4 80E0      		ldi r24,hi8(masterpins.1513+2)
- 374 01d6 C030      		cpi r28,lo8(masterpins.1513+2)
- 375 01d8 D807      		cpc r29,r24
- 376               	.LVL5:
- 377 01da 01F4      		brne .L27
- 378 01dc 692E      		mov r6,r25
- 379               	.LM59:
- 380               	/* #APP */
- 381               	 ;  255 "firefly.c" 1
- 382 01de F894      		cli
- 383               	 ;  0 "" 2
- 384               	.LM60:
- 385               	/* #NOAPP */
- 386 01e0 81E0      		ldi r24,lo8(1)
- 387 01e2 8093 0000 		sts ch1restcount,r24
- 388               	.LM61:
- 389               	/* #APP */
- 390               	 ;  257 "firefly.c" 1
- 391 01e6 7894      		sei
- 392               	 ;  0 "" 2
- 393               	/* #NOAPP */
- 394 01e8 00C0      		rjmp .L28
- 395               	.L29:
- 396               	.LM62:
- 397 01ea 81B5      		in r24,65-32
- 398 01ec 8064      		ori r24,lo8(64)
- 399 01ee 81BD      		out 65-32,r24
- 400               	.LM63:
- 401 01f0 85B7      		in r24,85-32
- 402 01f2 877E      		andi r24,lo8(-25)
- 403 01f4 85BF      		out 85-32,r24
- 404               	.LM64:
- 405 01f6 85B7      		in r24,85-32
- 406 01f8 8062      		ori r24,lo8(32)
- 407 01fa 85BF      		out 85-32,r24
- 408               	/* #APP */
- 409               	 ;  262 "firefly.c" 1
- 410 01fc 8895      		sleep
- 411               		
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 8
+ 355               	/* #NOAPP */
+ 356 01c8 82E0      		ldi r24,lo8(2)
+ 357 01ca 8093 0000 		sts ch1restcount,r24
+ 358               	.LM62:
+ 359 01ce 899A      		sbi 49-32,1
+ 360               	.LM63:
+ 361               	/* #APP */
+ 362               	 ;  234 "firefly.c" 1
+ 363 01d0 7894      		sei
+ 364               	 ;  0 "" 2
+ 365               	.LM64:
+ 366               	/* #NOAPP */
+ 367 01d2 FA01      		movw r30,r20
+ 368 01d4 6081      		ld r22,Z
+ 369 01d6 7181      		ldd r23,Z+1
+ 370 01d8 C0E0      		ldi r28,lo8(masterpins.1519)
+ 371 01da D0E0      		ldi r29,hi8(masterpins.1519)
+ 372               	.LVL5:
+ 373               	.L34:
+ 374               	.LM65:
+ 375 01dc 8881      		ld r24,Y
+ 376 01de 8093 0000 		sts masterpinmask,r24
+ 377 01e2 A0E0      		ldi r26,lo8(ch1pins.1520)
+ 378 01e4 B0E0      		ldi r27,hi8(ch1pins.1520)
+ 379               	.LVL6:
+ 380               	.L33:
+ 381               	.LM66:
+ 382 01e6 9C91      		ld r25,X
+ 383 01e8 20E0      		ldi r18,lo8(0)
+ 384 01ea 30E0      		ldi r19,hi8(0)
+ 385 01ec 00C0      		rjmp .L29
+ 386               	.L32:
+ 387               	.LBB17:
+ 388               	.LM67:
+ 389 01ee FA01      		movw r30,r20
+ 390 01f0 0281      		ldd r16,Z+2
+ 391 01f2 1381      		ldd r17,Z+3
+ 392 01f4 020F      		add r16,r18
+ 393 01f6 131F      		adc r17,r19
+ 394 01f8 F801      		movw r30,r16
+ 395               	/* #APP */
+ 396               	 ;  243 "firefly.c" 1
+ 397 01fa 8491      		lpm r24, Z
+ 398               		
+ 399               	 ;  0 "" 2
+ 400               	/* #NOAPP */
+ 401               	.LBE17:
+ 402 01fc 8093 0000 		sts ch1nextnote,r24
+ 403               	.LM68:
+ 404 0200 8E9A      		sbi 49-32,6
+ 405 0202 00C0      		rjmp .L30
+ 406               	.L31:
+ 407               	.LM69:
+ 408 0204 81B5      		in r24,65-32
+ 409               	.LVL7:
+ 410 0206 8064      		ori r24,lo8(64)
+ 411 0208 81BD      		out 65-32,r24
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 8
 
 
- 412               	 ;  0 "" 2
- 413               	/* #NOAPP */
- 414 01fe 85B7      		in r24,85-32
- 415 0200 8F7D      		andi r24,lo8(-33)
- 416 0202 85BF      		out 85-32,r24
- 417               	.L28:
- 418               	.LM65:
- 419 0204 8899      		sbic 49-32,0
- 420 0206 00C0      		rjmp .L29
- 421               	/* epilogue start */
- 422               	.LM66:
- 423 0208 DF91      		pop r29
- 424 020a CF91      		pop r28
- 425 020c 1F91      		pop r17
- 426 020e 0F91      		pop r16
- 427 0210 0895      		ret
- 428               	.LFE5:
- 430               	.global	randbits
- 432               	randbits:
- 433               	.LFB10:
- 434               	.LM67:
- 435               	.LVL6:
- 436               	/* prologue: function */
- 437               	/* frame size = 0 */
- 438 0212 E82F      		mov r30,r24
- 439               	.LM68:
- 440 0214 8091 0000 		lds r24,lfsr.1625
- 441 0218 9091 0000 		lds r25,(lfsr.1625)+1
- 442               	.LVL7:
- 443 021c 0097      		sbiw r24,0
- 444 021e 01F4      		brne .L34
- 445               	.LM69:
- 446 0220 9DEE      		ldi r25,lo8(-19)
- 447 0222 82E1      		ldi r24,lo8(18)
- 448               	.L39:
- 449 0224 98BB      		out 56-32,r25
- 450 0226 88BB      		out 56-32,r24
- 451 0228 00C0      		rjmp .L39
- 452               	.L34:
- 453 022a 9C01      		movw r18,r24
- 454 022c 220F      		lsl r18
- 455 022e 331F      		rol r19
- 456               	.LM70:
- 457 0230 97FF      		sbrs r25,7
- 458 0232 00C0      		rjmp .L40
- 459               	.L36:
- 460               	.LM71:
- 461 0234 87E8      		ldi r24,lo8(7559)
- 462 0236 9DE1      		ldi r25,hi8(7559)
- 463 0238 2827      		eor r18,r24
- 464 023a 3927      		eor r19,r25
- 465               	.L40:
- 466 023c 3093 0000 		sts (lfsr.1625)+1,r19
- 467 0240 2093 0000 		sts lfsr.1625,r18
- 468               	.LBB10:
- 469               	.LM72:
- 470 0244 F0E0      		ldi r31,lo8(0)
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 9
+ 412               	.LM70:
+ 413 020a 85B7      		in r24,85-32
+ 414 020c 877E      		andi r24,lo8(-25)
+ 415 020e 85BF      		out 85-32,r24
+ 416               	.LM71:
+ 417 0210 85B7      		in r24,85-32
+ 418 0212 8062      		ori r24,lo8(32)
+ 419 0214 85BF      		out 85-32,r24
+ 420               	/* #APP */
+ 421               	 ;  249 "firefly.c" 1
+ 422 0216 8895      		sleep
+ 423               		
+ 424               	 ;  0 "" 2
+ 425               	/* #NOAPP */
+ 426 0218 85B7      		in r24,85-32
+ 427 021a 8F7D      		andi r24,lo8(-33)
+ 428 021c 85BF      		out 85-32,r24
+ 429               	.LVL8:
+ 430               	.L30:
+ 431               	.LM72:
+ 432 021e 8E99      		sbic 49-32,6
+ 433 0220 00C0      		rjmp .L31
+ 434               	.LM73:
+ 435 0222 2E5F      		subi r18,lo8(-(2))
+ 436 0224 3F4F      		sbci r19,hi8(-(2))
+ 437               	.L29:
+ 438 0226 2617      		cp r18,r22
+ 439 0228 3707      		cpc r19,r23
+ 440 022a 00F0      		brlo .L32
+ 441 022c 1196      		adiw r26,1
+ 442               	.LM74:
+ 443 022e F0E0      		ldi r31,hi8(ch1pins.1520+3)
+ 444 0230 A030      		cpi r26,lo8(ch1pins.1520+3)
+ 445 0232 BF07      		cpc r27,r31
+ 446 0234 01F4      		brne .L33
+ 447 0236 2196      		adiw r28,1
+ 448               	.LM75:
+ 449 0238 80E0      		ldi r24,hi8(masterpins.1519+2)
+ 450 023a C030      		cpi r28,lo8(masterpins.1519+2)
+ 451 023c D807      		cpc r29,r24
+ 452               	.LVL9:
+ 453 023e 01F4      		brne .L34
+ 454 0240 692E      		mov r6,r25
+ 455               	.LM76:
+ 456               	/* #APP */
+ 457               	 ;  255 "firefly.c" 1
+ 458 0242 F894      		cli
+ 459               	 ;  0 "" 2
+ 460               	.LM77:
+ 461               	/* #NOAPP */
+ 462 0244 81E0      		ldi r24,lo8(1)
+ 463 0246 8093 0000 		sts ch1restcount,r24
+ 464               	.LM78:
+ 465               	/* #APP */
+ 466               	 ;  257 "firefly.c" 1
+ 467 024a 7894      		sei
+ 468               	 ;  0 "" 2
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 9
 
 
- 471               	.LVL8:
- 472 0246 E050      		subi r30,lo8(-(bitmasks))
- 473 0248 F040      		sbci r31,hi8(-(bitmasks))
- 474               	.LVL9:
- 475               	/* #APP */
- 476               	 ;  351 "firefly.c" 1
- 477 024a E491      		lpm r30, Z
- 478               		
- 479               	 ;  0 "" 2
- 480               	.LVL10:
- 481               	/* #NOAPP */
- 482 024c 8091 0000 		lds r24,lfsr.1625
- 483               	.LBE10:
- 484               	.LM73:
- 485 0250 8E23      		and r24,r30
- 486               	/* epilogue start */
- 487 0252 0895      		ret
- 488               	.LFE10:
- 490               	.global	pickmaster
- 492               	pickmaster:
- 493               	.LFB9:
- 494               	.LM74:
- 495               	/* prologue: function */
- 496               	/* frame size = 0 */
- 497               	.LM75:
- 498 0254 83E0      		ldi r24,lo8(3)
- 499 0256 00D0      		rcall randbits
- 500 0258 9091 0000 		lds r25,ticker.1612
- 501 025c 8823      		tst r24
- 502 025e 01F4      		brne .L42
- 503               	.LM76:
- 504 0260 90FF      		sbrs r25,0
- 505 0262 00C0      		rjmp .L44
- 506 0264 00C0      		rjmp .L43
- 507               	.L42:
- 508               	.LM77:
- 509 0266 892F      		mov r24,r25
- 510 0268 8F5F      		subi r24,lo8(-(1))
- 511 026a 8093 0000 		sts ticker.1612,r24
- 512 026e 80FD      		sbrc r24,0
- 513 0270 00C0      		rjmp .L43
- 514               	.L44:
- 515 0272 82E0      		ldi r24,lo8(2)
- 516 0274 0895      		ret
- 517               	.L43:
- 518 0276 80E1      		ldi r24,lo8(16)
- 519               	.LM78:
- 520 0278 0895      		ret
- 521               	.LFE9:
- 523               	.global	pickapin
- 525               	pickapin:
- 526               	.LFB8:
- 527               	.LM79:
- 528               	.LVL11:
- 529 027a 1F93      		push r17
- 530               	/* prologue: function */
- 531               	/* frame size = 0 */
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 10
+ 469               	/* #NOAPP */
+ 470 024c 00C0      		rjmp .L35
+ 471               	.L36:
+ 472               	.LM79:
+ 473 024e 81B5      		in r24,65-32
+ 474 0250 8064      		ori r24,lo8(64)
+ 475 0252 81BD      		out 65-32,r24
+ 476               	.LM80:
+ 477 0254 85B7      		in r24,85-32
+ 478 0256 877E      		andi r24,lo8(-25)
+ 479 0258 85BF      		out 85-32,r24
+ 480               	.LM81:
+ 481 025a 85B7      		in r24,85-32
+ 482 025c 8062      		ori r24,lo8(32)
+ 483 025e 85BF      		out 85-32,r24
+ 484               	/* #APP */
+ 485               	 ;  262 "firefly.c" 1
+ 486 0260 8895      		sleep
+ 487               		
+ 488               	 ;  0 "" 2
+ 489               	/* #NOAPP */
+ 490 0262 85B7      		in r24,85-32
+ 491 0264 8F7D      		andi r24,lo8(-33)
+ 492 0266 85BF      		out 85-32,r24
+ 493               	.L35:
+ 494               	.LM82:
+ 495 0268 8899      		sbic 49-32,0
+ 496 026a 00C0      		rjmp .L36
+ 497               	/* epilogue start */
+ 498               	.LM83:
+ 499 026c DF91      		pop r29
+ 500 026e CF91      		pop r28
+ 501 0270 1F91      		pop r17
+ 502 0272 0F91      		pop r16
+ 503 0274 0895      		ret
+ 504               	.LFE5:
+ 506               	.global	randbits
+ 508               	randbits:
+ 509               	.LFB10:
+ 510               	.LM84:
+ 511               	.LVL10:
+ 512               	/* prologue: function */
+ 513               	/* frame size = 0 */
+ 514 0276 E82F      		mov r30,r24
+ 515               	.LM85:
+ 516 0278 8091 0000 		lds r24,lfsr.1631
+ 517 027c 9091 0000 		lds r25,(lfsr.1631)+1
+ 518               	.LVL11:
+ 519 0280 0097      		sbiw r24,0
+ 520 0282 01F4      		brne .L41
+ 521               	.LM86:
+ 522 0284 9DEC      		ldi r25,lo8(-51)
+ 523 0286 82E3      		ldi r24,lo8(50)
+ 524               	.L46:
+ 525 0288 98BB      		out 56-32,r25
+ 526 028a 88BB      		out 56-32,r24
+ 527 028c 00C0      		rjmp .L46
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 10
 
 
- 532 027c 182F      		mov r17,r24
- 533               	.LM80:
- 534 027e 88E0      		ldi r24,lo8(8)
- 535               	.LVL12:
- 536 0280 00D0      		rcall randbits
- 537               	.LM81:
- 538 0282 90E0      		ldi r25,lo8(0)
- 539               	.LM82:
- 540 0284 9C01      		movw r18,r24
- 541 0286 220F      		lsl r18
- 542 0288 331F      		rol r19
- 543 028a 280F      		add r18,r24
- 544 028c 391F      		adc r19,r25
- 545 028e 3130      		cpi r19,lo8(1)
- 546 0290 01F0      		breq .L50
- 547 0292 3130      		cpi r19,lo8(1)
- 548 0294 00F0      		brlo .L49
- 549 0296 3230      		cpi r19,lo8(2)
- 550 0298 01F4      		brne .L48
- 551 029a 00C0      		rjmp .L56
- 552               	.L49:
- 553               	.LM83:
- 554 029c 1830      		cpi r17,lo8(8)
- 555 029e 01F4      		brne .L48
- 556 02a0 00C0      		rjmp .L52
- 557               	.L50:
- 558               	.LM84:
- 559 02a2 1430      		cpi r17,lo8(4)
- 560 02a4 01F4      		brne .L52
- 561 02a6 00C0      		rjmp .L53
- 562               	.L56:
- 563               	.LM85:
- 564 02a8 1130      		cpi r17,lo8(1)
- 565 02aa 01F4      		brne .L53
- 566               	.L48:
- 567 02ac 88E0      		ldi r24,lo8(8)
- 568               	.LVL13:
- 569 02ae 00C0      		rjmp .L54
- 570               	.LVL14:
- 571               	.L52:
- 572 02b0 84E0      		ldi r24,lo8(4)
- 573               	.LVL15:
- 574 02b2 00C0      		rjmp .L54
- 575               	.LVL16:
- 576               	.L53:
- 577 02b4 81E0      		ldi r24,lo8(1)
- 578               	.LVL17:
- 579               	.L54:
- 580               	.LVL18:
- 581               	/* epilogue start */
- 582               	.LM86:
- 583 02b6 1F91      		pop r17
- 584               	.LVL19:
- 585 02b8 0895      		ret
- 586               	.LFE8:
- 588               	.global	randscaleval
- 590               	randscaleval:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 11
+ 528               	.L41:
+ 529 028e 9C01      		movw r18,r24
+ 530 0290 220F      		lsl r18
+ 531 0292 331F      		rol r19
+ 532               	.LM87:
+ 533 0294 97FF      		sbrs r25,7
+ 534 0296 00C0      		rjmp .L47
+ 535               	.L43:
+ 536               	.LM88:
+ 537 0298 87E8      		ldi r24,lo8(7559)
+ 538 029a 9DE1      		ldi r25,hi8(7559)
+ 539 029c 2827      		eor r18,r24
+ 540 029e 3927      		eor r19,r25
+ 541               	.L47:
+ 542 02a0 3093 0000 		sts (lfsr.1631)+1,r19
+ 543 02a4 2093 0000 		sts lfsr.1631,r18
+ 544               	.LBB18:
+ 545               	.LM89:
+ 546 02a8 F0E0      		ldi r31,lo8(0)
+ 547               	.LVL12:
+ 548 02aa E050      		subi r30,lo8(-(bitmasks))
+ 549 02ac F040      		sbci r31,hi8(-(bitmasks))
+ 550               	.LVL13:
+ 551               	/* #APP */
+ 552               	 ;  351 "firefly.c" 1
+ 553 02ae E491      		lpm r30, Z
+ 554               		
+ 555               	 ;  0 "" 2
+ 556               	.LVL14:
+ 557               	/* #NOAPP */
+ 558 02b0 8091 0000 		lds r24,lfsr.1631
+ 559               	.LBE18:
+ 560               	.LM90:
+ 561 02b4 8E23      		and r24,r30
+ 562               	/* epilogue start */
+ 563 02b6 0895      		ret
+ 564               	.LFE10:
+ 566               	.global	pickmaster
+ 568               	pickmaster:
+ 569               	.LFB9:
+ 570               	.LM91:
+ 571               	/* prologue: function */
+ 572               	/* frame size = 0 */
+ 573               	.LM92:
+ 574 02b8 83E0      		ldi r24,lo8(3)
+ 575 02ba 00D0      		rcall randbits
+ 576 02bc 9091 0000 		lds r25,ticker.1618
+ 577 02c0 8823      		tst r24
+ 578 02c2 01F4      		brne .L49
+ 579               	.LM93:
+ 580 02c4 90FF      		sbrs r25,0
+ 581 02c6 00C0      		rjmp .L51
+ 582 02c8 00C0      		rjmp .L50
+ 583               	.L49:
+ 584               	.LM94:
+ 585 02ca 892F      		mov r24,r25
+ 586 02cc 8F5F      		subi r24,lo8(-(1))
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 11
 
 
- 591               	.LFB7:
- 592               	.LM87:
- 593 02ba EF92      		push r14
- 594 02bc FF92      		push r15
- 595 02be 0F93      		push r16
- 596 02c0 1F93      		push r17
- 597               	/* prologue: function */
- 598               	/* frame size = 0 */
- 599               	.LM88:
- 600 02c2 86E0      		ldi r24,lo8(6)
- 601 02c4 00D0      		rcall randbits
- 602 02c6 182F      		mov r17,r24
- 603 02c8 85E0      		ldi r24,lo8(5)
- 604 02ca 00D0      		rcall randbits
- 605 02cc E82E      		mov r14,r24
- 606 02ce 84E0      		ldi r24,lo8(4)
- 607 02d0 00D0      		rcall randbits
- 608 02d2 F82E      		mov r15,r24
- 609 02d4 83E0      		ldi r24,lo8(3)
- 610 02d6 00D0      		rcall randbits
- 611 02d8 082F      		mov r16,r24
- 612 02da 82E0      		ldi r24,lo8(2)
- 613 02dc 00D0      		rcall randbits
- 614 02de 1E0D      		add r17,r14
- 615 02e0 165C      		subi r17,lo8(-(58))
- 616 02e2 1F0D      		add r17,r15
- 617 02e4 100F      		add r17,r16
- 618               	.LM89:
- 619 02e6 810F      		add r24,r17
- 620               	/* epilogue start */
- 621 02e8 1F91      		pop r17
- 622 02ea 0F91      		pop r16
- 623 02ec FF90      		pop r15
- 624 02ee EF90      		pop r14
- 625 02f0 0895      		ret
- 626               	.LFE7:
- 628               	.global	randwaitval
- 630               	randwaitval:
- 631               	.LFB6:
- 632               	.LM90:
- 633 02f2 CF92      		push r12
- 634 02f4 DF92      		push r13
- 635 02f6 EF92      		push r14
- 636 02f8 FF92      		push r15
- 637 02fa 0F93      		push r16
- 638 02fc 1F93      		push r17
- 639               	/* prologue: function */
- 640               	/* frame size = 0 */
- 641               	.LM91:
- 642 02fe C090 0000 		lds r12,mood
- 643 0302 84E0      		ldi r24,lo8(4)
- 644 0304 00D0      		rcall randbits
- 645 0306 182F      		mov r17,r24
- 646 0308 84E0      		ldi r24,lo8(4)
- 647 030a 00D0      		rcall randbits
- 648 030c D82E      		mov r13,r24
- 649 030e 83E0      		ldi r24,lo8(3)
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 12
+ 587 02ce 8093 0000 		sts ticker.1618,r24
+ 588 02d2 80FD      		sbrc r24,0
+ 589 02d4 00C0      		rjmp .L50
+ 590               	.L51:
+ 591 02d6 82E0      		ldi r24,lo8(2)
+ 592 02d8 0895      		ret
+ 593               	.L50:
+ 594 02da 80E1      		ldi r24,lo8(16)
+ 595               	.LM95:
+ 596 02dc 0895      		ret
+ 597               	.LFE9:
+ 599               	.global	pickapin
+ 601               	pickapin:
+ 602               	.LFB8:
+ 603               	.LM96:
+ 604               	.LVL15:
+ 605 02de 1F93      		push r17
+ 606               	/* prologue: function */
+ 607               	/* frame size = 0 */
+ 608 02e0 182F      		mov r17,r24
+ 609               	.LM97:
+ 610 02e2 88E0      		ldi r24,lo8(8)
+ 611               	.LVL16:
+ 612 02e4 00D0      		rcall randbits
+ 613               	.LM98:
+ 614 02e6 90E0      		ldi r25,lo8(0)
+ 615               	.LM99:
+ 616 02e8 9C01      		movw r18,r24
+ 617 02ea 220F      		lsl r18
+ 618 02ec 331F      		rol r19
+ 619 02ee 280F      		add r18,r24
+ 620 02f0 391F      		adc r19,r25
+ 621 02f2 3130      		cpi r19,lo8(1)
+ 622 02f4 01F0      		breq .L57
+ 623 02f6 3130      		cpi r19,lo8(1)
+ 624 02f8 00F0      		brlo .L56
+ 625 02fa 3230      		cpi r19,lo8(2)
+ 626 02fc 01F4      		brne .L55
+ 627 02fe 00C0      		rjmp .L63
+ 628               	.L56:
+ 629               	.LM100:
+ 630 0300 1830      		cpi r17,lo8(8)
+ 631 0302 01F4      		brne .L55
+ 632 0304 00C0      		rjmp .L59
+ 633               	.L57:
+ 634               	.LM101:
+ 635 0306 1430      		cpi r17,lo8(4)
+ 636 0308 01F4      		brne .L59
+ 637 030a 00C0      		rjmp .L60
+ 638               	.L63:
+ 639               	.LM102:
+ 640 030c 1130      		cpi r17,lo8(1)
+ 641 030e 01F4      		brne .L60
+ 642               	.L55:
+ 643 0310 88E0      		ldi r24,lo8(8)
+ 644               	.LVL17:
+ 645 0312 00C0      		rjmp .L61
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 12
 
 
- 650 0310 00D0      		rcall randbits
- 651 0312 E82E      		mov r14,r24
- 652 0314 82E0      		ldi r24,lo8(2)
- 653 0316 00D0      		rcall randbits
- 654 0318 F82E      		mov r15,r24
- 655 031a 82E0      		ldi r24,lo8(2)
- 656 031c 00D0      		rcall randbits
- 657 031e 082F      		mov r16,r24
- 658 0320 83E0      		ldi r24,lo8(3)
- 659 0322 00D0      		rcall randbits
- 660 0324 1D0D      		add r17,r13
- 661 0326 1C0D      		add r17,r12
- 662 0328 1E0D      		add r17,r14
- 663 032a 1F0D      		add r17,r15
- 664 032c 100F      		add r17,r16
- 665               	.LM92:
- 666 032e 181B      		sub r17,r24
- 667 0330 812F      		mov r24,r17
- 668               	/* epilogue start */
- 669 0332 1F91      		pop r17
- 670 0334 0F91      		pop r16
- 671 0336 FF90      		pop r15
- 672 0338 EF90      		pop r14
- 673 033a DF90      		pop r13
- 674 033c CF90      		pop r12
- 675 033e 0895      		ret
- 676               	.LFE6:
- 678               	.global	pickasong
- 680               	pickasong:
- 681               	.LFB11:
- 682               	.LM93:
- 683               	/* prologue: function */
- 684               	/* frame size = 0 */
- 685               	.LM94:
- 686 0340 88E0      		ldi r24,lo8(8)
- 687 0342 00D0      		rcall randbits
- 688 0344 E82F      		mov r30,r24
- 689 0346 F0E0      		ldi r31,lo8(0)
- 690 0348 74E0      		ldi r23,4
- 691 034a F695      	1:	lsr r31
- 692 034c E795      		ror r30
- 693 034e 7A95      		dec r23
- 694 0350 01F4      		brne 1b
- 695 0352 EE0F      		lsl r30
- 696 0354 FF1F      		rol r31
- 697 0356 E050      		subi r30,lo8(-(songs))
- 698 0358 F040      		sbci r31,hi8(-(songs))
- 699               	.LM95:
- 700 035a 8081      		ld r24,Z
- 701 035c 9181      		ldd r25,Z+1
- 702               	/* epilogue start */
- 703 035e 0895      		ret
- 704               	.LFE11:
- 706               	.global	lighted_fireflies
- 708               	lighted_fireflies:
- 709               	.LFB14:
- 710               	.LM96:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 13
+ 646               	.LVL18:
+ 647               	.L59:
+ 648 0314 84E0      		ldi r24,lo8(4)
+ 649               	.LVL19:
+ 650 0316 00C0      		rjmp .L61
+ 651               	.LVL20:
+ 652               	.L60:
+ 653 0318 81E0      		ldi r24,lo8(1)
+ 654               	.LVL21:
+ 655               	.L61:
+ 656               	.LVL22:
+ 657               	/* epilogue start */
+ 658               	.LM103:
+ 659 031a 1F91      		pop r17
+ 660               	.LVL23:
+ 661 031c 0895      		ret
+ 662               	.LFE8:
+ 664               	.global	randscaleval
+ 666               	randscaleval:
+ 667               	.LFB7:
+ 668               	.LM104:
+ 669 031e EF92      		push r14
+ 670 0320 FF92      		push r15
+ 671 0322 0F93      		push r16
+ 672 0324 1F93      		push r17
+ 673               	/* prologue: function */
+ 674               	/* frame size = 0 */
+ 675               	.LM105:
+ 676 0326 86E0      		ldi r24,lo8(6)
+ 677 0328 00D0      		rcall randbits
+ 678 032a 182F      		mov r17,r24
+ 679 032c 85E0      		ldi r24,lo8(5)
+ 680 032e 00D0      		rcall randbits
+ 681 0330 E82E      		mov r14,r24
+ 682 0332 84E0      		ldi r24,lo8(4)
+ 683 0334 00D0      		rcall randbits
+ 684 0336 F82E      		mov r15,r24
+ 685 0338 83E0      		ldi r24,lo8(3)
+ 686 033a 00D0      		rcall randbits
+ 687 033c 082F      		mov r16,r24
+ 688 033e 82E0      		ldi r24,lo8(2)
+ 689 0340 00D0      		rcall randbits
+ 690 0342 1E0D      		add r17,r14
+ 691 0344 165C      		subi r17,lo8(-(58))
+ 692 0346 1F0D      		add r17,r15
+ 693 0348 100F      		add r17,r16
+ 694               	.LM106:
+ 695 034a 810F      		add r24,r17
+ 696               	/* epilogue start */
+ 697 034c 1F91      		pop r17
+ 698 034e 0F91      		pop r16
+ 699 0350 FF90      		pop r15
+ 700 0352 EF90      		pop r14
+ 701 0354 0895      		ret
+ 702               	.LFE7:
+ 704               	.global	randwaitval
+ 706               	randwaitval:
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 13
 
 
- 711 0360 EF92      		push r14
- 712 0362 FF92      		push r15
- 713 0364 1F93      		push r17
- 714 0366 CF93      		push r28
- 715 0368 DF93      		push r29
- 716               	/* prologue: function */
- 717               	/* frame size = 0 */
- 718               	.LM97:
- 719 036a C091 0000 		lds r28,ch1noteptr.1658
- 720 036e D091 0000 		lds r29,(ch1noteptr.1658)+1
- 721               	.LM98:
- 722 0372 E8E5      		ldi r30,lo8(600)
- 723 0374 EE2E      		mov r14,r30
- 724 0376 E2E0      		ldi r30,hi8(600)
- 725 0378 FE2E      		mov r15,r30
- 726               	.LVL20:
- 727               	.L77:
- 728               	.LM99:
- 729 037a 8899      		sbic 49-32,0
- 730 037c 00C0      		rjmp .L64
- 731 037e 8A9B      		sbis 49-32,2
- 732 0380 00C0      		rjmp .L65
- 733               	.L64:
- 734               	.LM100:
- 735 0382 889B      		sbis 49-32,0
- 736 0384 00C0      		rjmp .L66
- 737 0386 8E99      		sbic 49-32,6
- 738 0388 00C0      		rjmp .L66
- 739               	.LM101:
- 740 038a E091 0000 		lds r30,ch1song.1656
- 741 038e F091 0000 		lds r31,(ch1song.1656)+1
- 742               	.LVL21:
- 743 0392 8081      		ld r24,Z
- 744 0394 9181      		ldd r25,Z+1
- 745 0396 C817      		cp r28,r24
- 746 0398 D907      		cpc r29,r25
- 747 039a 01F0      		breq .L66
- 748               	.LBB11:
- 749               	.LM102:
- 750 039c 0280      		ldd __tmp_reg__,Z+2
- 751 039e F381      		ldd r31,Z+3
- 752 03a0 E02D      		mov r30,__tmp_reg__
- 753 03a2 EC0F      		add r30,r28
- 754 03a4 FD1F      		adc r31,r29
- 755 03a6 2196      		adiw r28,1
- 756               	/* #APP */
- 757               	 ;  482 "firefly.c" 1
- 758 03a8 E491      		lpm r30, Z
- 759               		
- 760               	 ;  0 "" 2
- 761               	.LVL22:
- 762               	/* #NOAPP */
- 763               	.LBE11:
- 764               	.LM103:
- 765 03aa 6091 0000 		lds r22,ch1scale
- 766 03ae 8E2F      		mov r24,r30
- 767 03b0 90E0      		ldi r25,lo8(0)
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 14
+ 707               	.LFB6:
+ 708               	.LM107:
+ 709 0356 CF92      		push r12
+ 710 0358 DF92      		push r13
+ 711 035a EF92      		push r14
+ 712 035c FF92      		push r15
+ 713 035e 0F93      		push r16
+ 714 0360 1F93      		push r17
+ 715               	/* prologue: function */
+ 716               	/* frame size = 0 */
+ 717               	.LM108:
+ 718 0362 C090 0000 		lds r12,mood
+ 719 0366 84E0      		ldi r24,lo8(4)
+ 720 0368 00D0      		rcall randbits
+ 721 036a 182F      		mov r17,r24
+ 722 036c 84E0      		ldi r24,lo8(4)
+ 723 036e 00D0      		rcall randbits
+ 724 0370 D82E      		mov r13,r24
+ 725 0372 83E0      		ldi r24,lo8(3)
+ 726 0374 00D0      		rcall randbits
+ 727 0376 E82E      		mov r14,r24
+ 728 0378 82E0      		ldi r24,lo8(2)
+ 729 037a 00D0      		rcall randbits
+ 730 037c F82E      		mov r15,r24
+ 731 037e 82E0      		ldi r24,lo8(2)
+ 732 0380 00D0      		rcall randbits
+ 733 0382 082F      		mov r16,r24
+ 734 0384 83E0      		ldi r24,lo8(3)
+ 735 0386 00D0      		rcall randbits
+ 736 0388 1D0D      		add r17,r13
+ 737 038a 1C0D      		add r17,r12
+ 738 038c 1E0D      		add r17,r14
+ 739 038e 1F0D      		add r17,r15
+ 740 0390 100F      		add r17,r16
+ 741               	.LM109:
+ 742 0392 181B      		sub r17,r24
+ 743 0394 812F      		mov r24,r17
+ 744               	/* epilogue start */
+ 745 0396 1F91      		pop r17
+ 746 0398 0F91      		pop r16
+ 747 039a FF90      		pop r15
+ 748 039c EF90      		pop r14
+ 749 039e DF90      		pop r13
+ 750 03a0 CF90      		pop r12
+ 751 03a2 0895      		ret
+ 752               	.LFE6:
+ 754               	.global	pickasong
+ 756               	pickasong:
+ 757               	.LFB11:
+ 758               	.LM110:
+ 759               	/* prologue: function */
+ 760               	/* frame size = 0 */
+ 761               	.LM111:
+ 762 03a4 88E0      		ldi r24,lo8(8)
+ 763 03a6 00D0      		rcall randbits
+ 764 03a8 E82F      		mov r30,r24
+ 765 03aa F0E0      		ldi r31,lo8(0)
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 14
 
 
- 768 03b2 70E0      		ldi r23,lo8(0)
- 769 03b4 00D0      		rcall __mulhi3
- 770               	.LM104:
- 771               	/* #APP */
- 772               	 ;  485 "firefly.c" 1
- 773 03b6 F894      		cli
- 774               	 ;  0 "" 2
- 775               	.LM105:
- 776               	/* #NOAPP */
- 777 03b8 9093 0000 		sts ch1nextnote,r25
- 778               	.LM106:
- 779 03bc 8E9A      		sbi 49-32,6
- 780               	.LM107:
- 781               	/* #APP */
- 782               	 ;  488 "firefly.c" 1
- 783 03be 7894      		sei
- 784               	 ;  0 "" 2
- 785               	/* #NOAPP */
- 786 03c0 00C0      		rjmp .L77
- 787               	.LVL23:
- 788               	.L66:
- 789               	.LM108:
- 790 03c2 8A9B      		sbis 49-32,2
- 791 03c4 00C0      		rjmp .L68
- 792 03c6 8F99      		sbic 49-32,7
- 793 03c8 00C0      		rjmp .L68
- 794               	.LM109:
- 795 03ca 2091 0000 		lds r18,ch2noteptr.1659
- 796 03ce 3091 0000 		lds r19,(ch2noteptr.1659)+1
- 797 03d2 E091 0000 		lds r30,ch2song.1657
- 798 03d6 F091 0000 		lds r31,(ch2song.1657)+1
- 799               	.LVL24:
- 800 03da 8081      		ld r24,Z
- 801 03dc 9181      		ldd r25,Z+1
- 802 03de 2817      		cp r18,r24
- 803 03e0 3907      		cpc r19,r25
- 804 03e2 01F0      		breq .L68
- 805               	.LBB12:
- 806               	.LM110:
- 807 03e4 0280      		ldd __tmp_reg__,Z+2
- 808 03e6 F381      		ldd r31,Z+3
- 809 03e8 E02D      		mov r30,__tmp_reg__
- 810 03ea E20F      		add r30,r18
- 811 03ec F31F      		adc r31,r19
- 812 03ee 2F5F      		subi r18,lo8(-(1))
- 813 03f0 3F4F      		sbci r19,hi8(-(1))
- 814 03f2 3093 0000 		sts (ch2noteptr.1659)+1,r19
- 815 03f6 2093 0000 		sts ch2noteptr.1659,r18
- 816               	/* #APP */
- 817               	 ;  496 "firefly.c" 1
- 818 03fa E491      		lpm r30, Z
- 819               		
- 820               	 ;  0 "" 2
+ 766 03ac 74E0      		ldi r23,4
+ 767 03ae F695      	1:	lsr r31
+ 768 03b0 E795      		ror r30
+ 769 03b2 7A95      		dec r23
+ 770 03b4 01F4      		brne 1b
+ 771 03b6 EE0F      		lsl r30
+ 772 03b8 FF1F      		rol r31
+ 773 03ba E050      		subi r30,lo8(-(songs))
+ 774 03bc F040      		sbci r31,hi8(-(songs))
+ 775               	.LM112:
+ 776 03be 8081      		ld r24,Z
+ 777 03c0 9181      		ldd r25,Z+1
+ 778               	/* epilogue start */
+ 779 03c2 0895      		ret
+ 780               	.LFE11:
+ 782               	.global	lighted_fireflies
+ 784               	lighted_fireflies:
+ 785               	.LFB15:
+ 786               	.LM113:
+ 787 03c4 EF92      		push r14
+ 788 03c6 FF92      		push r15
+ 789 03c8 0F93      		push r16
+ 790 03ca 1F93      		push r17
+ 791 03cc CF93      		push r28
+ 792 03ce DF93      		push r29
+ 793               	/* prologue: function */
+ 794               	/* frame size = 0 */
+ 795               	.LM114:
+ 796 03d0 1091 0000 		lds r17,temp.1721
+ 797 03d4 C091 0000 		lds r28,ch1noteptr.1719
+ 798 03d8 D091 0000 		lds r29,(ch1noteptr.1719)+1
+ 799               	.LM115:
+ 800 03dc E8E5      		ldi r30,lo8(600)
+ 801 03de EE2E      		mov r14,r30
+ 802 03e0 E2E0      		ldi r30,hi8(600)
+ 803 03e2 FE2E      		mov r15,r30
+ 804 03e4 00C0      		rjmp .L85
+ 805               	.LVL24:
+ 806               	.L83:
+ 807               	.LM116:
+ 808 03e6 8899      		sbic 49-32,0
+ 809 03e8 00C0      		rjmp .L72
+ 810 03ea 8A9B      		sbis 49-32,2
+ 811 03ec 00C0      		rjmp .L73
+ 812               	.L72:
+ 813               	.LM117:
+ 814 03ee 889B      		sbis 49-32,0
+ 815 03f0 00C0      		rjmp .L74
+ 816 03f2 8E99      		sbic 49-32,6
+ 817 03f4 00C0      		rjmp .L74
+ 818               	.LM118:
+ 819 03f6 E091 0000 		lds r30,ch1song.1717
+ 820 03fa F091 0000 		lds r31,(ch1song.1717)+1
  821               	.LVL25:
- 822               	/* #NOAPP */
- 823               	.LBE12:
- 824               	.LM111:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 15
+ 822 03fe 8081      		ld r24,Z
+ 823 0400 9181      		ldd r25,Z+1
+ 824 0402 C817      		cp r28,r24
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 15
 
 
- 825 03fc 6091 0000 		lds r22,ch2scale
- 826 0400 8E2F      		mov r24,r30
- 827 0402 90E0      		ldi r25,lo8(0)
- 828 0404 70E0      		ldi r23,lo8(0)
- 829 0406 00D0      		rcall __mulhi3
- 830               	.LM112:
- 831               	/* #APP */
- 832               	 ;  499 "firefly.c" 1
- 833 0408 F894      		cli
- 834               	 ;  0 "" 2
- 835               	.LM113:
- 836               	/* #NOAPP */
- 837 040a 9093 0000 		sts ch2nextnote,r25
- 838               	.LM114:
- 839 040e 8F9A      		sbi 49-32,7
- 840               	.LM115:
- 841               	/* #APP */
- 842               	 ;  502 "firefly.c" 1
- 843 0410 7894      		sei
- 844               	 ;  0 "" 2
- 845               	/* #NOAPP */
- 846 0412 00C0      		rjmp .L77
- 847               	.LVL26:
- 848               	.L68:
- 849               	.LM116:
- 850 0414 889B      		sbis 49-32,0
- 851 0416 00C0      		rjmp .L69
- 852 0418 8091 0000 		lds r24,ch1restcount
- 853 041c 8823      		tst r24
- 854 041e 01F4      		brne .L69
- 855               	.LM117:
- 856 0420 00D0      		rcall randwaitval
- 857               	.LVL27:
- 858               	.LM118:
- 859               	/* #APP */
- 860               	 ;  513 "firefly.c" 1
- 861 0422 F894      		cli
- 862               	 ;  0 "" 2
- 863               	.LM119:
- 864               	/* #NOAPP */
- 865 0424 8093 0000 		sts ch1restcount,r24
- 866               	.LM120:
- 867               	/* #APP */
- 868               	 ;  515 "firefly.c" 1
- 869 0428 7894      		sei
- 870               	 ;  0 "" 2
- 871               	/* #NOAPP */
- 872 042a 00C0      		rjmp .L77
- 873               	.LVL28:
- 874               	.L69:
- 875               	.LM121:
- 876 042c 8A9B      		sbis 49-32,2
- 877 042e 00C0      		rjmp .L65
- 878 0430 8091 0000 		lds r24,ch2restcount
- 879 0434 8823      		tst r24
- 880 0436 01F4      		brne .L65
- 881               	.LM122:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 16
+ 825 0404 D907      		cpc r29,r25
+ 826 0406 01F0      		breq .L74
+ 827               	.LBB19:
+ 828               	.LM119:
+ 829 0408 0280      		ldd __tmp_reg__,Z+2
+ 830 040a F381      		ldd r31,Z+3
+ 831 040c E02D      		mov r30,__tmp_reg__
+ 832 040e EC0F      		add r30,r28
+ 833 0410 FD1F      		adc r31,r29
+ 834 0412 2196      		adiw r28,1
+ 835               	/* #APP */
+ 836               	 ;  472 "firefly.c" 1
+ 837 0414 E491      		lpm r30, Z
+ 838               		
+ 839               	 ;  0 "" 2
+ 840               	.LVL26:
+ 841               	/* #NOAPP */
+ 842               	.LBE19:
+ 843               	.LM120:
+ 844 0416 6091 0000 		lds r22,ch1scale
+ 845 041a 8E2F      		mov r24,r30
+ 846 041c 90E0      		ldi r25,lo8(0)
+ 847 041e 70E0      		ldi r23,lo8(0)
+ 848 0420 00D0      		rcall __mulhi3
+ 849 0422 192F      		mov r17,r25
+ 850               	.LM121:
+ 851               	/* #APP */
+ 852               	 ;  475 "firefly.c" 1
+ 853 0424 F894      		cli
+ 854               	 ;  0 "" 2
+ 855               	.LM122:
+ 856               	/* #NOAPP */
+ 857 0426 9093 0000 		sts ch1nextnote,r25
+ 858               	.LM123:
+ 859 042a 8E9A      		sbi 49-32,6
+ 860               	.LM124:
+ 861               	/* #APP */
+ 862               	 ;  478 "firefly.c" 1
+ 863 042c 7894      		sei
+ 864               	 ;  0 "" 2
+ 865               	/* #NOAPP */
+ 866 042e 00C0      		rjmp .L85
+ 867               	.LVL27:
+ 868               	.L74:
+ 869               	.LM125:
+ 870 0430 8A9B      		sbis 49-32,2
+ 871 0432 00C0      		rjmp .L75
+ 872 0434 8F99      		sbic 49-32,7
+ 873 0436 00C0      		rjmp .L75
+ 874               	.LM126:
+ 875 0438 2091 0000 		lds r18,ch2noteptr.1720
+ 876 043c 3091 0000 		lds r19,(ch2noteptr.1720)+1
+ 877 0440 E091 0000 		lds r30,ch2song.1718
+ 878 0444 F091 0000 		lds r31,(ch2song.1718)+1
+ 879               	.LVL28:
+ 880 0448 8081      		ld r24,Z
+ 881 044a 9181      		ldd r25,Z+1
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 16
 
 
- 882 0438 00D0      		rcall randwaitval
- 883               	.LVL29:
- 884               	.LM123:
- 885               	/* #APP */
- 886               	 ;  521 "firefly.c" 1
- 887 043a F894      		cli
- 888               	 ;  0 "" 2
- 889               	.LM124:
- 890               	/* #NOAPP */
- 891 043c 8093 0000 		sts ch2restcount,r24
- 892               	.LM125:
- 893               	/* #APP */
- 894               	 ;  523 "firefly.c" 1
- 895 0440 7894      		sei
- 896               	 ;  0 "" 2
- 897               	/* #NOAPP */
- 898 0442 00C0      		rjmp .L77
- 899               	.LVL30:
- 900               	.L65:
- 901               	.LM126:
- 902 0444 8899      		sbic 49-32,0
- 903 0446 00C0      		rjmp .L70
- 904 0448 8999      		sbic 49-32,1
- 905 044a 00C0      		rjmp .L70
- 906 044c 8E99      		sbic 49-32,6
- 907 044e 00C0      		rjmp .L70
- 908               	.LM127:
- 909 0450 00D0      		rcall pickasong
- 910               	.LVL31:
- 911 0452 9093 0000 		sts (ch1song.1656)+1,r25
- 912 0456 8093 0000 		sts ch1song.1656,r24
- 913               	.LM128:
- 914 045a 872D      		mov r24,r7
- 915 045c 00D0      		rcall pickapin
- 916 045e 682E      		mov r6,r24
- 917               	.LM129:
- 918 0460 00D0      		rcall randscaleval
- 919 0462 8093 0000 		sts ch1scale,r24
- 920               	.LBB13:
- 921               	.LM130:
- 922 0466 E091 0000 		lds r30,ch1song.1656
- 923 046a F091 0000 		lds r31,(ch1song.1656)+1
- 924 046e 0280      		ldd __tmp_reg__,Z+2
- 925 0470 F381      		ldd r31,Z+3
- 926 0472 E02D      		mov r30,__tmp_reg__
- 927               	/* #APP */
- 928               	 ;  540 "firefly.c" 1
- 929 0474 E491      		lpm r30, Z
- 930               		
- 931               	 ;  0 "" 2
- 932               	.LVL32:
- 933               	/* #NOAPP */
- 934               	.LBE13:
- 935               	.LM131:
- 936 0476 6091 0000 		lds r22,ch1scale
- 937 047a 8E2F      		mov r24,r30
- 938 047c 90E0      		ldi r25,lo8(0)
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 17
+ 882 044c 2817      		cp r18,r24
+ 883 044e 3907      		cpc r19,r25
+ 884 0450 01F0      		breq .L75
+ 885               	.LBB20:
+ 886               	.LM127:
+ 887 0452 0280      		ldd __tmp_reg__,Z+2
+ 888 0454 F381      		ldd r31,Z+3
+ 889 0456 E02D      		mov r30,__tmp_reg__
+ 890 0458 E20F      		add r30,r18
+ 891 045a F31F      		adc r31,r19
+ 892 045c 2F5F      		subi r18,lo8(-(1))
+ 893 045e 3F4F      		sbci r19,hi8(-(1))
+ 894 0460 3093 0000 		sts (ch2noteptr.1720)+1,r19
+ 895 0464 2093 0000 		sts ch2noteptr.1720,r18
+ 896               	/* #APP */
+ 897               	 ;  486 "firefly.c" 1
+ 898 0468 E491      		lpm r30, Z
+ 899               		
+ 900               	 ;  0 "" 2
+ 901               	.LVL29:
+ 902               	/* #NOAPP */
+ 903               	.LBE20:
+ 904               	.LM128:
+ 905 046a 6091 0000 		lds r22,ch2scale
+ 906 046e 8E2F      		mov r24,r30
+ 907 0470 90E0      		ldi r25,lo8(0)
+ 908 0472 70E0      		ldi r23,lo8(0)
+ 909 0474 00D0      		rcall __mulhi3
+ 910 0476 192F      		mov r17,r25
+ 911               	.LM129:
+ 912               	/* #APP */
+ 913               	 ;  489 "firefly.c" 1
+ 914 0478 F894      		cli
+ 915               	 ;  0 "" 2
+ 916               	.LM130:
+ 917               	/* #NOAPP */
+ 918 047a 9093 0000 		sts ch2nextnote,r25
+ 919               	.LM131:
+ 920 047e 8F9A      		sbi 49-32,7
+ 921               	.LM132:
+ 922               	/* #APP */
+ 923               	 ;  492 "firefly.c" 1
+ 924 0480 7894      		sei
+ 925               	 ;  0 "" 2
+ 926               	/* #NOAPP */
+ 927 0482 00C0      		rjmp .L85
+ 928               	.LVL30:
+ 929               	.L75:
+ 930               	.LM133:
+ 931 0484 889B      		sbis 49-32,0
+ 932 0486 00C0      		rjmp .L76
+ 933 0488 8091 0000 		lds r24,ch1restcount
+ 934 048c 8823      		tst r24
+ 935 048e 01F4      		brne .L76
+ 936               	.LM134:
+ 937 0490 00D0      		rcall randwaitval
+ 938               	.LVL31:
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 17
 
 
- 939 047e 70E0      		ldi r23,lo8(0)
- 940 0480 00D0      		rcall __mulhi3
- 941 0482 192F      		mov r17,r25
- 942               	.LM132:
- 943 0484 8B9B      		sbis 49-32,3
- 944 0486 00C0      		rjmp .L71
- 945               	.LM133:
- 946 0488 00D0      		rcall pickmaster
- 947               	.LVL33:
- 948 048a 8093 0000 		sts masterpinmask,r24
- 949               	.LVL34:
- 950               	.L71:
- 951               	.LM134:
- 952               	/* #APP */
- 953               	 ;  548 "firefly.c" 1
- 954 048e F894      		cli
- 955               	 ;  0 "" 2
- 956               	.LM135:
- 957               	/* #NOAPP */
- 958 0490 1093 0000 		sts ch1nextnote,r17
- 959               	.LM136:
- 960 0494 8E9A      		sbi 49-32,6
- 961               	.LM137:
- 962               	/* #APP */
- 963               	 ;  551 "firefly.c" 1
- 964 0496 7894      		sei
- 965               	 ;  0 "" 2
- 966               	/* #NOAPP */
- 967 0498 C1E0      		ldi r28,lo8(1)
- 968 049a D0E0      		ldi r29,hi8(1)
- 969 049c 00C0      		rjmp .L77
- 970               	.LVL35:
- 971               	.L70:
- 972               	.LM138:
- 973 049e 8A99      		sbic 49-32,2
- 974 04a0 00C0      		rjmp .L72
- 975 04a2 8B99      		sbic 49-32,3
- 976 04a4 00C0      		rjmp .L72
- 977 04a6 8F99      		sbic 49-32,7
- 978 04a8 00C0      		rjmp .L72
- 979               	.LM139:
- 980 04aa 00D0      		rcall pickasong
- 981               	.LVL36:
- 982 04ac 9093 0000 		sts (ch2song.1657)+1,r25
- 983 04b0 8093 0000 		sts ch2song.1657,r24
- 984               	.LM140:
- 985 04b4 1092 0000 		sts (ch2noteptr.1659)+1,__zero_reg__
- 986 04b8 1092 0000 		sts ch2noteptr.1659,__zero_reg__
- 987               	.LM141:
- 988 04bc 862D      		mov r24,r6
- 989 04be 00D0      		rcall pickapin
- 990 04c0 782E      		mov r7,r24
- 991               	.LM142:
- 992 04c2 00D0      		rcall randscaleval
- 993 04c4 8093 0000 		sts ch2scale,r24
- 994               	.LBB14:
- 995               	.LM143:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 18
+ 939 0492 182F      		mov r17,r24
+ 940               	.LM135:
+ 941               	/* #APP */
+ 942               	 ;  503 "firefly.c" 1
+ 943 0494 F894      		cli
+ 944               	 ;  0 "" 2
+ 945               	.LM136:
+ 946               	/* #NOAPP */
+ 947 0496 8093 0000 		sts ch1restcount,r24
+ 948               	.LM137:
+ 949               	/* #APP */
+ 950               	 ;  505 "firefly.c" 1
+ 951 049a 7894      		sei
+ 952               	 ;  0 "" 2
+ 953               	/* #NOAPP */
+ 954 049c 00C0      		rjmp .L85
+ 955               	.LVL32:
+ 956               	.L76:
+ 957               	.LM138:
+ 958 049e 8A9B      		sbis 49-32,2
+ 959 04a0 00C0      		rjmp .L73
+ 960 04a2 8091 0000 		lds r24,ch2restcount
+ 961 04a6 8823      		tst r24
+ 962 04a8 01F4      		brne .L73
+ 963               	.LM139:
+ 964 04aa 00D0      		rcall randwaitval
+ 965               	.LVL33:
+ 966 04ac 182F      		mov r17,r24
+ 967               	.LM140:
+ 968               	/* #APP */
+ 969               	 ;  511 "firefly.c" 1
+ 970 04ae F894      		cli
+ 971               	 ;  0 "" 2
+ 972               	.LM141:
+ 973               	/* #NOAPP */
+ 974 04b0 8093 0000 		sts ch2restcount,r24
+ 975               	.LM142:
+ 976               	/* #APP */
+ 977               	 ;  513 "firefly.c" 1
+ 978 04b4 7894      		sei
+ 979               	 ;  0 "" 2
+ 980               	/* #NOAPP */
+ 981 04b6 00C0      		rjmp .L85
+ 982               	.LVL34:
+ 983               	.L73:
+ 984               	.LM143:
+ 985 04b8 8899      		sbic 49-32,0
+ 986 04ba 00C0      		rjmp .L77
+ 987 04bc 8999      		sbic 49-32,1
+ 988 04be 00C0      		rjmp .L77
+ 989 04c0 8E99      		sbic 49-32,6
+ 990 04c2 00C0      		rjmp .L77
+ 991               	.LM144:
+ 992 04c4 00D0      		rcall pickasong
+ 993               	.LVL35:
+ 994 04c6 9093 0000 		sts (ch1song.1717)+1,r25
+ 995 04ca 8093 0000 		sts ch1song.1717,r24
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 18
 
 
- 996 04c8 8091 0000 		lds r24,ch2noteptr.1659
- 997 04cc 9091 0000 		lds r25,(ch2noteptr.1659)+1
- 998 04d0 E091 0000 		lds r30,ch2song.1657
- 999 04d4 F091 0000 		lds r31,(ch2song.1657)+1
- 1000 04d8 0280      		ldd __tmp_reg__,Z+2
- 1001 04da F381      		ldd r31,Z+3
- 1002 04dc E02D      		mov r30,__tmp_reg__
- 1003 04de E80F      		add r30,r24
- 1004 04e0 F91F      		adc r31,r25
- 1005 04e2 0196      		adiw r24,1
- 1006 04e4 9093 0000 		sts (ch2noteptr.1659)+1,r25
- 1007 04e8 8093 0000 		sts ch2noteptr.1659,r24
- 1008               	/* #APP */
- 1009               	 ;  566 "firefly.c" 1
- 1010 04ec E491      		lpm r30, Z
- 1011               		
- 1012               	 ;  0 "" 2
- 1013               	.LVL37:
- 1014               	/* #NOAPP */
- 1015               	.LBE14:
- 1016               	.LM144:
- 1017 04ee 6091 0000 		lds r22,ch2scale
- 1018 04f2 8E2F      		mov r24,r30
- 1019 04f4 90E0      		ldi r25,lo8(0)
- 1020 04f6 70E0      		ldi r23,lo8(0)
- 1021 04f8 00D0      		rcall __mulhi3
- 1022 04fa 192F      		mov r17,r25
- 1023               	.LM145:
- 1024 04fc 899B      		sbis 49-32,1
- 1025 04fe 00C0      		rjmp .L73
- 1026               	.LM146:
- 1027 0500 00D0      		rcall pickmaster
- 1028               	.LVL38:
- 1029 0502 8093 0000 		sts masterpinmask,r24
- 1030               	.LVL39:
- 1031               	.L73:
- 1032               	.LM147:
- 1033               	/* #APP */
- 1034               	 ;  574 "firefly.c" 1
- 1035 0506 F894      		cli
- 1036               	 ;  0 "" 2
- 1037               	.LM148:
- 1038               	/* #NOAPP */
- 1039 0508 1093 0000 		sts ch2nextnote,r17
- 1040               	.LM149:
- 1041 050c 8F9A      		sbi 49-32,7
- 1042               	.LM150:
- 1043               	/* #APP */
- 1044               	 ;  577 "firefly.c" 1
- 1045 050e 7894      		sei
- 1046               	 ;  0 "" 2
- 1047               	/* #NOAPP */
- 1048 0510 00C0      		rjmp .L77
- 1049               	.LVL40:
- 1050               	.L72:
- 1051               	.LM151:
- 1052 0512 8C9B      		sbis 49-32,4
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 19
+ 996               	.LM145:
+ 997 04ce 872D      		mov r24,r7
+ 998 04d0 00D0      		rcall pickapin
+ 999 04d2 682E      		mov r6,r24
+ 1000               	.LM146:
+ 1001 04d4 00D0      		rcall randscaleval
+ 1002 04d6 8093 0000 		sts ch1scale,r24
+ 1003               	.LBB21:
+ 1004               	.LM147:
+ 1005 04da E091 0000 		lds r30,ch1song.1717
+ 1006 04de F091 0000 		lds r31,(ch1song.1717)+1
+ 1007 04e2 0280      		ldd __tmp_reg__,Z+2
+ 1008 04e4 F381      		ldd r31,Z+3
+ 1009 04e6 E02D      		mov r30,__tmp_reg__
+ 1010               	/* #APP */
+ 1011               	 ;  530 "firefly.c" 1
+ 1012 04e8 E491      		lpm r30, Z
+ 1013               		
+ 1014               	 ;  0 "" 2
+ 1015               	.LVL36:
+ 1016               	/* #NOAPP */
+ 1017               	.LBE21:
+ 1018               	.LM148:
+ 1019 04ea 6091 0000 		lds r22,ch1scale
+ 1020 04ee 8E2F      		mov r24,r30
+ 1021 04f0 90E0      		ldi r25,lo8(0)
+ 1022 04f2 70E0      		ldi r23,lo8(0)
+ 1023 04f4 00D0      		rcall __mulhi3
+ 1024 04f6 192F      		mov r17,r25
+ 1025 04f8 092F      		mov r16,r25
+ 1026               	.LM149:
+ 1027 04fa 8B9B      		sbis 49-32,3
+ 1028 04fc 00C0      		rjmp .L78
+ 1029               	.LM150:
+ 1030 04fe 00D0      		rcall pickmaster
+ 1031               	.LVL37:
+ 1032 0500 8093 0000 		sts masterpinmask,r24
+ 1033               	.LVL38:
+ 1034               	.L78:
+ 1035               	.LM151:
+ 1036               	/* #APP */
+ 1037               	 ;  538 "firefly.c" 1
+ 1038 0504 F894      		cli
+ 1039               	 ;  0 "" 2
+ 1040               	.LM152:
+ 1041               	/* #NOAPP */
+ 1042 0506 0093 0000 		sts ch1nextnote,r16
+ 1043               	.LM153:
+ 1044 050a 8E9A      		sbi 49-32,6
+ 1045               	.LM154:
+ 1046               	/* #APP */
+ 1047               	 ;  541 "firefly.c" 1
+ 1048 050c 7894      		sei
+ 1049               	 ;  0 "" 2
+ 1050               	/* #NOAPP */
+ 1051 050e C1E0      		ldi r28,lo8(1)
+ 1052 0510 D0E0      		ldi r29,hi8(1)
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 19
 
 
- 1053 0514 00C0      		rjmp .L74
- 1054               	.LM152:
- 1055 0516 85E0      		ldi r24,lo8(5)
- 1056 0518 00D0      		rcall randbits
- 1057               	.LVL41:
- 1058 051a 885F      		subi r24,lo8(-(8))
- 1059 051c 8093 0000 		sts mood,r24
- 1060               	.LM153:
- 1061 0520 F092 0000 		sts (mood_count)+1,r15
- 1062 0524 E092 0000 		sts mood_count,r14
- 1063               	.LM154:
- 1064 0528 8C98      		cbi 49-32,4
- 1065 052a 00C0      		rjmp .L77
- 1066               	.LVL42:
- 1067               	.L74:
- 1068               	.LM155:
- 1069 052c 81B5      		in r24,65-32
- 1070 052e 8064      		ori r24,lo8(64)
- 1071 0530 81BD      		out 65-32,r24
- 1072               	.LM156:
- 1073 0532 899B      		sbis 49-32,1
- 1074 0534 00C0      		rjmp .L75
- 1075 0536 8B9B      		sbis 49-32,3
- 1076 0538 00C0      		rjmp .L75
- 1077               	.LM157:
- 1078 053a 85B7      		in r24,85-32
- 1079 053c 877E      		andi r24,lo8(-25)
- 1080 053e 8061      		ori r24,lo8(16)
- 1081 0540 85BF      		out 85-32,r24
- 1082               	.LM158:
- 1083 0542 85B7      		in r24,85-32
- 1084 0544 8062      		ori r24,lo8(32)
- 1085 0546 85BF      		out 85-32,r24
- 1086               	/* #APP */
- 1087               	 ;  601 "firefly.c" 1
- 1088 0548 8895      		sleep
- 1089               		
- 1090               	 ;  0 "" 2
- 1091               	/* #NOAPP */
- 1092 054a 00C0      		rjmp .L78
- 1093               	.L75:
- 1094               	.LM159:
- 1095 054c 85B7      		in r24,85-32
- 1096 054e 877E      		andi r24,lo8(-25)
- 1097 0550 85BF      		out 85-32,r24
- 1098               	.LM160:
- 1099 0552 85B7      		in r24,85-32
- 1100 0554 8062      		ori r24,lo8(32)
- 1101 0556 85BF      		out 85-32,r24
- 1102               	/* #APP */
- 1103               	 ;  605 "firefly.c" 1
- 1104 0558 8895      		sleep
- 1105               		
- 1106               	 ;  0 "" 2
- 1107               	/* #NOAPP */
- 1108               	.L78:
- 1109 055a 85B7      		in r24,85-32
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 20
+ 1053 0512 00C0      		rjmp .L85
+ 1054               	.LVL39:
+ 1055               	.L77:
+ 1056               	.LM155:
+ 1057 0514 8A99      		sbic 49-32,2
+ 1058 0516 00C0      		rjmp .L79
+ 1059 0518 8B99      		sbic 49-32,3
+ 1060 051a 00C0      		rjmp .L79
+ 1061 051c 8F99      		sbic 49-32,7
+ 1062 051e 00C0      		rjmp .L79
+ 1063               	.LM156:
+ 1064 0520 00D0      		rcall pickasong
+ 1065               	.LVL40:
+ 1066 0522 9093 0000 		sts (ch2song.1718)+1,r25
+ 1067 0526 8093 0000 		sts ch2song.1718,r24
+ 1068               	.LM157:
+ 1069 052a 1092 0000 		sts (ch2noteptr.1720)+1,__zero_reg__
+ 1070 052e 1092 0000 		sts ch2noteptr.1720,__zero_reg__
+ 1071               	.LM158:
+ 1072 0532 862D      		mov r24,r6
+ 1073 0534 00D0      		rcall pickapin
+ 1074 0536 782E      		mov r7,r24
+ 1075               	.LM159:
+ 1076 0538 00D0      		rcall randscaleval
+ 1077 053a 8093 0000 		sts ch2scale,r24
+ 1078               	.LBB22:
+ 1079               	.LM160:
+ 1080 053e 8091 0000 		lds r24,ch2noteptr.1720
+ 1081 0542 9091 0000 		lds r25,(ch2noteptr.1720)+1
+ 1082 0546 E091 0000 		lds r30,ch2song.1718
+ 1083 054a F091 0000 		lds r31,(ch2song.1718)+1
+ 1084 054e 0280      		ldd __tmp_reg__,Z+2
+ 1085 0550 F381      		ldd r31,Z+3
+ 1086 0552 E02D      		mov r30,__tmp_reg__
+ 1087 0554 E80F      		add r30,r24
+ 1088 0556 F91F      		adc r31,r25
+ 1089 0558 0196      		adiw r24,1
+ 1090 055a 9093 0000 		sts (ch2noteptr.1720)+1,r25
+ 1091 055e 8093 0000 		sts ch2noteptr.1720,r24
+ 1092               	/* #APP */
+ 1093               	 ;  556 "firefly.c" 1
+ 1094 0562 E491      		lpm r30, Z
+ 1095               		
+ 1096               	 ;  0 "" 2
+ 1097               	.LVL41:
+ 1098               	/* #NOAPP */
+ 1099               	.LBE22:
+ 1100               	.LM161:
+ 1101 0564 6091 0000 		lds r22,ch2scale
+ 1102 0568 8E2F      		mov r24,r30
+ 1103 056a 90E0      		ldi r25,lo8(0)
+ 1104 056c 70E0      		ldi r23,lo8(0)
+ 1105 056e 00D0      		rcall __mulhi3
+ 1106 0570 192F      		mov r17,r25
+ 1107 0572 092F      		mov r16,r25
+ 1108               	.LM162:
+ 1109 0574 899B      		sbis 49-32,1
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 20
 
 
- 1110 055c 8F7D      		andi r24,lo8(-33)
- 1111 055e 85BF      		out 85-32,r24
- 1112 0560 00C0      		rjmp .L77
- 1113               	.LFE14:
- 1115               	.global	main
- 1117               	main:
- 1118               	.LFB15:
- 1119               	.LM161:
- 1120               	/* prologue: function */
- 1121               	/* frame size = 0 */
- 1122               	.LBB15:
- 1123               	.LBB16:
- 1124               	.LM162:
- 1125 0562 2DE0      		ldi r18,lo8(13)
- 1126 0564 88E1      		ldi r24,lo8(24)
- 1127 0566 90E0      		ldi r25,hi8(24)
+ 1110 0576 00C0      		rjmp .L80
+ 1111               	.LM163:
+ 1112 0578 00D0      		rcall pickmaster
+ 1113               	.LVL42:
+ 1114 057a 8093 0000 		sts masterpinmask,r24
+ 1115               	.LVL43:
+ 1116               	.L80:
+ 1117               	.LM164:
+ 1118               	/* #APP */
+ 1119               	 ;  564 "firefly.c" 1
+ 1120 057e F894      		cli
+ 1121               	 ;  0 "" 2
+ 1122               	.LM165:
+ 1123               	/* #NOAPP */
+ 1124 0580 0093 0000 		sts ch2nextnote,r16
+ 1125               	.LM166:
+ 1126 0584 8F9A      		sbi 49-32,7
+ 1127               	.LM167:
  1128               	/* #APP */
- 1129               	 ;  183 "firefly.c" 1
- 1130 0568 0FB6      		in __tmp_reg__,__SREG__
- 1131 056a F894      		cli
- 1132 056c A895      		wdr
- 1133 056e 81BD      		out 33,r24
- 1134 0570 0FBE      		out __SREG__,__tmp_reg__
- 1135 0572 21BD      		out 33,r18
- 1136               	 ;  0 "" 2
- 1137               	.LM163:
- 1138               	/* #NOAPP */
- 1139 0574 81B5      		in r24,65-32
- 1140 0576 8064      		ori r24,lo8(64)
- 1141 0578 81BD      		out 65-32,r24
- 1142               	.LM164:
- 1143 057a 8FEF      		ldi r24,lo8(-1)
- 1144 057c 87BB      		out 55-32,r24
- 1145               	.LM165:
- 1146 057e 8DEE      		ldi r24,lo8(-19)
- 1147 0580 88BB      		out 56-32,r24
- 1148               	.LM166:
- 1149 0582 80B5      		in r24,64-32
- 1150 0584 8860      		ori r24,lo8(8)
- 1151 0586 80BD      		out 64-32,r24
- 1152               	.LM167:
- 1153 0588 80B5      		in r24,64-32
- 1154 058a 8260      		ori r24,lo8(2)
- 1155 058c 80BD      		out 64-32,r24
- 1156               	.LM168:
- 1157 058e 80B5      		in r24,64-32
- 1158 0590 8160      		ori r24,lo8(1)
- 1159 0592 80BD      		out 64-32,r24
- 1160               	.LM169:
- 1161 0594 82E0      		ldi r24,lo8(2)
- 1162 0596 8ABD      		out 74-32,r24
- 1163               	.LM170:
- 1164 0598 83BF      		out 83-32,r24
- 1165               	.LM171:
- 1166 059a 89E1      		ldi r24,lo8(25)
- 1167 059c 89BD      		out 73-32,r24
- 1168               	.LBB17:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 21
+ 1129               	 ;  567 "firefly.c" 1
+ 1130 0586 7894      		sei
+ 1131               	 ;  0 "" 2
+ 1132               	/* #NOAPP */
+ 1133 0588 00C0      		rjmp .L85
+ 1134               	.LVL44:
+ 1135               	.L79:
+ 1136               	.LM168:
+ 1137 058a 8C9B      		sbis 49-32,4
+ 1138 058c 00C0      		rjmp .L81
+ 1139               	.LM169:
+ 1140 058e 85E0      		ldi r24,lo8(5)
+ 1141 0590 00D0      		rcall randbits
+ 1142               	.LVL45:
+ 1143 0592 885F      		subi r24,lo8(-(8))
+ 1144 0594 8093 0000 		sts mood,r24
+ 1145               	.LM170:
+ 1146 0598 F092 0000 		sts (mood_count)+1,r15
+ 1147 059c E092 0000 		sts mood_count,r14
+ 1148               	.LM171:
+ 1149 05a0 8C98      		cbi 49-32,4
+ 1150 05a2 00C0      		rjmp .L85
+ 1151               	.LVL46:
+ 1152               	.L81:
+ 1153               	.LM172:
+ 1154 05a4 81B5      		in r24,65-32
+ 1155 05a6 8064      		ori r24,lo8(64)
+ 1156 05a8 81BD      		out 65-32,r24
+ 1157               	.LM173:
+ 1158 05aa 899B      		sbis 49-32,1
+ 1159 05ac 00C0      		rjmp .L82
+ 1160 05ae 8B9B      		sbis 49-32,3
+ 1161 05b0 00C0      		rjmp .L82
+ 1162               	.LM174:
+ 1163 05b2 85B7      		in r24,85-32
+ 1164 05b4 877E      		andi r24,lo8(-25)
+ 1165 05b6 8061      		ori r24,lo8(16)
+ 1166 05b8 85BF      		out 85-32,r24
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 21
 
 
- 1169               	.LM172:
- 1170 059e 82E0      		ldi r24,lo8(2)
- 1171 05a0 90E0      		ldi r25,hi8(2)
- 1172 05a2 20E8      		ldi r18,lo8(-128)
- 1173               	/* #APP */
- 1174               	 ;  212 "firefly.c" 1
- 1175 05a4 0FB6      		in __tmp_reg__,__SREG__
- 1176 05a6 F894      		cli
- 1177 05a8 26BD      		out 38, r18
- 1178 05aa 86BD      		out 38, r24
- 1179 05ac 0FBE      		out __SREG__, __tmp_reg__
- 1180               	 ;  0 "" 2
- 1181               	/* #NOAPP */
- 1182               	.LBE17:
- 1183               	.LM173:
- 1184 05ae 80E1      		ldi r24,lo8(16)
- 1185 05b0 89BF      		out 89-32,r24
- 1186               	.LM174:
- 1187 05b2 81B5      		in r24,65-32
- 1188 05b4 8064      		ori r24,lo8(64)
- 1189 05b6 81BD      		out 65-32,r24
- 1190               	.LBE16:
- 1191               	.LBE15:
- 1192               	.LM175:
- 1193 05b8 8824      		clr r8
- 1194 05ba 7724      		clr r7
- 1195 05bc 6624      		clr r6
- 1196 05be 5524      		clr r5
- 1197 05c0 4424      		clr r4
- 1198 05c2 3324      		clr r3
- 1199 05c4 2224      		clr r2
- 1200               	.LM176:
- 1201 05c6 00D0      		rcall randwaitval
- 1202 05c8 8093 0000 		sts ch1restcount,r24
- 1203               	.LM177:
- 1204 05cc 00D0      		rcall randwaitval
- 1205 05ce 8093 0000 		sts ch2restcount,r24
- 1206               	.LM178:
- 1207 05d2 11BA      		out 49-32,__zero_reg__
- 1208               	.LM179:
- 1209               	/* #APP */
- 1210               	 ;  629 "firefly.c" 1
- 1211 05d4 7894      		sei
- 1212               	 ;  0 "" 2
- 1213               	.LM180:
- 1214               	/* #NOAPP */
- 1215 05d6 00D0      		rcall showbootup
- 1216               	.L80:
- 1217               	.LM181:
- 1218 05d8 8824      		clr r8
- 1219 05da 7724      		clr r7
- 1220 05dc 6624      		clr r6
- 1221 05de 5524      		clr r5
- 1222 05e0 4424      		clr r4
- 1223 05e2 3324      		clr r3
- 1224 05e4 2224      		clr r2
- 1225               	.LM182:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 22
+ 1167               	.LM175:
+ 1168 05ba 85B7      		in r24,85-32
+ 1169 05bc 8062      		ori r24,lo8(32)
+ 1170 05be 85BF      		out 85-32,r24
+ 1171               	/* #APP */
+ 1172               	 ;  591 "firefly.c" 1
+ 1173 05c0 8895      		sleep
+ 1174               		
+ 1175               	 ;  0 "" 2
+ 1176               	/* #NOAPP */
+ 1177 05c2 00C0      		rjmp .L86
+ 1178               	.L82:
+ 1179               	.LM176:
+ 1180 05c4 85B7      		in r24,85-32
+ 1181 05c6 877E      		andi r24,lo8(-25)
+ 1182 05c8 85BF      		out 85-32,r24
+ 1183               	.LM177:
+ 1184 05ca 85B7      		in r24,85-32
+ 1185 05cc 8062      		ori r24,lo8(32)
+ 1186 05ce 85BF      		out 85-32,r24
+ 1187               	/* #APP */
+ 1188               	 ;  595 "firefly.c" 1
+ 1189 05d0 8895      		sleep
+ 1190               		
+ 1191               	 ;  0 "" 2
+ 1192               	/* #NOAPP */
+ 1193               	.L86:
+ 1194 05d2 85B7      		in r24,85-32
+ 1195 05d4 8F7D      		andi r24,lo8(-33)
+ 1196 05d6 85BF      		out 85-32,r24
+ 1197               	.L85:
+ 1198               	.LM178:
+ 1199 05d8 8091 0000 		lds r24,is_dark
+ 1200 05dc 8823      		tst r24
+ 1201 05de 01F0      		breq .+2
+ 1202 05e0 00C0      		rjmp .L83
+ 1203 05e2 1093 0000 		sts temp.1721,r17
+ 1204 05e6 D093 0000 		sts (ch1noteptr.1719)+1,r29
+ 1205 05ea C093 0000 		sts ch1noteptr.1719,r28
+ 1206               	/* epilogue start */
+ 1207               	.LM179:
+ 1208 05ee DF91      		pop r29
+ 1209 05f0 CF91      		pop r28
+ 1210 05f2 1F91      		pop r17
+ 1211 05f4 0F91      		pop r16
+ 1212 05f6 FF90      		pop r15
+ 1213 05f8 EF90      		pop r14
+ 1214 05fa 0895      		ret
+ 1215               	.LFE15:
+ 1217               	.global	main
+ 1219               	main:
+ 1220               	.LFB16:
+ 1221               	.LM180:
+ 1222 05fc 0F93      		push r16
+ 1223 05fe 1F93      		push r17
+ 1224               	/* prologue: function */
+ 1225               	/* frame size = 0 */
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 22
 
 
- 1226 05e6 11BA      		out 49-32,__zero_reg__
- 1227               	.LM183:
- 1228 05e8 899A      		sbi 49-32,1
- 1229               	.LM184:
- 1230 05ea 8B9A      		sbi 49-32,3
- 1231               	.LM185:
- 1232 05ec 00D0      		rcall lighted_fireflies
- 1233 05ee 00C0      		rjmp .L80
- 1234               	.LFE15:
- 1236               	.global	bootsongnotes
- 1237               		.section	.progmem.data,"a",@progbits
- 1240               	bootsongnotes:
- 1241 0000 00        		.byte	0
- 1242 0001 04        		.byte	4
- 1243 0002 09        		.byte	9
- 1244 0003 10        		.byte	16
- 1245 0004 18        		.byte	24
- 1246 0005 21        		.byte	33
- 1247 0006 29        		.byte	41
- 1248 0007 2F        		.byte	47
- 1249 0008 32        		.byte	50
- 1250 0009 31        		.byte	49
- 1251 000a 2C        		.byte	44
- 1252 000b 23        		.byte	35
- 1253 000c 1A        		.byte	26
- 1254 000d 11        		.byte	17
- 1255 000e 0A        		.byte	10
- 1256 000f 05        		.byte	5
- 1257 0010 01        		.byte	1
- 1258 0011 00        		.byte	0
- 1259 0012 00        		.byte	0
- 1260               	.global	bootsong
- 1261               		.data
- 1264               	bootsong:
- 1265 0000 1300      		.word	19
- 1266 0002 0000      		.word	bootsongnotes
- 1267               	.global	song2anotes
- 1268               		.section	.progmem.data
- 1271               	song2anotes:
- 1272 0013 02        		.byte	2
- 1273 0014 1D        		.byte	29
- 1274 0015 51        		.byte	81
- 1275 0016 7B        		.byte	123
- 1276 0017 82        		.byte	-126
- 1277 0018 68        		.byte	104
- 1278 0019 3F        		.byte	63
- 1279 001a 18        		.byte	24
- 1280 001b 02        		.byte	2
- 1281 001c 01        		.byte	1
- 1282 001d 01        		.byte	1
- 1283 001e 01        		.byte	1
- 1284 001f 01        		.byte	1
- 1285 0020 01        		.byte	1
- 1286 0021 01        		.byte	1
- 1287 0022 04        		.byte	4
- 1288 0023 0F        		.byte	15
- 1289 0024 1A        		.byte	26
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 23
+ 1226               	.LBB23:
+ 1227               	.LBB24:
+ 1228               	.LM181:
+ 1229 0600 2DE0      		ldi r18,lo8(13)
+ 1230 0602 88E1      		ldi r24,lo8(24)
+ 1231 0604 90E0      		ldi r25,hi8(24)
+ 1232               	/* #APP */
+ 1233               	 ;  183 "firefly.c" 1
+ 1234 0606 0FB6      		in __tmp_reg__,__SREG__
+ 1235 0608 F894      		cli
+ 1236 060a A895      		wdr
+ 1237 060c 81BD      		out 33,r24
+ 1238 060e 0FBE      		out __SREG__,__tmp_reg__
+ 1239 0610 21BD      		out 33,r18
+ 1240               	 ;  0 "" 2
+ 1241               	.LM182:
+ 1242               	/* #NOAPP */
+ 1243 0612 81B5      		in r24,65-32
+ 1244 0614 8064      		ori r24,lo8(64)
+ 1245 0616 81BD      		out 65-32,r24
+ 1246               	.LM183:
+ 1247 0618 8FED      		ldi r24,lo8(-33)
+ 1248 061a 87BB      		out 55-32,r24
+ 1249               	.LM184:
+ 1250 061c 8DEC      		ldi r24,lo8(-51)
+ 1251 061e 88BB      		out 56-32,r24
+ 1252               	.LM185:
+ 1253 0620 80B5      		in r24,64-32
+ 1254 0622 8860      		ori r24,lo8(8)
+ 1255 0624 80BD      		out 64-32,r24
+ 1256               	.LM186:
+ 1257 0626 80B5      		in r24,64-32
+ 1258 0628 8260      		ori r24,lo8(2)
+ 1259 062a 80BD      		out 64-32,r24
+ 1260               	.LM187:
+ 1261 062c 80B5      		in r24,64-32
+ 1262 062e 8160      		ori r24,lo8(1)
+ 1263 0630 80BD      		out 64-32,r24
+ 1264               	.LM188:
+ 1265 0632 82E0      		ldi r24,lo8(2)
+ 1266 0634 8ABD      		out 74-32,r24
+ 1267               	.LM189:
+ 1268 0636 83BF      		out 83-32,r24
+ 1269               	.LM190:
+ 1270 0638 89E1      		ldi r24,lo8(25)
+ 1271 063a 89BD      		out 73-32,r24
+ 1272               	.LBB25:
+ 1273               	.LM191:
+ 1274 063c 82E0      		ldi r24,lo8(2)
+ 1275 063e 90E0      		ldi r25,hi8(2)
+ 1276 0640 20E8      		ldi r18,lo8(-128)
+ 1277               	/* #APP */
+ 1278               	 ;  212 "firefly.c" 1
+ 1279 0642 0FB6      		in __tmp_reg__,__SREG__
+ 1280 0644 F894      		cli
+ 1281 0646 26BD      		out 38, r18
+ 1282 0648 86BD      		out 38, r24
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 23
 
 
- 1290 0025 24        		.byte	36
- 1291 0026 2E        		.byte	46
- 1292 0027 37        		.byte	55
- 1293 0028 42        		.byte	66
- 1294 0029 4F        		.byte	79
- 1295 002a 5B        		.byte	91
- 1296 002b 66        		.byte	102
- 1297 002c 6D        		.byte	109
- 1298 002d 73        		.byte	115
- 1299 002e 79        		.byte	121
- 1300 002f 83        		.byte	-125
- 1301 0030 8E        		.byte	-114
- 1302 0031 98        		.byte	-104
- 1303 0032 9B        		.byte	-101
- 1304 0033 97        		.byte	-105
- 1305 0034 8D        		.byte	-115
- 1306 0035 85        		.byte	-123
- 1307 0036 83        		.byte	-125
- 1308 0037 87        		.byte	-121
- 1309 0038 90        		.byte	-112
- 1310 0039 99        		.byte	-103
- 1311 003a 9E        		.byte	-98
- 1312 003b 9E        		.byte	-98
- 1313 003c 9A        		.byte	-102
- 1314 003d 97        		.byte	-105
- 1315 003e 96        		.byte	-106
- 1316 003f 95        		.byte	-107
- 1317 0040 94        		.byte	-108
- 1318 0041 90        		.byte	-112
- 1319 0042 8B        		.byte	-117
- 1320 0043 88        		.byte	-120
- 1321 0044 8A        		.byte	-118
- 1322 0045 91        		.byte	-111
- 1323 0046 9B        		.byte	-101
- 1324 0047 A1        		.byte	-95
- 1325 0048 A0        		.byte	-96
- 1326 0049 99        		.byte	-103
- 1327 004a 90        		.byte	-112
- 1328 004b 8A        		.byte	-118
- 1329 004c 8B        		.byte	-117
- 1330 004d 91        		.byte	-111
- 1331 004e 98        		.byte	-104
- 1332 004f 9C        		.byte	-100
- 1333 0050 9A        		.byte	-102
- 1334 0051 94        		.byte	-108
- 1335 0052 8D        		.byte	-115
- 1336 0053 8A        		.byte	-118
- 1337 0054 8C        		.byte	-116
- 1338 0055 91        		.byte	-111
- 1339 0056 96        		.byte	-106
- 1340 0057 99        		.byte	-103
- 1341 0058 99        		.byte	-103
- 1342 0059 98        		.byte	-104
- 1343 005a 98        		.byte	-104
- 1344 005b 9A        		.byte	-102
- 1345 005c 9A        		.byte	-102
- 1346 005d 96        		.byte	-106
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 24
+ 1283 064a 0FBE      		out __SREG__, __tmp_reg__
+ 1284               	 ;  0 "" 2
+ 1285               	/* #NOAPP */
+ 1286               	.LBE25:
+ 1287               	.LM192:
+ 1288 064c 80E1      		ldi r24,lo8(16)
+ 1289 064e 89BF      		out 89-32,r24
+ 1290               	.LM193:
+ 1291 0650 81B5      		in r24,65-32
+ 1292 0652 8064      		ori r24,lo8(64)
+ 1293 0654 81BD      		out 65-32,r24
+ 1294               	.LBE24:
+ 1295               	.LBE23:
+ 1296               	.LM194:
+ 1297 0656 8824      		clr r8
+ 1298 0658 7724      		clr r7
+ 1299 065a 6624      		clr r6
+ 1300 065c 5524      		clr r5
+ 1301 065e 4424      		clr r4
+ 1302 0660 3324      		clr r3
+ 1303 0662 2224      		clr r2
+ 1304               	.LM195:
+ 1305 0664 00D0      		rcall randwaitval
+ 1306 0666 8093 0000 		sts ch1restcount,r24
+ 1307               	.LM196:
+ 1308 066a 00D0      		rcall randwaitval
+ 1309 066c 8093 0000 		sts ch2restcount,r24
+ 1310               	.LM197:
+ 1311 0670 11BA      		out 49-32,__zero_reg__
+ 1312               	.LM198:
+ 1313 0672 1092 0000 		sts waiting_for_dark,__zero_reg__
+ 1314               	.LM199:
+ 1315 0676 81E0      		ldi r24,lo8(1)
+ 1316 0678 8093 0000 		sts is_dark,r24
+ 1317               	.LM200:
+ 1318 067c 8093 0000 		sts force_dark,r24
+ 1319               	.LM201:
+ 1320               	/* #APP */
+ 1321               	 ;  619 "firefly.c" 1
+ 1322 0680 7894      		sei
+ 1323               	 ;  0 "" 2
+ 1324               	.LM202:
+ 1325               	/* #NOAPP */
+ 1326 0682 00D0      		rcall showbootup
+ 1327               	.LM203:
+ 1328 0684 1092 0000 		sts force_dark,__zero_reg__
+ 1329               	.LBB26:
+ 1330               	.LBB27:
+ 1331               	.LM204:
+ 1332 0688 01E0      		ldi r16,lo8(1)
+ 1333               	.LM205:
+ 1334 068a 10E1      		ldi r17,lo8(16)
+ 1335               	.L90:
+ 1336               	.LM206:
+ 1337 068c 0093 0000 		sts waiting_for_dark,r16
+ 1338               	.LM207:
+ 1339 0690 19BE      		out 89-32,__zero_reg__
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 24
 
 
- 1347 005e 8E        		.byte	-114
- 1348 005f 86        		.byte	-122
- 1349 0060 81        		.byte	-127
- 1350 0061 84        		.byte	-124
- 1351 0062 8E        		.byte	-114
- 1352 0063 9C        		.byte	-100
- 1353 0064 A8        		.byte	-88
- 1354 0065 AA        		.byte	-86
- 1355 0066 A1        		.byte	-95
- 1356 0067 92        		.byte	-110
- 1357 0068 83        		.byte	-125
- 1358 0069 79        		.byte	121
- 1359 006a 75        		.byte	117
- 1360 006b 74        		.byte	116
- 1361 006c 74        		.byte	116
- 1362 006d 73        		.byte	115
- 1363 006e 71        		.byte	113
- 1364 006f 6E        		.byte	110
- 1365 0070 6D        		.byte	109
- 1366 0071 6A        		.byte	106
- 1367 0072 65        		.byte	101
- 1368 0073 5C        		.byte	92
- 1369 0074 50        		.byte	80
- 1370 0075 43        		.byte	67
- 1371 0076 3A        		.byte	58
- 1372 0077 34        		.byte	52
- 1373 0078 31        		.byte	49
- 1374 0079 2E        		.byte	46
- 1375 007a 2B        		.byte	43
- 1376 007b 27        		.byte	39
- 1377 007c 21        		.byte	33
- 1378 007d 1B        		.byte	27
- 1379 007e 16        		.byte	22
- 1380 007f 12        		.byte	18
- 1381 0080 0E        		.byte	14
- 1382 0081 0B        		.byte	11
- 1383 0082 07        		.byte	7
- 1384 0083 05        		.byte	5
- 1385 0084 03        		.byte	3
- 1386 0085 01        		.byte	1
- 1387 0086 01        		.byte	1
- 1388 0087 00        		.byte	0
- 1389 0088 01        		.byte	1
- 1390 0089 00        		.byte	0
- 1391               	.global	song2a
- 1392               		.data
- 1395               	song2a:
- 1396 0004 7700      		.word	119
- 1397 0006 0000      		.word	song2anotes
- 1398               	.global	song2bnotes
- 1399               		.section	.progmem.data
- 1402               	song2bnotes:
- 1403 008a 01        		.byte	1
- 1404 008b 1F        		.byte	31
- 1405 008c 59        		.byte	89
- 1406 008d 7E        		.byte	126
- 1407 008e 77        		.byte	119
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 25
+ 1340 0692 00C0      		rjmp .L88
+ 1341               	.L89:
+ 1342               	.LM208:
+ 1343 0694 81B5      		in r24,65-32
+ 1344 0696 8064      		ori r24,lo8(64)
+ 1345 0698 81BD      		out 65-32,r24
+ 1346               	.LM209:
+ 1347 069a 85B7      		in r24,85-32
+ 1348 069c 877E      		andi r24,lo8(-25)
+ 1349 069e 8061      		ori r24,lo8(16)
+ 1350 06a0 85BF      		out 85-32,r24
+ 1351               	.LM210:
+ 1352 06a2 85B7      		in r24,85-32
+ 1353 06a4 8062      		ori r24,lo8(32)
+ 1354 06a6 85BF      		out 85-32,r24
+ 1355               	/* #APP */
+ 1356               	 ;  430 "firefly.c" 1
+ 1357 06a8 8895      		sleep
+ 1358               		
+ 1359               	 ;  0 "" 2
+ 1360               	/* #NOAPP */
+ 1361 06aa 85B7      		in r24,85-32
+ 1362 06ac 8F7D      		andi r24,lo8(-33)
+ 1363 06ae 85BF      		out 85-32,r24
+ 1364               	.L88:
+ 1365               	.LM211:
+ 1366 06b0 8091 0000 		lds r24,is_dark
+ 1367 06b4 8823      		tst r24
+ 1368 06b6 01F0      		breq .L89
+ 1369               	.LM212:
+ 1370 06b8 19BF      		out 89-32,r17
+ 1371               	.LM213:
+ 1372 06ba 1092 0000 		sts waiting_for_dark,__zero_reg__
+ 1373               	.LBE27:
+ 1374               	.LBE26:
+ 1375               	.LM214:
+ 1376 06be 8824      		clr r8
+ 1377 06c0 7724      		clr r7
+ 1378 06c2 6624      		clr r6
+ 1379 06c4 5524      		clr r5
+ 1380 06c6 4424      		clr r4
+ 1381 06c8 3324      		clr r3
+ 1382 06ca 2224      		clr r2
+ 1383               	.LM215:
+ 1384 06cc 11BA      		out 49-32,__zero_reg__
+ 1385               	.LM216:
+ 1386 06ce 899A      		sbi 49-32,1
+ 1387               	.LM217:
+ 1388 06d0 8B9A      		sbi 49-32,3
+ 1389               	.LM218:
+ 1390 06d2 00D0      		rcall lighted_fireflies
+ 1391 06d4 00C0      		rjmp .L90
+ 1392               	.LFE16:
+ 1394               	.global	bootsongnotes
+ 1395               		.section	.progmem.data,"a",@progbits
+ 1398               	bootsongnotes:
+ 1399 0000 00        		.byte	0
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 25
 
 
- 1408 008f 55        		.byte	85
- 1409 0090 2A        		.byte	42
- 1410 0091 06        		.byte	6
- 1411 0092 01        		.byte	1
- 1412 0093 01        		.byte	1
- 1413 0094 01        		.byte	1
- 1414 0095 01        		.byte	1
- 1415 0096 01        		.byte	1
- 1416 0097 01        		.byte	1
- 1417 0098 08        		.byte	8
- 1418 0099 16        		.byte	22
- 1419 009a 25        		.byte	37
- 1420 009b 33        		.byte	51
- 1421 009c 40        		.byte	64
- 1422 009d 48        		.byte	72
- 1423 009e 50        		.byte	80
- 1424 009f 5C        		.byte	92
- 1425 00a0 6C        		.byte	108
- 1426 00a1 7A        		.byte	122
- 1427 00a2 7F        		.byte	127
- 1428 00a3 7A        		.byte	122
- 1429 00a4 75        		.byte	117
- 1430 00a5 7C        		.byte	124
- 1431 00a6 8F        		.byte	-113
- 1432 00a7 A3        		.byte	-93
- 1433 00a8 A7        		.byte	-89
- 1434 00a9 9B        		.byte	-101
- 1435 00aa 8B        		.byte	-117
- 1436 00ab 87        		.byte	-121
- 1437 00ac 8E        		.byte	-114
- 1438 00ad 96        		.byte	-106
- 1439 00ae 96        		.byte	-106
- 1440 00af 8D        		.byte	-115
- 1441 00b0 83        		.byte	-125
- 1442 00b1 81        		.byte	-127
- 1443 00b2 85        		.byte	-123
- 1444 00b3 8B        		.byte	-117
- 1445 00b4 8F        		.byte	-113
- 1446 00b5 92        		.byte	-110
- 1447 00b6 95        		.byte	-107
- 1448 00b7 98        		.byte	-104
- 1449 00b8 96        		.byte	-106
- 1450 00b9 90        		.byte	-112
- 1451 00ba 8A        		.byte	-118
- 1452 00bb 8A        		.byte	-118
- 1453 00bc 91        		.byte	-111
- 1454 00bd 96        		.byte	-106
- 1455 00be 93        		.byte	-109
- 1456 00bf 89        		.byte	-119
- 1457 00c0 84        		.byte	-124
- 1458 00c1 89        		.byte	-119
- 1459 00c2 99        		.byte	-103
- 1460 00c3 A6        		.byte	-90
- 1461 00c4 A7        		.byte	-89
- 1462 00c5 9C        		.byte	-100
- 1463 00c6 94        		.byte	-108
- 1464 00c7 95        		.byte	-107
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 26
+ 1400 0001 04        		.byte	4
+ 1401 0002 09        		.byte	9
+ 1402 0003 10        		.byte	16
+ 1403 0004 18        		.byte	24
+ 1404 0005 21        		.byte	33
+ 1405 0006 29        		.byte	41
+ 1406 0007 2F        		.byte	47
+ 1407 0008 32        		.byte	50
+ 1408 0009 31        		.byte	49
+ 1409 000a 2C        		.byte	44
+ 1410 000b 23        		.byte	35
+ 1411 000c 1A        		.byte	26
+ 1412 000d 11        		.byte	17
+ 1413 000e 0A        		.byte	10
+ 1414 000f 05        		.byte	5
+ 1415 0010 01        		.byte	1
+ 1416 0011 00        		.byte	0
+ 1417 0012 00        		.byte	0
+ 1418               	.global	bootsong
+ 1419               		.data
+ 1422               	bootsong:
+ 1423 0000 1300      		.word	19
+ 1424 0002 0000      		.word	bootsongnotes
+ 1425               	.global	song2anotes
+ 1426               		.section	.progmem.data
+ 1429               	song2anotes:
+ 1430 0013 02        		.byte	2
+ 1431 0014 1D        		.byte	29
+ 1432 0015 51        		.byte	81
+ 1433 0016 7B        		.byte	123
+ 1434 0017 82        		.byte	-126
+ 1435 0018 68        		.byte	104
+ 1436 0019 3F        		.byte	63
+ 1437 001a 18        		.byte	24
+ 1438 001b 02        		.byte	2
+ 1439 001c 01        		.byte	1
+ 1440 001d 01        		.byte	1
+ 1441 001e 01        		.byte	1
+ 1442 001f 01        		.byte	1
+ 1443 0020 01        		.byte	1
+ 1444 0021 01        		.byte	1
+ 1445 0022 04        		.byte	4
+ 1446 0023 0F        		.byte	15
+ 1447 0024 1A        		.byte	26
+ 1448 0025 24        		.byte	36
+ 1449 0026 2E        		.byte	46
+ 1450 0027 37        		.byte	55
+ 1451 0028 42        		.byte	66
+ 1452 0029 4F        		.byte	79
+ 1453 002a 5B        		.byte	91
+ 1454 002b 66        		.byte	102
+ 1455 002c 6D        		.byte	109
+ 1456 002d 73        		.byte	115
+ 1457 002e 79        		.byte	121
+ 1458 002f 83        		.byte	-125
+ 1459 0030 8E        		.byte	-114
+ 1460 0031 98        		.byte	-104
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 26
 
 
- 1465 00c8 9C        		.byte	-100
- 1466 00c9 A1        		.byte	-95
- 1467 00ca 9C        		.byte	-100
- 1468 00cb 93        		.byte	-109
- 1469 00cc 8D        		.byte	-115
- 1470 00cd 91        		.byte	-111
- 1471 00ce 98        		.byte	-104
- 1472 00cf 9D        		.byte	-99
- 1473 00d0 9C        		.byte	-100
- 1474 00d1 9A        		.byte	-102
- 1475 00d2 9C        		.byte	-100
- 1476 00d3 A1        		.byte	-95
- 1477 00d4 A1        		.byte	-95
- 1478 00d5 98        		.byte	-104
- 1479 00d6 8C        		.byte	-116
- 1480 00d7 85        		.byte	-123
- 1481 00d8 83        		.byte	-125
- 1482 00d9 82        		.byte	-126
- 1483 00da 7C        		.byte	124
- 1484 00db 72        		.byte	114
- 1485 00dc 69        		.byte	105
- 1486 00dd 66        		.byte	102
- 1487 00de 67        		.byte	103
- 1488 00df 65        		.byte	101
- 1489 00e0 5D        		.byte	93
- 1490 00e1 52        		.byte	82
- 1491 00e2 4A        		.byte	74
- 1492 00e3 44        		.byte	68
- 1493 00e4 3F        		.byte	63
- 1494 00e5 37        		.byte	55
- 1495 00e6 2E        		.byte	46
- 1496 00e7 26        		.byte	38
- 1497 00e8 20        		.byte	32
- 1498 00e9 1D        		.byte	29
- 1499 00ea 19        		.byte	25
- 1500 00eb 14        		.byte	20
- 1501 00ec 0F        		.byte	15
- 1502 00ed 0B        		.byte	11
- 1503 00ee 08        		.byte	8
- 1504 00ef 06        		.byte	6
- 1505 00f0 04        		.byte	4
- 1506 00f1 02        		.byte	2
- 1507 00f2 01        		.byte	1
- 1508 00f3 01        		.byte	1
- 1509 00f4 00        		.byte	0
- 1510 00f5 00        		.byte	0
- 1511               	.global	song2b
- 1512               		.data
- 1515               	song2b:
- 1516 0008 6C00      		.word	108
- 1517 000a 0000      		.word	song2bnotes
- 1518               	.global	song2cnotes
- 1519               		.section	.progmem.data
- 1522               	song2cnotes:
- 1523 00f6 02        		.byte	2
- 1524 00f7 19        		.byte	25
- 1525 00f8 46        		.byte	70
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 27
+ 1461 0032 9B        		.byte	-101
+ 1462 0033 97        		.byte	-105
+ 1463 0034 8D        		.byte	-115
+ 1464 0035 85        		.byte	-123
+ 1465 0036 83        		.byte	-125
+ 1466 0037 87        		.byte	-121
+ 1467 0038 90        		.byte	-112
+ 1468 0039 99        		.byte	-103
+ 1469 003a 9E        		.byte	-98
+ 1470 003b 9E        		.byte	-98
+ 1471 003c 9A        		.byte	-102
+ 1472 003d 97        		.byte	-105
+ 1473 003e 96        		.byte	-106
+ 1474 003f 95        		.byte	-107
+ 1475 0040 94        		.byte	-108
+ 1476 0041 90        		.byte	-112
+ 1477 0042 8B        		.byte	-117
+ 1478 0043 88        		.byte	-120
+ 1479 0044 8A        		.byte	-118
+ 1480 0045 91        		.byte	-111
+ 1481 0046 9B        		.byte	-101
+ 1482 0047 A1        		.byte	-95
+ 1483 0048 A0        		.byte	-96
+ 1484 0049 99        		.byte	-103
+ 1485 004a 90        		.byte	-112
+ 1486 004b 8A        		.byte	-118
+ 1487 004c 8B        		.byte	-117
+ 1488 004d 91        		.byte	-111
+ 1489 004e 98        		.byte	-104
+ 1490 004f 9C        		.byte	-100
+ 1491 0050 9A        		.byte	-102
+ 1492 0051 94        		.byte	-108
+ 1493 0052 8D        		.byte	-115
+ 1494 0053 8A        		.byte	-118
+ 1495 0054 8C        		.byte	-116
+ 1496 0055 91        		.byte	-111
+ 1497 0056 96        		.byte	-106
+ 1498 0057 99        		.byte	-103
+ 1499 0058 99        		.byte	-103
+ 1500 0059 98        		.byte	-104
+ 1501 005a 98        		.byte	-104
+ 1502 005b 9A        		.byte	-102
+ 1503 005c 9A        		.byte	-102
+ 1504 005d 96        		.byte	-106
+ 1505 005e 8E        		.byte	-114
+ 1506 005f 86        		.byte	-122
+ 1507 0060 81        		.byte	-127
+ 1508 0061 84        		.byte	-124
+ 1509 0062 8E        		.byte	-114
+ 1510 0063 9C        		.byte	-100
+ 1511 0064 A8        		.byte	-88
+ 1512 0065 AA        		.byte	-86
+ 1513 0066 A1        		.byte	-95
+ 1514 0067 92        		.byte	-110
+ 1515 0068 83        		.byte	-125
+ 1516 0069 79        		.byte	121
+ 1517 006a 75        		.byte	117
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 27
 
 
- 1526 00f9 75        		.byte	117
- 1527 00fa 92        		.byte	-110
- 1528 00fb 90        		.byte	-112
- 1529 00fc 6F        		.byte	111
- 1530 00fd 3D        		.byte	61
- 1531 00fe 12        		.byte	18
- 1532 00ff 01        		.byte	1
- 1533 0100 01        		.byte	1
- 1534 0101 01        		.byte	1
- 1535 0102 01        		.byte	1
- 1536 0103 01        		.byte	1
- 1537 0104 01        		.byte	1
- 1538 0105 01        		.byte	1
- 1539 0106 01        		.byte	1
- 1540 0107 08        		.byte	8
- 1541 0108 12        		.byte	18
- 1542 0109 1C        		.byte	28
- 1543 010a 27        		.byte	39
- 1544 010b 32        		.byte	50
- 1545 010c 3C        		.byte	60
- 1546 010d 45        		.byte	69
- 1547 010e 4E        		.byte	78
- 1548 010f 55        		.byte	85
- 1549 0110 5C        		.byte	92
- 1550 0111 63        		.byte	99
- 1551 0112 69        		.byte	105
- 1552 0113 6F        		.byte	111
- 1553 0114 76        		.byte	118
- 1554 0115 7E        		.byte	126
- 1555 0116 86        		.byte	-122
- 1556 0117 8E        		.byte	-114
- 1557 0118 95        		.byte	-107
- 1558 0119 9B        		.byte	-101
- 1559 011a 9F        		.byte	-97
- 1560 011b A1        		.byte	-95
- 1561 011c A0        		.byte	-96
- 1562 011d 9C        		.byte	-100
- 1563 011e 98        		.byte	-104
- 1564 011f 92        		.byte	-110
- 1565 0120 8B        		.byte	-117
- 1566 0121 86        		.byte	-122
- 1567 0122 81        		.byte	-127
- 1568 0123 7E        		.byte	126
- 1569 0124 7D        		.byte	125
- 1570 0125 7E        		.byte	126
- 1571 0126 81        		.byte	-127
- 1572 0127 86        		.byte	-122
- 1573 0128 8C        		.byte	-116
- 1574 0129 94        		.byte	-108
- 1575 012a 9B        		.byte	-101
- 1576 012b A2        		.byte	-94
- 1577 012c A8        		.byte	-88
- 1578 012d AB        		.byte	-85
- 1579 012e AC        		.byte	-84
- 1580 012f AB        		.byte	-85
- 1581 0130 A8        		.byte	-88
- 1582 0131 A3        		.byte	-93
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 28
+ 1518 006b 74        		.byte	116
+ 1519 006c 74        		.byte	116
+ 1520 006d 73        		.byte	115
+ 1521 006e 71        		.byte	113
+ 1522 006f 6E        		.byte	110
+ 1523 0070 6D        		.byte	109
+ 1524 0071 6A        		.byte	106
+ 1525 0072 65        		.byte	101
+ 1526 0073 5C        		.byte	92
+ 1527 0074 50        		.byte	80
+ 1528 0075 43        		.byte	67
+ 1529 0076 3A        		.byte	58
+ 1530 0077 34        		.byte	52
+ 1531 0078 31        		.byte	49
+ 1532 0079 2E        		.byte	46
+ 1533 007a 2B        		.byte	43
+ 1534 007b 27        		.byte	39
+ 1535 007c 21        		.byte	33
+ 1536 007d 1B        		.byte	27
+ 1537 007e 16        		.byte	22
+ 1538 007f 12        		.byte	18
+ 1539 0080 0E        		.byte	14
+ 1540 0081 0B        		.byte	11
+ 1541 0082 07        		.byte	7
+ 1542 0083 05        		.byte	5
+ 1543 0084 03        		.byte	3
+ 1544 0085 01        		.byte	1
+ 1545 0086 01        		.byte	1
+ 1546 0087 00        		.byte	0
+ 1547 0088 01        		.byte	1
+ 1548 0089 00        		.byte	0
+ 1549               	.global	song2a
+ 1550               		.data
+ 1553               	song2a:
+ 1554 0004 7700      		.word	119
+ 1555 0006 0000      		.word	song2anotes
+ 1556               	.global	song2bnotes
+ 1557               		.section	.progmem.data
+ 1560               	song2bnotes:
+ 1561 008a 01        		.byte	1
+ 1562 008b 1F        		.byte	31
+ 1563 008c 59        		.byte	89
+ 1564 008d 7E        		.byte	126
+ 1565 008e 77        		.byte	119
+ 1566 008f 55        		.byte	85
+ 1567 0090 2A        		.byte	42
+ 1568 0091 06        		.byte	6
+ 1569 0092 01        		.byte	1
+ 1570 0093 01        		.byte	1
+ 1571 0094 01        		.byte	1
+ 1572 0095 01        		.byte	1
+ 1573 0096 01        		.byte	1
+ 1574 0097 01        		.byte	1
+ 1575 0098 08        		.byte	8
+ 1576 0099 16        		.byte	22
+ 1577 009a 25        		.byte	37
+ 1578 009b 33        		.byte	51
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 28
 
 
- 1583 0132 9E        		.byte	-98
- 1584 0133 99        		.byte	-103
- 1585 0134 95        		.byte	-107
- 1586 0135 92        		.byte	-110
- 1587 0136 90        		.byte	-112
- 1588 0137 90        		.byte	-112
- 1589 0138 92        		.byte	-110
- 1590 0139 94        		.byte	-108
- 1591 013a 97        		.byte	-105
- 1592 013b 9A        		.byte	-102
- 1593 013c 9D        		.byte	-99
- 1594 013d 9E        		.byte	-98
- 1595 013e 9E        		.byte	-98
- 1596 013f 9D        		.byte	-99
- 1597 0140 9A        		.byte	-102
- 1598 0141 96        		.byte	-106
- 1599 0142 91        		.byte	-111
- 1600 0143 8D        		.byte	-115
- 1601 0144 89        		.byte	-119
- 1602 0145 86        		.byte	-122
- 1603 0146 85        		.byte	-123
- 1604 0147 84        		.byte	-124
- 1605 0148 86        		.byte	-122
- 1606 0149 88        		.byte	-120
- 1607 014a 8B        		.byte	-117
- 1608 014b 8F        		.byte	-113
- 1609 014c 93        		.byte	-109
- 1610 014d 95        		.byte	-107
- 1611 014e 96        		.byte	-106
- 1612 014f 96        		.byte	-106
- 1613 0150 93        		.byte	-109
- 1614 0151 8F        		.byte	-113
- 1615 0152 8A        		.byte	-118
- 1616 0153 85        		.byte	-123
- 1617 0154 80        		.byte	-128
- 1618 0155 7B        		.byte	123
- 1619 0156 76        		.byte	118
- 1620 0157 73        		.byte	115
- 1621 0158 71        		.byte	113
- 1622 0159 6F        		.byte	111
- 1623 015a 6D        		.byte	109
- 1624 015b 6C        		.byte	108
- 1625 015c 69        		.byte	105
- 1626 015d 66        		.byte	102
- 1627 015e 62        		.byte	98
- 1628 015f 5C        		.byte	92
- 1629 0160 56        		.byte	86
- 1630 0161 4E        		.byte	78
- 1631 0162 46        		.byte	70
- 1632 0163 3F        		.byte	63
- 1633 0164 37        		.byte	55
- 1634 0165 30        		.byte	48
- 1635 0166 2A        		.byte	42
- 1636 0167 25        		.byte	37
- 1637 0168 21        		.byte	33
- 1638 0169 1D        		.byte	29
- 1639 016a 19        		.byte	25
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 29
+ 1579 009c 40        		.byte	64
+ 1580 009d 48        		.byte	72
+ 1581 009e 50        		.byte	80
+ 1582 009f 5C        		.byte	92
+ 1583 00a0 6C        		.byte	108
+ 1584 00a1 7A        		.byte	122
+ 1585 00a2 7F        		.byte	127
+ 1586 00a3 7A        		.byte	122
+ 1587 00a4 75        		.byte	117
+ 1588 00a5 7C        		.byte	124
+ 1589 00a6 8F        		.byte	-113
+ 1590 00a7 A3        		.byte	-93
+ 1591 00a8 A7        		.byte	-89
+ 1592 00a9 9B        		.byte	-101
+ 1593 00aa 8B        		.byte	-117
+ 1594 00ab 87        		.byte	-121
+ 1595 00ac 8E        		.byte	-114
+ 1596 00ad 96        		.byte	-106
+ 1597 00ae 96        		.byte	-106
+ 1598 00af 8D        		.byte	-115
+ 1599 00b0 83        		.byte	-125
+ 1600 00b1 81        		.byte	-127
+ 1601 00b2 85        		.byte	-123
+ 1602 00b3 8B        		.byte	-117
+ 1603 00b4 8F        		.byte	-113
+ 1604 00b5 92        		.byte	-110
+ 1605 00b6 95        		.byte	-107
+ 1606 00b7 98        		.byte	-104
+ 1607 00b8 96        		.byte	-106
+ 1608 00b9 90        		.byte	-112
+ 1609 00ba 8A        		.byte	-118
+ 1610 00bb 8A        		.byte	-118
+ 1611 00bc 91        		.byte	-111
+ 1612 00bd 96        		.byte	-106
+ 1613 00be 93        		.byte	-109
+ 1614 00bf 89        		.byte	-119
+ 1615 00c0 84        		.byte	-124
+ 1616 00c1 89        		.byte	-119
+ 1617 00c2 99        		.byte	-103
+ 1618 00c3 A6        		.byte	-90
+ 1619 00c4 A7        		.byte	-89
+ 1620 00c5 9C        		.byte	-100
+ 1621 00c6 94        		.byte	-108
+ 1622 00c7 95        		.byte	-107
+ 1623 00c8 9C        		.byte	-100
+ 1624 00c9 A1        		.byte	-95
+ 1625 00ca 9C        		.byte	-100
+ 1626 00cb 93        		.byte	-109
+ 1627 00cc 8D        		.byte	-115
+ 1628 00cd 91        		.byte	-111
+ 1629 00ce 98        		.byte	-104
+ 1630 00cf 9D        		.byte	-99
+ 1631 00d0 9C        		.byte	-100
+ 1632 00d1 9A        		.byte	-102
+ 1633 00d2 9C        		.byte	-100
+ 1634 00d3 A1        		.byte	-95
+ 1635 00d4 A1        		.byte	-95
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 29
 
 
- 1640 016b 16        		.byte	22
- 1641 016c 13        		.byte	19
- 1642 016d 10        		.byte	16
- 1643 016e 0D        		.byte	13
- 1644 016f 0A        		.byte	10
- 1645 0170 07        		.byte	7
- 1646 0171 05        		.byte	5
- 1647 0172 03        		.byte	3
- 1648 0173 02        		.byte	2
- 1649 0174 01        		.byte	1
- 1650 0175 01        		.byte	1
- 1651 0176 00        		.byte	0
- 1652 0177 00        		.byte	0
- 1653               	.global	song2c
- 1654               		.data
- 1657               	song2c:
- 1658 000c 8200      		.word	130
- 1659 000e 0000      		.word	song2cnotes
- 1660               	.global	song2dnotes
- 1661               		.section	.progmem.data
- 1664               	song2dnotes:
- 1665 0178 01        		.byte	1
- 1666 0179 1B        		.byte	27
- 1667 017a 48        		.byte	72
- 1668 017b 6D        		.byte	109
- 1669 017c 79        		.byte	121
- 1670 017d 68        		.byte	104
- 1671 017e 3D        		.byte	61
- 1672 017f 11        		.byte	17
- 1673 0180 01        		.byte	1
- 1674 0181 01        		.byte	1
- 1675 0182 01        		.byte	1
- 1676 0183 01        		.byte	1
- 1677 0184 01        		.byte	1
- 1678 0185 01        		.byte	1
- 1679 0186 01        		.byte	1
- 1680 0187 0B        		.byte	11
- 1681 0188 15        		.byte	21
- 1682 0189 22        		.byte	34
- 1683 018a 30        		.byte	48
- 1684 018b 3C        		.byte	60
- 1685 018c 46        		.byte	70
- 1686 018d 4D        		.byte	77
- 1687 018e 56        		.byte	86
- 1688 018f 63        		.byte	99
- 1689 0190 73        		.byte	115
- 1690 0191 80        		.byte	-128
- 1691 0192 87        		.byte	-121
- 1692 0193 87        		.byte	-121
- 1693 0194 86        		.byte	-122
- 1694 0195 88        		.byte	-120
- 1695 0196 8D        		.byte	-115
- 1696 0197 90        		.byte	-112
- 1697 0198 8F        		.byte	-113
- 1698 0199 8B        		.byte	-117
- 1699 019a 8A        		.byte	-118
- 1700 019b 8D        		.byte	-115
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 30
+ 1636 00d5 98        		.byte	-104
+ 1637 00d6 8C        		.byte	-116
+ 1638 00d7 85        		.byte	-123
+ 1639 00d8 83        		.byte	-125
+ 1640 00d9 82        		.byte	-126
+ 1641 00da 7C        		.byte	124
+ 1642 00db 72        		.byte	114
+ 1643 00dc 69        		.byte	105
+ 1644 00dd 66        		.byte	102
+ 1645 00de 67        		.byte	103
+ 1646 00df 65        		.byte	101
+ 1647 00e0 5D        		.byte	93
+ 1648 00e1 52        		.byte	82
+ 1649 00e2 4A        		.byte	74
+ 1650 00e3 44        		.byte	68
+ 1651 00e4 3F        		.byte	63
+ 1652 00e5 37        		.byte	55
+ 1653 00e6 2E        		.byte	46
+ 1654 00e7 26        		.byte	38
+ 1655 00e8 20        		.byte	32
+ 1656 00e9 1D        		.byte	29
+ 1657 00ea 19        		.byte	25
+ 1658 00eb 14        		.byte	20
+ 1659 00ec 0F        		.byte	15
+ 1660 00ed 0B        		.byte	11
+ 1661 00ee 08        		.byte	8
+ 1662 00ef 06        		.byte	6
+ 1663 00f0 04        		.byte	4
+ 1664 00f1 02        		.byte	2
+ 1665 00f2 01        		.byte	1
+ 1666 00f3 01        		.byte	1
+ 1667 00f4 00        		.byte	0
+ 1668 00f5 00        		.byte	0
+ 1669               	.global	song2b
+ 1670               		.data
+ 1673               	song2b:
+ 1674 0008 6C00      		.word	108
+ 1675 000a 0000      		.word	song2bnotes
+ 1676               	.global	song2cnotes
+ 1677               		.section	.progmem.data
+ 1680               	song2cnotes:
+ 1681 00f6 02        		.byte	2
+ 1682 00f7 19        		.byte	25
+ 1683 00f8 46        		.byte	70
+ 1684 00f9 75        		.byte	117
+ 1685 00fa 92        		.byte	-110
+ 1686 00fb 90        		.byte	-112
+ 1687 00fc 6F        		.byte	111
+ 1688 00fd 3D        		.byte	61
+ 1689 00fe 12        		.byte	18
+ 1690 00ff 01        		.byte	1
+ 1691 0100 01        		.byte	1
+ 1692 0101 01        		.byte	1
+ 1693 0102 01        		.byte	1
+ 1694 0103 01        		.byte	1
+ 1695 0104 01        		.byte	1
+ 1696 0105 01        		.byte	1
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 30
 
 
- 1701 019c 93        		.byte	-109
- 1702 019d 94        		.byte	-108
- 1703 019e 8E        		.byte	-114
- 1704 019f 83        		.byte	-125
- 1705 01a0 7B        		.byte	123
- 1706 01a1 7E        		.byte	126
- 1707 01a2 8A        		.byte	-118
- 1708 01a3 99        		.byte	-103
- 1709 01a4 A4        		.byte	-92
- 1710 01a5 A6        		.byte	-90
- 1711 01a6 A1        		.byte	-95
- 1712 01a7 9C        		.byte	-100
- 1713 01a8 9A        		.byte	-102
- 1714 01a9 9A        		.byte	-102
- 1715 01aa 99        		.byte	-103
- 1716 01ab 97        		.byte	-105
- 1717 01ac 96        		.byte	-106
- 1718 01ad 9B        		.byte	-101
- 1719 01ae A3        		.byte	-93
- 1720 01af A9        		.byte	-87
- 1721 01b0 A6        		.byte	-90
- 1722 01b1 98        		.byte	-104
- 1723 01b2 88        		.byte	-120
- 1724 01b3 7E        		.byte	126
- 1725 01b4 80        		.byte	-128
- 1726 01b5 8B        		.byte	-117
- 1727 01b6 97        		.byte	-105
- 1728 01b7 9C        		.byte	-100
- 1729 01b8 99        		.byte	-103
- 1730 01b9 92        		.byte	-110
- 1731 01ba 8C        		.byte	-116
- 1732 01bb 88        		.byte	-120
- 1733 01bc 83        		.byte	-125
- 1734 01bd 7B        		.byte	123
- 1735 01be 73        		.byte	115
- 1736 01bf 6E        		.byte	110
- 1737 01c0 6E        		.byte	110
- 1738 01c1 70        		.byte	112
- 1739 01c2 6E        		.byte	110
- 1740 01c3 64        		.byte	100
- 1741 01c4 56        		.byte	86
- 1742 01c5 49        		.byte	73
- 1743 01c6 41        		.byte	65
- 1744 01c7 3E        		.byte	62
- 1745 01c8 3C        		.byte	60
- 1746 01c9 3A        		.byte	58
- 1747 01ca 34        		.byte	52
- 1748 01cb 2E        		.byte	46
- 1749 01cc 28        		.byte	40
- 1750 01cd 23        		.byte	35
- 1751 01ce 1F        		.byte	31
- 1752 01cf 19        		.byte	25
- 1753 01d0 14        		.byte	20
- 1754 01d1 0F        		.byte	15
- 1755 01d2 0B        		.byte	11
- 1756 01d3 08        		.byte	8
- 1757 01d4 06        		.byte	6
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 31
+ 1697 0106 01        		.byte	1
+ 1698 0107 08        		.byte	8
+ 1699 0108 12        		.byte	18
+ 1700 0109 1C        		.byte	28
+ 1701 010a 27        		.byte	39
+ 1702 010b 32        		.byte	50
+ 1703 010c 3C        		.byte	60
+ 1704 010d 45        		.byte	69
+ 1705 010e 4E        		.byte	78
+ 1706 010f 55        		.byte	85
+ 1707 0110 5C        		.byte	92
+ 1708 0111 63        		.byte	99
+ 1709 0112 69        		.byte	105
+ 1710 0113 6F        		.byte	111
+ 1711 0114 76        		.byte	118
+ 1712 0115 7E        		.byte	126
+ 1713 0116 86        		.byte	-122
+ 1714 0117 8E        		.byte	-114
+ 1715 0118 95        		.byte	-107
+ 1716 0119 9B        		.byte	-101
+ 1717 011a 9F        		.byte	-97
+ 1718 011b A1        		.byte	-95
+ 1719 011c A0        		.byte	-96
+ 1720 011d 9C        		.byte	-100
+ 1721 011e 98        		.byte	-104
+ 1722 011f 92        		.byte	-110
+ 1723 0120 8B        		.byte	-117
+ 1724 0121 86        		.byte	-122
+ 1725 0122 81        		.byte	-127
+ 1726 0123 7E        		.byte	126
+ 1727 0124 7D        		.byte	125
+ 1728 0125 7E        		.byte	126
+ 1729 0126 81        		.byte	-127
+ 1730 0127 86        		.byte	-122
+ 1731 0128 8C        		.byte	-116
+ 1732 0129 94        		.byte	-108
+ 1733 012a 9B        		.byte	-101
+ 1734 012b A2        		.byte	-94
+ 1735 012c A8        		.byte	-88
+ 1736 012d AB        		.byte	-85
+ 1737 012e AC        		.byte	-84
+ 1738 012f AB        		.byte	-85
+ 1739 0130 A8        		.byte	-88
+ 1740 0131 A3        		.byte	-93
+ 1741 0132 9E        		.byte	-98
+ 1742 0133 99        		.byte	-103
+ 1743 0134 95        		.byte	-107
+ 1744 0135 92        		.byte	-110
+ 1745 0136 90        		.byte	-112
+ 1746 0137 90        		.byte	-112
+ 1747 0138 92        		.byte	-110
+ 1748 0139 94        		.byte	-108
+ 1749 013a 97        		.byte	-105
+ 1750 013b 9A        		.byte	-102
+ 1751 013c 9D        		.byte	-99
+ 1752 013d 9E        		.byte	-98
+ 1753 013e 9E        		.byte	-98
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 31
 
 
- 1758 01d5 04        		.byte	4
- 1759 01d6 02        		.byte	2
- 1760 01d7 01        		.byte	1
- 1761 01d8 01        		.byte	1
- 1762 01d9 00        		.byte	0
- 1763 01da 00        		.byte	0
- 1764               	.global	song2d
- 1765               		.data
- 1768               	song2d:
- 1769 0010 6300      		.word	99
- 1770 0012 0000      		.word	song2dnotes
- 1771               	.global	song2enotes
- 1772               		.section	.progmem.data
- 1775               	song2enotes:
- 1776 01db 01        		.byte	1
- 1777 01dc 1A        		.byte	26
- 1778 01dd 49        		.byte	73
- 1779 01de 74        		.byte	116
- 1780 01df 83        		.byte	-125
- 1781 01e0 73        		.byte	115
- 1782 01e1 50        		.byte	80
- 1783 01e2 27        		.byte	39
- 1784 01e3 08        		.byte	8
- 1785 01e4 01        		.byte	1
- 1786 01e5 01        		.byte	1
- 1787 01e6 01        		.byte	1
- 1788 01e7 01        		.byte	1
- 1789 01e8 01        		.byte	1
- 1790 01e9 01        		.byte	1
- 1791 01ea 01        		.byte	1
- 1792 01eb 06        		.byte	6
- 1793 01ec 0F        		.byte	15
- 1794 01ed 1A        		.byte	26
- 1795 01ee 24        		.byte	36
- 1796 01ef 2F        		.byte	47
- 1797 01f0 3A        		.byte	58
- 1798 01f1 46        		.byte	70
- 1799 01f2 52        		.byte	82
- 1800 01f3 5B        		.byte	91
- 1801 01f4 62        		.byte	98
- 1802 01f5 66        		.byte	102
- 1803 01f6 6A        		.byte	106
- 1804 01f7 6F        		.byte	111
- 1805 01f8 77        		.byte	119
- 1806 01f9 83        		.byte	-125
- 1807 01fa 90        		.byte	-112
- 1808 01fb 9A        		.byte	-102
- 1809 01fc 9D        		.byte	-99
- 1810 01fd 99        		.byte	-103
- 1811 01fe 90        		.byte	-112
- 1812 01ff 89        		.byte	-119
- 1813 0200 86        		.byte	-122
- 1814 0201 89        		.byte	-119
- 1815 0202 92        		.byte	-110
- 1816 0203 9A        		.byte	-102
- 1817 0204 9E        		.byte	-98
- 1818 0205 9C        		.byte	-100
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 32
+ 1754 013f 9D        		.byte	-99
+ 1755 0140 9A        		.byte	-102
+ 1756 0141 96        		.byte	-106
+ 1757 0142 91        		.byte	-111
+ 1758 0143 8D        		.byte	-115
+ 1759 0144 89        		.byte	-119
+ 1760 0145 86        		.byte	-122
+ 1761 0146 85        		.byte	-123
+ 1762 0147 84        		.byte	-124
+ 1763 0148 86        		.byte	-122
+ 1764 0149 88        		.byte	-120
+ 1765 014a 8B        		.byte	-117
+ 1766 014b 8F        		.byte	-113
+ 1767 014c 93        		.byte	-109
+ 1768 014d 95        		.byte	-107
+ 1769 014e 96        		.byte	-106
+ 1770 014f 96        		.byte	-106
+ 1771 0150 93        		.byte	-109
+ 1772 0151 8F        		.byte	-113
+ 1773 0152 8A        		.byte	-118
+ 1774 0153 85        		.byte	-123
+ 1775 0154 80        		.byte	-128
+ 1776 0155 7B        		.byte	123
+ 1777 0156 76        		.byte	118
+ 1778 0157 73        		.byte	115
+ 1779 0158 71        		.byte	113
+ 1780 0159 6F        		.byte	111
+ 1781 015a 6D        		.byte	109
+ 1782 015b 6C        		.byte	108
+ 1783 015c 69        		.byte	105
+ 1784 015d 66        		.byte	102
+ 1785 015e 62        		.byte	98
+ 1786 015f 5C        		.byte	92
+ 1787 0160 56        		.byte	86
+ 1788 0161 4E        		.byte	78
+ 1789 0162 46        		.byte	70
+ 1790 0163 3F        		.byte	63
+ 1791 0164 37        		.byte	55
+ 1792 0165 30        		.byte	48
+ 1793 0166 2A        		.byte	42
+ 1794 0167 25        		.byte	37
+ 1795 0168 21        		.byte	33
+ 1796 0169 1D        		.byte	29
+ 1797 016a 19        		.byte	25
+ 1798 016b 16        		.byte	22
+ 1799 016c 13        		.byte	19
+ 1800 016d 10        		.byte	16
+ 1801 016e 0D        		.byte	13
+ 1802 016f 0A        		.byte	10
+ 1803 0170 07        		.byte	7
+ 1804 0171 05        		.byte	5
+ 1805 0172 03        		.byte	3
+ 1806 0173 02        		.byte	2
+ 1807 0174 01        		.byte	1
+ 1808 0175 01        		.byte	1
+ 1809 0176 00        		.byte	0
+ 1810 0177 00        		.byte	0
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 32
 
 
- 1819 0206 95        		.byte	-107
- 1820 0207 8D        		.byte	-115
- 1821 0208 89        		.byte	-119
- 1822 0209 8A        		.byte	-118
- 1823 020a 8F        		.byte	-113
- 1824 020b 97        		.byte	-105
- 1825 020c 9D        		.byte	-99
- 1826 020d 9E        		.byte	-98
- 1827 020e 9B        		.byte	-101
- 1828 020f 97        		.byte	-105
- 1829 0210 94        		.byte	-108
- 1830 0211 96        		.byte	-106
- 1831 0212 9A        		.byte	-102
- 1832 0213 9E        		.byte	-98
- 1833 0214 A0        		.byte	-96
- 1834 0215 9E        		.byte	-98
- 1835 0216 99        		.byte	-103
- 1836 0217 94        		.byte	-108
- 1837 0218 90        		.byte	-112
- 1838 0219 91        		.byte	-111
- 1839 021a 93        		.byte	-109
- 1840 021b 96        		.byte	-106
- 1841 021c 96        		.byte	-106
- 1842 021d 92        		.byte	-110
- 1843 021e 8C        		.byte	-116
- 1844 021f 85        		.byte	-123
- 1845 0220 82        		.byte	-126
- 1846 0221 83        		.byte	-125
- 1847 0222 87        		.byte	-121
- 1848 0223 8C        		.byte	-116
- 1849 0224 8F        		.byte	-113
- 1850 0225 90        		.byte	-112
- 1851 0226 8E        		.byte	-114
- 1852 0227 8D        		.byte	-115
- 1853 0228 8D        		.byte	-115
- 1854 0229 90        		.byte	-112
- 1855 022a 95        		.byte	-107
- 1856 022b 99        		.byte	-103
- 1857 022c 9C        		.byte	-100
- 1858 022d 9D        		.byte	-99
- 1859 022e 9D        		.byte	-99
- 1860 022f 9D        		.byte	-99
- 1861 0230 A0        		.byte	-96
- 1862 0231 A4        		.byte	-92
- 1863 0232 A7        		.byte	-89
- 1864 0233 A7        		.byte	-89
- 1865 0234 A1        		.byte	-95
- 1866 0235 99        		.byte	-103
- 1867 0236 91        		.byte	-111
- 1868 0237 8E        		.byte	-114
- 1869 0238 8F        		.byte	-113
- 1870 0239 95        		.byte	-107
- 1871 023a 9A        		.byte	-102
- 1872 023b 9B        		.byte	-101
- 1873 023c 95        		.byte	-107
- 1874 023d 89        		.byte	-119
- 1875 023e 7C        		.byte	124
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 33
+ 1811               	.global	song2c
+ 1812               		.data
+ 1815               	song2c:
+ 1816 000c 8200      		.word	130
+ 1817 000e 0000      		.word	song2cnotes
+ 1818               	.global	song2dnotes
+ 1819               		.section	.progmem.data
+ 1822               	song2dnotes:
+ 1823 0178 01        		.byte	1
+ 1824 0179 1B        		.byte	27
+ 1825 017a 48        		.byte	72
+ 1826 017b 6D        		.byte	109
+ 1827 017c 79        		.byte	121
+ 1828 017d 68        		.byte	104
+ 1829 017e 3D        		.byte	61
+ 1830 017f 11        		.byte	17
+ 1831 0180 01        		.byte	1
+ 1832 0181 01        		.byte	1
+ 1833 0182 01        		.byte	1
+ 1834 0183 01        		.byte	1
+ 1835 0184 01        		.byte	1
+ 1836 0185 01        		.byte	1
+ 1837 0186 01        		.byte	1
+ 1838 0187 0B        		.byte	11
+ 1839 0188 15        		.byte	21
+ 1840 0189 22        		.byte	34
+ 1841 018a 30        		.byte	48
+ 1842 018b 3C        		.byte	60
+ 1843 018c 46        		.byte	70
+ 1844 018d 4D        		.byte	77
+ 1845 018e 56        		.byte	86
+ 1846 018f 63        		.byte	99
+ 1847 0190 73        		.byte	115
+ 1848 0191 80        		.byte	-128
+ 1849 0192 87        		.byte	-121
+ 1850 0193 87        		.byte	-121
+ 1851 0194 86        		.byte	-122
+ 1852 0195 88        		.byte	-120
+ 1853 0196 8D        		.byte	-115
+ 1854 0197 90        		.byte	-112
+ 1855 0198 8F        		.byte	-113
+ 1856 0199 8B        		.byte	-117
+ 1857 019a 8A        		.byte	-118
+ 1858 019b 8D        		.byte	-115
+ 1859 019c 93        		.byte	-109
+ 1860 019d 94        		.byte	-108
+ 1861 019e 8E        		.byte	-114
+ 1862 019f 83        		.byte	-125
+ 1863 01a0 7B        		.byte	123
+ 1864 01a1 7E        		.byte	126
+ 1865 01a2 8A        		.byte	-118
+ 1866 01a3 99        		.byte	-103
+ 1867 01a4 A4        		.byte	-92
+ 1868 01a5 A6        		.byte	-90
+ 1869 01a6 A1        		.byte	-95
+ 1870 01a7 9C        		.byte	-100
+ 1871 01a8 9A        		.byte	-102
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 33
 
 
- 1876 023f 73        		.byte	115
- 1877 0240 70        		.byte	112
- 1878 0241 74        		.byte	116
- 1879 0242 7B        		.byte	123
- 1880 0243 80        		.byte	-128
- 1881 0244 80        		.byte	-128
- 1882 0245 79        		.byte	121
- 1883 0246 6E        		.byte	110
- 1884 0247 63        		.byte	99
- 1885 0248 5B        		.byte	91
- 1886 0249 58        		.byte	88
- 1887 024a 58        		.byte	88
- 1888 024b 59        		.byte	89
- 1889 024c 57        		.byte	87
- 1890 024d 53        		.byte	83
- 1891 024e 4B        		.byte	75
- 1892 024f 42        		.byte	66
- 1893 0250 39        		.byte	57
- 1894 0251 32        		.byte	50
- 1895 0252 2C        		.byte	44
- 1896 0253 26        		.byte	38
- 1897 0254 22        		.byte	34
- 1898 0255 1D        		.byte	29
- 1899 0256 19        		.byte	25
- 1900 0257 14        		.byte	20
- 1901 0258 11        		.byte	17
- 1902 0259 0D        		.byte	13
- 1903 025a 09        		.byte	9
- 1904 025b 07        		.byte	7
- 1905 025c 04        		.byte	4
- 1906 025d 03        		.byte	3
- 1907 025e 01        		.byte	1
- 1908 025f 01        		.byte	1
- 1909 0260 00        		.byte	0
- 1910 0261 01        		.byte	1
- 1911 0262 00        		.byte	0
- 1912               	.global	song2e
- 1913               		.data
- 1916               	song2e:
- 1917 0014 8800      		.word	136
- 1918 0016 0000      		.word	song2enotes
- 1919               	.global	song2fnotes
- 1920               		.section	.progmem.data
- 1923               	song2fnotes:
- 1924 0263 02        		.byte	2
- 1925 0264 24        		.byte	36
- 1926 0265 5E        		.byte	94
- 1927 0266 82        		.byte	-126
- 1928 0267 79        		.byte	121
- 1929 0268 4F        		.byte	79
- 1930 0269 1B        		.byte	27
- 1931 026a 01        		.byte	1
- 1932 026b 01        		.byte	1
- 1933 026c 01        		.byte	1
- 1934 026d 01        		.byte	1
- 1935 026e 01        		.byte	1
- 1936 026f 01        		.byte	1
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 34
+ 1872 01a9 9A        		.byte	-102
+ 1873 01aa 99        		.byte	-103
+ 1874 01ab 97        		.byte	-105
+ 1875 01ac 96        		.byte	-106
+ 1876 01ad 9B        		.byte	-101
+ 1877 01ae A3        		.byte	-93
+ 1878 01af A9        		.byte	-87
+ 1879 01b0 A6        		.byte	-90
+ 1880 01b1 98        		.byte	-104
+ 1881 01b2 88        		.byte	-120
+ 1882 01b3 7E        		.byte	126
+ 1883 01b4 80        		.byte	-128
+ 1884 01b5 8B        		.byte	-117
+ 1885 01b6 97        		.byte	-105
+ 1886 01b7 9C        		.byte	-100
+ 1887 01b8 99        		.byte	-103
+ 1888 01b9 92        		.byte	-110
+ 1889 01ba 8C        		.byte	-116
+ 1890 01bb 88        		.byte	-120
+ 1891 01bc 83        		.byte	-125
+ 1892 01bd 7B        		.byte	123
+ 1893 01be 73        		.byte	115
+ 1894 01bf 6E        		.byte	110
+ 1895 01c0 6E        		.byte	110
+ 1896 01c1 70        		.byte	112
+ 1897 01c2 6E        		.byte	110
+ 1898 01c3 64        		.byte	100
+ 1899 01c4 56        		.byte	86
+ 1900 01c5 49        		.byte	73
+ 1901 01c6 41        		.byte	65
+ 1902 01c7 3E        		.byte	62
+ 1903 01c8 3C        		.byte	60
+ 1904 01c9 3A        		.byte	58
+ 1905 01ca 34        		.byte	52
+ 1906 01cb 2E        		.byte	46
+ 1907 01cc 28        		.byte	40
+ 1908 01cd 23        		.byte	35
+ 1909 01ce 1F        		.byte	31
+ 1910 01cf 19        		.byte	25
+ 1911 01d0 14        		.byte	20
+ 1912 01d1 0F        		.byte	15
+ 1913 01d2 0B        		.byte	11
+ 1914 01d3 08        		.byte	8
+ 1915 01d4 06        		.byte	6
+ 1916 01d5 04        		.byte	4
+ 1917 01d6 02        		.byte	2
+ 1918 01d7 01        		.byte	1
+ 1919 01d8 01        		.byte	1
+ 1920 01d9 00        		.byte	0
+ 1921 01da 00        		.byte	0
+ 1922               	.global	song2d
+ 1923               		.data
+ 1926               	song2d:
+ 1927 0010 6300      		.word	99
+ 1928 0012 0000      		.word	song2dnotes
+ 1929               	.global	song2enotes
+ 1930               		.section	.progmem.data
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 34
 
 
- 1937 0270 05        		.byte	5
- 1938 0271 10        		.byte	16
- 1939 0272 1E        		.byte	30
- 1940 0273 2D        		.byte	45
- 1941 0274 3B        		.byte	59
- 1942 0275 47        		.byte	71
- 1943 0276 52        		.byte	82
- 1944 0277 5E        		.byte	94
- 1945 0278 6B        		.byte	107
- 1946 0279 77        		.byte	119
- 1947 027a 82        		.byte	-126
- 1948 027b 89        		.byte	-119
- 1949 027c 8E        		.byte	-114
- 1950 027d 93        		.byte	-109
- 1951 027e 97        		.byte	-105
- 1952 027f 9A        		.byte	-102
- 1953 0280 99        		.byte	-103
- 1954 0281 95        		.byte	-107
- 1955 0282 90        		.byte	-112
- 1956 0283 8D        		.byte	-115
- 1957 0284 8D        		.byte	-115
- 1958 0285 8F        		.byte	-113
- 1959 0286 8F        		.byte	-113
- 1960 0287 8C        		.byte	-116
- 1961 0288 86        		.byte	-122
- 1962 0289 83        		.byte	-125
- 1963 028a 87        		.byte	-121
- 1964 028b 91        		.byte	-111
- 1965 028c A0        		.byte	-96
- 1966 028d AB        		.byte	-85
- 1967 028e AC        		.byte	-84
- 1968 028f A3        		.byte	-93
- 1969 0290 96        		.byte	-106
- 1970 0291 8D        		.byte	-115
- 1971 0292 8C        		.byte	-116
- 1972 0293 91        		.byte	-111
- 1973 0294 97        		.byte	-105
- 1974 0295 98        		.byte	-104
- 1975 0296 93        		.byte	-109
- 1976 0297 8A        		.byte	-118
- 1977 0298 86        		.byte	-122
- 1978 0299 88        		.byte	-120
- 1979 029a 93        		.byte	-109
- 1980 029b 9F        		.byte	-97
- 1981 029c A5        		.byte	-91
- 1982 029d A2        		.byte	-94
- 1983 029e 98        		.byte	-104
- 1984 029f 8C        		.byte	-116
- 1985 02a0 84        		.byte	-124
- 1986 02a1 81        		.byte	-127
- 1987 02a2 83        		.byte	-125
- 1988 02a3 84        		.byte	-124
- 1989 02a4 83        		.byte	-125
- 1990 02a5 7F        		.byte	127
- 1991 02a6 7B        		.byte	123
- 1992 02a7 77        		.byte	119
- 1993 02a8 74        		.byte	116
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 35
+ 1933               	song2enotes:
+ 1934 01db 01        		.byte	1
+ 1935 01dc 1A        		.byte	26
+ 1936 01dd 49        		.byte	73
+ 1937 01de 74        		.byte	116
+ 1938 01df 83        		.byte	-125
+ 1939 01e0 73        		.byte	115
+ 1940 01e1 50        		.byte	80
+ 1941 01e2 27        		.byte	39
+ 1942 01e3 08        		.byte	8
+ 1943 01e4 01        		.byte	1
+ 1944 01e5 01        		.byte	1
+ 1945 01e6 01        		.byte	1
+ 1946 01e7 01        		.byte	1
+ 1947 01e8 01        		.byte	1
+ 1948 01e9 01        		.byte	1
+ 1949 01ea 01        		.byte	1
+ 1950 01eb 06        		.byte	6
+ 1951 01ec 0F        		.byte	15
+ 1952 01ed 1A        		.byte	26
+ 1953 01ee 24        		.byte	36
+ 1954 01ef 2F        		.byte	47
+ 1955 01f0 3A        		.byte	58
+ 1956 01f1 46        		.byte	70
+ 1957 01f2 52        		.byte	82
+ 1958 01f3 5B        		.byte	91
+ 1959 01f4 62        		.byte	98
+ 1960 01f5 66        		.byte	102
+ 1961 01f6 6A        		.byte	106
+ 1962 01f7 6F        		.byte	111
+ 1963 01f8 77        		.byte	119
+ 1964 01f9 83        		.byte	-125
+ 1965 01fa 90        		.byte	-112
+ 1966 01fb 9A        		.byte	-102
+ 1967 01fc 9D        		.byte	-99
+ 1968 01fd 99        		.byte	-103
+ 1969 01fe 90        		.byte	-112
+ 1970 01ff 89        		.byte	-119
+ 1971 0200 86        		.byte	-122
+ 1972 0201 89        		.byte	-119
+ 1973 0202 92        		.byte	-110
+ 1974 0203 9A        		.byte	-102
+ 1975 0204 9E        		.byte	-98
+ 1976 0205 9C        		.byte	-100
+ 1977 0206 95        		.byte	-107
+ 1978 0207 8D        		.byte	-115
+ 1979 0208 89        		.byte	-119
+ 1980 0209 8A        		.byte	-118
+ 1981 020a 8F        		.byte	-113
+ 1982 020b 97        		.byte	-105
+ 1983 020c 9D        		.byte	-99
+ 1984 020d 9E        		.byte	-98
+ 1985 020e 9B        		.byte	-101
+ 1986 020f 97        		.byte	-105
+ 1987 0210 94        		.byte	-108
+ 1988 0211 96        		.byte	-106
+ 1989 0212 9A        		.byte	-102
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 35
 
 
- 1994 02a9 70        		.byte	112
- 1995 02aa 69        		.byte	105
- 1996 02ab 60        		.byte	96
- 1997 02ac 56        		.byte	86
- 1998 02ad 4D        		.byte	77
- 1999 02ae 45        		.byte	69
- 2000 02af 3E        		.byte	62
- 2001 02b0 36        		.byte	54
- 2002 02b1 2D        		.byte	45
- 2003 02b2 26        		.byte	38
- 2004 02b3 1F        		.byte	31
- 2005 02b4 1B        		.byte	27
- 2006 02b5 17        		.byte	23
- 2007 02b6 13        		.byte	19
- 2008 02b7 0E        		.byte	14
- 2009 02b8 0A        		.byte	10
- 2010 02b9 06        		.byte	6
- 2011 02ba 04        		.byte	4
- 2012 02bb 02        		.byte	2
- 2013 02bc 01        		.byte	1
- 2014 02bd 01        		.byte	1
- 2015 02be 00        		.byte	0
- 2016 02bf 00        		.byte	0
- 2017               	.global	song2f
- 2018               		.data
- 2021               	song2f:
- 2022 0018 5D00      		.word	93
- 2023 001a 0000      		.word	song2fnotes
- 2024               	.global	song2gnotes
- 2025               		.section	.progmem.data
- 2028               	song2gnotes:
- 2029 02c0 02        		.byte	2
- 2030 02c1 2A        		.byte	42
- 2031 02c2 63        		.byte	99
- 2032 02c3 79        		.byte	121
- 2033 02c4 60        		.byte	96
- 2034 02c5 2A        		.byte	42
- 2035 02c6 03        		.byte	3
- 2036 02c7 01        		.byte	1
- 2037 02c8 01        		.byte	1
- 2038 02c9 01        		.byte	1
- 2039 02ca 01        		.byte	1
- 2040 02cb 01        		.byte	1
- 2041 02cc 0C        		.byte	12
- 2042 02cd 19        		.byte	25
- 2043 02ce 29        		.byte	41
- 2044 02cf 3C        		.byte	60
- 2045 02d0 4D        		.byte	77
- 2046 02d1 56        		.byte	86
- 2047 02d2 5B        		.byte	91
- 2048 02d3 64        		.byte	100
- 2049 02d4 76        		.byte	118
- 2050 02d5 88        		.byte	-120
- 2051 02d6 90        		.byte	-112
- 2052 02d7 8F        		.byte	-113
- 2053 02d8 8D        		.byte	-115
- 2054 02d9 92        		.byte	-110
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 36
+ 1990 0213 9E        		.byte	-98
+ 1991 0214 A0        		.byte	-96
+ 1992 0215 9E        		.byte	-98
+ 1993 0216 99        		.byte	-103
+ 1994 0217 94        		.byte	-108
+ 1995 0218 90        		.byte	-112
+ 1996 0219 91        		.byte	-111
+ 1997 021a 93        		.byte	-109
+ 1998 021b 96        		.byte	-106
+ 1999 021c 96        		.byte	-106
+ 2000 021d 92        		.byte	-110
+ 2001 021e 8C        		.byte	-116
+ 2002 021f 85        		.byte	-123
+ 2003 0220 82        		.byte	-126
+ 2004 0221 83        		.byte	-125
+ 2005 0222 87        		.byte	-121
+ 2006 0223 8C        		.byte	-116
+ 2007 0224 8F        		.byte	-113
+ 2008 0225 90        		.byte	-112
+ 2009 0226 8E        		.byte	-114
+ 2010 0227 8D        		.byte	-115
+ 2011 0228 8D        		.byte	-115
+ 2012 0229 90        		.byte	-112
+ 2013 022a 95        		.byte	-107
+ 2014 022b 99        		.byte	-103
+ 2015 022c 9C        		.byte	-100
+ 2016 022d 9D        		.byte	-99
+ 2017 022e 9D        		.byte	-99
+ 2018 022f 9D        		.byte	-99
+ 2019 0230 A0        		.byte	-96
+ 2020 0231 A4        		.byte	-92
+ 2021 0232 A7        		.byte	-89
+ 2022 0233 A7        		.byte	-89
+ 2023 0234 A1        		.byte	-95
+ 2024 0235 99        		.byte	-103
+ 2025 0236 91        		.byte	-111
+ 2026 0237 8E        		.byte	-114
+ 2027 0238 8F        		.byte	-113
+ 2028 0239 95        		.byte	-107
+ 2029 023a 9A        		.byte	-102
+ 2030 023b 9B        		.byte	-101
+ 2031 023c 95        		.byte	-107
+ 2032 023d 89        		.byte	-119
+ 2033 023e 7C        		.byte	124
+ 2034 023f 73        		.byte	115
+ 2035 0240 70        		.byte	112
+ 2036 0241 74        		.byte	116
+ 2037 0242 7B        		.byte	123
+ 2038 0243 80        		.byte	-128
+ 2039 0244 80        		.byte	-128
+ 2040 0245 79        		.byte	121
+ 2041 0246 6E        		.byte	110
+ 2042 0247 63        		.byte	99
+ 2043 0248 5B        		.byte	91
+ 2044 0249 58        		.byte	88
+ 2045 024a 58        		.byte	88
+ 2046 024b 59        		.byte	89
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 36
 
 
- 2055 02da 99        		.byte	-103
- 2056 02db 9B        		.byte	-101
- 2057 02dc 99        		.byte	-103
- 2058 02dd 98        		.byte	-104
- 2059 02de 9B        		.byte	-101
- 2060 02df 9A        		.byte	-102
- 2061 02e0 94        		.byte	-108
- 2062 02e1 8D        		.byte	-115
- 2063 02e2 8E        		.byte	-114
- 2064 02e3 98        		.byte	-104
- 2065 02e4 9F        		.byte	-97
- 2066 02e5 9A        		.byte	-102
- 2067 02e6 8E        		.byte	-114
- 2068 02e7 88        		.byte	-120
- 2069 02e8 8D        		.byte	-115
- 2070 02e9 98        		.byte	-104
- 2071 02ea 99        		.byte	-103
- 2072 02eb 8F        		.byte	-113
- 2073 02ec 84        		.byte	-124
- 2074 02ed 7E        		.byte	126
- 2075 02ee 7C        		.byte	124
- 2076 02ef 78        		.byte	120
- 2077 02f0 6F        		.byte	111
- 2078 02f1 65        		.byte	101
- 2079 02f2 5C        		.byte	92
- 2080 02f3 53        		.byte	83
- 2081 02f4 48        		.byte	72
- 2082 02f5 3B        		.byte	59
- 2083 02f6 31        		.byte	49
- 2084 02f7 2B        		.byte	43
- 2085 02f8 26        		.byte	38
- 2086 02f9 1E        		.byte	30
- 2087 02fa 15        		.byte	21
- 2088 02fb 0F        		.byte	15
- 2089 02fc 0B        		.byte	11
- 2090 02fd 08        		.byte	8
- 2091 02fe 05        		.byte	5
- 2092 02ff 03        		.byte	3
- 2093 0300 01        		.byte	1
- 2094 0301 01        		.byte	1
- 2095 0302 00        		.byte	0
- 2096 0303 00        		.byte	0
- 2097               	.global	song2g
- 2098               		.data
- 2101               	song2g:
- 2102 001c 4400      		.word	68
- 2103 001e 0000      		.word	song2gnotes
- 2104               	.global	bootsongs
- 2107               	bootsongs:
- 2108 0020 0000      		.word	bootsong
- 2109               	.global	songs
- 2112               	songs:
- 2113 0022 0000      		.word	song2a
- 2114 0024 0000      		.word	song2b
- 2115 0026 0000      		.word	song2b
- 2116 0028 0000      		.word	song2c
- 2117 002a 0000      		.word	song2c
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 37
+ 2047 024c 57        		.byte	87
+ 2048 024d 53        		.byte	83
+ 2049 024e 4B        		.byte	75
+ 2050 024f 42        		.byte	66
+ 2051 0250 39        		.byte	57
+ 2052 0251 32        		.byte	50
+ 2053 0252 2C        		.byte	44
+ 2054 0253 26        		.byte	38
+ 2055 0254 22        		.byte	34
+ 2056 0255 1D        		.byte	29
+ 2057 0256 19        		.byte	25
+ 2058 0257 14        		.byte	20
+ 2059 0258 11        		.byte	17
+ 2060 0259 0D        		.byte	13
+ 2061 025a 09        		.byte	9
+ 2062 025b 07        		.byte	7
+ 2063 025c 04        		.byte	4
+ 2064 025d 03        		.byte	3
+ 2065 025e 01        		.byte	1
+ 2066 025f 01        		.byte	1
+ 2067 0260 00        		.byte	0
+ 2068 0261 01        		.byte	1
+ 2069 0262 00        		.byte	0
+ 2070               	.global	song2e
+ 2071               		.data
+ 2074               	song2e:
+ 2075 0014 8800      		.word	136
+ 2076 0016 0000      		.word	song2enotes
+ 2077               	.global	song2fnotes
+ 2078               		.section	.progmem.data
+ 2081               	song2fnotes:
+ 2082 0263 02        		.byte	2
+ 2083 0264 24        		.byte	36
+ 2084 0265 5E        		.byte	94
+ 2085 0266 82        		.byte	-126
+ 2086 0267 79        		.byte	121
+ 2087 0268 4F        		.byte	79
+ 2088 0269 1B        		.byte	27
+ 2089 026a 01        		.byte	1
+ 2090 026b 01        		.byte	1
+ 2091 026c 01        		.byte	1
+ 2092 026d 01        		.byte	1
+ 2093 026e 01        		.byte	1
+ 2094 026f 01        		.byte	1
+ 2095 0270 05        		.byte	5
+ 2096 0271 10        		.byte	16
+ 2097 0272 1E        		.byte	30
+ 2098 0273 2D        		.byte	45
+ 2099 0274 3B        		.byte	59
+ 2100 0275 47        		.byte	71
+ 2101 0276 52        		.byte	82
+ 2102 0277 5E        		.byte	94
+ 2103 0278 6B        		.byte	107
+ 2104 0279 77        		.byte	119
+ 2105 027a 82        		.byte	-126
+ 2106 027b 89        		.byte	-119
+ 2107 027c 8E        		.byte	-114
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 37
 
 
- 2118 002c 0000      		.word	song2c
- 2119 002e 0000      		.word	song2d
- 2120 0030 0000      		.word	song2d
- 2121 0032 0000      		.word	song2e
- 2122 0034 0000      		.word	song2e
- 2123 0036 0000      		.word	song2e
- 2124 0038 0000      		.word	song2f
- 2125 003a 0000      		.word	song2f
- 2126 003c 0000      		.word	song2g
- 2127 003e 0000      		.word	song2g
- 2128 0040 0000      		.word	song2g
- 2129               	.global	bitmasks
- 2130               		.section	.progmem.data
- 2133               	bitmasks:
- 2134 0304 00        		.byte	0
- 2135 0305 01        		.byte	1
- 2136 0306 03        		.byte	3
- 2137 0307 07        		.byte	7
- 2138 0308 0F        		.byte	15
- 2139 0309 1F        		.byte	31
- 2140 030a 3F        		.byte	63
- 2141 030b 7F        		.byte	127
- 2142 030c FF        		.byte	-1
- 2143               	.global	about
- 2146               	about:
- 2147 030d 4A61 7220 		.ascii	"Jar of Fireflies\nDesign and Implementation by Xander Hudson"
- 2147      6F66 2046 
- 2147      6972 6566 
- 2147      6C69 6573 
- 2147      0A44 6573 
- 2148 0348 2028 6A61 		.ascii	" (jar@synoptic.org)\nIdea and Inspiration by Kayobi Tierney\n"
- 2148      7240 7379 
- 2148      6E6F 7074 
- 2148      6963 2E6F 
- 2148      7267 290A 
- 2149 0383 5370 6563 		.ascii	"Specia"
- 2149      6961 
- 2150 0389 6C20 7468 		.string	"l thanks to Katie Horn for getting me to think about electronics"
- 2150      616E 6B73 
- 2150      2074 6F20 
- 2150      4B61 7469 
- 2150      6520 486F 
- 2151               	.global	version
- 2154               	version:
- 2155 03ca 2452 6576 		.string	"$Revision: 1.41 $ $Date: 2007/01/10 04:35:55 $"
- 2155      6973 696F 
- 2155      6E3A 2031 
- 2155      2E34 3120 
- 2155      2420 2444 
- 2156               	.global	mood
- 2157               		.data
- 2160               	mood:
- 2161 0042 02        		.byte	2
- 2162               	.global	mood_count
- 2165               	mood_count:
- 2166 0043 1E00      		.word	30
- 2167               		.lcomm ch2noteptr.1659,2
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 38
+ 2108 027d 93        		.byte	-109
+ 2109 027e 97        		.byte	-105
+ 2110 027f 9A        		.byte	-102
+ 2111 0280 99        		.byte	-103
+ 2112 0281 95        		.byte	-107
+ 2113 0282 90        		.byte	-112
+ 2114 0283 8D        		.byte	-115
+ 2115 0284 8D        		.byte	-115
+ 2116 0285 8F        		.byte	-113
+ 2117 0286 8F        		.byte	-113
+ 2118 0287 8C        		.byte	-116
+ 2119 0288 86        		.byte	-122
+ 2120 0289 83        		.byte	-125
+ 2121 028a 87        		.byte	-121
+ 2122 028b 91        		.byte	-111
+ 2123 028c A0        		.byte	-96
+ 2124 028d AB        		.byte	-85
+ 2125 028e AC        		.byte	-84
+ 2126 028f A3        		.byte	-93
+ 2127 0290 96        		.byte	-106
+ 2128 0291 8D        		.byte	-115
+ 2129 0292 8C        		.byte	-116
+ 2130 0293 91        		.byte	-111
+ 2131 0294 97        		.byte	-105
+ 2132 0295 98        		.byte	-104
+ 2133 0296 93        		.byte	-109
+ 2134 0297 8A        		.byte	-118
+ 2135 0298 86        		.byte	-122
+ 2136 0299 88        		.byte	-120
+ 2137 029a 93        		.byte	-109
+ 2138 029b 9F        		.byte	-97
+ 2139 029c A5        		.byte	-91
+ 2140 029d A2        		.byte	-94
+ 2141 029e 98        		.byte	-104
+ 2142 029f 8C        		.byte	-116
+ 2143 02a0 84        		.byte	-124
+ 2144 02a1 81        		.byte	-127
+ 2145 02a2 83        		.byte	-125
+ 2146 02a3 84        		.byte	-124
+ 2147 02a4 83        		.byte	-125
+ 2148 02a5 7F        		.byte	127
+ 2149 02a6 7B        		.byte	123
+ 2150 02a7 77        		.byte	119
+ 2151 02a8 74        		.byte	116
+ 2152 02a9 70        		.byte	112
+ 2153 02aa 69        		.byte	105
+ 2154 02ab 60        		.byte	96
+ 2155 02ac 56        		.byte	86
+ 2156 02ad 4D        		.byte	77
+ 2157 02ae 45        		.byte	69
+ 2158 02af 3E        		.byte	62
+ 2159 02b0 36        		.byte	54
+ 2160 02b1 2D        		.byte	45
+ 2161 02b2 26        		.byte	38
+ 2162 02b3 1F        		.byte	31
+ 2163 02b4 1B        		.byte	27
+ 2164 02b5 17        		.byte	23
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 38
 
 
- 2168               		.lcomm ch1noteptr.1658,2
- 2169               		.lcomm ch2song.1657,2
- 2170               		.lcomm ch1song.1656,2
- 2173               	lfsr.1625:
- 2174 0045 CE74      		.word	29902
- 2175               		.lcomm ticker.1612,1
- 2178               	ch1pins.1514:
- 2179 0047 08        		.byte	8
- 2180 0048 04        		.byte	4
- 2181 0049 01        		.byte	1
- 2184               	masterpins.1513:
- 2185 004a 10        		.byte	16
- 2186 004b 02        		.byte	2
- 2187               		.lcomm x.1430,1
- 2188               		.comm ch1restcount,1,1
- 2189               		.comm ch2restcount,1,1
- 2190               		.comm ch1nextnote,1,1
- 2191               		.comm ch2nextnote,1,1
- 2192               		.comm ch1scale,1,1
- 2193               		.comm ch2scale,1,1
- 2194               		.comm ch1nextscale,1,1
- 2195               		.comm ch2nextscale,1,1
- 2196               		.comm masterpinmask,1,1
- 2301               	.Letext0:
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 39
+ 2165 02b6 13        		.byte	19
+ 2166 02b7 0E        		.byte	14
+ 2167 02b8 0A        		.byte	10
+ 2168 02b9 06        		.byte	6
+ 2169 02ba 04        		.byte	4
+ 2170 02bb 02        		.byte	2
+ 2171 02bc 01        		.byte	1
+ 2172 02bd 01        		.byte	1
+ 2173 02be 00        		.byte	0
+ 2174 02bf 00        		.byte	0
+ 2175               	.global	song2f
+ 2176               		.data
+ 2179               	song2f:
+ 2180 0018 5D00      		.word	93
+ 2181 001a 0000      		.word	song2fnotes
+ 2182               	.global	song2gnotes
+ 2183               		.section	.progmem.data
+ 2186               	song2gnotes:
+ 2187 02c0 02        		.byte	2
+ 2188 02c1 2A        		.byte	42
+ 2189 02c2 63        		.byte	99
+ 2190 02c3 79        		.byte	121
+ 2191 02c4 60        		.byte	96
+ 2192 02c5 2A        		.byte	42
+ 2193 02c6 03        		.byte	3
+ 2194 02c7 01        		.byte	1
+ 2195 02c8 01        		.byte	1
+ 2196 02c9 01        		.byte	1
+ 2197 02ca 01        		.byte	1
+ 2198 02cb 01        		.byte	1
+ 2199 02cc 0C        		.byte	12
+ 2200 02cd 19        		.byte	25
+ 2201 02ce 29        		.byte	41
+ 2202 02cf 3C        		.byte	60
+ 2203 02d0 4D        		.byte	77
+ 2204 02d1 56        		.byte	86
+ 2205 02d2 5B        		.byte	91
+ 2206 02d3 64        		.byte	100
+ 2207 02d4 76        		.byte	118
+ 2208 02d5 88        		.byte	-120
+ 2209 02d6 90        		.byte	-112
+ 2210 02d7 8F        		.byte	-113
+ 2211 02d8 8D        		.byte	-115
+ 2212 02d9 92        		.byte	-110
+ 2213 02da 99        		.byte	-103
+ 2214 02db 9B        		.byte	-101
+ 2215 02dc 99        		.byte	-103
+ 2216 02dd 98        		.byte	-104
+ 2217 02de 9B        		.byte	-101
+ 2218 02df 9A        		.byte	-102
+ 2219 02e0 94        		.byte	-108
+ 2220 02e1 8D        		.byte	-115
+ 2221 02e2 8E        		.byte	-114
+ 2222 02e3 98        		.byte	-104
+ 2223 02e4 9F        		.byte	-97
+ 2224 02e5 9A        		.byte	-102
+ 2225 02e6 8E        		.byte	-114
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 39
+
+
+ 2226 02e7 88        		.byte	-120
+ 2227 02e8 8D        		.byte	-115
+ 2228 02e9 98        		.byte	-104
+ 2229 02ea 99        		.byte	-103
+ 2230 02eb 8F        		.byte	-113
+ 2231 02ec 84        		.byte	-124
+ 2232 02ed 7E        		.byte	126
+ 2233 02ee 7C        		.byte	124
+ 2234 02ef 78        		.byte	120
+ 2235 02f0 6F        		.byte	111
+ 2236 02f1 65        		.byte	101
+ 2237 02f2 5C        		.byte	92
+ 2238 02f3 53        		.byte	83
+ 2239 02f4 48        		.byte	72
+ 2240 02f5 3B        		.byte	59
+ 2241 02f6 31        		.byte	49
+ 2242 02f7 2B        		.byte	43
+ 2243 02f8 26        		.byte	38
+ 2244 02f9 1E        		.byte	30
+ 2245 02fa 15        		.byte	21
+ 2246 02fb 0F        		.byte	15
+ 2247 02fc 0B        		.byte	11
+ 2248 02fd 08        		.byte	8
+ 2249 02fe 05        		.byte	5
+ 2250 02ff 03        		.byte	3
+ 2251 0300 01        		.byte	1
+ 2252 0301 01        		.byte	1
+ 2253 0302 00        		.byte	0
+ 2254 0303 00        		.byte	0
+ 2255               	.global	song2g
+ 2256               		.data
+ 2259               	song2g:
+ 2260 001c 4400      		.word	68
+ 2261 001e 0000      		.word	song2gnotes
+ 2262               	.global	bootsongs
+ 2265               	bootsongs:
+ 2266 0020 0000      		.word	bootsong
+ 2267               	.global	songs
+ 2270               	songs:
+ 2271 0022 0000      		.word	song2a
+ 2272 0024 0000      		.word	song2b
+ 2273 0026 0000      		.word	song2b
+ 2274 0028 0000      		.word	song2c
+ 2275 002a 0000      		.word	song2c
+ 2276 002c 0000      		.word	song2c
+ 2277 002e 0000      		.word	song2d
+ 2278 0030 0000      		.word	song2d
+ 2279 0032 0000      		.word	song2e
+ 2280 0034 0000      		.word	song2e
+ 2281 0036 0000      		.word	song2e
+ 2282 0038 0000      		.word	song2f
+ 2283 003a 0000      		.word	song2f
+ 2284 003c 0000      		.word	song2g
+ 2285 003e 0000      		.word	song2g
+ 2286 0040 0000      		.word	song2g
+ 2287               	.global	bitmasks
+ 2288               		.section	.progmem.data
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 40
+
+
+ 2291               	bitmasks:
+ 2292 0304 00        		.byte	0
+ 2293 0305 01        		.byte	1
+ 2294 0306 03        		.byte	3
+ 2295 0307 07        		.byte	7
+ 2296 0308 0F        		.byte	15
+ 2297 0309 1F        		.byte	31
+ 2298 030a 3F        		.byte	63
+ 2299 030b 7F        		.byte	127
+ 2300 030c FF        		.byte	-1
+ 2301               	.global	about
+ 2304               	about:
+ 2305 030d 4A61 7220 		.ascii	"Jar of Fireflies\nDesign and Implementation by Xander Hudson"
+ 2305      6F66 2046 
+ 2305      6972 6566 
+ 2305      6C69 6573 
+ 2305      0A44 6573 
+ 2306 0348 2028 6A61 		.ascii	" (jar@synoptic.org)\nIdea and Inspiration by Kayobi Tierney\n"
+ 2306      7240 7379 
+ 2306      6E6F 7074 
+ 2306      6963 2E6F 
+ 2306      7267 290A 
+ 2307 0383 5370 6563 		.ascii	"Specia"
+ 2307      6961 
+ 2308 0389 6C20 7468 		.string	"l thanks to Katie Horn for getting me to think about electronics"
+ 2308      616E 6B73 
+ 2308      2074 6F20 
+ 2308      4B61 7469 
+ 2308      6520 486F 
+ 2309               	.global	version
+ 2312               	version:
+ 2313 03ca 2452 6576 		.string	"$Revision: 1.41 $ $Date: 2007/01/10 04:35:55 $"
+ 2313      6973 696F 
+ 2313      6E3A 2031 
+ 2313      2E34 3120 
+ 2313      2420 2444 
+ 2314               	.global	mood
+ 2315               		.data
+ 2318               	mood:
+ 2319 0042 02        		.byte	2
+ 2320               	.global	mood_count
+ 2323               	mood_count:
+ 2324 0043 1E00      		.word	30
+ 2325               		.lcomm temp.1721,1
+ 2326               		.lcomm ch2noteptr.1720,2
+ 2327               		.lcomm ch1noteptr.1719,2
+ 2328               		.lcomm ch2song.1718,2
+ 2329               		.lcomm ch1song.1717,2
+ 2332               	lfsr.1631:
+ 2333 0045 CE74      		.word	29902
+ 2334               		.lcomm ticker.1618,1
+ 2337               	ch1pins.1520:
+ 2338 0047 08        		.byte	8
+ 2339 0048 04        		.byte	4
+ 2340 0049 01        		.byte	1
+ 2343               	masterpins.1519:
+ 2344 004a 10        		.byte	16
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 41
+
+
+ 2345 004b 02        		.byte	2
+ 2346               		.lcomm x.1435,1
+ 2349               	debounce.1682:
+ 2350 004c 0A        		.byte	10
+ 2351               		.comm ch1restcount,1,1
+ 2352               		.comm ch2restcount,1,1
+ 2353               		.comm ch1nextnote,1,1
+ 2354               		.comm ch2nextnote,1,1
+ 2355               		.comm ch1scale,1,1
+ 2356               		.comm ch2scale,1,1
+ 2357               		.comm ch1nextscale,1,1
+ 2358               		.comm ch2nextscale,1,1
+ 2359               		.comm masterpinmask,1,1
+ 2360               		.comm waiting_for_dark,1,1
+ 2361               		.comm is_dark,1,1
+ 2362               		.comm force_dark,1,1
+ 2467               	.Letext0:
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 firefly.c
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2      *ABS*:0000003f __SREG__
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:3      *ABS*:0000003e __SP_H__
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:4      *ABS*:0000003d __SP_L__
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:5      *ABS*:00000034 __CCP__
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:6      *ABS*:00000000 __tmp_reg__
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:7      *ABS*:00000001 __zero_reg__
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:18     .text:00000000 __vector_12
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2      *ABS*:0000003f __SREG__
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:3      *ABS*:0000003e __SP_H__
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:4      *ABS*:0000003d __SP_L__
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:5      *ABS*:00000034 __CCP__
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:6      *ABS*:00000000 __tmp_reg__
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:7      *ABS*:00000001 __zero_reg__
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:18     .text:00000000 __vector_12
+                            *COM*:00000001 force_dark
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2349   .data:0000004c debounce.1682
+                            *COM*:00000001 is_dark
                             *COM*:00000001 ch1restcount
                             *COM*:00000001 ch2restcount
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2165   .data:00000043 mood_count
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:77     .text:00000068 __vector_10
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2175   .bss:00000009 x.1430
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2323   .data:00000043 mood_count
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:148    .text:000000c2 __vector_10
+                            *COM*:00000001 waiting_for_dark
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2334   .bss:0000000a x.1435
                             *COM*:00000001 ch1nextnote
                             *COM*:00000001 ch2nextnote
                             *COM*:00000001 masterpinmask
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:211    .text:00000122 von_242
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:213    .text:00000124 turnon_242
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:217    .text:0000012a turnoff_242
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:219    .text:0000012c done_242
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:235    .text:0000013c von_250
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:237    .text:0000013e turnon_250
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:241    .text:00000144 turnoff_250
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:243    .text:00000146 done_250
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:260    .text:00000152 showbootup
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2107   .data:00000020 bootsongs
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2184   .data:0000004a masterpins.1513
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2178   .data:00000047 ch1pins.1514
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:432    .text:00000212 randbits
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2173   .data:00000045 lfsr.1625
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2133   .progmem.data:00000304 bitmasks
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:492    .text:00000254 pickmaster
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2170   .bss:00000008 ticker.1612
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:525    .text:0000027a pickapin
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:590    .text:000002ba randscaleval
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:630    .text:000002f2 randwaitval
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2160   .data:00000042 mood
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:680    .text:00000340 pickasong
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2112   .data:00000022 songs
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:708    .text:00000360 lighted_fireflies
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2167   .bss:00000002 ch1noteptr.1658
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2169   .bss:00000006 ch1song.1656
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:287    .text:00000186 von_320
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:289    .text:00000188 turnon_320
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:293    .text:0000018e turnoff_320
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:295    .text:00000190 done_320
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:311    .text:000001a0 von_328
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:313    .text:000001a2 turnon_328
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:317    .text:000001a8 turnoff_328
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:319    .text:000001aa done_328
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:336    .text:000001b6 showbootup
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2265   .data:00000020 bootsongs
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2343   .data:0000004a masterpins.1519
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2337   .data:00000047 ch1pins.1520
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:508    .text:00000276 randbits
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2332   .data:00000045 lfsr.1631
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2291   .progmem.data:00000304 bitmasks
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:568    .text:000002b8 pickmaster
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2329   .bss:00000009 ticker.1618
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:601    .text:000002de pickapin
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:666    .text:0000031e randscaleval
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:706    .text:00000356 randwaitval
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2318   .data:00000042 mood
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:756    .text:000003a4 pickasong
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2270   .data:00000022 songs
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:784    .text:000003c4 lighted_fireflies
+                             .bss:00000000 temp.1721
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2326   .bss:00000003 ch1noteptr.1719
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2328   .bss:00000007 ch1song.1717
                             *COM*:00000001 ch1scale
-                             .bss:00000000 ch2noteptr.1659
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2168   .bss:00000004 ch2song.1657
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2325   .bss:00000001 ch2noteptr.1720
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2327   .bss:00000005 ch2song.1718
                             *COM*:00000001 ch2scale
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1117   .text:00000562 main
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1240   .progmem.data:00000000 bootsongnotes
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1264   .data:00000000 bootsong
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1271   .progmem.data:00000013 song2anotes
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1395   .data:00000004 song2a
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1402   .progmem.data:0000008a song2bnotes
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1515   .data:00000008 song2b
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1522   .progmem.data:000000f6 song2cnotes
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1657   .data:0000000c song2c
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1664   .progmem.data:00000178 song2dnotes
-GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s 			page 40
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1219   .text:000005fc main
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1398   .progmem.data:00000000 bootsongnotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1422   .data:00000000 bootsong
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1429   .progmem.data:00000013 song2anotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1553   .data:00000004 song2a
+GAS LISTING /var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s 			page 43
 
 
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1768   .data:00000010 song2d
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1775   .progmem.data:000001db song2enotes
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1916   .data:00000014 song2e
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:1923   .progmem.data:00000263 song2fnotes
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2021   .data:00000018 song2f
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2028   .progmem.data:000002c0 song2gnotes
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2101   .data:0000001c song2g
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2146   .progmem.data:0000030d about
-/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//cca1hVAU.s:2154   .progmem.data:000003ca version
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1560   .progmem.data:0000008a song2bnotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1673   .data:00000008 song2b
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1680   .progmem.data:000000f6 song2cnotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1815   .data:0000000c song2c
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1822   .progmem.data:00000178 song2dnotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1926   .data:00000010 song2d
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:1933   .progmem.data:000001db song2enotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2074   .data:00000014 song2e
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2081   .progmem.data:00000263 song2fnotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2179   .data:00000018 song2f
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2186   .progmem.data:000002c0 song2gnotes
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2259   .data:0000001c song2g
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2304   .progmem.data:0000030d about
+/var/folders/m6/h69rbtm16qg9rvj4_lszybhm0000gn/T//ccjkuZLT.s:2312   .progmem.data:000003ca version
                             *COM*:00000001 ch1nextscale
                             *COM*:00000001 ch2nextscale
 
