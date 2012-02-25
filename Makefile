@@ -11,12 +11,14 @@
 #####         Target Specific Details          #####
 #####     Customize these for your project     #####
 
+MCU_NUM?=85
+
 # Name of target controller 
 # (e.g. 'at90s8515', see the available avr-gcc mmcu 
 # options for possible values)
 #MCU=atmega16
 #MCU=atmega8515
-MCU=attiny85
+MCU=attiny$(MCU_NUM)
 
 # id to use with programmer
 # default: PROGRAMMER_MCU=$(MCU)
@@ -26,7 +28,7 @@ MCU=attiny85
 # avrdude requires 'm8')
 #PROGRAMMER_MCU=m16
 #PROGRAMMER_MCU=m8515
-PROGRAMMER_MCU=t85
+PROGRAMMER_MCU=t$(MCU_NUM)
 
 # Name of our project
 # (use a single word, e.g. 'myproject')
@@ -74,7 +76,7 @@ AVRDUDE_OPTS=-i 8
 # port--serial or parallel port to which your 
 # hardware programmer is attached
 #
-AVRDUDE_PORT=/dev/cu.usbserial-FTB5PNU8
+AVRDUDE_PORT=/dev/cu.usbserial
 # AVRDUDE_PORT=usb
 # AVRDUDE_PORT=com1:
 
