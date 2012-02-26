@@ -66,20 +66,28 @@ OPT?=s
 # one of the valid "-c PROGRAMMER-ID" values 
 # described in the avrdude info page.
 # 
-AVRDUDE_PROGRAMMERID=stk500
+AVRDUDE_PROGRAMMERID?=stk500
 # AVRDUDE_PROGRAMMERID=stk500v2
 # AVRDUDE_PROGRAMMERID=jtag2isp
 # AVRDUDE_PROGRAMMERID=dragon_isp
 # additional AVRDUDE opts (in this case 125KHz)
-AVRDUDE_OPTS=-i 8
+AVRDUDE_OPTS=-i 8 -v
 
 # port--serial or parallel port to which your 
 # hardware programmer is attached
 #
-AVRDUDE_PORT=/dev/cu.usbserial
+AVRDUDE_PORT?=/dev/cu.usbserial
 # AVRDUDE_PORT=usb
 # AVRDUDE_PORT=com1:
 
+# for phototransistor
+CDEFS=-DUSE_PHOTOTRANSISTOR=1
+HFUSE=0xDF
+
+AVRDUDE_PROGRAMMERID=stk500hvsp
+
+# no phototransistor
+# CDEFS=-DUSE_PHOTOTRANSISTOR=0
 
 ####################################################
 #####                Config Done               #####
@@ -107,6 +115,8 @@ CFLAGS= -I. $(INC) -g -mmcu=$(MCU) -O$(OPT) \
 	-Wall -Wstrict-prototypes               \
 	-Wa,-ahldms=$(firstword                  \
 	$(filter %.lst, $(<:.c=.lst)))
+
+CFLAGS+= $(CDEFS)
 
 # c++ specific flags
 CPPFLAGS=-fno-exceptions               \
@@ -202,7 +212,7 @@ writeflash: hex
 fuses:
 	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID) \
 	-p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) $(AVRDUDE_OPTS) \
-	-U hfuse:w:0xDF:m -U lfuse:w:0x62:m
+	-U hfuse:w:$(HFUSE):m -U lfuse:w:0x62:m
 
 firefly: hex
 
