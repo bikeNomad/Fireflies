@@ -193,6 +193,11 @@ ioinit(void)
     PRR |= _BV(PRUSI);   // Turn off USI clock
     PRR |= _BV(PRADC);   // Turn off ADC
 
+#if USE_PHOTOTRANSISTOR
+    // disable digital input buffer on ADC pin to reduce power consumption
+    DIDR0 = _BV(ADC0D);
+#endif
+
     /*
      * Set up the 8-bit timer 0.
      *
@@ -396,13 +401,8 @@ static void still_dark(void)
 {
     static uint8_t debounce = DARK_DEBOUNCE;
 
-	// set up I/O pins
-	PORTB = LEDS_OFF | _BV(PIN_F);	// turn ON pullup on PIN_F
 	// read state
     uint8_t photocell = read_adc(PHOTOTRANSISTOR_ADC);  // Vcc as VRef, no conn to AREF.
-
-	// turn off pullup
-	PORTB = LEDS_OFF;	// turn OFF pullup on PIN_F
 
     if ((photocell > DARK_MINIMUM) || force_dark)
     {

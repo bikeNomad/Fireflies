@@ -1,0 +1,420 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADCSRA	firefly.s	/^    ADCSRA = _BV(ADEN) | _BV(ADSC);      \/\/ enable ADC and start conversion$/;"	d
+ADMUX	firefly.s	/^    ADMUX = muxreg | _BV(ADLAR);    \/\/ left-justified result$/;"	d
+ASMFILES	Makefile	/^ASMFILES=$(filter %.S, $(PRJSRC))$/;"	m
+ASMFLAGS	Makefile	/^ASMFLAGS =-I. $(INC) -mmcu=$(MCU)        \\$/;"	m
+AVRDUDE	Makefile	/^AVRDUDE=avrdude$/;"	m
+AVRDUDE_OPTS	Makefile	/^AVRDUDE_OPTS=-i 8 -v$/;"	m
+AVRDUDE_PORT	Makefile	/^AVRDUDE_PORT?=\/dev\/cu.usbserial$/;"	m
+AVRDUDE_PROGRAMMERID	Makefile	/^AVRDUDE_PROGRAMMERID=stk500hvsp$/;"	m
+AVRDUDE_PROGRAMMERID	Makefile	/^AVRDUDE_PROGRAMMERID?=stk500$/;"	m
+BIGCFILES	Makefile	/^BIGCFILES=$(filter %.C, $(PRJSRC))$/;"	m
+BRIGHTER	config.h	/^#define BRIGHTER /;"	d
+CC	Makefile	/^CC=avr-gcc$/;"	m
+CCFILES	Makefile	/^CCFILES=$(filter %.cc, $(PRJSRC))$/;"	m
+CDEFS	Makefile	/^CDEFS=-DUSE_PHOTOTRANSISTOR=1$/;"	m
+CFILES	Makefile	/^CFILES=$(filter %.c, $(PRJSRC))$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -I. $(INC) -g -mmcu=$(MCU) -O$(OPT) \\$/;"	m
+CPPFILES	Makefile	/^CPPFILES=$(filter %.cpp, $(PRJSRC))$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS=-fno-exceptions               \\$/;"	m
+DARK_DEBOUNCE	config.h	/^#define	DARK_DEBOUNCE	/;"	d
+DARK_MINIMUM	config.h	/^#define DARK_MINIMUM /;"	d
+DDRB	firefly.s	/^    DDRB = DDRB_DEFAULT;$/;"	d
+DDRB_DEFAULT	firefly.c	/^#  define DDRB_DEFAULT /;"	d	file:
+DIDR0	firefly.s	/^    DIDR0 = _BV(ADC0D);$/;"	d
+DUMPTRG	Makefile	/^DUMPTRG=$(PROJECTNAME).s$/;"	m
+Disassembly	firefly.s	/^Disassembly of section .text:$/;"	l
+FLAGS0	firefly.h	/^#define FLAGS0 /;"	d
+FLAGS0	firefly.s	/^        FLAGS0 = 0;$/;"	d
+FLAGS0	firefly.s	/^    FLAGS0 = 0;$/;"	d
+FREAKOUT	firefly.c	/^#define FREAKOUT /;"	d	file:
+FREAKOUT	firefly.s	/^#define FREAKOUT  for (;;) {PORTB = LEDS_OFF; PORTB = ~LEDS_OFF; } $/;"	d
+GDBINITFILE	Makefile	/^GDBINITFILE=gdbinit-$(PROJECTNAME)$/;"	m
+GENASMFILES	Makefile	/^GENASMFILES=$(filter %.s, $(OBJDEPS:.o=.s)) $/;"	m
+HEXFORMAT	Makefile	/^HEXFORMAT=ihex$/;"	m
+HEXROMTRG	Makefile	/^HEXROMTRG=$(PROJECTNAME).hex $/;"	m
+HEXTRG	Makefile	/^HEXTRG=$(HEXROMTRG) $/;"	m
+HFUSE	Makefile	/^HFUSE=0xDF$/;"	m
+ISR	firefly.c	/^ISR(TIM0_COMPA_vect) {$/;"	f
+ISR	firefly.c	/^ISR(WDT_vect) {$/;"	f
+LDFLAGS	Makefile	/^LDFLAGS=-Wl,-Map,$(TRG).map -mmcu=$(MCU) \\$/;"	m
+LEDS_OFF	firefly.c	/^#  define LEDS_OFF /;"	d	file:
+LIBS	Makefile	/^LIBS=$/;"	m
+LST	Makefile	/^LST=$(filter %.lst, $(OBJDEPS:.o=.lst))$/;"	m
+MCU	Makefile	/^MCU=attiny$(MCU_NUM)$/;"	m
+MCU_NUM	Makefile	/^MCU_NUM?=85$/;"	m
+OBJCOPY	Makefile	/^OBJCOPY=avr-objcopy$/;"	m
+OBJDEPS	Makefile	/^OBJDEPS=$(CFILES:.c=.o)    \\$/;"	m
+OBJDUMP	Makefile	/^OBJDUMP=avr-objdump$/;"	m
+OCR0A	firefly.s	/^    OCR0A = 25;$/;"	d
+OPT	Makefile	/^OPT?=s$/;"	m
+OUTFORMAT	Makefile	/^OUTFORMAT=elf$/;"	m
+PHOTOSHOOT	config.h	/^#define PHOTOSHOOT /;"	d
+PHOTOTRANSISTOR_ADC	firefly.h	/^#   define PHOTOTRANSISTOR_ADC /;"	d
+PHOTOTRANSISTOR_PIN	firefly.h	/^#   define PHOTOTRANSISTOR_PIN /;"	d
+PIN_A	firefly.h	/^#define PIN_A /;"	d
+PIN_A_ADC	firefly.h	/^#define PIN_A_ADC /;"	d
+PIN_B	firefly.h	/^#define PIN_B /;"	d
+PIN_C	firefly.h	/^#define PIN_C /;"	d
+PIN_D	firefly.h	/^#define PIN_D /;"	d
+PIN_E	firefly.h	/^#define PIN_E /;"	d
+PIN_F	firefly.h	/^#define PIN_F /;"	d
+PIN_F_ADC	firefly.h	/^#define PIN_F_ADC /;"	d
+PORTB	firefly.s	/^	PORTB = LEDS_OFF | _BV(PHOTOTRANSISTOR_PIN);	\/\/ turn ON pullup on PIN_F$/;"	d
+PORTB	firefly.s	/^	PORTB = LEDS_OFF;	\/\/ turn OFF pullup on PIN_F$/;"	d
+PRJSRC	Makefile	/^PRJSRC=firefly.c$/;"	m
+PROGRAMMER_MCU	Makefile	/^PROGRAMMER_MCU=t$(MCU_NUM)$/;"	m
+PROJECTNAME	Makefile	/^PROJECTNAME=firefly$/;"	m
+RANDOM_SEED	config.h	/^#define RANDOM_SEED /;"	d
+RANDOM_SEED	firefly.h	/^#define RANDOM_SEED /;"	d
+READ_TEMPERATURE	config.h	/^#define READ_TEMPERATURE /;"	d
+REMOVE	Makefile	/^REMOVE=rm -f$/;"	m
+SIZE	Makefile	/^SIZE=avr-size$/;"	m
+SONG1	firefly.h	/^#define SONG1 /;"	d
+SONG2	config.h	/^#define SONG2 /;"	d
+Song	songs/songs.h	/^} Song;$/;"	t	typeref:struct:song
+TCCR0A	firefly.s	/^    TCCR0A = _BV(WGM01);  \/\/ Set CTC mode, timer counts 0 - OCRA$/;"	d
+TCCR0B	firefly.s	/^    TCCR0B = _BV(CS01); \/\/ Clock\/8$/;"	d
+TIMSK	firefly.s	/^    TIMSK = 0;  \/\/ disable timer 0 compare interrupt$/;"	d
+TIMSK	firefly.s	/^    TIMSK = _BV(OCIE0A);    \/\/ enable timer 0 interrupt$/;"	d
+TIMSK	firefly.s	/^    TIMSK = _BV(OCIE0A);$/;"	d
+TRG	Makefile	/^TRG=$(PROJECTNAME).$(OUTFORMAT)$/;"	m
+USE_PHOTOTRANSISTOR	config.h	/^#define USE_PHOTOTRANSISTOR /;"	d
+WATCHDOG_OK	firefly.c	/^#define WATCHDOG_OK /;"	d	file:
+a	firefly.s	/^   a:	21 c2       	rjmp	.+1090   	; 0x44e <__bad_interrupt>$/;"	l
+a00	firefly.s	/^ a00:	09 c0       	rjmp	.+18     	; 0xa14 <lighted_fireflies+0x200>$/;"	l
+a02	firefly.s	/^ a02:	85 b7       	in	r24, 0x35	; 53$/;"	l
+a04	firefly.s	/^ a04:	87 7e       	andi	r24, 0xE7	; 231$/;"	l
+a06	firefly.s	/^ a06:	80 61       	ori	r24, 0x10	; 16$/;"	l
+a08	firefly.s	/^ a08:	85 bf       	out	0x35, r24	; 53$/;"	l
+a0a	firefly.s	/^ a0a:	85 b7       	in	r24, 0x35	; 53$/;"	l
+a0c	firefly.s	/^ a0c:	80 62       	ori	r24, 0x20	; 32$/;"	l
+a0e	firefly.s	/^ a0e:	85 bf       	out	0x35, r24	; 53$/;"	l
+a1	firefly.s	/^  a1:	05 03 01 01 00 01 00                                .......$/;"	l
+a10	firefly.s	/^ a10:	88 95       	sleep$/;"	l
+a12	firefly.s	/^ a12:	07 c0       	rjmp	.+14     	; 0xa22 <lighted_fireflies+0x20e>$/;"	l
+a14	firefly.s	/^ a14:	85 b7       	in	r24, 0x35	; 53$/;"	l
+a16	firefly.s	/^ a16:	87 7e       	andi	r24, 0xE7	; 231$/;"	l
+a18	firefly.s	/^ a18:	85 bf       	out	0x35, r24	; 53$/;"	l
+a1a	firefly.s	/^ a1a:	85 b7       	in	r24, 0x35	; 53$/;"	l
+a1c	firefly.s	/^ a1c:	80 62       	ori	r24, 0x20	; 32$/;"	l
+a1e	firefly.s	/^ a1e:	85 bf       	out	0x35, r24	; 53$/;"	l
+a20	firefly.s	/^ a20:	88 95       	sleep$/;"	l
+a22	firefly.s	/^ a22:	85 b7       	in	r24, 0x35	; 53$/;"	l
+a24	firefly.s	/^ a24:	8f 7d       	andi	r24, 0xDF	; 223$/;"	l
+a26	firefly.s	/^ a26:	85 bf       	out	0x35, r24	; 53$/;"	l
+a28	firefly.s	/^ a28:	80 91 bf 00 	lds	r24, 0x00BF$/;"	l
+a2c	firefly.s	/^ a2c:	88 23       	and	r24, r24$/;"	l
+a2e	firefly.s	/^ a2e:	09 f0       	breq	.+2      	; 0xa32 <lighted_fireflies+0x21e>$/;"	l
+a30	firefly.s	/^ a30:	02 cf       	rjmp	.-508    	; 0x836 <lighted_fireflies+0x22>$/;"	l
+a32	firefly.s	/^ a32:	10 93 ae 00 	sts	0x00AE, r17$/;"	l
+a36	firefly.s	/^ a36:	d0 93 b2 00 	sts	0x00B2, r29$/;"	d
+a3a	firefly.s	/^ a3a:	c0 93 b1 00 	sts	0x00B1, r28$/;"	l
+a3e	firefly.s	/^ a3e:	df 91       	pop	r29$/;"	d
+a40	firefly.s	/^ a40:	cf 91       	pop	r28$/;"	l
+a42	firefly.s	/^ a42:	1f 91       	pop	r17$/;"	l
+a44	firefly.s	/^ a44:	0f 91       	pop	r16$/;"	l
+a46	firefly.s	/^ a46:	ff 90       	pop	r15$/;"	l
+a48	firefly.s	/^ a48:	ef 90       	pop	r14$/;"	l
+a4a	firefly.s	/^ a4a:	08 95       	ret$/;"	l
+a4c	firefly.s	/^ a4c:	0f 93       	push	r16$/;"	l
+a4e	firefly.s	/^ a4e:	1f 93       	push	r17$/;"	l
+a50	firefly.s	/^ a50:	2d e0       	ldi	r18, 0x0D	; 13$/;"	l
+a52	firefly.s	/^ a52:	88 e1       	ldi	r24, 0x18	; 24$/;"	l
+a54	firefly.s	/^ a54:	90 e0       	ldi	r25, 0x00	; 0$/;"	l
+a56	firefly.s	/^ a56:	0f b6       	in	r0, 0x3f	; 63$/;"	l
+a58	firefly.s	/^ a58:	f8 94       	cli$/;"	l
+a5a	firefly.s	/^ a5a:	a8 95       	wdr$/;"	l
+a5c	firefly.s	/^ a5c:	81 bd       	out	0x21, r24	; 33$/;"	l
+a5e	firefly.s	/^ a5e:	0f be       	out	0x3f, r0	; 63$/;"	l
+a60	firefly.s	/^ a60:	21 bd       	out	0x21, r18	; 33$/;"	l
+a62	firefly.s	/^ a62:	81 b5       	in	r24, 0x21	; 33$/;"	l
+a64	firefly.s	/^ a64:	80 64       	ori	r24, 0x40	; 64$/;"	l
+a66	firefly.s	/^ a66:	81 bd       	out	0x21, r24	; 33$/;"	l
+a68	firefly.s	/^ a68:	8f ed       	ldi	r24, 0xDF	; 223$/;"	l
+a6a	firefly.s	/^ a6a:	87 bb       	out	0x17, r24	; 23$/;"	l
+a6c	firefly.s	/^ a6c:	8d ec       	ldi	r24, 0xCD	; 205$/;"	l
+a6e	firefly.s	/^ a6e:	88 bb       	out	0x18, r24	; 24$/;"	l
+a70	firefly.s	/^ a70:	80 b5       	in	r24, 0x20	; 32$/;"	l
+a72	firefly.s	/^ a72:	88 60       	ori	r24, 0x08	; 8$/;"	l
+a74	firefly.s	/^ a74:	80 bd       	out	0x20, r24	; 32$/;"	l
+a76	firefly.s	/^ a76:	80 b5       	in	r24, 0x20	; 32$/;"	l
+a78	firefly.s	/^ a78:	82 60       	ori	r24, 0x02	; 2$/;"	l
+a7a	firefly.s	/^ a7a:	80 bd       	out	0x20, r24	; 32$/;"	l
+a7c	firefly.s	/^ a7c:	80 b5       	in	r24, 0x20	; 32$/;"	l
+a7e	firefly.s	/^ a7e:	81 60       	ori	r24, 0x01	; 1$/;"	l
+a8	firefly.s	/^  a8:	01 1f 59 7e 77 55 2a 06 01 01 01 01 01 01 08 16     ..Y~wU*.........$/;"	l
+a80	firefly.s	/^ a80:	80 bd       	out	0x20, r24	; 32$/;"	l
+a82	firefly.s	/^ a82:	80 e2       	ldi	r24, 0x20	; 32$/;"	l
+a84	firefly.s	/^ a84:	84 bb       	out	0x14, r24	; 20$/;"	l
+a86	firefly.s	/^ a86:	82 e0       	ldi	r24, 0x02	; 2$/;"	l
+a88	firefly.s	/^ a88:	8a bd       	out	0x2a, r24	; 42$/;"	l
+a8a	firefly.s	/^ a8a:	83 bf       	out	0x33, r24	; 51$/;"	l
+a8c	firefly.s	/^ a8c:	89 e1       	ldi	r24, 0x19	; 25$/;"	l
+a8e	firefly.s	/^ a8e:	89 bd       	out	0x29, r24	; 41$/;"	l
+a90	firefly.s	/^ a90:	82 e0       	ldi	r24, 0x02	; 2$/;"	l
+a92	firefly.s	/^ a92:	90 e0       	ldi	r25, 0x00	; 0$/;"	l
+a94	firefly.s	/^ a94:	20 e8       	ldi	r18, 0x80	; 128$/;"	l
+a96	firefly.s	/^ a96:	0f b6       	in	r0, 0x3f	; 63$/;"	l
+a98	firefly.s	/^ a98:	f8 94       	cli$/;"	l
+a9a	firefly.s	/^ a9a:	26 bd       	out	0x26, r18	; 38$/;"	l
+a9c	firefly.s	/^ a9c:	86 bd       	out	0x26, r24	; 38$/;"	l
+a9e	firefly.s	/^ a9e:	0f be       	out	0x3f, r0	; 63$/;"	l
+aa0	firefly.s	/^ aa0:	80 e1       	ldi	r24, 0x10	; 16$/;"	l
+aa2	firefly.s	/^ aa2:	89 bf       	out	0x39, r24	; 57$/;"	l
+aa4	firefly.s	/^ aa4:	81 b5       	in	r24, 0x21	; 33$/;"	l
+aa6	firefly.s	/^ aa6:	80 64       	ori	r24, 0x40	; 64$/;"	l
+aa8	firefly.s	/^ aa8:	81 bd       	out	0x21, r24	; 33$/;"	l
+aaa	firefly.s	/^ aaa:	88 24       	eor	r8, r8$/;"	l
+aac	firefly.s	/^ aac:	77 24       	eor	r7, r7$/;"	l
+aae	firefly.s	/^ aae:	66 24       	eor	r6, r6$/;"	l
+ab0	firefly.s	/^ ab0:	55 24       	eor	r5, r5$/;"	l
+ab2	firefly.s	/^ ab2:	44 24       	eor	r4, r4$/;"	l
+ab4	firefly.s	/^ ab4:	33 24       	eor	r3, r3$/;"	l
+ab6	firefly.s	/^ ab6:	22 24       	eor	r2, r2$/;"	l
+ab8	firefly.s	/^ ab8:	76 de       	rcall	.-788    	; 0x7a6 <randwaitval>$/;"	l
+aba	firefly.s	/^ aba:	80 93 bb 00 	sts	0x00BB, r24$/;"	l
+abe	firefly.s	/^ abe:	73 de       	rcall	.-794    	; 0x7a6 <randwaitval>$/;"	l
+about	firefly.c	/^const prog_uint8_t about[] = "Jar of Fireflies\\n"$/;"	v
+ac0	firefly.s	/^ ac0:	80 93 c0 00 	sts	0x00C0, r24$/;"	l
+ac4	firefly.s	/^ ac4:	11 ba       	out	0x11, r1	; 17$/;"	l
+ac6	firefly.s	/^ ac6:	10 92 c2 00 	sts	0x00C2, r1$/;"	l
+aca	firefly.s	/^ aca:	81 e0       	ldi	r24, 0x01	; 1$/;"	l
+acc	firefly.s	/^ acc:	80 93 bf 00 	sts	0x00BF, r24$/;"	l
+ad0	firefly.s	/^ ad0:	80 93 ba 00 	sts	0x00BA, r24$/;"	l
+ad4	firefly.s	/^ ad4:	78 94       	sei$/;"	l
+ad6	firefly.s	/^ ad6:	97 dd       	rcall	.-1234   	; 0x606 <showbootup>$/;"	l
+ad8	firefly.s	/^ ad8:	10 92 ba 00 	sts	0x00BA, r1$/;"	l
+adc	firefly.s	/^ adc:	01 e0       	ldi	r16, 0x01	; 1$/;"	l
+ade	firefly.s	/^ ade:	10 e1       	ldi	r17, 0x10	; 16$/;"	l
+ae0	firefly.s	/^ ae0:	00 93 c2 00 	sts	0x00C2, r16$/;"	l
+ae4	firefly.s	/^ ae4:	19 be       	out	0x39, r1	; 57$/;"	l
+ae6	firefly.s	/^ ae6:	0e c0       	rjmp	.+28     	; 0xb04 <main+0xb8>$/;"	l
+ae8	firefly.s	/^ ae8:	81 b5       	in	r24, 0x21	; 33$/;"	l
+aea	firefly.s	/^ aea:	80 64       	ori	r24, 0x40	; 64$/;"	l
+aec	firefly.s	/^ aec:	81 bd       	out	0x21, r24	; 33$/;"	l
+aee	firefly.s	/^ aee:	85 b7       	in	r24, 0x35	; 53$/;"	l
+af0	firefly.s	/^ af0:	87 7e       	andi	r24, 0xE7	; 231$/;"	l
+af2	firefly.s	/^ af2:	80 61       	ori	r24, 0x10	; 16$/;"	l
+af4	firefly.s	/^ af4:	85 bf       	out	0x35, r24	; 53$/;"	l
+af6	firefly.s	/^ af6:	85 b7       	in	r24, 0x35	; 53$/;"	l
+af8	firefly.s	/^ af8:	80 62       	ori	r24, 0x20	; 32$/;"	l
+afa	firefly.s	/^ afa:	85 bf       	out	0x35, r24	; 53$/;"	l
+afc	firefly.s	/^ afc:	88 95       	sleep$/;"	l
+afe	firefly.s	/^ afe:	85 b7       	in	r24, 0x35	; 53$/;"	l
+b0	firefly.h	/^    uint8_t  b0:1, $/;"	m	struct:__anon1
+b00	firefly.s	/^ b00:	8f 7d       	andi	r24, 0xDF	; 223$/;"	l
+b02	firefly.s	/^ b02:	85 bf       	out	0x35, r24	; 53$/;"	l
+b04	firefly.s	/^ b04:	80 91 bf 00 	lds	r24, 0x00BF$/;"	l
+b08	firefly.s	/^ b08:	88 23       	and	r24, r24$/;"	l
+b0a	firefly.s	/^ b0a:	71 f3       	breq	.-36     	; 0xae8 <main+0x9c>$/;"	l
+b0c	firefly.s	/^ b0c:	19 bf       	out	0x39, r17	; 57$/;"	l
+b0e	firefly.s	/^ b0e:	10 92 c2 00 	sts	0x00C2, r1$/;"	l
+b1	firefly.h	/^             b1:1,$/;"	m	struct:__anon1
+b12	firefly.s	/^ b12:	88 24       	eor	r8, r8$/;"	l
+b14	firefly.s	/^ b14:	77 24       	eor	r7, r7$/;"	l
+b16	firefly.s	/^ b16:	66 24       	eor	r6, r6$/;"	l
+b18	firefly.s	/^ b18:	55 24       	eor	r5, r5$/;"	l
+b1a	firefly.s	/^ b1a:	44 24       	eor	r4, r4$/;"	l
+b1c	firefly.s	/^ b1c:	33 24       	eor	r3, r3$/;"	l
+b1e	firefly.s	/^ b1e:	22 24       	eor	r2, r2$/;"	l
+b2	firefly.h	/^             b2:1,$/;"	m	struct:__anon1
+b20	firefly.s	/^ b20:	11 ba       	out	0x11, r1	; 17$/;"	l
+b22	firefly.s	/^ b22:	89 9a       	sbi	0x11, 1	; 17$/;"	l
+b24	firefly.s	/^ b24:	8b 9a       	sbi	0x11, 3	; 17$/;"	l
+b26	firefly.s	/^ b26:	76 de       	rcall	.-788    	; 0x814 <lighted_fireflies>$/;"	l
+b28	firefly.s	/^ b28:	db cf       	rjmp	.-74     	; 0xae0 <main+0x94>$/;"	d
+b2a	firefly.s	/^ b2a:	55 27       	eor	r21, r21$/;"	l
+b2c	firefly.s	/^ b2c:	00 24       	eor	r0, r0$/;"	l
+b2e	firefly.s	/^ b2e:	80 ff       	sbrs	r24, 0$/;"	l
+b3	firefly.h	/^             b3:1,$/;"	m	struct:__anon1
+b30	firefly.s	/^ b30:	02 c0       	rjmp	.+4      	; 0xb36 <__mulhi3_skip1>$/;"	l
+b32	firefly.s	/^ b32:	06 0e       	add	r0, r22$/;"	l
+b34	firefly.s	/^ b34:	57 1f       	adc	r21, r23$/;"	l
+b36	firefly.s	/^ b36:	66 0f       	add	r22, r22$/;"	l
+b38	firefly.s	/^ b38:	77 1f       	adc	r23, r23$/;"	l
+b3a	firefly.s	/^ b3a:	61 15       	cp	r22, r1$/;"	l
+b3c	firefly.s	/^ b3c:	71 05       	cpc	r23, r1$/;"	l
+b3e	firefly.s	/^ b3e:	21 f0       	breq	.+8      	; 0xb48 <__mulhi3_exit>$/;"	l
+b4	firefly.h	/^             b4:1,$/;"	m	struct:__anon1
+b40	firefly.s	/^ b40:	96 95       	lsr	r25$/;"	l
+b42	firefly.s	/^ b42:	87 95       	ror	r24$/;"	l
+b44	firefly.s	/^ b44:	00 97       	sbiw	r24, 0x00	; 0$/;"	l
+b46	firefly.s	/^ b46:	99 f7       	brne	.-26     	; 0xb2e <__mulhi3_loop>$/;"	l
+b48	firefly.s	/^ b48:	95 2f       	mov	r25, r21$/;"	l
+b4a	firefly.s	/^ b4a:	80 2d       	mov	r24, r0$/;"	l
+b4c	firefly.s	/^ b4c:	08 95       	ret$/;"	l
+b4e	firefly.s	/^ b4e:	f8 94       	cli$/;"	l
+b5	firefly.h	/^             b5:1,$/;"	m	struct:__anon1
+b50	firefly.s	/^ b50:	ff cf       	rjmp	.-2      	; 0xb50 <__stop_program>$/;"	l
+b6	firefly.h	/^             b6:1,$/;"	m	struct:__anon1
+b7	firefly.h	/^             b7:1;$/;"	m	struct:__anon1
+b8	firefly.s	/^  b8:	25 33 40 48 50 5c 6c 7a 7f 7a 75 7c 8f a3 a7 9b     %3@HP\\lz.zu|....$/;"	l
+bitmasks	firefly.h	/^const prog_uint8_t bitmasks[] = { $/;"	v
+bootsong	songs/bootsong.h	/^Song bootsong = { sizeof(bootsongnotes), bootsongnotes };$/;"	v
+bootsongnotes	songs/bootsong.h	/^const prog_uint8_t bootsongnotes[] = {0, 4, 9, 16, 24, 33, 41, 47, 50, 49, $/;"	v
+bootsongs	firefly.h	/^const Song *bootsongs[] = { &bootsong };$/;"	v
+c	firefly.s	/^   c:	20 c2       	rjmp	.+1088   	; 0x44e <__bad_interrupt>$/;"	l
+c8	firefly.s	/^  c8:	8b 87 8e 96 96 8d 83 81 85 8b 8f 92 95 98 96 90     ................$/;"	l
+ch1bright	firefly.s	/^                ch1bright = 0;$/;"	d
+ch1bright	firefly.s	/^                ch1bright = ch1nextnote;$/;"	d
+ch1bright	firefly.s	/^        ch1bright = ch2bright = ch1err = ch2err = ch1pin = ch2pin = portval = 0;$/;"	d
+ch1bright	firefly.s	/^    ch1bright = ch2bright = ch1err = ch2err = ch1pin = ch2pin = portval = 0;$/;"	d
+ch1nextnote	firefly.c	/^volatile uint8_t ch1nextnote;$/;"	v
+ch1nextnote	firefly.s	/^                    ch1nextnote = temp;$/;"	d
+ch1nextnote	firefly.s	/^                ch1nextnote = pgm_read_byte(&ch1song->notes[ch1noteptr++]);$/;"	d
+ch1nextnote	firefly.s	/^            ch1nextnote = temp;$/;"	d
+ch1nextscale	firefly.c	/^volatile uint8_t ch1nextscale;$/;"	v
+ch1noteptr	firefly.s	/^            ch1noteptr = 0;$/;"	d
+ch1noteready	firefly.c	/^#define ch1noteready /;"	d	file:
+ch1noteready	firefly.s	/^                    ch1noteready = 1;$/;"	d
+ch1noteready	firefly.s	/^                ch1noteready = 0;$/;"	d
+ch1noteready	firefly.s	/^                ch1noteready = 1;$/;"	d
+ch1noteready	firefly.s	/^            ch1noteready = 1;$/;"	d
+ch1pin	firefly.s	/^            ch1pin = ch1pins[cpin];$/;"	d
+ch1pin	firefly.s	/^            ch1pin = pickapin(ch2pin);$/;"	d
+ch1playing	firefly.c	/^#define ch1playing /;"	d	file:
+ch1playing	firefly.s	/^                    ch1playing = 0;   $/;"	d
+ch1playing	firefly.s	/^                ch1playing = 1;$/;"	d
+ch1restcount	firefly.c	/^volatile uint8_t ch1restcount;$/;"	v
+ch1restcount	firefly.s	/^                ch1restcount = temp;$/;"	d
+ch1restcount	firefly.s	/^    ch1restcount = 1;   $/;"	d
+ch1restcount	firefly.s	/^    ch1restcount = 2;$/;"	d
+ch1restcount	firefly.s	/^    ch1restcount = randwaitval();$/;"	d
+ch1resting	firefly.c	/^#define ch1resting /;"	d	file:
+ch1resting	firefly.s	/^                    ch1resting = 1;$/;"	d
+ch1resting	firefly.s	/^        ch1resting = 1;$/;"	d
+ch1resting	firefly.s	/^    ch1resting = 1; $/;"	d
+ch1scale	firefly.c	/^volatile uint8_t ch1scale;$/;"	v
+ch1scale	firefly.s	/^            ch1scale = randscaleval();$/;"	d
+ch1song	firefly.s	/^            ch1song = pickasong();$/;"	d
+ch2bright	firefly.s	/^                ch2bright = 0;$/;"	d
+ch2bright	firefly.s	/^                ch2bright = ch2nextnote;$/;"	d
+ch2nextnote	firefly.c	/^volatile uint8_t ch2nextnote;$/;"	v
+ch2nextnote	firefly.s	/^                    ch2nextnote = temp;$/;"	d
+ch2nextnote	firefly.s	/^            ch2nextnote = temp;$/;"	d
+ch2nextscale	firefly.c	/^volatile uint8_t ch2nextscale;$/;"	v
+ch2noteptr	firefly.s	/^            ch2noteptr = 0;$/;"	d
+ch2noteready	firefly.c	/^#define ch2noteready /;"	d	file:
+ch2noteready	firefly.s	/^                    ch2noteready = 1;$/;"	d
+ch2noteready	firefly.s	/^                ch2noteready = 0;$/;"	d
+ch2noteready	firefly.s	/^            ch2noteready = 1;$/;"	d
+ch2pin	firefly.s	/^            ch2pin = pickapin(ch1pin);$/;"	d
+ch2playing	firefly.c	/^#define ch2playing /;"	d	file:
+ch2playing	firefly.s	/^                    ch2playing = 0;   $/;"	d
+ch2playing	firefly.s	/^                ch2playing = 1;$/;"	d
+ch2restcount	firefly.c	/^volatile uint8_t ch2restcount;$/;"	v
+ch2restcount	firefly.s	/^                ch2restcount = temp;$/;"	d
+ch2restcount	firefly.s	/^    ch2restcount = randwaitval();$/;"	d
+ch2resting	firefly.c	/^#define ch2resting /;"	d	file:
+ch2resting	firefly.s	/^                    ch2resting = 1;$/;"	d
+ch2resting	firefly.s	/^        ch2resting = 1;$/;"	d
+ch2scale	firefly.c	/^volatile uint8_t ch2scale;$/;"	v
+ch2scale	firefly.s	/^            ch2scale = randscaleval();$/;"	d
+ch2song	firefly.s	/^            ch2song = pickasong();$/;"	d
+d8	firefly.s	/^  d8:	8a 8a 91 96 93 89 84 89 99 a6 a7 9c 94 95 9c a1     ................$/;"	l
+debounce	firefly.s	/^            debounce = DARK_DEBOUNCE;$/;"	d
+debounce	firefly.s	/^        debounce = DARK_DEBOUNCE;$/;"	d
+e	firefly.s	/^   e:	1f c2       	rjmp	.+1086   	; 0x44e <__bad_interrupt>$/;"	l
+e8	firefly.s	/^  e8:	9c 93 8d 91 98 9d 9c 9a 9c a1 a1 98 8c 85 83 82     ................$/;"	l
+f8	firefly.s	/^  f8:	7c 72 69 66 67 65 5d 52 4a 44 3f 37 2e 26 20 1d     |rifge]RJD?7.& .$/;"	l
+force_dark	firefly.c	/^volatile uint8_t force_dark;$/;"	v
+force_dark	firefly.s	/^    force_dark = 0;$/;"	d
+force_dark	firefly.s	/^    force_dark = 1;$/;"	d
+int	firefly.s	/^int main(void)$/;"	l
+io_reg	firefly.h	/^} io_reg;$/;"	t	typeref:struct:__anon1
+ioinit	firefly.c	/^ioinit(void)$/;"	f	file:
+is_dark	firefly.c	/^#   define is_dark /;"	d	file:
+is_dark	firefly.c	/^volatile uint8_t is_dark;	        \/\/ true if it still seems to be dark.$/;"	v
+is_dark	firefly.s	/^            is_dark = 1;$/;"	d
+is_dark	firefly.s	/^        is_dark = 0;$/;"	d
+is_dark	firefly.s	/^    is_dark = 1;$/;"	d
+lfsr	firefly.s	/^        lfsr = lfsr << 1;$/;"	d
+lfsr	firefly.s	/^        lfsr = lfsr ^ 0x1D87;$/;"	d
+lighted_fireflies	firefly.c	/^void lighted_fireflies(void)$/;"	f
+main	firefly.c	/^int main(void)$/;"	f
+masterpinmask	firefly.c	/^volatile uint8_t masterpinmask;$/;"	v
+masterpinmask	firefly.s	/^                masterpinmask = pickmaster();$/;"	d
+masterpinmask	firefly.s	/^        masterpinmask = masterpins[mpin];$/;"	d
+mood	firefly.c	/^uint8_t mood = 2;$/;"	v
+mood	firefly.s	/^            mood = 1;$/;"	d
+mood	firefly.s	/^            mood = randbits(5) + 8;$/;"	d
+mood_count	firefly.c	/^uint16_t mood_count = 30;   \/\/ WDT cycles before changing mood$/;"	v
+mood_count	firefly.s	/^            mood_count = 60 * 5 * 2;$/;"	d
+myrand	firefly.s	/^    myrand = ((uint16_t)((myrand << 1) + myrand)) >> 8;$/;"	d
+need_mood	firefly.c	/^#define need_mood /;"	d	file:
+need_mood	firefly.s	/^            need_mood = 0;$/;"	d
+notecount	songs/songs.h	/^    uint16_t            notecount;$/;"	m	struct:song
+notes	songs/songs.h	/^    const prog_uint8_t  *notes; $/;"	m	struct:song
+pickapin	firefly.c	/^uint8_t pickapin (uint8_t inuse) {$/;"	f
+pickasong	firefly.c	/^const Song *pickasong(void)$/;"	f
+pickmaster	firefly.c	/^uint8_t pickmaster (void) {$/;"	f
+portval	firefly.s	/^            portval = LEDS_OFF | masterpinmask;$/;"	d
+portval	firefly.s	/^            portval = LEDS_OFF;    \/\/ lights off.$/;"	d
+pwm	firefly.h	/^#define pwm(/;"	d
+randbits	firefly.c	/^uint8_t randbits(uint8_t bits)$/;"	f
+randscaleval	firefly.c	/^uint8_t randscaleval (void) {$/;"	f
+randwaitval	firefly.c	/^uint8_t randwaitval (void) {$/;"	f
+read_adc	firefly.c	/^static uint8_t read_adc(uint8_t muxreg)$/;"	f	file:
+read_temperature	firefly.c	/^static uint8_t read_temperature(void)$/;"	f	file:
+showbootup	firefly.c	/^void showbootup (void) {$/;"	f
+song	songs/songs.h	/^typedef struct song {$/;"	s
+song1a	songs/song1a.h	/^Song song1a = { sizeof(song1anotes), song1anotes };$/;"	v
+song1anotes	songs/song1a.h	/^const prog_uint8_t song1anotes[] = {2, 14, 44, 95, 141, 175, 192, $/;"	v
+song1b	songs/song1b.h	/^Song song1b = { sizeof(song1bnotes), song1bnotes };$/;"	v
+song1bnotes	songs/song1b.h	/^const prog_uint8_t song1bnotes[] = {5, 17, 45, 89, 131, 163, 185, $/;"	v
+song1c	songs/song1c.h	/^Song song1c = { sizeof(song1cnotes), song1cnotes };$/;"	v
+song1cnotes	songs/song1c.h	/^const prog_uint8_t song1cnotes[] = {2, 16, 52, 106, 151, 182, 192, $/;"	v
+song1d	songs/song1d.h	/^Song song1d = { sizeof(song1dnotes), song1dnotes };$/;"	v
+song1dnotes	songs/song1d.h	/^const prog_uint8_t song1dnotes[] = {8, 28, 78, 133, 176, 195, 171, $/;"	v
+song1e	songs/song1e.h	/^Song song1e = { sizeof(song1enotes), song1enotes };$/;"	v
+song1enotes	songs/song1e.h	/^const prog_uint8_t song1enotes[] = {5, 15, 32, 64, 99, 132, 160, $/;"	v
+song2a	songs/song2a.h	/^Song song2a = { sizeof(song2anotes), song2anotes };$/;"	v
+song2anotes	songs/song2a.h	/^const prog_uint8_t song2anotes[] = {2, 29, 81, 123, 130, 104, 63, 24, 2, $/;"	v
+song2b	songs/song2b.h	/^Song song2b = { sizeof(song2bnotes), song2bnotes };$/;"	v
+song2bnotes	songs/song2b.h	/^const prog_uint8_t song2bnotes[] = {1, 31, 89, 126, 119, 85, 42, 6, 1, 1,$/;"	v
+song2c	songs/song2c.h	/^Song song2c = { sizeof(song2cnotes), song2cnotes };$/;"	v
+song2cnotes	songs/song2c.h	/^const prog_uint8_t song2cnotes[] = {2, 25, 70, 117, 146, 144, 111, 61, 18, $/;"	v
+song2d	songs/song2d.h	/^Song song2d = { sizeof(song2dnotes), song2dnotes };$/;"	v
+song2dnotes	songs/song2d.h	/^const prog_uint8_t song2dnotes[] = {1, 27, 72, 109, 121, 104, 61, 17, 1, 1, $/;"	v
+song2e	songs/song2e.h	/^Song song2e = { sizeof(song2enotes), song2enotes };$/;"	v
+song2enotes	songs/song2e.h	/^const prog_uint8_t song2enotes[] = {1, 26, 73, 116, 131, 115, 80, 39, 8, $/;"	v
+song2f	songs/song2f.h	/^Song song2f = { sizeof(song2fnotes), song2fnotes };$/;"	v
+song2fnotes	songs/song2f.h	/^const prog_uint8_t song2fnotes[] = {2, 36, 94, 130, 121, 79, 27, 1, 1, 1, $/;"	v
+song2g	songs/song2g.h	/^Song song2g = { sizeof(song2gnotes), song2gnotes };$/;"	v
+song2gnotes	songs/song2g.h	/^const prog_uint8_t song2gnotes[] = {2, 42, 99, 121, 96, 42, 3, 1, 1, 1, 1, $/;"	v
+songs	firefly.h	/^const Song *songs[] = { $/;"	v
+static	firefly.s	/^static uint8_t read_adc(uint8_t muxreg)$/;"	l
+static	firefly.s	/^static void still_dark(void)$/;"	l
+static	firefly.s	/^static void wait_for_dark(void)$/;"	l
+static	firefly.s	/^static void$/;"	l
+still_dark	firefly.c	/^static void still_dark(void)        { }$/;"	f	file:
+still_dark	firefly.c	/^static void still_dark(void)$/;"	f	file:
+temp	firefly.s	/^                    temp = ((uint16_t) (ch1scale * temp)) >> 8;$/;"	d
+temp	firefly.s	/^                    temp = ((uint16_t) (ch2scale * temp)) >> 8;$/;"	d
+temp	firefly.s	/^                    temp = pgm_read_byte(&ch1song->notes[ch1noteptr++]);$/;"	d
+temp	firefly.s	/^                    temp = pgm_read_byte(&ch2song->notes[ch2noteptr++]);$/;"	d
+temp	firefly.s	/^                temp = randwaitval();$/;"	d
+temp	firefly.s	/^            temp = ((uint16_t) (ch1scale * temp)) >> 8;$/;"	d
+temp	firefly.s	/^            temp = ((uint16_t) (ch2scale * temp)) >> 8;$/;"	d
+temp	firefly.s	/^            temp = pgm_read_byte(&ch1song->notes[ch1noteptr++]);$/;"	d
+temp	firefly.s	/^            temp = pgm_read_byte(&ch2song->notes[ch2noteptr++]);$/;"	d
+uint8_t	firefly.s	/^uint8_t pickapin (uint8_t inuse) {$/;"	l
+uint8_t	firefly.s	/^uint8_t pickmaster (void) {$/;"	l
+uint8_t	firefly.s	/^uint8_t randbits(uint8_t bits)$/;"	l
+uint8_t	firefly.s	/^uint8_t randscaleval (void) {$/;"	l
+uint8_t	firefly.s	/^uint8_t randwaitval (void) {$/;"	l
+version	firefly.c	/^const prog_uint8_t version[] = "$Revision: 1.41 $ $Date: 2007\/01\/10 04:35:55 $";$/;"	v
+void	firefly.s	/^void lighted_fireflies(void)$/;"	l
+void	firefly.s	/^void showbootup (void) {$/;"	l
+wait_for_dark	firefly.c	/^static void wait_for_dark(void)     { }$/;"	f	file:
+wait_for_dark	firefly.c	/^static void wait_for_dark(void)$/;"	f	file:
+waiting_for_dark	firefly.c	/^#   define waiting_for_dark /;"	d	file:
+waiting_for_dark	firefly.c	/^volatile uint8_t waiting_for_dark;	\/\/ true if in the "wait for dark" state.$/;"	v
+waiting_for_dark	firefly.s	/^    waiting_for_dark = 0;$/;"	d
+waiting_for_dark	firefly.s	/^    waiting_for_dark = 1;$/;"	d

@@ -100,10 +100,9 @@ typedef struct {
 #define PIN_F 5
 #define PIN_F_ADC 0
 
-#if PHOTOTRANSISTOR_ON_RESET_PIN
+#if USE_PHOTOTRANSISTOR
+#   define PHOTOTRANSISTOR_PIN    PIN_F
 #   define PHOTOTRANSISTOR_ADC    PIN_F_ADC
-#else
-#   define PHOTOTRANSISTOR_ADC    PIN_A_ADC
 #endif
 
 #define FLAGS0 GPIOR0
