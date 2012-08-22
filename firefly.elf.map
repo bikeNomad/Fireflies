@@ -3,7 +3,7 @@ Archive member included because of file (symbol)
 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_mulhi3.o)
                               firefly.o (__mulhi3)
 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
-                              /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o (exit)
+                              /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o (exit)
 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_copy_data.o)
                               firefly.o (__do_copy_data)
 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_clear_bss.o)
@@ -38,7 +38,7 @@ signature        0x00840000         0x00000400         rw !x
 
 Linker script and memory map
 
-LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
 LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/libm.a
 LOAD firefly.o
 LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
@@ -137,7 +137,7 @@ LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
 
 .text           0x00000000      0xb4a
  *(.vectors)
- .vectors       0x00000000       0x1e /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .vectors       0x00000000       0x1e /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
                 0x00000000                __vectors
                 0x00000000                __vector_default
  *(.vectors)
@@ -175,13 +175,13 @@ LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000418        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .init0         0x00000418        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
                 0x00000418                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000418        0xc /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .init2         0x00000418        0xc /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
  *(.init2)
  *(.init3)
  *(.init3)
@@ -200,10 +200,10 @@ LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000044a        0x4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .init9         0x0000044a        0x4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
  *(.init9)
  *(.text)
- .text          0x0000044e        0x2 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .text          0x0000044e        0x2 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
                 0x0000044e                __vector_1
                 0x0000044e                __bad_interrupt
                 0x0000044e                __vector_6
@@ -270,7 +270,7 @@ LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
 .data           0x00800060       0x4e load address 0x00000b4a
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800060        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .data          0x00800060        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
  .data          0x00800060       0x4d firefly.o
                 0x00800070                song2d
                 0x00800060                bootsong
@@ -300,7 +300,7 @@ LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
 .bss            0x008000ae       0x17
                 0x008000ae                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008000ae        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .bss           0x008000ae        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
  .bss           0x008000ae        0xb firefly.o
  .bss           0x008000b9        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_mulhi3.o)
  .bss           0x008000b9        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a(_exit.o)
@@ -350,11 +350,11 @@ LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr25/libgcc.a
 
 .stab           0x00000000      0x6b4
  *(.stab)
- .stab          0x00000000      0x6b4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .stab          0x00000000      0x6b4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
 
 .stabstr        0x00000000       0x82
  *(.stabstr)
- .stabstr       0x00000000       0x82 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn45.o
+ .stabstr       0x00000000       0x82 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
 
 .stab.excl
  *(.stab.excl)

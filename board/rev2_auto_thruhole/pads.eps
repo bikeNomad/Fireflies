@@ -1,0 +1,169 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Title: EAGLE Drawing /Users/ned/src/Fireflies/board/rev2_auto_thruhole/firefly2_auto_thruhole.brd
+%%Creator: EAGLE
+%%Pages: 1
+%%BoundingBox: 0 0 234 162
+%%EndComments
+
+% Coordinate transfer:
+
+/EU { 254 div 0.072 mul } def
+/inch { 72 mul } def
+
+% Linestyle:
+
+1 setlinecap
+1 setlinejoin
+
+% Drawing functions:
+
+/l {  % draw a line
+   /lw exch def
+   /y2 exch def
+   /x2 exch def
+   /y1 exch def
+   /x1 exch def
+   newpath
+   x1 EU y1 EU moveto
+   x2 EU y2 EU lineto
+   lw EU setlinewidth
+   stroke
+   } def
+
+/h {  % draw a hole
+   /d  exch def
+   /y  exch def
+   /x  exch def
+   d 0 gt {
+     newpath
+     x EU y EU d 2 div EU 0 360 arc
+     currentgray dup
+     1 exch sub setgray
+     fill
+     setgray
+     } if
+   } def
+
+/b {  % draw a bar
+   /an exch def
+   /y2 exch def
+   /x2 exch def
+   /y1 exch def
+   /x1 exch def
+   /w2 x2 x1 sub 2 div EU def
+   /h2 y2 y1 sub 2 div EU def
+   gsave
+   x1 x2 add 2 div EU y1 y2 add 2 div EU translate
+   an rotate
+   newpath
+   w2     h2     moveto
+   w2 neg h2     lineto
+   w2 neg h2 neg lineto
+   w2     h2 neg lineto
+   closepath
+   fill
+   grestore
+   } def
+
+/c {  % draw a circle
+   /lw exch def
+   /rd exch def
+   /y  exch def
+   /x  exch def
+   newpath
+   lw EU setlinewidth
+   x EU y EU rd EU 0 360 arc
+   stroke
+   } def
+
+/a {  % draw an arc
+   /lc exch def
+   /ae exch def
+   /as exch def
+   /lw exch def
+   /rd exch def
+   /y  exch def
+   /x  exch def
+   lw rd 2 mul gt {
+     /rd rd lw 2 div add 2 div def
+     /lw rd 2 mul def
+     } if
+   currentlinecap currentlinejoin
+   lc setlinecap 0 setlinejoin
+   newpath
+   lw EU setlinewidth
+   x EU y EU rd EU as ae arc
+   stroke
+   setlinejoin setlinecap
+   } def
+
+/p {  % draw a pie
+   /d exch def
+   /y exch def
+   /x exch def
+   newpath
+   x EU y EU d 2 div EU 0 360 arc
+   fill
+   } def
+
+/edge { 0.20710678119 mul } def
+
+/o {  % draw an octagon
+   /an exch def
+   /dy exch def
+   /dx exch def
+   /y  exch def
+   /x  exch def
+   gsave
+   x EU y EU translate
+   an dx dy lt { 90 add /dx dy /dy dx def def } if rotate
+   newpath
+      0 dx 2 div sub EU                    0 dy edge  add EU moveto
+      0 dx dy sub 2 div sub dy edge sub EU 0 dy 2 div add EU lineto
+      0 dx dy sub 2 div add dy edge add EU 0 dy 2 div add EU lineto
+      0 dx 2 div add EU                    0 dy edge  add EU lineto
+      0 dx 2 div add EU                    0 dy edge  sub EU lineto
+      0 dx dy sub 2 div add dy edge add EU 0 dy 2 div sub EU lineto
+      0 dx dy sub 2 div sub dy edge sub EU 0 dy 2 div sub EU lineto
+      0 dx 2 div sub EU                    0 dy edge  sub EU lineto
+   closepath
+   fill
+   grestore
+   } def
+
+6656 6656 641656 6656 0 l
+641656 6656 641656 387656 0 l
+641656 387656 6656 387656 0 l
+6656 387656 6656 6656 0 l
+534976 260275 534976 276277 16002 l
+560376 276277 560376 260275 16002 l
+585776 260275 585776 276277 16002 l
+611176 260275 611176 276277 16002 l
+611176 336475 611176 352477 16002 l
+585776 336475 585776 352477 16002 l
+560376 336475 560376 352477 16002 l
+534976 336475 534976 352477 16002 l
+97334 82856 78538 82856 18796 l
+97334 108256 78538 108256 18796 l
+298502 36628 279706 36628 18796 l
+298502 62028 279706 62028 18796 l
+64822 335332 46026 335332 18796 l
+64822 360732 46026 360732 18796 l
+592634 34596 573838 34596 18796 l
+592634 59996 573838 59996 18796 l
+458014 329236 439218 329236 18796 l
+458014 354636 439218 354636 18796 l
+204014 227636 185218 227636 18796 l
+204014 253036 185218 253036 18796 l
+286019 330149 281525 341275 12000 l
+248932 315164 244438 326290 12000 l
+501956 333916 16510 p
+501956 283916 16510 p
+583236 210618 583236 229414 18796 l
+583236 134418 583236 153214 18796 l
+611176 210618 611176 229414 18796 l
+611176 134418 611176 153214 18796 l
+440336 206872 440336 187440 19432 l
+240336 206872 240336 187440 19432 l
+514656 187758 514656 206554 18796 l
+489256 187758 489256 206554 18796 l
